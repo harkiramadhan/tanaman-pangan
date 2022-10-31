@@ -26,14 +26,15 @@
          </div>
       </section>
       <!--       social -->
-      <ul class="trusted-by bg-white border-bottom">
-         <li><img src="<?= base_url() ?>assets/images/facebook.png"></li>
-         <li><img src="<?= base_url() ?>assets/images/google.png"></li>
-         <li><img src="<?= base_url() ?>assets/images/mit.png"></li>
-         <li><img src="<?= base_url() ?>assets/images/netflix.png"></li>
-         <li><img src="<?= base_url() ?>assets/images/paypal.png"></li>
-         <li><img src="<?= base_url() ?>assets/images/intuit.png"></li>
-         <li><img src="<?= base_url() ?>assets/images/facebook.png"></li>
+      <ul class="d-flex flex-row trusted-by bg-white border-bottom py-3">
+         <li><img src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo_small.png" style="height: 40px; width: auto;"></li>
+         <li><img src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo-bps.jpg" style="height: 40px; width: auto;"></li>
+         <li><img src="https://tanamanpangan.pertanian.go.id/assets/img/link/RANrB.png" style="height: 40px; width: auto;"></li>
+         <li><img src="https://tanamanpangan.pertanian.go.id/assets/img/link/sedang_1634785548_LAPOR_LOGO-removebg-preview.png" style="height: 40px; width: auto;"></li>
+         <li><img src="https://tanamanpangan.pertanian.go.id/assets/img/link/Logo_BPN-KemenATR_(2017).png" style="height: 40px; width: auto;"></li>
+         <li><img src="https://tanamanpangan.pertanian.go.id/assets/img/link/bapanasbkp1.png" style="height: 40px; width: auto;"></li>
+         <li><img src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo-lpse.jpg" style="height: 40px; width: auto;"></li>
+         <li><img src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo-sms-center.png" style="height: 40px; width: auto;"></li>
       </ul>
       <!--       social -->
 
@@ -48,7 +49,7 @@
                      <img src="<?= base_url() ?>assets/images/graphics.svg" alt="" loading="lazy">
                      <span class="h4 mb-4">2000</span>
                      <br class="my-2">
-                     <span>Graphics &amp; Design</span>
+                     <span>Petani/Produsen</span>
                   </a>
                </li>
                <li>
@@ -56,7 +57,7 @@
                      <img src="<?= base_url() ?>assets/images/online-marketing.svg" alt="Digital Marketing" loading="lazy">
                      <span class="h4 mb-4">2000</span>
                      <br class="my-2">
-                     <span>Digital Marketing</span>
+                     <span>Usaha Olahan</span>
                   </a>
                </li>
                <li>
@@ -64,7 +65,7 @@
                      <img src="<?= base_url() ?>assets/images/writing-translation.svg" alt="Writing &amp; Translation" loading="lazy">
                      <span class="h4 mb-4">2000</span>
                      <br class="my-2">
-                     <span>Writing &amp; Translation</span>
+                     <span>Offtaker Pangan</span>
                   </a>
                </li>
                <li>
@@ -72,7 +73,7 @@
                      <img src="<?= base_url() ?>assets/images/video-animation.svg" alt="Video &amp; Animation" loading="lazy">
                      <span class="h4 mb-4">2000</span>
                      <br class="my-2">
-                     <span>Video &amp; Animation</span>
+                     <span>Eksportir</span>
                   </a>
                </li>
                <li>
@@ -80,7 +81,7 @@
                      <img src="<?= base_url() ?>assets/images/music-audio.svg" alt="Music &amp; Audio" loading="lazy">
                      <span class="h4 mb-4">2000</span>
                      <br class="my-2">
-                     <span>Music &amp; Audio</span>
+                     <span>Penyedia Bibit/Benih</span>
                   </a>
                </li>
                <li>
@@ -88,7 +89,7 @@
                      <img src="<?= base_url() ?>assets/images/programming.svg" alt="Programming &amp; Tech" loading="lazy">
                      <span class="h4 mb-4">2000</span>
                      <br class="my-2">
-                     <span>Programming &amp; Tech</span>
+                     <span>Penyedia Pupuk</span>
                   </a>
                </li>
                <li>
@@ -96,18 +97,193 @@
                      <img src="<?= base_url() ?>assets/images/business.svg" alt="Business" loading="lazy">
                      <span class="h4 mb-4">2000</span>
                      <br class="my-2">
-                     <span>Busines</span>
-                  </a>
-               </li>
-               <li>
-                  <a href="#">
-                     <img src="<?= base_url() ?>assets/images/lifestyle.svg" alt="Lifestyle" loading="lazy">
-                     <span class="h4 mb-4">2000</span>
-                     <br class="my-2">
-                     <span>Lifestyle</span>
+                     <span>Penyedia Alsintan</span>
                   </a>
                </li>
             </ul>
+         </div>
+      </div>
+
+      
+
+      <div class="container pt-5 pb-5  ">
+         <div class="row">
+            <div class="col-12 text-center pt-1 pb-5">
+               <img src="<?= base_url() ?>assets/images/storyset/Indonesia.svg" class="video-img w-75">
+            </div>
+            
+            <div class="col-md-12">
+               <h2 class="mb-5">Lebih Dekat Untuk Kolaborasi Antar <span class="font-weight-bold text-danger">#JEJARING</span>
+               </h2>
+               <ul class="nav osahan-tabs nav-tabs flex-column flex-sm-row border-0 mb-4">
+                  <li class="nav-item">
+                     <a href="#active" data-toggle="tab" class="nav-link make-black active border-0 rounded"> 
+                     PETANI/PRODUSEN
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="#delivered" data-toggle="tab" class="nav-link make-black border-0 rounded">
+                     USAHA OLAHAN
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="#completed" data-toggle="tab" class="nav-link make-black border-0 rounded">
+                     OFFTAKER PANGAN
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="#cancelled" data-toggle="tab" class="nav-link make-black border-0 rounded">
+                     EKSPORTIR
+                     </a>
+                  </li>
+                  <li class="nav-item">
+                     <a href="#all" data-toggle="tab" class="nav-link make-black border-0 rounded">
+                     JEJARING LAINNYA
+                     </a>
+                  </li>
+               </ul>
+               <div class="tab-content osahan-table border-0 px-3 pt-1">
+                  <div class="tab-pane active" id="active">
+                     <div class="about-section">
+                        <div class="row align-items-center">
+                           <div class="col-md-6">
+                              <h2>Sebagai Petani/Produsen? <br> Apa yang kamu dapat?</h2>
+                              <ul>
+                                 <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg">Perluas Jejaringmu</span>Agar potensi produkmu lebih dikenal luas antar #JEJARING</li>
+                                 <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg">Peluang Lebih Tinggi Sekian %</span>Kapan lagi produkmu akan lebih tinggi terjual dan dikenal sehingga bisa meningkatkan penjualan.</li>
+                                 <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg">Berkembang Lebih Pesat</span>Perkembangan usahamu akan lebih meyakinkan dengan jejaring yang kuat dan kompak.</li>
+                              </ul>
+                           </div>
+                           <div class="col-md-6 text-right mt-lg-0 mt-5">
+                              <img src="<?= base_url() ?>assets/images/storyset/Group 1.png" class="video-img w-100 rounded-lg" style="border-radius: 15px !important;">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tab-pane" id="delivered">
+                     <div class="about-section">
+                        <div class="row align-items-center">
+                           <div class="col-md-6">
+                              <h2>Give Your Business The Right Tools</h2>
+                              <ul>
+                                 <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Full Transparency</span> A new shared dashboard allows you to track your team's activity, so that everyone is always in sync.</li>
+                                 <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> VIP Customer Support
+                                    </span>Quick response time and upgraded support solutions will help you to get what you need, when you need it.
+                                 </li>
+                                 <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Improved Billing Options</span>One team - one payment method. You can now add a card on file that every team member can use.</li>
+                              </ul>
+                           </div>
+                           <div class="col-md-6 text-right mt-lg-0 mt-5">
+                              <img src="<?= base_url() ?>assets/images/storyset/Group 1.png" class="video-img w-100 rounded-lg" style="border-radius: 15px !important;">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tab-pane" id="completed">
+                     <div class="about-section">
+                        <div class="row align-items-center">
+                           <div class="col-md-6">
+                              <h2>Give Your Business The Right Tools</h2>
+                              <ul>
+                                 <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Full Transparency</span> A new shared dashboard allows you to track your team's activity, so that everyone is always in sync.</li>
+                                 <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> VIP Customer Support
+                                    </span>Quick response time and upgraded support solutions will help you to get what you need, when you need it.
+                                 </li>
+                                 <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Improved Billing Options</span>One team - one payment method. You can now add a card on file that every team member can use.</li>
+                              </ul>
+                           </div>
+                           <div class="col-md-6 text-right mt-lg-0 mt-5">
+                              <img src="<?= base_url() ?>assets/images/storyset/Group 1.png" class="video-img w-100 rounded-lg" style="border-radius: 15px !important;">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tab-pane" id="cancelled">
+                     <div class="about-section">
+                        <div class="row align-items-center">
+                           <div class="col-md-6">
+                              <h2>Give Your Business The Right Tools</h2>
+                              <ul>
+                                 <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Full Transparency</span> A new shared dashboard allows you to track your team's activity, so that everyone is always in sync.</li>
+                                 <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> VIP Customer Support
+                                    </span>Quick response time and upgraded support solutions will help you to get what you need, when you need it.
+                                 </li>
+                                 <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Improved Billing Options</span>One team - one payment method. You can now add a card on file that every team member can use.</li>
+                              </ul>
+                           </div>
+                           <div class="col-md-6 text-right mt-lg-0 mt-5">
+                              <img src="<?= base_url() ?>assets/images/storyset/Group 1.png" class="video-img w-100 rounded-lg" style="border-radius: 15px !important;">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="tab-pane" id="all">
+                     <div class="about-section">
+                        <div class="row align-items-center">
+                           <div class="col-md-6">
+                              <h2>Give Your Business The Right Tools</h2>
+                              <ul>
+                                 <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Full Transparency</span> A new shared dashboard allows you to track your team's activity, so that everyone is always in sync.</li>
+                                 <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> VIP Customer Support
+                                    </span>Quick response time and upgraded support solutions will help you to get what you need, when you need it.
+                                 </li>
+                                 <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Improved Billing Options</span>One team - one payment method. You can now add a card on file that every team member can use.</li>
+                              </ul>
+                           </div>
+                           <div class="col-md-6 text-right mt-lg-0 mt-5">
+                              <img src="<?= base_url() ?>assets/images/storyset/Group 1.png" class="video-img w-100 rounded-lg" style="border-radius: 15px !important;">
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+               <div class="text-center mt-5">
+                  <a href="#" class="c-btn c-fill-color-btn" tabindex="0">DAFTAR MENJADI JEJARING</a>
+               </div>
+            </div>
+         </div>
+      </div>
+
+
+      <div class="container pt-3 pb-1">
+         <div class="row">
+                  <!-- Main Content -->
+            <div class="col-md-6">
+               <div class="box shadow-sm rounded bg-white mb-4">
+                  <div class="p-4 d-flex align-items-center">
+                     <i class="fa fa-question fa-5x"></i>
+                     <div class="ml-4">
+                        <h5 class="font-weight-normal text-dark mb-3 mt-0">Kurang Yakin?</h5>
+                        <p class="mb-0 text-muted">Find the answer to any question, from the basics all the way to advanced tips and tricks!
+                           ...
+                        </p>
+                     </div>
+                  </div>
+                  <div class="overflow-hidden border-top d-flex align-items-center p-4">
+                     <a class="font-weight-bold d-block" href="#"> Miver Help Forum. </a>
+                     <i class="mdi mdi-arrow-right ml-auto text-primary"></i>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-6">
+               <div class="box shadow-sm rounded bg-white mb-4">
+                  <div class="p-4 d-flex align-items-center">
+                     <i class="fa fa-commenting-o fa-5x"></i>
+                     <div class="ml-4">
+                        <h5 class="font-weight-normal text-dark mb-3 mt-0">Cari Tahu Lebih Banyak
+                        </h5>
+                        <p class="mb-0 text-muted">Want to learn more about setting up and managing your team? Look no further!
+                           ...
+                        </p>
+                     </div>
+                  </div>
+                  <div class="overflow-hidden border-top d-flex align-items-center p-4">
+                     <a class="font-weight-bold d-block" href="#"> Miver Safety Center. </a>
+                     <i class="mdi mdi-arrow-right ml-auto text-primary"></i>
+                  </div>
+               </div>
+            </div>
          </div>
       </div>
 
@@ -211,47 +387,46 @@
       </section>
       <!--       recent -->
 
-
-      <div class="container">
-         <div class="row">
-                  <!-- Main Content -->
-            <div class="col-md-6">
-               <div class="box shadow-sm rounded bg-white mb-4">
-                  <div class="p-4 d-flex align-items-center">
-                     <i class="mdi mdi-message-text-outline display-4"></i>
-                     <div class="ml-4">
-                        <h5 class="font-weight-normal text-dark mb-3 mt-0">Help Forum</h5>
-                        <p class="mb-0 text-muted">Find the answer to any question, from the basics all the way to advanced tips and tricks!
-                           ...
-                        </p>
+      <div class="guide-wrapper py-5">
+         <div class="container">
+            <h2>
+               BTS Pro Paktani
+               <a href="#" class="ml-auto mb-auto text-info">
+                  <span class="d-lg-inline d-none">Selengkapnya</span> <i class="fa fa-arrow-right ml-3"></i>
+               </a>
+            </h2>
+            <div class="row">
+               <div class="col-md-4">
+                  <a href="#" class="guide">
+                     <img src="<?= base_url() ?>assets/images/guide-01.jpg">
+                     <div class="content">
+                        <h6>Create a Website</h6>
+                        <p>Building a stunning website from A to Z</p>
                      </div>
-                  </div>
-                  <div class="overflow-hidden border-top d-flex align-items-center p-4">
-                     <a class="font-weight-bold d-block" href="#"> Miver Help Forum. </a>
-                     <i class="mdi mdi-arrow-right ml-auto text-primary"></i>
-                  </div>
+                  </a>
                </div>
-            </div>
-            <div class="col-md-6">
-               <div class="box shadow-sm rounded bg-white mb-4">
-                  <div class="p-4 d-flex align-items-center">
-                     <i class="mdi mdi-lock-outline display-4"></i>
-                     <div class="ml-4">
-                        <h5 class="font-weight-normal text-dark mb-3 mt-0">Safety Center
-                        </h5>
-                        <p class="mb-0 text-muted">Want to learn more about setting up and managing your team? Look no further!
-                           ...
-                        </p>
+               <div class="col-md-4">
+                  <a href="#" class="guide">
+                     <img src="<?= base_url() ?>assets/images/guide-02.jpg">
+                     <div class="content">
+                        <h6>Grow With Digital Marketing</h6>
+                        <p>Promoting your business online</p>
                      </div>
-                  </div>
-                  <div class="overflow-hidden border-top d-flex align-items-center p-4">
-                     <a class="font-weight-bold d-block" href="#"> Miver Safety Center. </a>
-                     <i class="mdi mdi-arrow-right ml-auto text-primary"></i>
-                  </div>
+                  </a>
+               </div>
+               <div class="col-md-4">
+                  <a href="#" class="guide">
+                     <img src="<?= base_url() ?>assets/images/guide-03.jpg">
+                     <div class="content">
+                        <h6>Build a Strong Brand</h6>
+                        <p>Differentiating yourself from the competition</p>
+                     </div>
+                  </a>
                </div>
             </div>
          </div>
       </div>
+
       <!--       services-->
       <div class="services-wrapper bg-white py-5">
          <div class="container">
@@ -261,7 +436,7 @@
                   <a href="">
                      <div class="service">
                         <img src="<?= base_url() ?>assets/images/service-02.jpg">
-                        <h3><span>Draft RPP Nomor 22</span><i class="fa fa-file mt-3"></i></h3>
+                        <h3><i class="fa fa-file fa-lg mb-3"></i><span>Draft RPP Nomor 22</span></h3>
                      </div>
                   </a>
                </div>
@@ -416,7 +591,7 @@
                   <div id="syncingHeadingOne">
                      <h5 class="mb-0">
                         <button class="shadow-none btn btn-block d-flex justify-content-between card-btn p-3" data-toggle="collapse" data-target="#syncingCollapseOne" aria-expanded="false" aria-controls="syncingCollapseOne">
-                        How does syncing work?
+                        Apa itu program Tanaman Pangan?
                         <span class="card-btn-arrow">
                         <span class="mdi mdi-chevron-down"></span>
                         </span>
@@ -425,7 +600,7 @@
                   </div>
                   <div id="syncingCollapseOne" class="collapse show" aria-labelledby="syncingHeadingOne" data-parent="#syncingAccordion">
                      <div class="card-body border-top p-3 text-muted">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        Program ini nantinya akan fokus dalam 3 hal, yang pertama adalah dalam pengadaan pelatiha tani trainer yang bertujuan nantinya para petani bisa lebih berkembang. Selanjutnya adalah jejaring, dimana antara petani, gapoktan atau elemen yang lain bisa bertemu di program jejaring. Terahir adalah publikasi informasi penting tentnag program.
                      </div>
                   </div>
                </div>
@@ -435,7 +610,7 @@
                   <div id="syncingHeadingTwo">
                      <h5 class="mb-0">
                         <button class="shadow-none btn btn-block d-flex justify-content-between card-btn collapsed p-3" data-toggle="collapse" data-target="#syncingCollapseTwo" aria-expanded="false" aria-controls="syncingCollapseTwo">
-                        How do I upload files from my phone or tablet?
+                        Bagaimana cara mendaftarkan diri ke program ini?
                         <span class="card-btn-arrow">
                         <span class="mdi mdi-chevron-down"></span>
                         </span>
@@ -444,7 +619,7 @@
                   </div>
                   <div id="syncingCollapseTwo" class="collapse" aria-labelledby="syncingHeadingTwo" data-parent="#syncingAccordion">
                      <div class="card-body border-top p-3 text-muted">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        Untuk mendaftarkan bisa melalui tombol "Daftar" yang ada di ujung kanan atas dari website.
                      </div>
                   </div>
                </div>
@@ -454,7 +629,7 @@
                   <div id="syncingHeadingThree">
                      <h5 class="mb-0">
                         <button class="shadow-none btn btn-block d-flex justify-content-between card-btn collapsed p-3" data-toggle="collapse" data-target="#syncingCollapseThree" aria-expanded="false" aria-controls="syncingCollapseThree">
-                        How do I link to a file or folder?
+                        Apakah ada biaya yang di keluarkan untuk mengikuti program ini?
                         <span class="card-btn-arrow">
                         <span class="mdi mdi-chevron-down"></span>
                         </span>
@@ -463,7 +638,7 @@
                   </div>
                   <div id="syncingCollapseThree" class="collapse" aria-labelledby="syncingHeadingThree" data-parent="#syncingAccordion">
                      <div class="card-body border-top p-3 text-muted">
-                        Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                        Sampai dengan saat ini, program masih berjalan tanpa adanya biaya yang di bebankan oleh peserta. Oleh karena itu kami sangat menganjurkan untuk mendaftarkan dan mengikuti kegiatan.
                      </div>
                   </div>
                </div>

@@ -29,6 +29,7 @@
          <div class="container">
             <!-- Sidebar Toggle (Topbar) -->
             <a class="navbar-brand" href="index.html"><img src="http://app3.pertanian.go.id/propaktani/portal/assets/img/logo_login.png" alt=""></a>
+            <h6 class="mb-0 font-weight-bold">Propaktani</h6>
             <!-- Topbar Search -->
             <!-- <form class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search">
                <div class="input-group">
@@ -42,8 +43,9 @@
             </form> -->
             <!-- Topbar Navbar -->
             <ul class="navbar-nav align-items-center ml-auto">
-               
-               <li class="nav-item dropdown no-arrow no-caret dropdown-user">
+               <a href="#" class="btn btn-outline-success btn-lg font-weight-bold">Masuk</a>
+               <a href="#" class="btn btn-success btn-lg font-weight-bold ml-2">Daftar</a>               
+               <!-- <li class="nav-item dropdown no-arrow no-caret dropdown-user">
                   <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="<?= base_url() ?>assets/images/user/s4.png"></a>
                   <div class="dropdown-menu dropdown-menu-right border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
                      <h6 class="dropdown-header d-flex align-items-center">
@@ -74,7 +76,7 @@
                         Logout
                      </a>
                   </div>
-               </li>
+               </li> -->
             </ul>
          </div>
       </nav>
@@ -87,25 +89,25 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                <ul class="navbar-nav">
                   <li class="nav-item">
-                     <a class="nav-link active" href="about.html">Beranda</a>
+                     <a class="nav-link active" href="<?= base_url() ?>landing">Beranda</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="about.html">Tani Trainer</a>
+                     <a class="nav-link" href="<?= base_url() ?>jejaring"><i class="fa fa-users mr-2" style="color: #2CDD9B;"></i>Jejaring</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="about.html">Jejaring</a>
+                     <a class="nav-link" href="<?= base_url() ?>tanitrainer">Tani Trainer</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="contact.html">Publikasi</a>
+                     <a class="nav-link" href="<?= base_url() ?>publikasi">Publikasi</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="contact.html">FAQ</a>
+                     <a class="nav-link" href="<?= base_url() ?>faq">FAQ</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="contact.html">Tentang Kami</a>
+                     <a class="nav-link" href="<?= base_url() ?>tentangkami">Tentang Kami</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="contact.html">Pilih Bahasa</a>
+                     <a class="nav-link" href="<?= base_url() ?>">Pilih Bahasa</a>
                   </li>
                </ul>
             </div>
