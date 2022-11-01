@@ -1,6 +1,6 @@
 
       <!-- footer -->
-      <footer class="bg-white">
+      <footer class="bg-white border-top">
          <div class="container">
             <div class="d-flex justify-content-between">
                <div class="footer-list">

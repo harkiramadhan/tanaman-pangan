@@ -17,14 +17,24 @@
       <div class="main-page best-selling">
          <div class="view_slider recommended pt-5">
             <div class="container">
-               <div class="sorting-div d-flex align-items-center justify-content-between">
+               <div class="sorting-div d-flex align-items-center justify-content-">
                   <p class="mb-2">463 Jejaring Tersedia</p>
-                  <div class="sorting d-flex align-items-center">
-                     <p>Tampilkan</p>
-                     <select class="custom-select custom-select-sm border-0 shadow-sm ml-2">
+                  <div class="sorting d-flex align-items-center ml-auto">
+                     <p>Berdasarkan</p>
+                     <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;">
+                        <option selected disabled>Pilih Peran</option>
                         <option>Semua</option>
                         <option>Petani/Produsen Pangan</option>
                         <option>Offtaker</option>
+                     </select>
+                  </div>
+                  <div class="sorting d-flex align-items-center ml-3">
+                     <!-- <p>Tampilkan</p> -->
+                     <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;">
+                        <option selected disabled>Pilih Wilayah</option>
+                        <option>Semua</option>
+                        <option>Jawa Barat</option>
+                        <option>Jawa Timur</option>
                      </select>
                   </div>
                </div>
@@ -33,7 +43,7 @@
             <div class="container">
                <div class="row">
                   <div class="col-md-3">
-                     <a href="product-detail.html">
+                     <a href="<?= site_url() ?>jejaring/profil">
                         <img class="img-fluid" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" />
                      </a>
                      <div class="inner-slider">
@@ -45,7 +55,7 @@
                                     alt='' />
                                 </span>
                                 <span class="seller-name">
-                                <a href="#" class="mb-1">Alfian Rahmatullah</a>
+                                <a href="<?= site_url() ?>jejaring/profil" class="mb-1">Alfian Rahmatullah</a>
                                 
                                 </span>
                             </div>
@@ -68,7 +78,7 @@
                   </div>
 
                   <div class="col-md-3">
-                     <a href="product-detail.html">
+                     <a href="<?= site_url() ?>jejaring/profil">
                         <img class="img-fluid" src="https://alfand.web.id/wp-content/uploads/2021/07/Proses-Produksi-Makanan-Pendorong-Pembangunan-Ekonomi.jpg" />
                      </a>
                      <div class="inner-slider">
@@ -80,7 +90,7 @@
                                     alt='' />
                                 </span>
                                 <span class="seller-name">
-                                <a href="#" class="mb-1">PT Wijaya Kusuma</a>
+                                <a href="<?= site_url() ?>jejaring/profil" class="mb-1">PT Wijaya Kusuma</a>
                                 
                                 </span>
                             </div>

@@ -109,7 +109,7 @@
       <div class="container pt-5 pb-5  ">
          <div class="row">
             <div class="col-12 text-center pt-1 pb-5">
-               <img src="<?= base_url() ?>assets/images/storyset/Indonesia.svg" class="video-img w-75">
+               <img src="<?= base_url() ?>assets/images/storyset/Indonesia_provinces_HDI_2021 1.svg" class="video-img w-75">
             </div>
             
             <div class="col-md-12">
@@ -387,7 +387,7 @@
       </section>
       <!--       recent -->
 
-      <div class="guide-wrapper py-5">
+      <div class="guide-wrapper pt-5 testimonial">
          <div class="container">
             <h2>
                BTS Pro Paktani
@@ -397,30 +397,12 @@
             </h2>
             <div class="row">
                <div class="col-md-4">
-                  <a href="#" class="guide">
-                     <img src="<?= base_url() ?>assets/images/guide-01.jpg">
-                     <div class="content">
+                  <a href="#" class="guide picture-wrapper">
+                     <img class="" src="<?= base_url() ?>assets/images/guide-01.jpg" style="border-radius: 10px;">
+                     <!-- <div class="content">
                         <h6>Create a Website</h6>
                         <p>Building a stunning website from A to Z</p>
-                     </div>
-                  </a>
-               </div>
-               <div class="col-md-4">
-                  <a href="#" class="guide">
-                     <img src="<?= base_url() ?>assets/images/guide-02.jpg">
-                     <div class="content">
-                        <h6>Grow With Digital Marketing</h6>
-                        <p>Promoting your business online</p>
-                     </div>
-                  </a>
-               </div>
-               <div class="col-md-4">
-                  <a href="#" class="guide">
-                     <img src="<?= base_url() ?>assets/images/guide-03.jpg">
-                     <div class="content">
-                        <h6>Build a Strong Brand</h6>
-                        <p>Differentiating yourself from the competition</p>
-                     </div>
+                     </div> -->
                   </a>
                </div>
             </div>

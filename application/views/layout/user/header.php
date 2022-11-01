@@ -43,8 +43,8 @@
             </form> -->
             <!-- Topbar Navbar -->
             <ul class="navbar-nav align-items-center ml-auto">
-               <a href="#" class="btn btn-outline-success btn-lg font-weight-bold">Masuk</a>
-               <a href="#" class="btn btn-success btn-lg font-weight-bold ml-2">Daftar</a>               
+               <a href="<?= site_url() ?>auth/" class="btn btn-outline-success btn-lg font-weight-bold">Masuk</a>
+               <a href="<?= site_url() ?>auth/daftar" class="btn btn-success btn-lg font-weight-bold ml-2">Daftar</a>               
                <!-- <li class="nav-item dropdown no-arrow no-caret dropdown-user">
                   <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="<?= base_url() ?>assets/images/user/s4.png"></a>
                   <div class="dropdown-menu dropdown-menu-right border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
@@ -89,25 +89,22 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                <ul class="navbar-nav">
                   <li class="nav-item">
-                     <a class="nav-link active" href="<?= base_url() ?>landing">Beranda</a>
+                     <a class="nav-link active" href="<?= site_url() ?>landing">Beranda</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="<?= base_url() ?>jejaring"><i class="fa fa-users mr-2" style="color: #2CDD9B;"></i>Jejaring</a>
+                     <a class="nav-link" href="<?= site_url() ?>jejaring"><i class="fa fa-users mr-2" style="color: #2CDD9B;"></i>Jejaring</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="<?= base_url() ?>tanitrainer">Tani Trainer</a>
+                     <a class="nav-link" href="<?= site_url() ?>tanitrainer">Tani Trainer</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="<?= base_url() ?>publikasi">Publikasi</a>
+                     <a class="nav-link" href="<?= site_url() ?>publikasi">Publikasi</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="<?= base_url() ?>faq">FAQ</a>
+                     <a class="nav-link" href="<?= site_url() ?>faq">FAQ</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="<?= base_url() ?>tentangkami">Tentang Kami</a>
-                  </li>
-                  <li class="nav-item">
-                     <a class="nav-link" href="<?= base_url() ?>">Pilih Bahasa</a>
+                     <a class="nav-link" href="<?= site_url() ?>tentangkami">Tentang Kami</a>
                   </li>
                </ul>
             </div>

@@ -15,6 +15,5 @@ class Auth extends CI_Controller {
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/daftar', $var);
 		$this->load->view('layout/user/footer', $var);
-	
 	}
 }
