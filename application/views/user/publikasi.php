@@ -28,7 +28,7 @@
                               <div class="filters-card-header" id="headingOne">
                                  <h6 class="mb-0">
                                     <a href="#" class="btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Cocok Untuk <i class="mdi mdi-chevron-down float-right"></i>
+                                    Pilih Jenis Publikasi <i class="mdi mdi-chevron-down float-right"></i>
                                     </a>
                                  </h6>
                               </div>
@@ -36,31 +36,19 @@
                                  <div class="filters-card-body card-shop-filters">
                                     <div class="custom-control custom-checkbox">
                                        <input type="checkbox" class="custom-control-input" id="cb1">
-                                       <label class="custom-control-label" for="cb1">Petani/Produsen </label>
+                                       <label class="custom-control-label" for="cb1">Dokumen </label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                        <input type="checkbox" class="custom-control-input" id="cb2">
-                                       <label class="custom-control-label" for="cb2">Usaha Olahan</label>
+                                       <label class="custom-control-label" for="cb2">Berita</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                        <input type="checkbox" class="custom-control-input" id="cb3">
-                                       <label class="custom-control-label" for="cb3">Offtaker</label>
+                                       <label class="custom-control-label" for="cb3">Video</label>
                                     </div>
                                     <div class="custom-control custom-checkbox">
                                        <input type="checkbox" class="custom-control-input" id="cb4">
-                                       <label class="custom-control-label" for="cb4">Eksportir</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                       <input type="checkbox" class="custom-control-input" id="cb3">
-                                       <label class="custom-control-label" for="cb3">Penyedia Bibit</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                       <input type="checkbox" class="custom-control-input" id="cb3">
-                                       <label class="custom-control-label" for="cb3">Penyedia Pupuk</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                       <input type="checkbox" class="custom-control-input" id="cb3">
-                                       <label class="custom-control-label" for="cb3">Penyedia Alsintan</label>
+                                       <label class="custom-control-label" for="cb4">Gambar</label>
                                     </div>
                                  </div>
                               </div>
@@ -78,30 +66,47 @@
                               <p>Tampilkan</p>
                               <select class="custom-select custom-select-sm border-0 shadow-sm ml-2">
                                  <option>Semua</option>
-                                 <option>Aktif</option>
-                                 <option>Selesai</option>
+                                 <option>Terbaru</option>
+                                 <option>A-Z</option>
                               </select>
                            </div>
                         </div>
-                        <h3>Daftar Kelas Tani Trainer</h3>
+                        <h3>Daftar Seluruh Publikasi</h3>
                      </div>
                   </div>
                   <div class="row">
                     <div class="col">
                         <div class="box shadow-sm rounded bg-white mb-3">
-                            <div class="box-body d-flex p-3 border-bottom">
-                                <img class="img-fluid rounded mb-auto mr-3" src="<?= base_url() ?>assets/images/l3.png" alt="">
-                                <div class="d-flex flex-column align-items-top job-item-header pb-2">
-                                    <div class="mb-3">
-                                        <div class="text-truncate text-info text-uppercase"><i class="fa fa-file mr-2"></i>Berita</div>
-                                        <h6 class="font-weight-bold text-dark my-1">Mentan SYL Dorong Petani Milenial Indonesia Timur Bangun Konsepsi dan Networking</h6>
-                                        <div class="text-gray-900">Rabu, 14 September 2022</div>
-                                    </div>
-                                    <a href="#" class="ml-auto mt-auto text-danger">
-                                        <span class="d-lg-inline d-none">Selengkapnya</span> <i class="fa fa-arrow-right ml-3"></i>
-                                    </a>
-                                </div>
-                            </div>
+                           <a href="#">
+                              <div class="box-body d-flex p-3 border-bottom">
+                                 <img class="img-fluid rounded mb-auto" src="<?= base_url() ?>assets/images/l3.png" alt="" style="height: 130px; width: 130px;">
+                                 <div class="d-flex flex-column align-items-top job-item-header pb-2 ml-3">
+                                       <div class="mb-3">
+                                          <div class="text-truncate text-info text-uppercase"><i class="fa fa-file mr-2"></i>Berita</div>
+                                          <h6 class="font-weight-bold text-dark my-1">Mentan SYL Dorong Petani Milenial Indonesia Timur Bangun Konsepsi dan Networking</h6>
+                                          <div class="text-gray-900">Rabu, 14 September 2022</div>
+                                       </div>
+                                       <a href="#" class="ml-auto mt-auto text-danger">
+                                          <span class="d-lg-inline d-none">Selengkapnya</span> <i class="fa fa-arrow-right ml-3"></i>
+                                       </a>
+                                 </div>
+                              </div>
+                           </a>
+                           <a href="#">
+                              <div class="box-body d-flex p-3 border-bottom">
+                                 <img class="img-fluid rounded mb-auto" src="<?= base_url() ?>assets/images/l3.png" alt="" style="height: 130px; width: 130px;">
+                                 <div class="d-flex flex-column align-items-top job-item-header pb-2 ml-3">
+                                       <div class="mb-3">
+                                          <div class="text-truncate text-info text-uppercase"><i class="fa fa-play mr-2"></i>Video</div>
+                                          <h6 class="font-weight-bold text-dark my-1">Mentan SYL Dorong Petani Milenial Indonesia Timur Bangun Konsepsi dan Networking</h6>
+                                          <div class="text-gray-900">Rabu, 14 September 2022</div>
+                                       </div>
+                                       <a href="#" class="ml-auto mt-auto text-danger">
+                                          <span class="d-lg-inline d-none">Selengkapnya</span> <i class="fa fa-arrow-right ml-3"></i>
+                                       </a>
+                                 </div>
+                              </div>
+                           </a>
                         </div>
                     </div>
                   </div>

@@ -8,6 +8,11 @@
                <div class="col-md-12">
                   <div class="d-flex align-items-center py-3">
                      <div class="profile-left">
+                        <ol class="breadcrumb bg-white px-0 py-0 mb-3">
+                           <li class="breadcrumb-item small"><a href="#" class="text-info"><i class="fa fa-home mr-2"></i>Beranda</a></li>
+                           <li class="breadcrumb-item small"><a href="#" class="text-info">Jejaring</a></li>
+                           <li class="breadcrumb-item small active" aria-current="page">PT Wijaya Kusuma</li>
+                        </ol>
                         <h5 class="font-weight-bold text-dark mb-1 mt-0">PT Wijaya Kusuma</h5>
                         <p class="mb-0 text-muted"><a class="mr-2 font-weight-bold" href="#"> <i class="fa fa-map mr-1"></i> Singaparna, Kab. Tasikmalaya</a></p>
                      </div>
@@ -212,6 +217,24 @@
                            </ul>
                         </div>
                      </div>
+                  </div>
+
+                  <div class="box shadow-sm rounded bg-white mb-3">
+                     <div class="box-title border-bottom p-3 d-flex align-items-center">
+                        <h6 class="m-0">Kelas Tani</h6>
+                        <a class="ml-auto text-info" href="#">Selengkapnya <i class="fa fa-arrow-right ml-2"></i></a>
+                     </div>
+                     <a href="job-profile.html">
+                        <div class="border-bottom rounded bg-white job-item p-3 mb-0">
+                           <img class="img-fluid w-100 mb-3 rounded" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" alt="" style="height: 80px; width: auto; object-fit: cover;">
+                           <div class="d-flex align-items-center job-item-header">
+                              <div class="overflow-hidden mr-2">
+                                 <!-- text-truncate -->
+                                 <h6 class="font-weight-bold text-dark mb-0">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah</h6>
+                              </div>
+                           </div>
+                        </div>
+                     </a>
                   </div>
                </aside>
             </div>
