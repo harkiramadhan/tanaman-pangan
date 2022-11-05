@@ -103,7 +103,7 @@
                                 </div>
                                 <h3 class="mb-2">Pelatihan Sejuta Petani dan Penyuluh Vol.3 dengan tema Pemanfaatan KUR untuk Agribisnis.</h3>
                                 <div class="footer">
-                                <a href="#" class="c-btn btn-block c-fill-color-btn">Daftar Pelatihan</a>
+                                <a href="#" class="c-btn btn-block c-fill-color-btn">Lihat Kelas</a>
                                 </div>
                             </div>
                         </div>

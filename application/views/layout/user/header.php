@@ -44,39 +44,40 @@
             <!-- Topbar Navbar -->
             <ul class="navbar-nav align-items-center ml-auto">
                <a href="<?= site_url() ?>auth/" class="btn btn-outline-success btn-lg font-weight-bold">Masuk</a>
-               <a href="<?= site_url() ?>auth/daftar" class="btn btn-success btn-lg font-weight-bold ml-2">Daftar</a>               
-               <!-- <li class="nav-item dropdown no-arrow no-caret dropdown-user">
+               <a href="<?= site_url() ?>auth/daftar" class="btn btn-success btn-lg font-weight-bold ml-2">Daftar</a>    
+               <a href="<?= site_url() ?>user/kelasku" class="btn btn-outline-success btn-lg font-weight-bold ml-2">Kelas Saya</a>            
+               <li class="nav-item dropdown no-arrow no-caret dropdown-user ml-2">
                   <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="<?= base_url() ?>assets/images/user/s4.png"></a>
                   <div class="dropdown-menu dropdown-menu-right border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
                      <h6 class="dropdown-header d-flex align-items-center">
                         <img class="dropdown-user-img" src="<?= base_url() ?>assets/images/user/s4.png">
                         <div class="dropdown-user-details">
-                           <div class="dropdown-user-details-name">Askbootstrap</div>
-                           <div class="dropdown-user-details-email">iamosahan@gmail.com</div>
+                           <div class="dropdown-user-details-name">Alfian Rahmatullah</div>
+                           <div class="dropdown-user-details-email bg-warning rounded text-dark p-1 mt-1">Petani/Produsen Pangan Segar</div>
                         </div>
                      </h6>
                      <div class="dropdown-divider"></div>
-                     <a class="dropdown-item" href="account.html">
+                     <a class="dropdown-item" href="<?= site_url() ?>user/">
                         <div class="dropdown-item-icon">
                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-settings">
                               <circle cx="12" cy="12" r="3"></circle>
                               <path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path>
                            </svg>
                         </div>
-                        Account
+                        Detail Akun Saya
                      </a>
-                     <a class="dropdown-item" href="#">
+                     <a class="dropdown-item text-danger" href="#">
                         <div class="dropdown-item-icon">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out">
+                           <svg class="text-danger" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-log-out">
                               <path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path>
                               <polyline points="16 17 21 12 16 7"></polyline>
                               <line x1="21" y1="12" x2="9" y2="12"></line>
                            </svg>
                         </div>
-                        Logout
+                        Keluar
                      </a>
                   </div>
-               </li> -->
+               </li>
             </ul>
          </div>
       </nav>

@@ -5,19 +5,19 @@
             <div class="slider mt-0">
                <div id="aniimated-thumbnials" class="slider-for slick-slider-single">
                   <a href="https://www.tokopedia.com/">
-                  <img class="img-fluid" src="https://images.tokopedia.net/img/cache/1208/NsjrJu/2022/10/26/97564bfb-608b-4a32-837e-a27fe5dc1d82.jpg.webp?ect=4g" />
+                  <img class="img-fluid" src="<?= base_url() ?>assets/images/list/v1.png" style="height: 280px !important;" />
                   </a>
-                  <a href="https://images.tokopedia.net/img/cache/1208/NsjrJu/2022/10/26/a491020d-46fe-43da-a55d-7c747e563d26.jpg.webp?ect=4g">
-                  <img class="img-fluid" src="https://images.tokopedia.net/img/cache/1208/NsjrJu/2022/10/26/a491020d-46fe-43da-a55d-7c747e563d26.jpg.webp?ect=4g" />
+                  <a href="<?= base_url() ?>assets/images/list/v1.png">
+                  <img class="img-fluid" src="<?= base_url() ?>assets/images/list/v1.png" style="height: 280px !important;" />
                   </a>
-                  <a href="https://images.tokopedia.net/img/cache/1208/NsjrJu/2022/10/26/97564bfb-608b-4a32-837e-a27fe5dc1d82.jpg.webp?ect=4g">
-                  <img class="img-fluid" src="https://images.tokopedia.net/img/cache/1208/NsjrJu/2022/10/26/97564bfb-608b-4a32-837e-a27fe5dc1d82.jpg.webp?ect=4g" />
+                  <a href="<?= base_url() ?>assets/images/list/v1.png">
+                  <img class="img-fluid" src="<?= base_url() ?>assets/images/list/v1.png" style="height: 280px !important;" />
                   </a>
-                  <a href="https://images.tokopedia.net/img/cache/1208/NsjrJu/2022/10/26/97564bfb-608b-4a32-837e-a27fe5dc1d82.jpg.webp?ect=4g">
-                  <img class="img-fluid" src="https://images.tokopedia.net/img/cache/1208/NsjrJu/2022/10/26/97564bfb-608b-4a32-837e-a27fe5dc1d82.jpg.webp?ect=4g" />
+                  <a href="<?= base_url() ?>assets/images/list/v1.png">
+                  <img class="img-fluid" src="<?= base_url() ?>assets/images/list/v1.png" style="height: 280px !important;" />
                   </a>
-                  <a href="https://images.tokopedia.net/img/cache/1208/NsjrJu/2022/10/26/97564bfb-608b-4a32-837e-a27fe5dc1d82.jpg.webp?ect=4g">
-                  <img class="img-fluid" src="https://images.tokopedia.net/img/cache/1208/NsjrJu/2022/10/26/97564bfb-608b-4a32-837e-a27fe5dc1d82.jpg.webp?ect=4g" />
+                  <a href="<?= base_url() ?>assets/images/list/v1.png">
+                  <img class="img-fluid" src="<?= base_url() ?>assets/images/list/v1.png" style="height: 280px !important;" />
                   </a>
                </div>
                <div class="slider-nav slick-slider-single">
