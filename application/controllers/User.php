@@ -1,7 +1,6 @@
 <?php
 
 class User extends CI_Controller {
-	
 	public function index(){
         $var['title'] = "Dahboard User";
 		$this->load->view('layout/user/header', $var);

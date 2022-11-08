@@ -1,7 +1,6 @@
 <?php
 
 class Landing extends CI_Controller {
-	
 	public function index(){
         $var['title'] = "Landing Page";
 		$this->load->view('layout/user/header', $var);

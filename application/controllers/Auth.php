@@ -1,7 +1,6 @@
 <?php
 
 class Auth extends CI_Controller {
-	
 	public function index(){
         $var['title'] = "Masuk";
 		$this->load->view('layout/user/header', $var);

@@ -1,7 +1,6 @@
 <?php
 
 class Tanitrainer extends CI_Controller {
-	
 	public function index(){
         $var['title'] = "Tani Trainer";
 		$this->load->view('layout/user/header', $var);
