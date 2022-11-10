@@ -55,3 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 $route['masuk'] = 'auth/index';
 $route['daftar'] = 'auth/daftar';
+$route['logout'] = 'auth/logout';
