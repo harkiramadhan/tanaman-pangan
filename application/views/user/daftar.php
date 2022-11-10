@@ -10,19 +10,28 @@
                         <h5 class="font-weight-bold">Hallo,</h5>
                         <p class="text-muted">Daftarkan diri kamu untuk mendapatkan jejaring yang lebih luas</p>
                      </div>
-                     <form action="index.html">
+                     <form action="<?= site_url('auth/register') ?>" method="POST">
+                        <div class="form-group">
+                           <label class="mb-1">Nama</label>
+                           <div class="position-relative icon-form-control">
+                              <i class="mdi mdi-account position-absolute"></i>
+                              <input type="text" name="nama" class="form-control" required>
+                           </div>
+                        </div>
+
                         <div class="form-group">
                            <label class="mb-1">No HP/WA</label>
                            <div class="position-relative icon-form-control">
-                              <i class="mdi mdi-account position-absolute"></i>
-                              <input type="email" class="form-control">
+                              <i class="mdi mdi-phone position-absolute"></i>
+                              <input type="number" name="hp" class="form-control" required>
                            </div>
                         </div>
+
                         <div class="form-group">
                            <label class="mb-1">Password</label>
                            <div class="position-relative icon-form-control">
                               <i class="mdi mdi-key-variant position-absolute"></i>
-                              <input type="password" class="form-control">
+                              <input type="password" name="password" class="form-control" required>
                            </div>
                         </div>
 
@@ -30,39 +39,27 @@
                            <label class="mb-1">Ulangi Password</label>
                            <div class="position-relative icon-form-control">
                               <i class="mdi mdi-key-variant position-absolute"></i>
-                              <input type="password" class="form-control">
+                              <input type="password" name="validate_password" class="form-control" required>
                            </div>
                         </div>
                         
                         <div class="form-group">
                            <label class="mb-1">Peran</label>
-                           <select class="form-control">
-                              <option>Pilih ...</option>
-                              <option>Petani/Produsen Pangan Segar</option>
-                              <option>Usaha Olahan Pangan</option>
-                              <option>Offtaker Pangan Segar/Olahan</option>
-                              <option>Eksportir</option>
-                              <option>Penyedia Bibit/Benih</option>
-                              <option>Penyedia Pupuk/Pestisida Non Kimia</option>
-                              <option>Penyedia Alsintan</option>
+                           <select name="role_id" class="form-control" required>
+                              <option selected disabled>Pilih ...</option>
+                              <?php foreach($role->result() as $rr){ ?>
+                                 <option value="<?= $rr->id ?>"><?= $rr->role ?></option>
+                              <?php } ?>
                            </select>
                         </div>
 
                         <div class="form-group">
                            <label class="mb-1">Komoditas Pangan</label>
-                           <select class="form-control js-example-basic-multiple" name="states[]" multiple="multiple">
-                              <option value="">Padi</option>
-                              <option value="">Jagung</option>
-                              <option value="">Kedelai</option>
-                              <option value="">Ubi Kayu</option>
-                              <option value="">Ubi Jalar</option>
-                              <option value="">Shorgum</option>
-                              <option value="">Kacang Tanah</option>
-                              <option value="">Kacang Hijau</option>
-                              <option value="">Talas</option>
-                              <option value="">Porang</option>
-                              <option value="">Aneka Umbi Lainnya</option>
-                              <option value="">Aneka Kacang Lainnya</option>
+                           <select class="form-control js-example-basic-multiple" name="komoditas_id[]" multiple="multiple" required>
+                              <option value="" disabled>Pilih Komoditas</option>
+                              <?php foreach($komoditas->result() as $kr){ ?>
+                                 <option value="<?= $kr->id ?>"><?= $kr->komoditas ?></option>
+                              <?php } ?>
                            </select>
                         </div>
                         
@@ -70,7 +67,7 @@
                         
                         <div class="text-center mt-3 border-top pt-3">
                            <p class="small text-muted">Sudah memiliki akun?</p>
-                           <button type="button" class="btn btn-outline-secondary btn-block">MASUK SEKARANG</button>
+                           <a href="<?= site_url('') ?>" type="button" class="btn btn-outline-secondary btn-block">MASUK SEKARANG</a>
                         </div>
                      </form>
                   </div>

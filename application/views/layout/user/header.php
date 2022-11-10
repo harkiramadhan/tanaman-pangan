@@ -9,26 +9,26 @@
       <!-- Favicon Icon -->
       <link rel="icon" type="image/png" href="http://app3.pertanian.go.id/propaktani/portal/assets/img/logo_login.png">
       <!-- Bootstrap core CSS -->
-      <link href="<?= base_url() ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+      <link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
       <!-- Font Awesome-->
-      <link href="<?= base_url() ?>assets/vendor/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+      <link href="<?= base_url('assets/vendor/fontawesome/css/font-awesome.min.css') ?>" rel="stylesheet">
       <!-- Material Design Icons -->
-      <link href="<?= base_url() ?>assets/vendor/icons/css/materialdesignicons.min.css" media="all" rel="stylesheet" type="text/css">
+      <link href="<?= base_url('assets/vendor/icons/css/materialdesignicons.min.css') ?>" media="all" rel="stylesheet" type="text/css">
       <!-- Slick -->
-      <link href="<?= base_url() ?>assets/vendor/slick-master/slick/slick.css" rel="stylesheet" type="text/css">
+      <link href="<?= base_url('assets/vendor/slick-master/slick/slick.css') ?>" rel="stylesheet" type="text/css">
       <!-- Lightgallery -->
-      <link href="<?= base_url() ?>assets/vendor/lightgallery-master/dist/css/lightgallery.min.css" rel="stylesheet">
+      <link href="<?= base_url('assets/vendor/lightgallery-master/dist/css/lightgallery.min.css') ?>" rel="stylesheet">
       <!-- Select2 CSS -->
       <link href="<?= base_url() ?>assets/vendor/select2/css/select2-bootstrap.css" />
-      <link href="<?= base_url() ?>assets/vendor/select2/css/select2.min.css" rel="stylesheet">
+      <link href="<?= base_url('assets/vendor/select2/css/select2.min.css') ?>" rel="stylesheet">
       <!-- Custom styles for this template -->
-      <link href="<?= base_url() ?>assets/css/style.css" rel="stylesheet">
+      <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
    </head>
    <body>
       <nav class="navbar navbar-expand-lg navbar-light topbar static-top shadow-sm bg-white osahan-nav-top px-0">
          <div class="container">
             <!-- Sidebar Toggle (Topbar) -->
-            <a class="navbar-brand" href="index.html"><img src="http://app3.pertanian.go.id/propaktani/portal/assets/img/logo_login.png" alt=""></a>
+            <a class="navbar-brand" href="<?= site_url() ?>"><img src="http://app3.pertanian.go.id/propaktani/portal/assets/img/logo_login.png" alt=""></a>
             <h6 class="mb-0 font-weight-bold">Propaktani</h6>
             <!-- Topbar Search -->
             <!-- <form class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search">
@@ -43,14 +43,14 @@
             </form> -->
             <!-- Topbar Navbar -->
             <ul class="navbar-nav align-items-center ml-auto">
-               <a href="<?= site_url() ?>auth/" class="btn btn-outline-success btn-lg font-weight-bold">Masuk</a>
-               <a href="<?= site_url() ?>auth/daftar" class="btn btn-success btn-lg font-weight-bold ml-2">Daftar</a>    
-               <a href="<?= site_url() ?>user/kelasku" class="btn btn-outline-success btn-lg font-weight-bold ml-2">Kelas Saya</a>            
+               <a href="<?= site_url('masuk') ?>" class="btn btn-outline-success btn-lg font-weight-bold">Masuk</a>
+               <a href="<?= site_url('daftar') ?>" class="btn btn-success btn-lg font-weight-bold ml-2">Daftar</a>    
+               <a href="<?= site_url('user/kelasku') ?>" class="btn btn-outline-success btn-lg font-weight-bold ml-2">Kelas Saya</a>            
                <li class="nav-item dropdown no-arrow no-caret dropdown-user ml-2">
                   <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="<?= base_url() ?>assets/images/user/s4.png"></a>
                   <div class="dropdown-menu dropdown-menu-right border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
                      <h6 class="dropdown-header d-flex align-items-center">
-                        <img class="dropdown-user-img" src="<?= base_url() ?>assets/images/user/s4.png">
+                        <img class="dropdown-user-img" src="<?= base_url('assets/images/user/s4.png') ?>">
                         <div class="dropdown-user-details">
                            <div class="dropdown-user-details-name">Alfian Rahmatullah</div>
                            <div class="dropdown-user-details-email bg-warning rounded text-dark p-1 mt-1">Petani/Produsen Pangan Segar</div>
@@ -90,30 +90,30 @@
             <div class="collapse navbar-collapse" id="navbarResponsive">
                <ul class="navbar-nav">
                   <li class="nav-item">
-                     <a class="nav-link active" href="<?= site_url() ?>landing">Beranda</a>
+                     <a class="nav-link <?= ($this->uri->segment(1) == '') ? 'active' : '' ?>" href="<?= site_url('') ?>">Beranda</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="<?= site_url() ?>jejaring"><i class="fa fa-users mr-2" style="color: #2CDD9B;"></i>Jejaring</a>
+                     <a class="nav-link <?= ($this->uri->segment(1) == 'jejaring') ? 'active' : '' ?>" href="<?= site_url('jejaring') ?>"><i class="fa fa-users mr-2" style="color: #2CDD9B;"></i>Jejaring</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="<?= site_url() ?>tanitrainer">Tani Trainer</a>
+                     <a class="nav-link <?= ($this->uri->segment(1) == 'tanitrainer') ? 'active' : '' ?>" href="<?= site_url('tanitrainer') ?>">Tani Trainer</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="<?= site_url() ?>publikasi">Publikasi</a>
+                     <a class="nav-link <?= ($this->uri->segment(1) == 'publikasi') ? 'active' : '' ?>" href="<?= site_url('publikasi') ?>">Publikasi</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="<?= site_url() ?>faq">FAQ</a>
+                     <a class="nav-link <?= ($this->uri->segment(1) == 'faq') ? 'active' : '' ?>" href="<?= site_url('faq') ?>">FAQ</a>
                   </li>
                   <li class="nav-item">
-                     <a class="nav-link" href="<?= site_url() ?>tentangkami">Tentang Kami</a>
+                     <a class="nav-link <?= ($this->uri->segment(1) == 'tentangkami') ? 'active' : '' ?>" href="<?= site_url('tentangkami') ?>">Tentang Kami</a>
                   </li>
                </ul>
             </div>
             <ul class="navbar-nav ml-auto">
                <li class="nav-item">
                   <a class="nav-link">
-                  <img class="country-flag img-fluid" src="<?= base_url() ?>assets/images/flag/india.png">
-                  <span>English</span>
+                     <img class="country-flag img-fluid" src="<?= base_url('assets/images/flag/uk.png') ?>">
+                     <span>English</span>
                   </a>
                </li>
             </ul>
