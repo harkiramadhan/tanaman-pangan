@@ -398,7 +398,7 @@
             <div class="row">
                <div class="col-md-4">
                   <a href="#" class="guide picture-wrapper">
-                     <img class="" src="<?= base_url() ?>assets/images/guide-01.jpg" style="border-radius: 10px;">
+                     <img class="" src="https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg" style="border-radius: 10px; object-fit: cover; height: 220px;">
                      <!-- <div class="content">
                         <h6>Create a Website</h6>
                         <p>Building a stunning website from A to Z</p>
@@ -417,7 +417,7 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img src="<?= base_url() ?>assets/images/service-02.jpg">
+                        <img class="pickgradient" src="https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg" style="height: 280px; object-fit: cover;">
                         <h3><i class="fa fa-file fa-lg mb-3"></i><span>Draft RPP Nomor 22</span></h3>
                      </div>
                   </a>
@@ -425,7 +425,7 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img src="<?= base_url() ?>assets/images/service-02.jpg">
+                        <img src="https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg" style="height: 280px; object-fit: cover;">
                         <h3><span>PERMENTAN NO. 40.1</span><i class="fa fa-file mt-3"></i></h3>
                      </div>
                   </a>

@@ -56,12 +56,11 @@
                               <p class="text-muted font-weight-bold mb-0">Provinsi<sup class="text-danger">*</sup></p>
                            </div>
                            <div class="col-md-8">
-                              <select class="form-control" name="provinsi">
-                                 <option>Pilih</option>
-                                 <option>Jawa Barat</option>
-                                 <option>Jawa Timur</option>
-                                 <option>Jawa Tengah</option>
-                                 <option>Kalimantan</option>
+                              <select class="form-control" name="provinsi" id="select-prov">
+                                 <option> Pilih Provinsi</option>
+                                 <?php foreach($provinsi->result() as $p): ?>
+                                    <option value="<?= $p->prov_id ?>"> <?= ucwords(strtolower($p->prov_name)) ?></option>
+                                 <?php endforeach; ?>
                               </select>
                            </div>
                         </div>
@@ -70,12 +69,8 @@
                               <p class="text-muted font-weight-bold mb-0">Kabupaten/Kota<sup class="text-danger">*</sup></p>
                            </div>
                            <div class="col-md-8">
-                              <select class="form-control" name="kabupatenkota">
-                                 <option>Pilih</option>
-                                 <option>Jawa Barat</option>
-                                 <option>Jawa Timur</option>
-                                 <option>Jawa Tengah</option>
-                                 <option>Kalimantan</option>
+                              <select class="form-control" name="kabupatenkota" id="select-kab" disabled>
+                                 <option> Pilih Kabupaten / Kota</option>
                               </select>
                            </div>
                         </div>
@@ -84,12 +79,8 @@
                               <p class="text-muted font-weight-bold mb-0">Kecamatan<sup class="text-danger">*</sup></p>
                            </div>
                            <div class="col-md-8">
-                              <select class="form-control" name="kecamatan">
-                                 <option>Pilih</option>
-                                 <option>Jawa Barat</option>
-                                 <option>Jawa Timur</option>
-                                 <option>Jawa Tengah</option>
-                                 <option>Kalimantan</option>
+                              <select class="form-control" name="kecamatan" id="select-kec" disabled>
+                                 <option> Pilih Kecamatan</option>
                               </select>
                            </div>
                         </div>
@@ -98,12 +89,8 @@
                               <p class="text-muted font-weight-bold mb-0">Desa/Kelurahan<sup class="text-danger">*</sup></p>
                            </div>
                            <div class="col-md-8">
-                              <select class="form-control" name="desakelurahan">
-                                 <option>Pilih</option>
-                                 <option>Jawa Barat</option>
-                                 <option>Jawa Timur</option>
-                                 <option>Jawa Tengah</option>
-                                 <option>Kalimantan</option>
+                              <select class="form-control" name="desakelurahan" id="select-kel" disabled>
+                                 <option> Pilih Kelurahan</option>
                               </select>
                            </div>
                         </div>

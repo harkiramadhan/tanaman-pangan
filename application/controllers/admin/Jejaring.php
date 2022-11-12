@@ -1,10 +1,10 @@
 <?php
 
-class Admin extends CI_Controller {
+class Jejaring extends CI_Controller {
 	public function index(){
-        $var['title'] = "Beranda Admin";
+        $var['title'] = "Beranda Jejaring";
 		$this->load->view('layout/admin/header', $var);
-		$this->load->view('admin/beranda', $var);
+		$this->load->view('admin/jejaring', $var);
 		$this->load->view('layout/admin/footer', $var);
 	}
 }

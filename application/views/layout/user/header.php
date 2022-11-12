@@ -19,10 +19,11 @@
       <!-- Lightgallery -->
       <link href="<?= base_url('assets/vendor/lightgallery-master/dist/css/lightgallery.min.css') ?>" rel="stylesheet">
       <!-- Select2 CSS -->
-      <link href="<?= base_url() ?>assets/vendor/select2/css/select2-bootstrap.css" />
+      <link href="<?= base_url('assets/vendor/select2/css/select2-bootstrap.css') ?>" />
       <link href="<?= base_url('assets/vendor/select2/css/select2.min.css') ?>" rel="stylesheet">
       <!-- Custom styles for this template -->
       <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
+      <link href="<?= base_url('assets/css/custom.css') ?>" rel="stylesheet">
    </head>
    <body>
       <nav class="navbar navbar-expand-lg navbar-light topbar static-top shadow-sm bg-white osahan-nav-top px-0">

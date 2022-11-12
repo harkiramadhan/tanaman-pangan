@@ -7,7 +7,8 @@ class User extends CI_Controller {
 		$this->load->model([
 			'M_Komoditas',
 			'M_Role',
-			'M_User'
+			'M_User',
+			'M_Wilayah'
 		]);
 
 		if($this->session->userdata('masuk') != TRUE){
@@ -17,7 +18,11 @@ class User extends CI_Controller {
 	public function index(){
 		$var = [
 			'title' => 'Dashboard User',
-			'user' => $this->M_User->getById($this->session->userdata('userid'))
+			'user' => $this->M_User->getById($this->session->userdata('userid')),
+			'provinsi' => $this->M_Wilayah->getProvinsi(),
+			'ajax' => [
+				'profil'
+			]
 		];
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/user-profil', $var);
@@ -50,5 +55,48 @@ class User extends CI_Controller {
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/user-galeri', $var);
 		$this->load->view('layout/user/footer', $var);
+	}
+
+	/* Ajax Here! */
+	function getKabupaten(){
+		$provid = $this->input->get('provid', TRUE);
+		$kabupaten = $this->M_Wilayah->getKabupatenByProv($provid);
+		
+		?>
+			<option> Pilih Kabupaten / Kota</option>
+		<?php
+		foreach($kabupaten->result() as $row){
+			?>
+				<option value="<?= $row->city_id ?>"> <?= ucwords(strtolower($row->city_name)) ?></option>
+			<?php
+		}
+	}
+
+	function getKecamatan(){
+		$kabid = $this->input->get('kabid', TRUE);
+		$kecamatan = $this->M_Wilayah->getKecamatanByKab($kabid);
+
+		?>
+			<option> Pilih Kecamatan</option>
+		<?php
+		foreach($kecamatan->result() as $row){
+			?>
+				<option value="<?= $row->dis_id ?>"> <?= ucwords(strtolower($row->dis_name)) ?></option>
+			<?php
+		}
+	}
+
+	function getKelurahan(){
+		$kecid = $this->input->get('kecid', TRUE);
+		$kelurahan = $this->M_Wilayah->getKabupatenByKec($kecid);
+
+		?>
+			<option> Pilih Desa/Kelurahan</option>
+		<?php
+		foreach($kelurahan->result() as $row){
+			?>
+				<option value="<?= $row->subdis_id ?>"> <?= ucwords(strtolower($row->subdis_name)) ?></option>
+			<?php
+		}
 	}
 }
