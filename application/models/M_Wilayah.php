@@ -4,15 +4,18 @@ class M_Wilayah extends CI_Model {
         return $this->db->get('provinces');
     }
 
-    function getKotaByProv($provid){
+    function getKabupatenByProv($provid){
+        /* Cities as Kabupaten/Kota */
         return $this->db->get_where('cities', ['prov_id' => $provid]);
     }
 
-    function getKabupatenByKota($kotaid){
+    function getKecamatanByKab($kotaid){
+        /* Districts as Kecamatan */
         return $this->db->get_where('districts', ['city_id' => $kotaid]);
     }
 
-    function getKecamatanByKab($kabid){
+    function getKabupatenByKec($kabid){
+        /* Sub Districts as Desa/Kelurahan */
         return $this->db->get_where('subdistricts', ['dis_id' => $kabid]);
     }
 }

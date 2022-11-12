@@ -60,7 +60,7 @@ class User extends CI_Controller {
 	/* Ajax Here! */
 	function getKabupaten(){
 		$provid = $this->input->get('provid', TRUE);
-		$kabupaten = $this->M_Wilayah->getKotaByProv($provid);
+		$kabupaten = $this->M_Wilayah->getKabupatenByProv($provid);
 		
 		?>
 			<option> Pilih Kabupaten / Kota</option>
@@ -74,7 +74,7 @@ class User extends CI_Controller {
 
 	function getKecamatan(){
 		$kabid = $this->input->get('kabid', TRUE);
-		$kecamatan = $this->M_Wilayah->getKabupatenByKota($kabid);
+		$kecamatan = $this->M_Wilayah->getKecamatanByKab($kabid);
 
 		?>
 			<option> Pilih Kecamatan</option>
@@ -88,7 +88,7 @@ class User extends CI_Controller {
 
 	function getKelurahan(){
 		$kecid = $this->input->get('kecid', TRUE);
-		$kelurahan = $this->M_Wilayah->getKecamatanByKab($kecid);
+		$kelurahan = $this->M_Wilayah->getKabupatenByKec($kecid);
 
 		?>
 			<option> Pilih Desa/Kelurahan</option>
