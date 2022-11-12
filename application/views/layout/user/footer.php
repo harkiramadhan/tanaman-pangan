@@ -72,6 +72,9 @@
       </footer>
       <!-- footer-->
       <!-- Bootstrap core JavaScript -->
+      <script>
+         var baseUrl = '<?= site_url() ?>'
+      </script>
       <script src="<?= base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
       <script src="<?= base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
       <!-- Contact form JavaScript -->
@@ -86,5 +89,13 @@
       <script src="<?= base_url() ?>assets/vendor/select2/js/select2.min.js"></script>
       <!-- Custom -->
       <script src="<?= base_url() ?>assets/js/custom.js"></script>
+      <?php 
+         if(@$ajax) {
+               foreach(@$ajax as $a){
+                  echo "<script src='".base_url('assets/js/custom/' . $a).".js'></script>";
+               }
+         }
+               
+      ?>
    </body>
 </html>
