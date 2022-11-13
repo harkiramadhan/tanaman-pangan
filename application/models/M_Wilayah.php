@@ -14,7 +14,7 @@ class M_Wilayah extends CI_Model {
         return $this->db->get_where('districts', ['city_id' => $kotaid]);
     }
 
-    function getKabupatenByKec($kabid){
+    function getKelurahanByKec($kabid){
         /* Sub Districts as Desa/Kelurahan */
         return $this->db->get_where('subdistricts', ['dis_id' => $kabid]);
     }

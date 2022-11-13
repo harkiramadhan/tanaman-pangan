@@ -57,13 +57,35 @@ class User extends CI_Controller {
 		$this->load->view('layout/user/footer', $var);
 	}
 
+	/* Action Here! */
+	function saveProfile(){
+		$dataUpdate = [
+			'nama' => $this->input->post('nama', TRUE),
+			'hp' => $this->input->post('hp', TRUE),
+			'alamat' => $this->input->post('alamat', TRUE),
+			'prov' => $this->input->post('prov', TRUE),
+			'kab_kota' => $this->input->post('kab_kota', TRUE),
+			'kec' => $this->input->post('kec', TRUE),
+			'desa_kel' => $this->input->post('desa_kel', TRUE)
+		];
+		$this->db->where('id', $this->session->userdata('userid'))->update('user', $dataUpdate);
+		if($this->db->affected_rows() > 0){
+			$this->session->set_userdata('success', "Data Berhasil Di Simpan");
+		}else{
+			$this->session->set_userdata('error', "Data Gagal Di Simpan");
+		}
+
+		
+		redirect($_SERVER['HTTP_REFERER']);
+	}
+
 	/* Ajax Here! */
 	function getKabupaten(){
 		$provid = $this->input->get('provid', TRUE);
 		$kabupaten = $this->M_Wilayah->getKabupatenByProv($provid);
 		
 		?>
-			<option> Pilih Kabupaten / Kota</option>
+			<option value=""> Pilih Kabupaten / Kota</option>
 		<?php
 		foreach($kabupaten->result() as $row){
 			?>
@@ -77,7 +99,7 @@ class User extends CI_Controller {
 		$kecamatan = $this->M_Wilayah->getKecamatanByKab($kabid);
 
 		?>
-			<option> Pilih Kecamatan</option>
+			<option value=""> Pilih Kecamatan</option>
 		<?php
 		foreach($kecamatan->result() as $row){
 			?>
@@ -88,10 +110,10 @@ class User extends CI_Controller {
 
 	function getKelurahan(){
 		$kecid = $this->input->get('kecid', TRUE);
-		$kelurahan = $this->M_Wilayah->getKabupatenByKec($kecid);
+		$kelurahan = $this->M_Wilayah->getKelurahanByKec($kecid);
 
 		?>
-			<option> Pilih Desa/Kelurahan</option>
+			<option value=""> Pilih Desa/Kelurahan</option>
 		<?php
 		foreach($kelurahan->result() as $row){
 			?>

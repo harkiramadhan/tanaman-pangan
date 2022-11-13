@@ -6,8 +6,8 @@ $('#select-prov').change(function(){
         data: { provid : provid},
         beforeSend: function(){
             $('#select-kab').empty()
-            $('#select-kec').empty().append('<option> Pilih Kecamatan</option>')
-            $('#select-kel').empty().append('<option> Pilih Desa/Kelurahan</option>')
+            $('#select-kec').empty().append('<option value=""> Pilih Kecamatan</option>')
+            $('#select-kel').empty().append('<option value=""> Pilih Desa/Kelurahan</option>')
 
             $('#select-kec').prop('disabled', true)
             $('#select-kel').prop('disabled', true)
@@ -28,7 +28,7 @@ $('#select-kab').change(function(){
         beforeSend: function(){
             $('#select-kec').prop('disabled', false)
             $('#select-kel').prop('disabled', true)
-            $('#select-kel').empty().append('<option> Pilih Desa/Kelurahan</option>')
+            $('#select-kel').empty().append('<option value=""> Pilih Desa/Kelurahan</option>')
         },
         success: function(res){
             $('#select-kec').html(res)
