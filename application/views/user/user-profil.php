@@ -26,11 +26,14 @@
                      <a href="account.html" class="text-success">Tinjau Profil<i class="fa fa-arrow-right ml-2"></i></a>
                   </div>
                   <div class="p-3 border-bottom">
-                     <form action="<?= site_url('user/saveProfile') ?>" method="POST">
+                     <form action="<?= site_url('user/saveProfile') ?>" method="POST" enctype="multipart/form-data">
                         <div class="text-center">
                         <p class="text-muted font-weight-bold mb-2">Foto Profil</p>
-
-                           <img src="https://public-assets.envato-static.com/assets/common/icons-buttons/default-user-2962fd43ee315eafee8bfc08f02fee84687beb0499de44e5ab2873399944b0fe.jpg" class="img-fluid mt-2 rounded-circle mb-4" alt="Responsive image" style="width: 100px;">
+                           <?php if($user->img): ?>
+                              <img src="<?= base_url('uploads/profile/' . $user->img) ?>" class="img-fluid mt-2 rounded-circle mb-4" alt="Responsive image" style="width: 100px;" id="image-preview">
+                           <?php else: ?>
+                              <img src="https://public-assets.envato-static.com/assets/common/icons-buttons/default-user-2962fd43ee315eafee8bfc08f02fee84687beb0499de44e5ab2873399944b0fe.jpg" class="img-fluid mt-2 rounded-circle mb-4" alt="Responsive image" style="width: 100px;" id="image-preview">
+                           <?php endif; ?>
                         </div>
                         <div class="row d-flex align-items-center form-group">
                            <div class="col-md-4">
@@ -38,8 +41,8 @@
                            </div>
                            <div class="col-md-8">
                               <div class="custom-file">
-                                 <input type="file" class="custom-file-input" id="inputGroupFile04" aria-describedby="inputGroupFileAddon04">
-                                 <label class="custom-file-label" for="inputGroupFile04">Choose file</label>
+                                 <input type="file" name="file" class="custom-file-input" id="image-source" aria-describedby="inputGroupFileAddon04" onchange="previewImage()">
+                                 <label class="custom-file-label" for="image-source">Choose file</label>
                               </div>
                            </div>
                         </div>

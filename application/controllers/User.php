@@ -8,13 +8,30 @@ class User extends CI_Controller {
 			'M_Komoditas',
 			'M_Role',
 			'M_User',
-			'M_Wilayah'
+			'M_Wilayah',
+			'M_Kelembagaan'
 		]);
 
+		$this->load->library('image_lib');
 		if($this->session->userdata('masuk') != TRUE){
 			redirect('','refresh');
 		}
 	}
+
+	private function resizeImage($filename){
+        $config['image_library'] = 'gd2';  
+        $config['source_image'] = './uploads/profile/'.$filename;  
+        $config['create_thumb'] = FALSE;  
+        $config['maintain_ratio'] = TRUE;  
+        $config['quality'] = '75%';  
+        $config['new_image'] = './uploads/profile/'.$filename;  
+        $config['width'] = 500;              
+  
+        $this->image_lib->initialize($config);
+        $this->image_lib->resize();  
+        $this->image_lib->clear();
+    }
+
 	public function index(){
 		$var = [
 			'title' => 'Dashboard User',
@@ -30,10 +47,17 @@ class User extends CI_Controller {
 	}
 
     public function data(){
-        $var['title'] = "Dahboard User Data Pertanian";
+        $var = [
+			'title' => 'Dashboard User Data Pertanian',
+			'user' => $this->M_User->getById($this->session->userdata('userid')),
+			'lembaga' => $this->db->get('kelembagaan')->result()
+		];
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/user-profil-data', $var);
 		$this->load->view('layout/user/footer', $var);
+
+		$this->output->enable_profiler(TRUE);
+		
 	}
 	
     public function password(){
@@ -59,7 +83,25 @@ class User extends CI_Controller {
 
 	/* Action Here! */
 	function saveProfile(){
+		$user = $this->M_User->getById($this->session->userdata('userid'));
+		$config['upload_path'] = './uploads/profile';  
+		$config['allowed_types'] = 'jpg|jpeg|png'; 
+		$config['encrypt_name'] = TRUE;
+		$this->load->library('upload', $config);
+        if($this->upload->do_upload('file')){
+			if($user->img != NULL){
+				@unlink('./uploads/profile/' . @$user->img);
+			}
+			
+            $data = $this->upload->data();
+            $filename = $data['file_name'];
+			$this->resizeImage($filename); 
+        }else{
+			$filename = $user->img;
+		}
+
 		$dataUpdate = [
+			'img' => $filename,
 			'nama' => $this->input->post('nama', TRUE),
 			'hp' => $this->input->post('hp', TRUE),
 			'alamat' => $this->input->post('alamat', TRUE),
@@ -74,7 +116,6 @@ class User extends CI_Controller {
 		}else{
 			$this->session->set_userdata('error', "Data Gagal Di Simpan");
 		}
-
 		
 		redirect($_SERVER['HTTP_REFERER']);
 	}

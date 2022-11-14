@@ -1,9 +1,9 @@
         <section class="pt-3">
             <div class="container">
                 <ol class="breadcrumb px-0 py-0 mb-3" style="background: #f0f2f5;" >
-                    <li class="breadcrumb-item small"><a href="#" class="text-info"><i class="fa fa-home mr-2"></i>Beranda</a></li>
+                    <li class="breadcrumb-item small"><a href="<?= site_url('') ?>" class="text-info"><i class="fa fa-home mr-2"></i>Beranda</a></li>
                     <li class="breadcrumb-item small"><a href="#" class="text-info">Akun</a></li>
-                    <li class="breadcrumb-item small active" aria-current="page">Profil Saya</li>
+                    <li class="breadcrumb-item small active" aria-current="page">Data Pertanian</li>
                 </ol>
             </div>
         </section>
@@ -13,9 +13,9 @@
                <div class="col-lg-3 mb-3">
                   <div class="bg-white rounded shadow-sm py-3 sidebar-fix">
                         <div class="dropdown-menu-show">
-                            <a class="dropdown-item py-2" href="<?= site_url() ?>/user">Profil</a>
-                            <a class="dropdown-item py-2 active" href="<?= site_url() ?>/user/data">Data Pertanian</a>
-                            <a class="dropdown-item py-2" href="<?= site_url() ?>/user/password">Kata Sandi</a>
+                            <a class="dropdown-item py-2" href="<?= site_url('user') ?>">Profil</a>
+                            <a class="dropdown-item py-2 active" href="<?= site_url('user/data') ?>">Data Pertanian</a>
+                            <a class="dropdown-item py-2" href="<?= site_url('user/password') ?>">Kata Sandi</a>
                         </div>
                     </div>
                </div>
@@ -32,7 +32,7 @@
                                     <p class="text-muted font-weight-bold mb-0">Nama Lembaga<sup class="text-danger">*</sup></p>
                                  </div>
                                  <div class="col-md-8">
-                                    <input type="text" name="nama" class="form-control font-weight-bold text-muted" value="PT Wijaya Kusuma" placeholder="Isi Nama Lembaga">
+                                    <input type="text" name="nama" class="form-control font-weight-bold text-muted" value="<?= $user->nama_kelembagaan ?>" placeholder="Isi Nama Lembaga" required>
                                  </div>
                               </div>
                               <div class="row d-flex align-items-center form-group">
@@ -40,12 +40,13 @@
                                     <p class="text-muted font-weight-bold mb-0">Kategori Lembaga<sup class="text-danger">*</sup></p>
                                  </div>
                                  <div class="col-md-8">
-                                    <select class="form-control" name="kecamatan">
-                                       <option>Pilih</option>
-                                       <option>Perorangan</option>
-                                       <option>PT/CV</option>
-                                       <option>Jawa Tengah</option>
-                                       <option>Kalimantan</option>
+                                    <select class="form-control" name="kelembagaan_id" required>
+                                       <option value=""> Pilih Kelembagaan</option>
+
+
+                                       <?php foreach($lembaga as $l){ ?>
+                                          <option value="<?= $l->id ?>"> <?= $l->$id ?></option>
+                                       <?php } ?>
                                     </select>
                                  </div>
                               </div>
