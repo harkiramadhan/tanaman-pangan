@@ -21,7 +21,7 @@
 	<link rel="apple-touch-icon" sizes="76x76" href="../assets/img/apple-icon.png">
       <link rel="icon" type="image/png" href="http://app3.pertanian.go.id/propaktani/portal/assets/img/logo_login.png">
 	<title>
-		Dashboard Admin - 
+		<?= $title ?> Dashboard Admin
 	</title>
 	<!--     Fonts and icons     -->
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700" rel="stylesheet" />
@@ -50,10 +50,10 @@
 			</a>
 		</div>
 		<hr class="horizontal dark mt-0">
-		<div class="collapse navbar-collapse  w-auto " id="sidenav-collapse-main">
+		<div class="collapse navbar-collapse w-auto " id="sidenav-collapse-main">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link active" href="">
+					<a class="nav-link active" href="<?= site_url('admin/admin') ?>">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 							<i class="fas fa-home text-dark text-lg opacity-10" style="top: 0px;"></i>
@@ -62,7 +62,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="">
+					<a class="nav-link" href="<?= site_url('admin/jejaring') ?>">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 							<i class="fas fa-link text-dark text-lg opacity-10" style="top: 0px;"></i>

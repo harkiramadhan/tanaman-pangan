@@ -31,6 +31,7 @@
             <!-- Sidebar Toggle (Topbar) -->
             <a class="navbar-brand" href="<?= site_url() ?>"><img src="http://app3.pertanian.go.id/propaktani/portal/assets/img/logo_login.png" alt=""></a>
             <h6 class="mb-0 font-weight-bold">Propaktani</h6>
+            
             <!-- Topbar Search -->
             <!-- <form class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search">
                <div class="input-group">
@@ -42,6 +43,7 @@
                   </div>
                </div>
             </form> -->
+            
             <!-- Topbar Navbar -->
             <ul class="navbar-nav align-items-center ml-auto">
                <?php if($this->session->userdata('masuk') == TRUE): ?>

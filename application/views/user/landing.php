@@ -246,9 +246,124 @@
       </div>
 
 
+
+      <!-- services-->
+      <div class="services-wrapper bg-white py-5">
+         <div class="container">
+            <h2>Cari Komoditas</h2>
+            <div class="row service-slider">
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class="pickgradient border-2" src="https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg" style="height: 200px; object-fit: cover;">
+                        <h3><span>Singkong</span></h3>
+                     </div>
+                  </a>
+               </div>
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class="pickgradient" src="https://cdn1-production-images-kly.akamaized.net/Cq0JGcRlrWieYHAMv_GwG5gufEM=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2914926/original/005311900_1568795429-2019-09-18.jpg" style="height: 200px; object-fit: cover;">
+                        <h3><span>Padi/Beras</span></h3>
+                     </div>
+                  </a>
+               </div>
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class="pickgradient" src="https://asset.kompas.com/crops/SUtUYLeiCclWljut0zrslqBE7HM=/0x0:1000x667/750x500/data/photo/2021/10/04/615a966655301.jpg" style="height: 200px; object-fit: cover;">
+                        <h3><span>Jagung</span></h3>
+                     </div>
+                  </a>
+               </div>
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class="pickgradient" src="https://img-cdn.medkomtek.com/YDjevmAi2tlxv1arGWxrPNehObs=/0x0/smart/filters:quality(75):strip_icc():format(webp)/article/4YsuprB4vuHL8SMsCTiTb/original/053780800_1571798592-Kedelai-Biji-bijian-dengan-Beragam-Manfaat-By-nnattalli-shutterstock.jpg" style="height: 200px; object-fit: cover;">
+                        <h3><span>Kedelai</span></h3>
+                     </div>
+                  </a>
+               </div>
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class="pickgradient" src="https://akcdn.detik.net.id/visual/2020/11/23/ilustrasi-ubi-ungu-1_169.jpeg?w=650" style="height: 200px; object-fit: cover;">
+                        <h3><span>Ubi Jalar</span></h3>
+                     </div>
+                  </a>
+               </div>
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class="pickgradient" src="https://www.satuharapan.com/uploads/pics/news_81722_1554734688.jpg" style="height: 200px; object-fit: cover;">
+                        <h3><span>Shorgum</span></h3>
+                     </div>
+                  </a>
+               </div>
+            </div>
+         </div>
+         <br>
+         <br>
+         <div class="container">
+            <h2>Jual Produkmu ke Mereka</h2>
+            <div class="row service-slider">
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class="pickgradient border-2" src="https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg" style="height: 200px; object-fit: cover;">
+                        <h3><span>Singkong</span></h3>
+                     </div>
+                  </a>
+               </div>
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class="pickgradient" src="https://cdn1-production-images-kly.akamaized.net/Cq0JGcRlrWieYHAMv_GwG5gufEM=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2914926/original/005311900_1568795429-2019-09-18.jpg" style="height: 200px; object-fit: cover;">
+                        <h3><span>Padi/Beras</span></h3>
+                     </div>
+                  </a>
+               </div>
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class="pickgradient" src="https://asset.kompas.com/crops/SUtUYLeiCclWljut0zrslqBE7HM=/0x0:1000x667/750x500/data/photo/2021/10/04/615a966655301.jpg" style="height: 200px; object-fit: cover;">
+                        <h3><span>Jagung</span></h3>
+                     </div>
+                  </a>
+               </div>
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class="pickgradient" src="https://img-cdn.medkomtek.com/YDjevmAi2tlxv1arGWxrPNehObs=/0x0/smart/filters:quality(75):strip_icc():format(webp)/article/4YsuprB4vuHL8SMsCTiTb/original/053780800_1571798592-Kedelai-Biji-bijian-dengan-Beragam-Manfaat-By-nnattalli-shutterstock.jpg" style="height: 200px; object-fit: cover;">
+                        <h3><span>Kedelai</span></h3>
+                     </div>
+                  </a>
+               </div>
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class="pickgradient" src="https://akcdn.detik.net.id/visual/2020/11/23/ilustrasi-ubi-ungu-1_169.jpeg?w=650" style="height: 200px; object-fit: cover;">
+                        <h3><span>Ubi Jalar</span></h3>
+                     </div>
+                  </a>
+               </div>
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class="pickgradient" src="https://www.satuharapan.com/uploads/pics/news_81722_1554734688.jpg" style="height: 200px; object-fit: cover;">
+                        <h3><span>Shorgum</span></h3>
+                     </div>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- services-->
+
       <div class="container pt-3 pb-1">
+         <br>
          <div class="row">
-                  <!-- Main Content -->
+            <!-- Main Content -->
             <div class="col-md-6">
                <div class="box shadow-sm rounded bg-white mb-4">
                   <div class="p-4 d-flex align-items-center">
