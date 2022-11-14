@@ -55,9 +55,6 @@ class User extends CI_Controller {
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/user-profil-data', $var);
 		$this->load->view('layout/user/footer', $var);
-
-		$this->output->enable_profiler(TRUE);
-		
 	}
 	
     public function password(){
