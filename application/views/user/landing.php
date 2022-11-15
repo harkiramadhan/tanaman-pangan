@@ -255,15 +255,15 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient border-2" src="https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg" style="height: 200px; object-fit: cover;">
-                        <h3><span>Singkong</span></h3>
+                        <img class="pickgradient border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
+                        <h3 class="h1"><span>Singkong</span></h3>
                      </div>
                   </a>
                </div>
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient" src="https://cdn1-production-images-kly.akamaized.net/Cq0JGcRlrWieYHAMv_GwG5gufEM=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2914926/original/005311900_1568795429-2019-09-18.jpg" style="height: 200px; object-fit: cover;">
+                        <img class="pickgradient" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://cdn1-production-images-kly.akamaized.net/Cq0JGcRlrWieYHAMv_GwG5gufEM=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2914926/original/005311900_1568795429-2019-09-18.jpg');">
                         <h3><span>Padi/Beras</span></h3>
                      </div>
                   </a>
@@ -271,7 +271,7 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient" src="https://asset.kompas.com/crops/SUtUYLeiCclWljut0zrslqBE7HM=/0x0:1000x667/750x500/data/photo/2021/10/04/615a966655301.jpg" style="height: 200px; object-fit: cover;">
+                        <img class="pickgradient" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://asset.kompas.com/crops/SUtUYLeiCclWljut0zrslqBE7HM=/0x0:1000x667/750x500/data/photo/2021/10/04/615a966655301.jpg');">
                         <h3><span>Jagung</span></h3>
                      </div>
                   </a>
@@ -279,7 +279,7 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient" src="https://img-cdn.medkomtek.com/YDjevmAi2tlxv1arGWxrPNehObs=/0x0/smart/filters:quality(75):strip_icc():format(webp)/article/4YsuprB4vuHL8SMsCTiTb/original/053780800_1571798592-Kedelai-Biji-bijian-dengan-Beragam-Manfaat-By-nnattalli-shutterstock.jpg" style="height: 200px; object-fit: cover;">
+                        <img class="pickgradient" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://img-cdn.medkomtek.com/YDjevmAi2tlxv1arGWxrPNehObs=/0x0/smart/filters:quality(75):strip_icc():format(webp)/article/4YsuprB4vuHL8SMsCTiTb/original/053780800_1571798592-Kedelai-Biji-bijian-dengan-Beragam-Manfaat-By-nnattalli-shutterstock.jpg');">
                         <h3><span>Kedelai</span></h3>
                      </div>
                   </a>
@@ -287,7 +287,7 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient" src="https://akcdn.detik.net.id/visual/2020/11/23/ilustrasi-ubi-ungu-1_169.jpeg?w=650" style="height: 200px; object-fit: cover;">
+                        <img class="pickgradient" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://akcdn.detik.net.id/visual/2020/11/23/ilustrasi-ubi-ungu-1_169.jpeg?w=650');">
                         <h3><span>Ubi Jalar</span></h3>
                      </div>
                   </a>
@@ -295,7 +295,7 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient" src="https://www.satuharapan.com/uploads/pics/news_81722_1554734688.jpg" style="height: 200px; object-fit: cover;">
+                        <img class="pickgradient" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://www.satuharapan.com/uploads/pics/news_81722_1554734688.jpg');">
                         <h3><span>Shorgum</span></h3>
                      </div>
                   </a>
@@ -360,48 +360,7 @@
       </div>
       <!-- services-->
 
-      <div class="container pt-3 pb-1">
-         <br>
-         <div class="row">
-            <!-- Main Content -->
-            <div class="col-md-6">
-               <div class="box shadow-sm rounded bg-white mb-4">
-                  <div class="p-4 d-flex align-items-center">
-                     <i class="fa fa-question fa-5x"></i>
-                     <div class="ml-4">
-                        <h5 class="font-weight-normal text-dark mb-3 mt-0">Kurang Yakin?</h5>
-                        <p class="mb-0 text-muted">Find the answer to any question, from the basics all the way to advanced tips and tricks!
-                           ...
-                        </p>
-                     </div>
-                  </div>
-                  <div class="overflow-hidden border-top d-flex align-items-center p-4">
-                     <a class="font-weight-bold d-block" href="#"> Miver Help Forum. </a>
-                     <i class="mdi mdi-arrow-right ml-auto text-primary"></i>
-                  </div>
-               </div>
-            </div>
-            <div class="col-md-6">
-               <div class="box shadow-sm rounded bg-white mb-4">
-                  <div class="p-4 d-flex align-items-center">
-                     <i class="fa fa-commenting-o fa-5x"></i>
-                     <div class="ml-4">
-                        <h5 class="font-weight-normal text-dark mb-3 mt-0">Cari Tahu Lebih Banyak
-                        </h5>
-                        <p class="mb-0 text-muted">Want to learn more about setting up and managing your team? Look no further!
-                           ...
-                        </p>
-                     </div>
-                  </div>
-                  <div class="overflow-hidden border-top d-flex align-items-center p-4">
-                     <a class="font-weight-bold d-block" href="#"> Miver Safety Center. </a>
-                     <i class="mdi mdi-arrow-right ml-auto text-primary"></i>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-
+      
       <!--       recent -->
       <section class="py-5">
          <div class="view_slider recommended">

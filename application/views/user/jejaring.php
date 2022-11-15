@@ -21,17 +21,22 @@
                   <p class="mb-2">463 Jejaring Tersedia</p>
                   <div class="sorting d-flex align-items-center ml-auto">
                      <p>Berdasarkan</p>
+                  </div>
+                  <div class="sorting d-flex align-items-center ml-3">
                      <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;">
-                        <option selected disabled>Pilih Peran</option>
+                        <option selected disabled>Komoditas</option>
+                        <option>Jagung</option>
+                        <option>Jeruk</option>
+                        <option>Beras/Padi</option>
+                     </select>
+                     <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;">
+                        <option selected disabled>Peran</option>
                         <option>Semua</option>
                         <option>Petani/Produsen Pangan</option>
                         <option>Offtaker</option>
                      </select>
-                  </div>
-                  <div class="sorting d-flex align-items-center ml-3">
-                     <!-- <p>Tampilkan</p> -->
                      <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;">
-                        <option selected disabled>Pilih Wilayah</option>
+                        <option selected disabled>Wilayah</option>
                         <option>Semua</option>
                         <option>Jawa Barat</option>
                         <option>Jawa Timur</option>
@@ -60,9 +65,19 @@
                                 </span>
                             </div>
                             <span class="badge badge-warning">Petani/Produsen Pangan</span>
-                           <h3>
+                           <h3 class="mb-1">
                               Petani yang bergerak pada budidaya porang, hubungi untuk bisa terhubung lebih lanjut
                            </h3>
+                           <h3 class="mb-2 mt-0 font-weight-bold">
+                              Komoditas dijual:
+                           </h3>
+                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Jagung</span>
+                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Beras/Padi</span>
+                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Shorgum</span>
+                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Singkong</span>
+                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Kedelai</span>
+                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Ubi Jalar</span>
+                           
                            <div class="footer mt-2">
                                 <a href="#" class="text-dark" tabindex="0">
                                     <i class="fa fa-map-marker fa-lg  ml-2 mr-3" aria-hidden="true"></i>
@@ -95,9 +110,18 @@
                                 </span>
                             </div>
                             <span class="badge badge-warning">Usaha Olahan</span>
-                           <h3>
+                           <h3 class="mb-1">
                               Bergerak dalam proses olahan pangan untuk lebih layak dan menerima hasil tani.
                            </h3>
+                           <h3 class="mb-2 mt-0 font-weight-bold">
+                              Komoditas dicari:
+                           </h3>
+                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Jagung</span>
+                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Beras/Padi</span>
+                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Shorgum</span>
+                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Singkong</span>
+                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Kedelai</span>
+                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Ubi Jalar</span>
                            <div class="footer mt-2">
                                 <a href="#" class="text-dark" tabindex="0">
                                     <i class="fa fa-map-marker fa-lg  ml-2 mr-3" aria-hidden="true"></i>
