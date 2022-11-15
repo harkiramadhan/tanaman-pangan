@@ -65,7 +65,10 @@ class User extends CI_Controller {
 	}
 	
     public function password(){
-        $var['title'] = "Dahboard User Data Pertanian";
+        $var = [
+			'title' => 'Dashboard User Kata Sandi',
+			'user' => $this->M_User->getById($this->session->userdata('userid')),
+		];
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/user-profil-password', $var);
 		$this->load->view('layout/user/footer', $var);
@@ -193,6 +196,19 @@ class User extends CI_Controller {
 			}
 		}else{
 			$this->db->where('user_id', $userid)->delete('user_komoditas');
+		}
+		
+		redirect($_SERVER['HTTP_REFERER']);
+	}
+
+	function changePassword(){
+		$pass = $this->input->post('new-pass', TRUE);
+		$passValid = $this->input->post('new-pass-valid', TRUE);
+
+		if($pass == $passValid){
+			$this->db->where('id', $this->session->userdata('userid'))->update('user', [
+				'password' => $pass
+			]);
 		}
 		
 		redirect($_SERVER['HTTP_REFERER']);
