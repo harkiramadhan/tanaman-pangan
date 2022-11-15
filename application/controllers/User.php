@@ -9,7 +9,10 @@ class User extends CI_Controller {
 			'M_Role',
 			'M_User',
 			'M_Wilayah',
-			'M_Kelembagaan'
+			'M_Kelembagaan',
+			'M_Penjualan',
+			'M_Kategori_olahan',
+			'M_Ketertarikan'
 		]);
 
 		$this->load->library('image_lib');
@@ -50,7 +53,11 @@ class User extends CI_Controller {
         $var = [
 			'title' => 'Dashboard User Data Pertanian',
 			'user' => $this->M_User->getById($this->session->userdata('userid')),
-			'lembaga' => $this->db->get('kelembagaan')->result()
+			'lembaga' => $this->db->get('kelembagaan'),
+			'komoditas' => $this->M_Komoditas->getAll(),
+			'penjualan' => $this->M_Penjualan->getAll(),
+			'kategori_olahan' => $this->M_Kategori_olahan->getAll(),
+			'ketertarikan' => $this->M_Ketertarikan->getAll()
 		];
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/user-profil-data', $var);
@@ -112,6 +119,80 @@ class User extends CI_Controller {
 			$this->session->set_userdata('success', "Data Berhasil Di Simpan");
 		}else{
 			$this->session->set_userdata('error', "Data Gagal Di Simpan");
+		}
+		
+		redirect($_SERVER['HTTP_REFERER']);
+	}
+
+	function saveData(){
+		$userid = $this->session->userdata('userid');
+		$dataUpdate = [
+			'nama_kelembagaan' => $this->input->post('nama_kelembagaan', TRUE),
+			'kelembagaan_id' => $this->input->post('kelembagaan_id', TRUE),
+			'lahan_yg_dikelola' => $this->input->post('lahan_yg_dikelola', TRUE),
+			'rata_produksi_tahun' => $this->input->post('rata_produksi_tahun', TRUE),
+			'rata_produksi_bulan' => $this->input->post('rata_produksi_bulan', TRUE),
+			'jenis_olahan' => $this->input->post('jenis_olahan', TRUE),
+			'produksi_olahan' => $this->input->post('produksi_olahan', TRUE),
+			'jenis_pupuk' => $this->input->post('jenis_pupuk', TRUE),
+			'jenis_pestisida' => $this->input->post('jenis_pestisida', TRUE),
+			'jenis_aisintan' => $this->input->post('jenis_aisintan', TRUE),
+			'menjual_produk' => $this->input->post('menjual_produk', TRUE),
+			'membutuhkan_produk' => $this->input->post('membutuhkan_produk', TRUE),
+			'keterangan' => $this->input->post('keterangan', TRUE)
+		];
+		$this->db->where('id', $userid)->update('user', $dataUpdate);
+
+		$penjualan = $this->input->post('penjualan_id[]', TRUE);
+		if(count($penjualan) > 0){
+			$this->db->where('user_id', $userid)->delete('user_penjualan');
+			foreach($penjualan as $p){
+				$this->db->insert('user_penjualan', [
+					'user_id' => $userid,
+					'penjualan_id' => $p
+				]);
+			}
+		}else{
+			$this->db->where('user_id', $userid)->delete('user_penjualan');
+		}
+
+		$ketertarikan = $this->input->post('ketertarikan_id[]', TRUE);
+		if(count($ketertarikan) > 0){
+			$this->db->where('user_id', $userid)->delete('user_tertarik');
+			foreach($ketertarikan as $kt){
+				$this->db->insert('user_tertarik', [
+					'user_id' => $userid,
+					'ketertarikan_id' => $kt
+				]);
+			}
+		}else{
+			$this->db->where('user_id', $userid)->delete('user_tertarik');
+		}
+
+		$kategori_olahan = $this->input->post('kategori_olahan_id[]', TRUE);
+		if(count($kategori_olahan) > 0){
+			$this->db->where('user_id', $userid)->delete('user_kategori_olahan');
+			foreach($kategori_olahan as $ko){
+				$this->db->insert('user_kategori_olahan', [
+					'user_id' => $userid,
+					'kategori_olahan_id' => $ko
+				]);
+			}
+		}else{
+			$this->db->where('user_id', $userid)->delete('user_kategori_olahan');
+		}
+
+		$komoditas = $this->input->post('komoditas_id[]', TRUE);
+		if(count($komoditas) > 0){
+			$this->db->where('user_id', $userid)->delete('user_komoditas');
+			foreach($komoditas as $k){
+				$this->db->insert('user_komoditas', [
+					'user_id' => $userid,
+					'komoditas_id' => $k
+				]);
+			}
+		}else{
+			$this->db->where('user_id', $userid)->delete('user_komoditas');
 		}
 		
 		redirect($_SERVER['HTTP_REFERER']);
