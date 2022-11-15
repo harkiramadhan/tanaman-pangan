@@ -24,6 +24,11 @@
       <!-- Custom styles for this template -->
       <link href="<?= base_url('assets/css/style.css') ?>" rel="stylesheet">
       <link href="<?= base_url('assets/css/custom.css') ?>" rel="stylesheet">
+      
+      <!-- Quill Assets CDN -->
+      <!-- Theme included stylesheets -->
+      <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+
    </head>
    <body>
       <nav class="navbar navbar-expand-lg navbar-light topbar static-top shadow-sm bg-white osahan-nav-top px-0">

@@ -87,6 +87,11 @@
       <script src="<?= base_url() ?>assets/vendor/lightgallery-master/dist/js/lightgallery-all.min.js"></script>
       <!-- select2 Js -->
       <script src="<?= base_url() ?>assets/vendor/select2/js/select2.min.js"></script>
+      
+
+      <!-- Main Quill library -->
+      <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+      
       <!-- Custom -->
       <script src="<?= base_url() ?>assets/js/custom.js"></script>
       <?php 
@@ -97,5 +102,19 @@
          }
                
       ?>
+      <script>
+         var toolbarOptions = [['bold', 'italic', 'underline', 'strike'], ['link'],  [{ 'list': 'ordered'}, { 'list': 'bullet' }]];
+
+         var options = {
+         debug: 'info',
+         modules: {
+            toolbar: toolbarOptions
+         },
+         placeholder: 'Tulis deskripsi...',
+         // readOnly: true,
+         theme: 'snow'
+         };
+         var editor = new Quill('#editor', options);
+      </script>
    </body>
 </html>

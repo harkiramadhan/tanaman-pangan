@@ -27,13 +27,23 @@
                   </div>
                   <div class="p-3 border-bottom">
                      <form action="<?= site_url('user/saveProfile') ?>" method="POST" enctype="multipart/form-data">
-                        <div class="text-center">
-                        <p class="text-muted font-weight-bold mb-2">Foto Profil</p>
-                           <?php if($user->img): ?>
-                              <img src="<?= base_url('uploads/profile/' . $user->img) ?>" class="img-fluid mt-2 rounded-circle mb-4" alt="Responsive image" style="width: 100px;" id="image-preview">
-                           <?php else: ?>
-                              <img src="https://public-assets.envato-static.com/assets/common/icons-buttons/default-user-2962fd43ee315eafee8bfc08f02fee84687beb0499de44e5ab2873399944b0fe.jpg" class="img-fluid mt-2 rounded-circle mb-4" alt="Responsive image" style="width: 100px;" id="image-preview">
-                           <?php endif; ?>
+                        <div class="row">
+                           <div class="col-md-6 col-12 text-center">
+                              <p class="text-muted font-weight-bold mb-2">Foto Profil</p>
+                              <?php if($user->img): ?>
+                                 <img src="<?= base_url('uploads/profile/' . $user->img) ?>" class="img-fluid mt-2 rounded-circle mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview">
+                              <?php else: ?>
+                                 <img src="https://public-assets.envato-static.com/assets/common/icons-buttons/default-user-2962fd43ee315eafee8bfc08f02fee84687beb0499de44e5ab2873399944b0fe.jpg" class="img-fluid mt-2 rounded-circle mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview">
+                              <?php endif; ?>
+                           </div>
+                           <div class="col-md-6 col-12 text-center">
+                              <p class="text-muted font-weight-bold mb-2">Gambar Cover</p>
+                                 <?php if($user->img): ?>
+                                    <img src="<?= base_url('uploads/profile/' . $user->img) ?>" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 200px; height: 100px; object-fit: cover;" id="image-preview">
+                                 <?php else: ?>
+                                    <img src="https://public-assets.envato-static.com/assets/common/icons-buttons/default-user-2962fd43ee315eafee8bfc08f02fee84687beb0499de44e5ab2873399944b0fe.jpg" class="img-fluid mt-2 rounded-circle mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview">
+                                 <?php endif; ?>
+                           </div>
                         </div>
                         <div class="row d-flex align-items-center form-group">
                            <div class="col-md-4">
@@ -48,7 +58,27 @@
                         </div>
                         <div class="row d-flex align-items-center form-group">
                            <div class="col-md-4">
+                              <p class="text-muted font-weight-bold mb-0">Upload Gambar Cover<sup class="text-danger">*</sup></p>
+                           </div>
+                           <div class="col-md-8">
+                              <div class="custom-file">
+                                 <input type="file" name="file" class="custom-file-input" id="image-source" aria-describedby="#" onchange="previewImage()">
+                                 <label class="custom-file-label" for="image-source">Choose file</label>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="row d-flex align-items-center form-group">
+                           <div class="col-md-4">
                               <p class="text-muted font-weight-bold mb-0">Penanggung Jawab<sup class="text-danger">*</sup></p>
+                           </div>
+                           <div class="col-md-8">
+                              <input type="text" name="nama" class="form-control font-weight-bold text-muted" value="<?= $user->nama ?>" placeholder="Isi Nama Lengkap" required>
+                           </div>
+                        </div>
+
+                        <div class="row d-flex align-items-center form-group">
+                           <div class="col-md-4">
+                              <p class="text-muted font-weight-bold mb-0">Peran<sup class="text-danger">*</sup></p>
                            </div>
                            <div class="col-md-8">
                               <input type="text" name="nama" class="form-control font-weight-bold text-muted" value="<?= $user->nama ?>" placeholder="Isi Nama Lengkap" required>
@@ -62,6 +92,8 @@
                               <input type="text" name="hp" class="form-control font-weight-bold text-muted" value="<?= $user->hp ?>" required>
                            </div>
                         </div>
+
+                        <!-- FORM ALAMAT -->
                         <div class="row d-flex align-items-center form-group">
                            <div class="col-md-4">
                               <p class="text-muted font-weight-bold mb-0">Alamat<sup class="text-danger">*</sup></p>
@@ -134,6 +166,20 @@
                               </select>
                            </div>
                         </div>
+                        <!-- FORM ALAMAT END -->
+
+
+                        <div class="row d-flex align-items-center form-group">
+                           <div class="col-md-4">
+                              <p class="text-muted font-weight-bold mb-0">Deskripsi<sup class="text-danger">*</sup></p>
+                           </div>
+                           <div class="col-md-8">
+                              <div class="rounded" id="editor">
+                                 
+                              </div>
+                           </div>
+                        </div>
+
                         <div class="text-right">
                            <button type="submit" class="btn btn-success">Simpan Perubahan</button>
                         </div>
