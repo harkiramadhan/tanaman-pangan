@@ -245,8 +245,6 @@
          </div>
       </div>
 
-
-
       <!-- services-->
       <div class="services-wrapper bg-white py-5">
          <div class="container">
@@ -255,7 +253,7 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
+                        <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
                         <h3 class="h1"><span>Singkong</span></h3>
                      </div>
                   </a>
@@ -263,7 +261,7 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://cdn1-production-images-kly.akamaized.net/Cq0JGcRlrWieYHAMv_GwG5gufEM=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2914926/original/005311900_1568795429-2019-09-18.jpg');">
+                        <img class="" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://cdn1-production-images-kly.akamaized.net/Cq0JGcRlrWieYHAMv_GwG5gufEM=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2914926/original/005311900_1568795429-2019-09-18.jpg');">
                         <h3><span>Padi/Beras</span></h3>
                      </div>
                   </a>
@@ -271,7 +269,7 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://asset.kompas.com/crops/SUtUYLeiCclWljut0zrslqBE7HM=/0x0:1000x667/750x500/data/photo/2021/10/04/615a966655301.jpg');">
+                        <img class="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://asset.kompas.com/crops/SUtUYLeiCclWljut0zrslqBE7HM=/0x0:1000x667/750x500/data/photo/2021/10/04/615a966655301.jpg');">
                         <h3><span>Jagung</span></h3>
                      </div>
                   </a>
@@ -279,7 +277,7 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://img-cdn.medkomtek.com/YDjevmAi2tlxv1arGWxrPNehObs=/0x0/smart/filters:quality(75):strip_icc():format(webp)/article/4YsuprB4vuHL8SMsCTiTb/original/053780800_1571798592-Kedelai-Biji-bijian-dengan-Beragam-Manfaat-By-nnattalli-shutterstock.jpg');">
+                        <img class="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://img-cdn.medkomtek.com/YDjevmAi2tlxv1arGWxrPNehObs=/0x0/smart/filters:quality(75):strip_icc():format(webp)/article/4YsuprB4vuHL8SMsCTiTb/original/053780800_1571798592-Kedelai-Biji-bijian-dengan-Beragam-Manfaat-By-nnattalli-shutterstock.jpg');">
                         <h3><span>Kedelai</span></h3>
                      </div>
                   </a>
@@ -287,7 +285,7 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://akcdn.detik.net.id/visual/2020/11/23/ilustrasi-ubi-ungu-1_169.jpeg?w=650');">
+                        <img class="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://akcdn.detik.net.id/visual/2020/11/23/ilustrasi-ubi-ungu-1_169.jpeg?w=650');">
                         <h3><span>Ubi Jalar</span></h3>
                      </div>
                   </a>
@@ -295,22 +293,22 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://www.satuharapan.com/uploads/pics/news_81722_1554734688.jpg');">
+                        <img class="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://www.satuharapan.com/uploads/pics/news_81722_1554734688.jpg');">
                         <h3><span>Shorgum</span></h3>
                      </div>
                   </a>
                </div>
             </div>
          </div>
-         <br>
-         <br>
-         <div class="container">
+         
+
+         <!-- <div class="container">
             <h2>Jual Produkmu ke Mereka</h2>
             <div class="row service-slider">
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient border-2" src="https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg" style="height: 200px; object-fit: cover;">
+                        <img class=" border-2" src="https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg" style="height: 200px; object-fit: cover;">
                         <h3><span>Singkong</span></h3>
                      </div>
                   </a>
@@ -318,7 +316,7 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient" src="https://cdn1-production-images-kly.akamaized.net/Cq0JGcRlrWieYHAMv_GwG5gufEM=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2914926/original/005311900_1568795429-2019-09-18.jpg" style="height: 200px; object-fit: cover;">
+                        <img class="" src="https://cdn1-production-images-kly.akamaized.net/Cq0JGcRlrWieYHAMv_GwG5gufEM=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2914926/original/005311900_1568795429-2019-09-18.jpg" style="height: 200px; object-fit: cover;">
                         <h3><span>Padi/Beras</span></h3>
                      </div>
                   </a>
@@ -326,7 +324,7 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient" src="https://asset.kompas.com/crops/SUtUYLeiCclWljut0zrslqBE7HM=/0x0:1000x667/750x500/data/photo/2021/10/04/615a966655301.jpg" style="height: 200px; object-fit: cover;">
+                        <img class="" src="https://asset.kompas.com/crops/SUtUYLeiCclWljut0zrslqBE7HM=/0x0:1000x667/750x500/data/photo/2021/10/04/615a966655301.jpg" style="height: 200px; object-fit: cover;">
                         <h3><span>Jagung</span></h3>
                      </div>
                   </a>
@@ -334,7 +332,7 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient" src="https://img-cdn.medkomtek.com/YDjevmAi2tlxv1arGWxrPNehObs=/0x0/smart/filters:quality(75):strip_icc():format(webp)/article/4YsuprB4vuHL8SMsCTiTb/original/053780800_1571798592-Kedelai-Biji-bijian-dengan-Beragam-Manfaat-By-nnattalli-shutterstock.jpg" style="height: 200px; object-fit: cover;">
+                        <img class="" src="https://img-cdn.medkomtek.com/YDjevmAi2tlxv1arGWxrPNehObs=/0x0/smart/filters:quality(75):strip_icc():format(webp)/article/4YsuprB4vuHL8SMsCTiTb/original/053780800_1571798592-Kedelai-Biji-bijian-dengan-Beragam-Manfaat-By-nnattalli-shutterstock.jpg" style="height: 200px; object-fit: cover;">
                         <h3><span>Kedelai</span></h3>
                      </div>
                   </a>
@@ -342,7 +340,7 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient" src="https://akcdn.detik.net.id/visual/2020/11/23/ilustrasi-ubi-ungu-1_169.jpeg?w=650" style="height: 200px; object-fit: cover;">
+                        <img class="" src="https://akcdn.detik.net.id/visual/2020/11/23/ilustrasi-ubi-ungu-1_169.jpeg?w=650" style="height: 200px; object-fit: cover;">
                         <h3><span>Ubi Jalar</span></h3>
                      </div>
                   </a>
@@ -350,17 +348,17 @@
                <div class="col">
                   <a href="">
                      <div class="service">
-                        <img class="pickgradient" src="https://www.satuharapan.com/uploads/pics/news_81722_1554734688.jpg" style="height: 200px; object-fit: cover;">
+                        <img class="" src="https://www.satuharapan.com/uploads/pics/news_81722_1554734688.jpg" style="height: 200px; object-fit: cover;">
                         <h3><span>Shorgum</span></h3>
                      </div>
                   </a>
                </div>
             </div>
-         </div>
+         </div> -->
       </div>
       <!-- services-->
 
-      
+
       <!--       recent -->
       <section class="py-5">
          <div class="view_slider recommended">
@@ -461,7 +459,82 @@
       </section>
       <!--       recent -->
 
-      <div class="guide-wrapper pt-5 testimonial">
+      <!-- services-->
+      <div class="services-wrapper bg-white py-5">
+         <div class="container">
+            <h2>Publikasi Penting Kami</h2>
+            <div class="row service-slider">
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
+                        <h3 style="top: none !important; bottom: 30px !important;">
+                           <i class="fa fa-play-circle fa-1x fa-lg mb-3"></i>
+                           <span style="font-size: 24px !important;">BTS</span>
+                           <span class="font-weight-light mt-1">12 items</span>
+                        </h3>
+                     </div>
+                  </a>
+               </div>
+
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
+                        <h3 style="top: none !important; bottom: 30px !important;">
+                           <i class="fa fa-file fa-1x fa-lg mb-3"></i>
+                           <span style="font-size: 24px !important;">Berita</span>
+                           <span class="font-weight-light mt-1">12 items</span>
+                        </h3>
+                     </div>
+                  </a>
+               </div>
+
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
+                        <h3 style="top: none !important; bottom: 30px !important;">
+                           <i class="fa fa-play-circle fa-1x fa-lg mb-3"></i>
+                           <span style="font-size: 24px !important;">Video</span>
+                           <span class="font-weight-light mt-1">12 items</span>
+                        </h3>
+                     </div>
+                  </a>
+               </div>
+
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
+                        <h3 style="top: none !important; bottom: 30px !important;">
+                           <i class="fa fa-play-circle fa-1x fa-lg mb-3"></i>
+                           <span style="font-size: 24px !important;">Galeri</span>
+                           <span class="font-weight-light mt-1">12 items</span>
+                        </h3>
+                     </div>
+                  </a>
+               </div>
+
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
+                        <h3 style="top: none !important; bottom: 30px !important;">
+                           <i class="fa fa-play-circle fa-1x fa-lg mb-3"></i>
+                           <span style="font-size: 24px !important;">Sosial Media</span>
+                           <span class="font-weight-light mt-1">12 items</span>
+                        </h3>
+                     </div>
+                  </a>
+               </div>
+            </div>
+         </div>
+      </div>
+      <!-- services-->
+
+
+      <div class="guide-wrapper pb-5 bg-white testimonial">
          <div class="container">
             <h2>
                BTS Pro Paktani
@@ -470,77 +543,41 @@
                </a>
             </h2>
             <div class="row">
-               <div class="col-md-4">
-                  <a href="#" class="guide picture-wrapper">
-                     <img class="" src="https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg" style="border-radius: 10px; object-fit: cover; height: 220px;">
-                     <!-- <div class="content">
-                        <h6>Create a Website</h6>
-                        <p>Building a stunning website from A to Z</p>
-                     </div> -->
+               <div class="col-md-4 col-12">
+                  <a href="#" class="guide picture-wrapper w-100">
+                     <img class="mb-2 w-100" src="https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg" style="border-radius: 10px; object-fit: cover; height: 220px;">
+                     <div class="content">
+                        <h6>Pembukaan Acara Tani Trainer</h6>
+                        <p>Dihadiri oleh bapak kementan yang berbahagia</p>
+                     </div>
                   </a>
                </div>
+
+               <div class="col-md-4 col-12">
+                  <a href="#" class="guide picture-wrapper w-100">
+                     <img class="mb-2 w-100" src="https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg" style="border-radius: 10px; object-fit: cover; height: 220px;">
+                     <div class="content">
+                        <h6>Pembukaan Acara Tani Trainer</h6>
+                        <p>Dihadiri oleh bapak kementan yang berbahagia</p>
+                     </div>
+                  </a>
+               </div>
+
+               <div class="col-md-4 col-12">
+                  <a href="#" class="guide picture-wrapper w-100">
+                     <img class="mb-2 w-100" src="https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg" style="border-radius: 10px; object-fit: cover; height: 220px;">
+                     <div class="content">
+                        <h6>Pembukaan Acara Tani Trainer</h6>
+                        <p>Dihadiri oleh bapak kementan yang berbahagia</p>
+                     </div>
+                  </a>
+               </div>
+               
             </div>
          </div>
       </div>
 
-      <!--       services-->
-      <div class="services-wrapper bg-white py-5">
-         <div class="container">
-            <h2>Publikasi Penting Kami</h2>
-            <div class="row service-slider">
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img class="pickgradient" src="https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg" style="height: 280px; object-fit: cover;">
-                        <h3><i class="fa fa-file fa-lg mb-3"></i><span>Draft RPP Nomor 22</span></h3>
-                     </div>
-                  </a>
-               </div>
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img src="https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg" style="height: 280px; object-fit: cover;">
-                        <h3><span>PERMENTAN NO. 40.1</span><i class="fa fa-file mt-3"></i></h3>
-                     </div>
-                  </a>
-               </div>
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img src="<?= base_url() ?>assets/images/service-02.jpg">
-                        <h3><span>PERMENTAN NO. 40.1</span><i class="fa fa-file mt-3"></i></h3>
-                     </div>
-                  </a>
-               </div>
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img src="<?= base_url() ?>assets/images/service-02.jpg">
-                        <h3><span>PERMENTAN NO. 40.1</span><i class="fa fa-file mt-3"></i></h3>
-                     </div>
-                  </a>
-               </div>
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img src="<?= base_url() ?>assets/images/service-02.jpg">
-                        <h3><span>PERMENTAN NO. 40.1</span><i class="fa fa-file mt-3"></i></h3>
-                     </div>
-                  </a>
-               </div>
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img src="<?= base_url() ?>assets/images/service-02.jpg">
-                        <h3><span>PERMENTAN NO. 40.1</span><i class="fa fa-file mt-3"></i></h3>
-                     </div>
-                  </a>
-               </div>
-            </div>
-         </div>
-      </div>
-      <!--       services-->
-
+      
       
       <!--    about section -->
       <div class="container">
@@ -575,7 +612,7 @@
          <div class="container">
             <div class="testimonial">
                <div class="video-modal">
-                  <div class="picture-wrapper">
+                  <div class="">
                      <img src="https://storage.nu.or.id/storage/post/16_9/mid/1616572339.jpg">
                   </div>
                </div>

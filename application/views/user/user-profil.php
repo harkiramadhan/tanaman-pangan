@@ -84,6 +84,16 @@
                               <input type="text" name="nama" class="form-control font-weight-bold text-muted" value="<?= $user->nama ?>" placeholder="Isi Nama Lengkap" required>
                            </div>
                         </div>
+
+                        <div class="row d-flex align-items-center form-group">
+                           <div class="col-md-4">
+                              <p class="text-muted font-weight-bold mb-0">Google Maps <sup class="text-danger">*</sup></p>
+                           </div>
+                           <div class="col-md-8">
+                              <input type="text" name="nama" class="form-control font-weight-bold text-muted" value="" placeholder="Tambahkan link maps" required>
+                           </div>
+                        </div>
+
                         <div class="row d-flex align-items-center form-group">
                            <div class="col-md-4">
                               <p class="text-muted font-weight-bold mb-0">No HP/WA<sup class="text-danger">*</sup></p>
@@ -175,7 +185,7 @@
                            </div>
                            <div class="col-md-8">
                               <div class="rounded" id="editor">
-                                 
+
                               </div>
                            </div>
                         </div>

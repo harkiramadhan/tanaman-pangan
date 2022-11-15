@@ -16,10 +16,10 @@
      
       <div class="main-page best-selling">
          <div class="view_slider recommended pt-5">
-            <div class="container">
+            <div class="container mb-3">
                <div class="sorting-div d-flex align-items-center justify-content-">
-                  <p class="mb-2">463 Jejaring Tersedia</p>
-                  <div class="sorting d-flex align-items-center ml-auto">
+                  <p class="mb-2 d-lg-block d-none">463 Jejaring Tersedia</p>
+                  <div class="sorting d-flex align-items-center ml-auto  d-lg-block d-none">
                      <p>Berdasarkan</p>
                   </div>
                   <div class="sorting d-flex align-items-center ml-3">
@@ -43,7 +43,7 @@
                      </select>
                   </div>
                </div>
-               <h3>Perluas Jejaringmu Sekarang</h3>
+               <h3 class="d-lg-block d-none">Perluas Jejaringmu Sekarang</h3>
             </div>
             <div class="container">
                <div class="row">
