@@ -35,20 +35,16 @@
 									<p class="mb-0">Kelola admin sekarang, </p>
 								</div>
 								<div class="card-body">
-									<form role="form" action="http://localhost/tax-session/admin/auth/action"
+									<form role="form" action="<?= site_url('admin/auth/login') ?>"
 										method="post">
 										<div class="mb-3">
-											<input name="email" type="email" class="form-control form-control-lg"
-												placeholder="Email" aria-label="Email">
+											<input name="email" type="email" class="form-control form-control-lg" placeholder="Email" aria-label="Email">
 										</div>
 										<div class="mb-3">
-											<input name="password" type="password" class="form-control form-control-lg"
-												placeholder="Password" aria-label="Password">
+											<input name="password" type="password" class="form-control form-control-lg" placeholder="Password" aria-label="Password">
 										</div>
 										<div class="text-center">
-											<button type="post"
-												class="btn btn-lg bg-primary text-white btn-lg w-100 mt-4 mb-0">MASUK
-												SEKARANG</button>
+											<button type="post" class="btn btn-lg bg-primary text-white btn-lg w-100 mt-4 mb-0">MASUK SEKARANG</button>
 										</div>
 									</form>
 								</div>

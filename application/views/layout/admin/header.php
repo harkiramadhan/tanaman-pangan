@@ -53,7 +53,7 @@
 		<div class="collapse navbar-collapse w-auto " id="sidenav-collapse-main">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-					<a class="nav-link active" href="<?= site_url('admin/admin') ?>">
+					<a class="nav-link <?= ($this->uri->segment(2) == NULL || $this->uri->segment(2) == 'admin') ? 'active' : '' ?>" href="<?= site_url('admin') ?>">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 							<i class="fas fa-home text-dark text-lg opacity-10" style="top: 0px;"></i>
@@ -62,7 +62,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="<?= site_url('admin/jejaring') ?>">
+					<a class="nav-link <?= ($this->uri->segment(2) == 'jejaring') ? 'active' : '' ?>" href="<?= site_url('admin/jejaring') ?>">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 							<i class="fas fa-link text-dark text-lg opacity-10" style="top: 0px;"></i>
@@ -71,7 +71,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="">
+					<a class="nav-link <?= ($this->uri->segment(2) == 'publikasi') ? 'active' : '' ?>" href="<?= site_url('admin/publikasi') ?>">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 							<i class="fas fa-video text-dark text-lg opacity-10" style="top: 0px;"></i>
@@ -80,7 +80,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="">
+					<a class="nav-link <?= ($this->uri->segment(2) == 'tanitrainer') ? 'active' : '' ?>" href="<?= site_url('admin/tanitrainer') ?>">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 							<i class="fas fa-users text-dark text-lg opacity-10" style="top: 0px;"></i>
@@ -89,7 +89,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link" href="">
+					<a class="nav-link <?= ($this->uri->segment(2) == 'pengaturan') ? 'active' : '' ?>" href="<?= site_url('admin/pengaturan') ?>">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 							<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
