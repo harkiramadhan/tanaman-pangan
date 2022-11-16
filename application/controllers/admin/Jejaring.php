@@ -4,6 +4,9 @@ class Jejaring extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 
+		$this->load->model([
+			'M_Jejaring'
+		]);
 		if($this->session->userdata('admin') != TRUE){
 			redirect('admin/auth','refresh');
 		}
@@ -11,7 +14,8 @@ class Jejaring extends CI_Controller {
 	
 	public function index(){
         $var = [
-			'title' => 'Beranda Jejaring'
+			'title' => 'Beranda Jejaring',
+			'jejaring' => $this->M_Jejaring->getAll()
 		];
 
 		$this->load->view('layout/admin/header', $var);
