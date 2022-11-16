@@ -125,7 +125,7 @@
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Jenis</th>
-                                 <td class="p-3">Roti, Makanan</td>
+                                 <td class="p-3"><?= $jejaring->jenis_olahan ?></td>
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Produksi</th>
