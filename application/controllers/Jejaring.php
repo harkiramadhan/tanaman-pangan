@@ -43,7 +43,7 @@ class Jejaring extends CI_Controller {
 		$this->load->view('layout/user/footer', $var);
 	}
 
-	public function profil(){
+	public function detail($id){
         $var = [
 			'title' => "Profil Jejaring"
 		];

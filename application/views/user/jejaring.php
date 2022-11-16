@@ -50,9 +50,13 @@
             </div>
             <div class="container">
                <div class="row">
-                  <?php foreach($data->result() as $row): ?>
+
+                  <?php 
+                     foreach($data->result() as $row): 
+                        $komoditasUser = $this->M_Komoditas->getByUser($row->id);
+                  ?>
                      <div class="col-md-3">
-                        <a href="<?= site_url('jejaring/profil') ?>">
+                        <a href="<?= site_url('jejaring/' . $row->id) ?>">
                            <?php if($row->cover_img): ?>
                               <img class="img-fluid" src="<?= base_url('uploads/cover/' . $row->cover_img) ?>" />
                            <?php else: ?>
@@ -60,43 +64,39 @@
                            <?php endif; ?>
                         </a>
                         <div class="inner-slider">
-                        <div class="inner-wrapper">
-                           <div class="d-flex align-items-center">
-                              <span class="seller-image">
-                                 <img class="img-fluid"src="<?= base_url('uploads/profile/' . $row->img) ?>"alt='' />
-                              </span>
-                              <span class="seller-name">
-                                 <a href="<?= site_url('jejaring/profil') ?>" class="mb-1"><?= $row->nama ?></a>
-                              </span>
-                           </div>
-                           <span class="badge badge-warning"><?= $row->role ?></span>
-                           <h3 class="mb-1">
-                              Petani yang bergerak pada budidaya porang, hubungi untuk bisa terhubung lebih lanjut
-                           </h3>
-                           <h3 class="mb-2 mt-0 font-weight-bold">
-                              Komoditas dijual:
-                           </h3>
-                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Jagung</span>
-                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Beras/Padi</span>
-                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Shorgum</span>
-                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Singkong</span>
-                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Kedelai</span>
-                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Ubi Jalar</span>
-                           
-                           <div class="footer mt-2">
-                              <a href="#" class="text-dark" tabindex="0">
-                                 <i class="fa fa-map-marker fa-lg  ml-2 mr-3" aria-hidden="true"></i>
-                              </a>
-                              <a href="#" class="text-dark" tabindex="0">
-                                 <i class="fa fa-whatsapp  fa-lg ml-2 mr-3" aria-hidden="true"></i>
-                              </a>
+                           <div class="inner-wrapper">
+                              <div class="d-flex align-items-center">
+                                 <span class="seller-image">
+                                    <img class="img-fluid"src="<?= base_url('uploads/profile/' . $row->img) ?>"alt='' />
+                                 </span>
+                                 <span class="seller-name">
+                                    <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1"><?= $row->nama ?></a>
+                                 </span>
+                              </div>
+                              <span class="badge badge-warning"><?= $row->role ?></span>
+                              <h3 class="mb-1"><?= $row->keterangan ?></h3>
+                              <h3 class="mb-2 mt-0 font-weight-bold">
+                                 Komoditas dijual:
+                              </h3>
+                              <?php foreach($komoditasUser->result() as $ku): ?>
+                                 <span class="badge border border-2 bg-info text-white p-2 mb-1"><?= $ku->komoditas ?></span>
+                              <?php endforeach; ?>
+                              
+                              <div class="footer mt-2">
+                                 <a href="<?= $row->maps ?>" class="text-dark" tabindex="0" <?= ($row->maps) ? 'target="__BLANK"' : '' ?>>
+                                    <i class="fa fa-map-marker fa-lg  ml-2 mr-3" aria-hidden="true"></i>
+                                 </a>
+                                 <a href="https://api.whatsapp.com/send/?phone=<?= $row->hp ?>&text&type=phone_number&app_absent=0" class="text-dark" tabindex="0" target="__BLANK">
+                                    <i class="fa fa-whatsapp  fa-lg ml-2 mr-3" aria-hidden="true"></i>
+                                 </a>
 
-                              <a href="#" class="c-btn btn-block c-fill-color-btn" tabindex="0">CEK PROFIL</a>
+                                 <a href="<?= site_url('jejaring/' . $row->id) ?>" class="c-btn btn-block c-fill-color-btn" tabindex="0">CEK PROFIL</a>
+                              </div>
                            </div>
-                        </div>
                         </div>
                      </div>
                   <?php endforeach; ?>
+
                </div>
             </div>
          </div>

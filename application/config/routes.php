@@ -58,3 +58,4 @@ $route['daftar'] = 'auth/daftar';
 $route['logout'] = 'auth/logout';
 
 $route['admin'] = 'admin/admin/index';
+$route['jejaring/(:num)'] = 'jejaring/detail/$1';
