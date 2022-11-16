@@ -31,6 +31,8 @@ class Jejaring extends CI_Controller {
 		$this->load->view('admin/jejaring-detail', $var);
 		$this->load->view('layout/admin/footer', $var);
 	}
+
+	/* Action Here */
 }
 
 	
