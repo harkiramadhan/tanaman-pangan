@@ -102,19 +102,5 @@
          }
                
       ?>
-      <script>
-         var toolbarOptions = [['bold', 'italic', 'underline', 'strike'], ['link'],  [{ 'list': 'ordered'}, { 'list': 'bullet' }]];
-
-         var options = {
-         debug: 'info',
-         modules: {
-            toolbar: toolbarOptions
-         },
-         placeholder: 'Tulis deskripsi...',
-         // readOnly: true,
-         theme: 'snow'
-         };
-         var editor = new Quill('#editor', options);
-      </script>
    </body>
 </html>

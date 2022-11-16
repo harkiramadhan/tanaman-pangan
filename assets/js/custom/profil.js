@@ -1,3 +1,20 @@
+var toolbarOptions = [['bold', 'italic', 'underline', 'strike'], ['link'],  [{ 'list': 'ordered'}, { 'list': 'bullet' }]];
+var options = {
+    debug: 'info',
+    modules: {
+        toolbar: toolbarOptions
+    },
+    placeholder: 'Tulis deskripsi...',
+    theme: 'snow'
+};
+var editor = new Quill('#editor', options);
+editor.pasteHTML($('#keterangan').val());
+editor.on('text-change', function(delta, oldDelta, source) {
+    console.log(editor.container.firstChild.innerHTML)
+    $('#keterangan').val(editor.container.firstChild.innerHTML)
+});
+
+
 $('#select-prov').change(function(){
     var provid = $(this).find(':selected').val()
     $.ajax({
@@ -61,5 +78,17 @@ function previewImage() {
     oFReader.readAsDataURL(document.getElementById("image-source").files[0])
     oFReader.onload = function(oFREvent) {
     document.getElementById("image-preview").src = oFREvent.target.result
+  }
+}
+
+function previewImage2() {
+    var element = document.getElementById("image-preview2")
+    element.classList.remove("d-none")
+    document.getElementById("image-preview2").style.display = "block"
+
+    var oFReader = new FileReader()
+    oFReader.readAsDataURL(document.getElementById("image-source2").files[0])
+    oFReader.onload = function(oFREvent) {
+    document.getElementById("image-preview2").src = oFREvent.target.result
   }
 }

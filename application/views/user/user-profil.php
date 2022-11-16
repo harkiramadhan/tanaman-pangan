@@ -38,10 +38,10 @@
                            </div>
                            <div class="col-md-6 col-12 text-center">
                               <p class="text-muted font-weight-bold mb-2">Gambar Cover</p>
-                                 <?php if($user->img): ?>
-                                    <img src="<?= base_url('uploads/profile/' . $user->img) ?>" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 200px; height: 100px; object-fit: cover;" id="image-preview">
+                                 <?php if($user->cover_img): ?>
+                                    <img src="<?= base_url('uploads/cover/' . $user->cover_img) ?>" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 200px; height: 100px; object-fit: cover;" id="image-preview2">
                                  <?php else: ?>
-                                    <img src="https://public-assets.envato-static.com/assets/common/icons-buttons/default-user-2962fd43ee315eafee8bfc08f02fee84687beb0499de44e5ab2873399944b0fe.jpg" class="img-fluid mt-2 rounded-circle mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview">
+                                    <img src="https://public-assets.envato-static.com/assets/common/icons-buttons/default-user-2962fd43ee315eafee8bfc08f02fee84687beb0499de44e5ab2873399944b0fe.jpg" class="img-fluid mt-2 rounded-circle mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview2">
                                  <?php endif; ?>
                            </div>
                         </div>
@@ -62,7 +62,7 @@
                            </div>
                            <div class="col-md-8">
                               <div class="custom-file">
-                                 <input type="file" name="file" class="custom-file-input" id="image-source" aria-describedby="#" onchange="previewImage()">
+                                 <input type="file" name="cover_img" class="custom-file-input" id="image-source2" aria-describedby="#" onchange="previewImage2()">
                                  <label class="custom-file-label" for="image-source">Choose file</label>
                               </div>
                            </div>
@@ -90,7 +90,7 @@
                               <p class="text-muted font-weight-bold mb-0">Google Maps <sup class="text-danger">*</sup></p>
                            </div>
                            <div class="col-md-8">
-                              <input type="text" name="nama" class="form-control font-weight-bold text-muted" value="" placeholder="Tambahkan link maps" required>
+                              <input type="text" name="maps" class="form-control font-weight-bold text-muted" value="<?= $user->maps ?>" placeholder="Tambahkan link maps" required>
                            </div>
                         </div>
 
@@ -184,6 +184,7 @@
                               <p class="text-muted font-weight-bold mb-0">Deskripsi<sup class="text-danger">*</sup></p>
                            </div>
                            <div class="col-md-8">
+                              <input type="hidden" name="keterangan" id="keterangan" value="<?= $user->keterangan ?>">
                               <div class="rounded" id="editor">
 
                               </div>

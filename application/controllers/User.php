@@ -21,13 +21,13 @@ class User extends CI_Controller {
 		}
 	}
 
-	private function resizeImage($filename){
+	private function resizeImage($filename, $path){
         $config['image_library'] = 'gd2';  
-        $config['source_image'] = './uploads/profile/'.$filename;  
+        $config['source_image'] = $path.$filename;  
         $config['create_thumb'] = FALSE;  
         $config['maintain_ratio'] = TRUE;  
         $config['quality'] = '75%';  
-        $config['new_image'] = './uploads/profile/'.$filename;  
+        $config['new_image'] = $path.$filename;  
         $config['width'] = 500;              
   
         $this->image_lib->initialize($config);
@@ -102,9 +102,25 @@ class User extends CI_Controller {
 			
             $data = $this->upload->data();
             $filename = $data['file_name'];
-			$this->resizeImage($filename); 
+			$this->resizeImage($filename, './uploads/profile/'); 
         }else{
 			$filename = $user->img;
+		}
+
+		$config['upload_path'] = './uploads/cover';  
+		$config['allowed_types'] = 'jpg|jpeg|png'; 
+		$config['encrypt_name'] = TRUE;
+		$this->load->library('upload', $config, 'cover');
+		if($this->cover->do_upload('cover_img')){
+			if($user->cover_img != NULL){
+				@unlink('./uploads/cover/' . @$user->cover_img);
+			}
+
+			$coverData = $this->cover->data();
+			$coverName = $coverData['file_name'];
+			$this->resizeImage($coverName, './uploads/cover/');
+		}else{
+			$coverName = $user->cover_img;
 		}
 
 		$dataUpdate = [
@@ -115,7 +131,10 @@ class User extends CI_Controller {
 			'prov' => $this->input->post('prov', TRUE),
 			'kab_kota' => $this->input->post('kab_kota', TRUE),
 			'kec' => $this->input->post('kec', TRUE),
-			'desa_kel' => $this->input->post('desa_kel', TRUE)
+			'desa_kel' => $this->input->post('desa_kel', TRUE),
+			'cover_img' => $coverName,
+			'maps' => $this->input->post('maps', TRUE),
+			'keterangan' => $this->input->post('keterangan', TRUE)
 		];
 		$this->db->where('id', $this->session->userdata('userid'))->update('user', $dataUpdate);
 		if($this->db->affected_rows() > 0){
