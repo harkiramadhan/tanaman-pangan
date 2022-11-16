@@ -8,10 +8,10 @@ var options = {
     theme: 'snow'
 };
 var editor = new Quill('#editor', options);
-editor.pasteHTML($('#keterangan').val());
+editor.pasteHTML($('#deskripsi').val());
 editor.on('text-change', function(delta, oldDelta, source) {
     console.log(editor.container.firstChild.innerHTML)
-    $('#keterangan').val(editor.container.firstChild.innerHTML)
+    $('#deskripsi').val(editor.container.firstChild.innerHTML)
 });
 
 

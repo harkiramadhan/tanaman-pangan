@@ -134,7 +134,7 @@ class User extends CI_Controller {
 			'desa_kel' => $this->input->post('desa_kel', TRUE),
 			'cover_img' => $coverName,
 			'maps' => $this->input->post('maps', TRUE),
-			'keterangan' => $this->input->post('keterangan', TRUE)
+			'deskripsi' => $this->input->post('deskripsi', TRUE)
 		];
 		$this->db->where('id', $this->session->userdata('userid'))->update('user', $dataUpdate);
 		if($this->db->affected_rows() > 0){

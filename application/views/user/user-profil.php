@@ -184,7 +184,7 @@
                               <p class="text-muted font-weight-bold mb-0">Deskripsi<sup class="text-danger">*</sup></p>
                            </div>
                            <div class="col-md-8">
-                              <input type="hidden" name="keterangan" id="keterangan" value="<?= $user->keterangan ?>">
+                              <input type="hidden" name="deskripsi" id="deskripsi" value="<?= $user->deskripsi ?>">
                               <div class="rounded" id="editor">
 
                               </div>
