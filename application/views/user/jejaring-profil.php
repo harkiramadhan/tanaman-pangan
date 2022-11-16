@@ -193,7 +193,11 @@
                      </div>
                      <div class="box-body p-3">
                         <p class="mb-2 font-weight-bold">Tampak Depan</p>
-                        <img class="img-fluid w-100 mb-1" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" alt="" style="object-fit: cover; height: 70px; border-radius: 10px;">
+                           <?php if($jejaring->cover_img): ?>
+                              <img class="img-fluid w-100 mb-1" src="<?= base_url('uploads/cover/' . $jejaring->cover_img) ?>" alt="" style="object-fit: cover; height: 70px; border-radius: 10px;">
+                           <?php else: ?>
+                              <img class="img-fluid w-100 mb-1" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" alt="" style="object-fit: cover; height: 70px; border-radius: 10px;">
+                           <?php endif; ?>
                         <p class="mt-2 mb-2 font-weight-bold">Foto Lainnya</p>
                         <div class="gallery-box-main">
                            <div class="gallery-box">
