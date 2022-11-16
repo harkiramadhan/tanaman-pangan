@@ -110,7 +110,11 @@
                      </a>
                   </li>
                   <?php for($i=1; $i <= $count; $i++): ?>
-                     <li class="page-item <?= ($this->input->get('page', TRUE) == $i) ? 'active' : '' ?>">
+                     <?php if($i == 1 && $this->input->get('page', TRUE) == NULL): ?>
+                        <li class="page-item active">
+                     <?php else: ?>
+                        <li class="page-item <?= ($this->input->get('page', TRUE) == $i) ? 'active' : '' ?>">
+                     <?php endif; ?>
                         <a class="page-link" href="<?= site_url('jejaring?page=' . $i) ?>"><?= $i ?></a>
                      </li>
                   <?php endfor; ?>
