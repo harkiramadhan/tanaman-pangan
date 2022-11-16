@@ -9,7 +9,10 @@ class Jejaring extends CI_Controller {
 			'M_Jejaring',
 			'M_Komoditas',
 			'M_Role',
-			'M_Wilayah'
+			'M_Wilayah',
+			'M_Kategori_olahan',
+			'M_Ketertarikan',
+			'M_Penjualan'
 		]);
 	}
 
@@ -47,7 +50,13 @@ class Jejaring extends CI_Controller {
 
 	public function detail($id){
         $var = [
-			'title' => "Profil Jejaring"
+			'title' => "Profil Jejaring",
+			'user' => $this->M_User->getById($this->session->userdata('userid')),
+			'jejaring' => $this->M_Jejaring->getByUserid($id),
+			'komoditas' => $this->M_Komoditas->getByUser($id),
+			'kategori_olahan' => $this->M_Kategori_olahan->getByUser($id),
+			'tertarik' => $this->M_Ketertarikan->getByUser($id),
+			'penjualan' => $this->M_Penjualan->getByUser($id)
 		];
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/jejaring-profil', $var);
