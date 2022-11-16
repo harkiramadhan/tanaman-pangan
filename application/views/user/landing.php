@@ -478,7 +478,6 @@
       </div>
       <!-- services-->
 
-
       <div class="guide-wrapper pb-5 bg-white testimonial">
          <div class="container">
             <h2>
@@ -521,8 +520,6 @@
             </div>
          </div>
       </div>
-
-      
       
       <!--    about section -->
       <div class="container">

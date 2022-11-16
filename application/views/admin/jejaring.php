@@ -28,7 +28,7 @@
 											<tr>
 												<th class="text-uppercase text-dark text-xxs text-center font-weight-bolder opacity-10" width="1px">#
 												</th>
-												<th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Pelatihan</th>
+												<th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Jejaring</th>
 												<th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Status</th>
 												<th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Aksi</th>
 											</tr>

@@ -33,6 +33,10 @@
 	<link href="<?= base_url('assets/css/admin/nucleo-svg.css')?>" rel="stylesheet" />
 	<!-- CSS Files -->
 	<link id="pagestyle" href="<?= base_url('assets/css/admin/argon-dashboard.css')?>" rel="stylesheet" />
+      
+	<!-- Quill Assets CDN -->
+	<!-- Theme included stylesheets -->
+	<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">

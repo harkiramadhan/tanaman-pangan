@@ -15,7 +15,24 @@
 				<form method="post" action="#" enctype="multipart/form-data">
 					<div class="row">
                         <div class="col-lg-12">
+							<div class="row">
+								<div class="col-md-6 col-12">
+									<div class="mb-3 mt-2 text-center">
+										<p>Foto Profil</p>
+										<img src="http://localhost/tax-session/uploads/pelatihan/b6bf8464f52f204a2220dd05ef6c341f.jpg" class="img-fluid img-center shadow rounded-circle" style="width: 250px; height: 250px; object-fit: cover;" id="image-preview">
+									</div>
+								</div>
+
+								<div class="col-md-6 col-12">
+									<div class="mb-3 mt-2 text-center">										
+										<p>Gambar Cover</p>
+										<img src="http://localhost/tax-session/uploads/pelatihan/b6bf8464f52f204a2220dd05ef6c341f.jpg" class="img-fluid img-center shadow rounded" style="max-height: 250px" id="image-preview">
+									</div>
+								</div>
+							</div>
+
                             <h6 class="mb-3">PROFIL JEJARING</h6>
+
                             <div class="form-group">
                                 <label class="form-control-label" for="input-gambar">Foto Profil
                                 <span class="text-danger">*</span></label>
