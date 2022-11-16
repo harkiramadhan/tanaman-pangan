@@ -5,6 +5,7 @@ class Jejaring extends CI_Controller {
 		parent::__construct();
 
 		$this->load->model([
+			'M_User',
 			'M_Jejaring',
 			'M_Komoditas',
 			'M_Role',
@@ -26,6 +27,7 @@ class Jejaring extends CI_Controller {
 
         $var = [
 			'title' => "Temui Sesama Jejaring",
+			'user' => $this->M_User->getById($this->session->userdata('userid')),
 			'komoditas' => $this->M_Komoditas->getAll(),
 			'role' => $this->M_Role->getAll(),
 			'provinsi' => $this->M_Wilayah->getProvinsi(),
