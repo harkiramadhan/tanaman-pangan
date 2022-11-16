@@ -23,23 +23,26 @@
                      <p>Berdasarkan</p>
                   </div>
                   <div class="sorting d-flex align-items-center ml-3">
-                     <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;">
+                     <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="select-komoditas">
                         <option selected disabled>Komoditas</option>
-                        <option>Jagung</option>
-                        <option>Jeruk</option>
-                        <option>Beras/Padi</option>
+                        <option value="semua"> Semua</option>
+                        <?php foreach($komoditas->result() as $k){ ?>
+                           <option value="<?= $k->id ?>"> <?= ucwords(ucfirst($k->komoditas)) ?></option>
+                        <?php } ?>
                      </select>
                      <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;">
                         <option selected disabled>Peran</option>
-                        <option>Semua</option>
-                        <option>Petani/Produsen Pangan</option>
-                        <option>Offtaker</option>
+                        <option value="semua">Semua</option>
+                        <?php foreach($role->result() as $r){ ?>
+                           <option value="<?= $r->id ?>"> <?= $r->role ?></option>
+                        <?php } ?>
                      </select>
                      <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;">
                         <option selected disabled>Wilayah</option>
-                        <option>Semua</option>
-                        <option>Jawa Barat</option>
-                        <option>Jawa Timur</option>
+                        <option value="semua">Semua</option>
+                        <?php foreach($provinsi->result() as $p){ ?>
+                           <option value="<?= $p->prov_id ?>"> <?= ucwords(strtolower($p->prov_name)) ?></option>
+                        <?php } ?>
                      </select>
                   </div>
                </div>
@@ -47,24 +50,26 @@
             </div>
             <div class="container">
                <div class="row">
-                  <div class="col-md-3">
-                     <a href="<?= site_url() ?>jejaring/profil">
-                        <img class="img-fluid" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" />
-                     </a>
-                     <div class="inner-slider">
+                  <?php foreach($data->result() as $row): ?>
+                     <div class="col-md-3">
+                        <a href="<?= site_url('jejaring/profil') ?>">
+                           <?php if($row->cover_img): ?>
+                              <img class="img-fluid" src="<?= base_url('uploads/cover/' . $row->cover_img) ?>" />
+                           <?php else: ?>
+                              <img class="img-fluid" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" />
+                           <?php endif; ?>
+                        </a>
+                        <div class="inner-slider">
                         <div class="inner-wrapper">
                            <div class="d-flex align-items-center">
-                                <span class="seller-image">
-                                <img class="img-fluid"
-                                    src="https://images-tm.tempo.co/all/2021/08/11/779608/779608_1200.jpg"
-                                    alt='' />
-                                </span>
-                                <span class="seller-name">
-                                <a href="<?= site_url() ?>jejaring/profil" class="mb-1">Alfian Rahmatullah</a>
-                                
-                                </span>
-                            </div>
-                            <span class="badge badge-warning">Petani/Produsen Pangan</span>
+                              <span class="seller-image">
+                                 <img class="img-fluid"src="<?= base_url('uploads/profile/' . $row->img) ?>"alt='' />
+                              </span>
+                              <span class="seller-name">
+                                 <a href="<?= site_url('jejaring/profil') ?>" class="mb-1"><?= $row->nama ?></a>
+                              </span>
+                           </div>
+                           <span class="badge badge-warning"><?= $row->role ?></span>
                            <h3 class="mb-1">
                               Petani yang bergerak pada budidaya porang, hubungi untuk bisa terhubung lebih lanjut
                            </h3>
@@ -79,62 +84,19 @@
                            <span class="badge border border-2 bg-info text-white p-2 mb-1">Ubi Jalar</span>
                            
                            <div class="footer mt-2">
-                                <a href="#" class="text-dark" tabindex="0">
-                                    <i class="fa fa-map-marker fa-lg  ml-2 mr-3" aria-hidden="true"></i>
-                                </a>
-                                <a href="#" class="text-dark" tabindex="0">
-                                    <i class="fa fa-whatsapp  fa-lg ml-2 mr-3" aria-hidden="true"></i>
-                                </a>
+                              <a href="#" class="text-dark" tabindex="0">
+                                 <i class="fa fa-map-marker fa-lg  ml-2 mr-3" aria-hidden="true"></i>
+                              </a>
+                              <a href="#" class="text-dark" tabindex="0">
+                                 <i class="fa fa-whatsapp  fa-lg ml-2 mr-3" aria-hidden="true"></i>
+                              </a>
 
-                                <a href="#" class="c-btn btn-block c-fill-color-btn" tabindex="0">CEK PROFIL</a>
+                              <a href="#" class="c-btn btn-block c-fill-color-btn" tabindex="0">CEK PROFIL</a>
                            </div>
                         </div>
-                     </div>
-                  </div>
-
-                  <div class="col-md-3">
-                     <a href="<?= site_url() ?>jejaring/profil">
-                        <img class="img-fluid" src="https://alfand.web.id/wp-content/uploads/2021/07/Proses-Produksi-Makanan-Pendorong-Pembangunan-Ekonomi.jpg" />
-                     </a>
-                     <div class="inner-slider">
-                        <div class="inner-wrapper">
-                           <div class="d-flex align-items-center">
-                                <span class="seller-image">
-                                <img class="img-fluid"
-                                    src="https://static.vecteezy.com/system/resources/thumbnails/007/684/509/small/alphabet-letters-initials-monogram-logo-tp-pt-t-and-p-free-vector.jpg"
-                                    alt='' />
-                                </span>
-                                <span class="seller-name">
-                                <a href="<?= site_url() ?>jejaring/profil" class="mb-1">PT Wijaya Kusuma</a>
-                                
-                                </span>
-                            </div>
-                            <span class="badge badge-warning">Usaha Olahan</span>
-                           <h3 class="mb-1">
-                              Bergerak dalam proses olahan pangan untuk lebih layak dan menerima hasil tani.
-                           </h3>
-                           <h3 class="mb-2 mt-0 font-weight-bold">
-                              Komoditas dicari:
-                           </h3>
-                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Jagung</span>
-                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Beras/Padi</span>
-                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Shorgum</span>
-                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Singkong</span>
-                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Kedelai</span>
-                           <span class="badge border border-2 bg-info text-white p-2 mb-1">Ubi Jalar</span>
-                           <div class="footer mt-2">
-                                <a href="#" class="text-dark" tabindex="0">
-                                    <i class="fa fa-map-marker fa-lg  ml-2 mr-3" aria-hidden="true"></i>
-                                </a>
-                                <a href="#" class="text-dark" tabindex="0">
-                                    <i class="fa fa-whatsapp  fa-lg ml-2 mr-3" aria-hidden="true"></i>
-                                </a>
-
-                                <a href="#" class="c-btn btn-block c-fill-color-btn" tabindex="0">CEK PROFIL</a>
-                           </div>
                         </div>
                      </div>
-                  </div>
+                  <?php endforeach; ?>
                </div>
             </div>
          </div>
@@ -142,17 +104,18 @@
             <nav aria-label="Page navigation example">
                <ul class="pagination">
                   <li class="page-item">
-                     <a class="page-link" href="#" aria-label="Previous">
+                     <a class="page-link" href="<?= ($page > 1) ? site_url('jejaring?page=' . $previous) : '#' ?>" aria-label="Previous">
                         <span aria-hidden="true"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
                         <!--                    <span class="sr-only"></span>-->
                      </a>
                   </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">4</a></li>
-                  <li class="page-item"><a class="page-link" href="#">5</a></li>
+                  <?php for($i=1; $i <= $count; $i++): ?>
+                     <li class="page-item <?= ($this->input->get('page', TRUE) == $i) ? 'active' : '' ?>">
+                        <a class="page-link" href="<?= site_url('jejaring?page=' . $i) ?>"><?= $i ?></a>
+                     </li>
+                  <?php endfor; ?>
                   <li class="page-item">
-                     <a class="page-link" href="#" aria-label="Next">
+                     <a class="page-link" href="<?= ($page < $count) ? site_url('jejaring?page=' . $next) : '#' ?>" aria-label="Next">
                         <span aria-hidden="true"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
                         <!--                    <span class="sr-only"></span>-->
                      </a>
