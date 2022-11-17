@@ -489,7 +489,7 @@
             <div class="row">
                <div class="col-md-4 col-12">
                   <a href="#" class="guide picture-wrapper w-100">
-                     <img class="mb-2 w-100" src="https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg" style="border-radius: 10px; object-fit: cover; height: 220px;">
+                     <img class="mb-2 w-100" style="border-radius: 10px; object-fit: cover; height: 220px; background-image: linear-gradient(160deg, rgba(29,200,204,0.8) 0%, rgba(44,221,155,0.2) 90%), url('https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg');">
                      <div class="content">
                         <h6>Pembukaan Acara Tani Trainer</h6>
                         <p>Dihadiri oleh bapak kementan yang berbahagia</p>
@@ -499,7 +499,7 @@
 
                <div class="col-md-4 col-12">
                   <a href="#" class="guide picture-wrapper w-100">
-                     <img class="mb-2 w-100" src="https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg" style="border-radius: 10px; object-fit: cover; height: 220px;">
+                     <img class="mb-2 w-100" style="border-radius: 10px; object-fit: cover; height: 220px; background-image: linear-gradient(160deg, rgba(29,200,204,0.8) 0%, rgba(44,221,155,0.2) 90%), url('https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg');">
                      <div class="content">
                         <h6>Pembukaan Acara Tani Trainer</h6>
                         <p>Dihadiri oleh bapak kementan yang berbahagia</p>
@@ -509,7 +509,7 @@
 
                <div class="col-md-4 col-12">
                   <a href="#" class="guide picture-wrapper w-100">
-                     <img class="mb-2 w-100" src="https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg" style="border-radius: 10px; object-fit: cover; height: 220px;">
+                     <img class="mb-2 w-100" style="border-radius: 10px; object-fit: cover; height: 220px; background-image: linear-gradient(160deg, rgba(29,200,204,0.8) 0%, rgba(44,221,155,0.2) 90%), url('https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg');">
                      <div class="content">
                         <h6>Pembukaan Acara Tani Trainer</h6>
                         <p>Dihadiri oleh bapak kementan yang berbahagia</p>
