@@ -56,6 +56,10 @@
                                  <td class="p-3"><?= $jejaring->nama_kelembagaan ?></td>
                               </tr>
                               <tr class="border-bottom">
+                                 <th class="p-3" width="30%;">Kategori Lembaga</th>
+                                 <td class="p-3"><?= $jejaring->kelembagaan ?></td>
+                              </tr>
+                              <tr class="border-bottom">
                                  <th class="p-3">No HP</th>
                                  <td class="p-3"><?= $jejaring->hp ?></td>
                               </tr>

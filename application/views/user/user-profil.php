@@ -22,13 +22,8 @@
          <div class="col-lg-9">
             <div class="bg-white rounded shadow-sm sidebar-page-right">
                <div>
-                  <div class="row p-3 border-bottom">
-                     <div class="col">
-                        <span class="badge badge-warning mb-0 py-2 px-2 text-uppercase">Petani/Produsen Pangan</span>
-                     </div>
-                     <div class="col text-right">
-                        <a href="account.html" class="text-success">Tinjau Profil<i class="fa fa-arrow-right ml-2"></i></a>
-                     </div>
+                  <div class="p-3 border-bottom text-right">
+                     <a href="account.html" class="text-success">Tinjau Profil<i class="fa fa-arrow-right ml-2"></i></a>
                   </div>
                   <div class="p-3 border-bottom">
                      <form action="<?= site_url('user/saveProfile') ?>" method="POST" enctype="multipart/form-data">
@@ -86,10 +81,7 @@
                               <p class="text-muted font-weight-bold mb-0">Peran</p>
                            </div>
                            <div class="col-md-8">
-                              <select class="form-control">
-                                 <option>Pilih</option>
-                                 <option>Petani/Produsen</option>
-                              </select>
+                              <input type="text" name="nama" class="form-control font-weight-bold text-muted" value="<?= $user->nama ?>" placeholder="Isi Nama Lengkap" required>
                            </div>
                         </div>
 
