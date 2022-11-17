@@ -30,8 +30,6 @@
                         <a href="<?= site_url('jejaring/' . $user->id) ?>" class="text-success" target="__BLANK">Tinjau Profil<i class="fa fa-arrow-right ml-2"></i></a>
                      </div>
                   </div>
-                  <div class="p-3 border-bottom text-right">
-                  </div>
                   <div class="p-3 border-bottom">
                      <form action="<?= site_url('user/saveProfile') ?>" method="POST" enctype="multipart/form-data">
                         <div class="row">
@@ -197,6 +195,46 @@
                               </div>
                            </div>
                         </div>
+
+                        <!-- SOSMED START -->
+
+                        <div class="row d-flex align-items-center form-group">
+                           <div class="col-md-4">
+                              <p class="text-muted font-weight-bold mb-0">Facebook</p>
+                           </div>
+                           <div class="col-md-8">
+                              <input type="text" name="facebook" class="form-control font-weight-bold text-muted" value="" placeholder="Link profil facebookmu">
+                           </div>
+                        </div>
+
+                        <div class="row d-flex align-items-center form-group">
+                           <div class="col-md-4">
+                              <p class="text-muted font-weight-bold mb-0">Instagram</p>
+                           </div>
+                           <div class="col-md-8">
+                              <input type="text" name="Instagram" class="form-control font-weight-bold text-muted" value="" placeholder="Link profil Instagrammu">
+                           </div>
+                        </div>
+
+                        <div class="row d-flex align-items-center form-group">
+                           <div class="col-md-4">
+                              <p class="text-muted font-weight-bold mb-0">Tiktok</p>
+                           </div>
+                           <div class="col-md-8">
+                              <input type="text" name="Tiktok" class="form-control font-weight-bold text-muted" value="" placeholder="Link profil Tiktokmu">
+                           </div>
+                        </div>
+
+                        <div class="row d-flex align-items-center form-group">
+                           <div class="col-md-4">
+                              <p class="text-muted font-weight-bold mb-0">Youtube</p>
+                           </div>
+                           <div class="col-md-8">
+                              <input type="text" name="Youtube" class="form-control font-weight-bold text-muted" value="" placeholder="Link profil Youtubemu">
+                           </div>
+                        </div>
+
+                        <!-- SOSMED END -->
 
                         <div class="text-right">
                            <button type="submit" class="btn btn-success">Simpan Perubahan</button>

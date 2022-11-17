@@ -52,11 +52,11 @@
                         <table class="table table-borderless mb-0">
                            <tbody>
                               <tr class="border-bottom">
-                                 <th class="p-3" width="30%;">Lembaga</th>
+                                 <th class="p-3" width="40%;">Lembaga</th>
                                  <td class="p-3"><?= $jejaring->nama_kelembagaan ?></td>
                               </tr>
                               <tr class="border-bottom">
-                                 <th class="p-3" width="30%;">Kategori Lembaga</th>
+                                 <th class="p-3" width="40%;">Kategori Lembaga</th>
                                  <td class="p-3"><?= $jejaring->kelembagaan ?></td>
                               </tr>
                               <tr class="border-bottom">
@@ -96,8 +96,16 @@
                                  <td class="p-3"><?= $jejaring->rata_produksi_bulan ?> Kg <sup class="text-danger">/bulan</sup></td>
                               </tr>
                               <tr class="border-bottom">
+                                 <th class="p-3">Menjual Produk</th>
+                                 <td class="p-3"> Kentang</td>
+                              </tr>
+                              <tr class="border-bottom">
                                  <th class="p-3">Produk Dijual</th>
                                  <td class="p-3"> Kg <sup class="text-danger">/bulan</sup></td>
+                              </tr>
+                              <tr class="border-bottom">
+                                 <th class="p-3">Membutuhkan Produk</th>
+                                 <td class="p-3"> Kentang</td>
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Produk Dibutuhkan</th>
@@ -116,7 +124,7 @@
                         <table class="table table-borderless mb-0">
                            <tbody>
                               <tr class="border-bottom">
-                                 <th class="p-3" width="30%;">Kategori</th>
+                                 <th class="p-3" width="40%;">Kategori</th>
                                  <td class="p-3"><?php 
                                     $copyOlahan = $kategori_olahan->result();
                                     foreach($kategori_olahan->result() as $o){
@@ -170,6 +178,10 @@
                         <div class="d-flex align-items-top mb-2">
                            <p class="mb-0 text-muted">Whatsapp</p>
                            <p class="font-weight-bold text-dark mb-0 mt-0 ml-auto"><?= $jejaring->hp ?></p>
+                        </div>
+                        <div class="d-flex align-items-top mb-2">
+                           <p class="mb-0 text-muted">Instagram</p>
+                           <p class="font-weight-bold text-dark mb-0 mt-0 ml-auto">@ptwijayakusuma</p>
                         </div>
                         <div class="d-flex align-items-top mb-2">
                            <p class="mb-0 text-muted">Facebook</p>
