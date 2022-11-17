@@ -22,8 +22,15 @@
          <div class="col-lg-9">
             <div class="bg-white rounded shadow-sm sidebar-page-right">
                <div>
+                  <div class="row p-3 border-bottom">
+                     <div class="col">
+                        <span class="badge badge-warning mb-0 py-2 px-2 text-uppercase">Petani/Produsen Pangan</span>
+                     </div>
+                     <div class="col text-right">
+                        <a href="<?= site_url('jejaring/' . $user->id) ?>" class="text-success" target="__BLANK">Tinjau Profil<i class="fa fa-arrow-right ml-2"></i></a>
+                     </div>
+                  </div>
                   <div class="p-3 border-bottom text-right">
-                     <a href="<?= site_url('jejaring/' . $user->id) ?>" class="text-success" target="__BLANK">Tinjau Profil<i class="fa fa-arrow-right ml-2"></i></a>
                   </div>
                   <div class="p-3 border-bottom">
                      <form action="<?= site_url('user/saveProfile') ?>" method="POST" enctype="multipart/form-data">
