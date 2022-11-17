@@ -23,7 +23,7 @@
             <div class="bg-white rounded shadow-sm sidebar-page-right">
                <div>
                   <div class="p-3 border-bottom text-right">
-                     <a href="account.html" class="text-success">Tinjau Profil<i class="fa fa-arrow-right ml-2"></i></a>
+                     <a href="<?= site_url('jejaring/' . $user->id) ?>" class="text-success" target="__BLANK">Tinjau Profil<i class="fa fa-arrow-right ml-2"></i></a>
                   </div>
                   <div class="p-3 border-bottom">
                      <form action="<?= site_url('user/saveProfile') ?>" method="POST" enctype="multipart/form-data">
@@ -81,7 +81,7 @@
                               <p class="text-muted font-weight-bold mb-0">Peran<sup class="text-danger">*</sup></p>
                            </div>
                            <div class="col-md-8">
-                              <input type="text" name="nama" class="form-control font-weight-bold text-muted" value="<?= $user->nama ?>" placeholder="Isi Nama Lengkap" required>
+                              <input type="text" name="" class="form-control font-weight-bold text-muted" value="<?= $user->role ?>" placeholder="Isi Nama Lengkap" disabled>
                            </div>
                         </div>
 

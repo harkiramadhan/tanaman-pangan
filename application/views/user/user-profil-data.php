@@ -23,7 +23,7 @@
             <div class="bg-white rounded shadow-sm sidebar-page-right">
                <div>
                   <div class="p-3 border-bottom text-right">
-                     <a href="account.html" class="text-success">Tinjau Profil<i class="fa fa-arrow-right ml-2"></i></a>
+                     <a href="<?= site_url('jejaring/' . $user->id) ?>" class="text-success" target="__BLANK">Tinjau Profil<i class="fa fa-arrow-right ml-2"></i></a>
                   </div>
                   <div class="p-3 border-bottom">
                      <form action="<?= site_url('user/saveData') ?>" method="POST">
