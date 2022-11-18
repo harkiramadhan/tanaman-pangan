@@ -179,6 +179,19 @@ class Jejaring extends CI_Controller {
 		
 		redirect($_SERVER['HTTP_REFERER']);
 	}
+
+	function changePassword($userid){
+		$pass = $this->input->post('new-pass', TRUE);
+		$passValid = $this->input->post('new-pass-valid', TRUE);
+
+		if($pass == $passValid){
+			$this->db->where('id', $userid)->update('user', [
+				'password' => $pass
+			]);
+		}
+		
+		redirect($_SERVER['HTTP_REFERER']);
+	}
 }
 
 	

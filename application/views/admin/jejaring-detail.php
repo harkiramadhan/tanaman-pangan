@@ -71,6 +71,11 @@
                             </div>
 
 							<div class="form-group">
+								<label class="form-control-label" for="input-nama">Penanggung Jawab <span class="text-danger">*</span></label>
+								<input type="text" name="nama" class="form-control" placeholder="Nama Penanggung Jawab" value="<?= $jejaring->nama ?>" required="">
+							</div>
+							
+							<div class="form-group">
 								<label class="form-control-label" for="input-nama">No HP/WA <span class="text-danger">*</span></label>
 								<input type="text" name="hp" class="form-control" placeholder="No HP/WA" value="<?= $jejaring->hp ?>" required="">
 							</div>
@@ -131,6 +136,42 @@
 									<?php }; endif; ?>
 								</select>
 							</div>
+
+							<div class="row d-flex align-items-center form-group">
+								<div class="col-md-4">
+									<p class="text-muted font-weight-bold mb-0">Facebook</p>
+								</div>
+								<div class="col-md-8">
+									<input type="text" name="facebook" class="form-control font-weight-bold text-muted" value="<?= $jejaring->facebook ?>" placeholder="Link profil facebookmu">
+								</div>
+								</div>
+
+								<div class="row d-flex align-items-center form-group">
+								<div class="col-md-4">
+									<p class="text-muted font-weight-bold mb-0">Instagram</p>
+								</div>
+								<div class="col-md-8">
+									<input type="text" name="instagram" class="form-control font-weight-bold text-muted" value="<?= $jejaring->instagram ?>" placeholder="Link profil Instagrammu">
+								</div>
+								</div>
+
+								<div class="row d-flex align-items-center form-group">
+								<div class="col-md-4">
+									<p class="text-muted font-weight-bold mb-0">Tiktok</p>
+								</div>
+								<div class="col-md-8">
+									<input type="text" name="tiktok" class="form-control font-weight-bold text-muted" value="<?= $jejaring->tiktok ?>" placeholder="Link profil Tiktokmu">
+								</div>
+								</div>
+
+								<div class="row d-flex align-items-center form-group">
+								<div class="col-md-4">
+									<p class="text-muted font-weight-bold mb-0">Youtube</p>
+								</div>
+								<div class="col-md-8">
+									<input type="text" name="youtube" class="form-control font-weight-bold text-muted" value="<?= $jejaring->youtube ?>" placeholder="Link profil Youtubemu">
+								</div>
+							</div>
                             <br>
                             <h6 class="mb-3">DATA PERTANIAN</h6>
 
@@ -172,6 +213,11 @@
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Rata2 Produksi Tahunan <span class="text-danger">*</span></label>
 								<input type="text" name="rata_produksi_tahun" class="form-control" placeholder="Rata2 Produksi Tahunan" value="<?= $jejaring->rata_produksi_tahun ?>" required="">
+							</div>
+
+							<div class="form-group">
+								<label class="form-control-label" for="input-nama">Rata2 Produksi Bulanan <span class="text-danger">*</span></label>
+								<input type="text" name="rata_produksi_bulan" class="form-control" placeholder="Rata2 Produksi Bulanan" value="<?= $jejaring->rata_produksi_bulan ?>" required="">
 							</div>
 
 							<div class="form-group">
@@ -220,6 +266,16 @@
 							</div>
 
 							<div class="form-group">
+								<label class="form-control-label" for="input-nama">Membutuhkan Produk <span class="text-danger">*</span></label>
+								<input type="text" name="membutuhkan_produk" class="form-control" placeholder="Menjual Produk" value="<?= $jejaring->membutuhkan_produk ?>" required="">
+							</div>
+
+							<div class="form-group">
+								<label class="form-control-label" for="input-nama">Produk dibutuhkan  Bulanan <span class="text-danger">*) Kg</span></label>
+								<input type="text" name="produk_dibutuhkan_bulanan" class="form-control" placeholder="Produk dijual  Bulanan" value="<?= $jejaring->produk_dibutuhkan_bulanan ?>" required="">
+							</div>
+
+							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Produk dijual  Bulanan <span class="text-danger">*) Kg</span></label>
 								<input type="text" name="produk_dijual_bulanan" class="form-control" placeholder="Produk dijual  Bulanan" value="<?= $jejaring->produk_dijual_bulanan ?>" required="">
 							</div>
@@ -256,6 +312,11 @@
 								<?php } ?>
                             </div>
 
+							<div class="form-group">
+								<label class="form-control-label" for="input-nama">Keterangan Tambahan <span class="text-danger">*</span></label>
+								<input type="text" name="keterangan" class="form-control" placeholder="Tulis" value="<?= $jejaring->keterangan ?>" required="">
+							</div>
+
                         </div>
 						<div class="col-12 mt-3 d-grid">
 							<button type="submit" class="btn bg-gradient-dark mb-0">SIMPAN</button>
@@ -277,19 +338,28 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-          <form>
-              <div class="row d-flex align-items-center form-group">
-                  <div class="col-md-4">
-                  <p class="text-muted font-weight-bold mb-0">Password Baru</p>
-                  </div>
-                  <div class="col-md-8">
-                  <input type="password" name="new-pass" class="form-control font-weight-bold text-muted">
-                  </div>
-              </div>
-              <div class="text-right">
-                  <button class="btn btn-success w-100 mb-0">SIMPAN</button>
-                  <button class="btn btn-transparant shadow-none w-100 mb-0">KEMBALI</button>
-              </div>
+          <form action="<?= site_url('admin/jejaring/changePassword/' . $jejaring->id) ?>" method="POST">
+				<div class="row d-flex align-items-center form-group">
+					<div class="col-md-4">
+					<p class="text-muted font-weight-bold mb-0">New Password</p>
+					</div>
+					<div class="col-md-8">
+						<input type="password" name="new-pass" class="form-control font-weight-bold text-muted">
+					</div>
+				</div>
+				<div class="row d-flex align-items-center form-group">
+					<div class="col-md-4">
+					<p class="text-muted font-weight-bold mb-0">Confirm Password</p>
+					</div>
+					<div class="col-md-8">
+						<input type="password" name="new-pass-valid" class="form-control font-weight-bold text-muted">
+						<p class="text-muted pt-2">8 characters or longer. Combine upper and lowercase letters and numbers.</p>
+					</div>
+				</div>
+				<div class="text-right">
+					<button type="submit" class="btn btn-success w-100 mb-0">SIMPAN</button>
+					<button type="button" class="btn btn-transparant shadow-none w-100 mb-0">KEMBALI</button>
+				</div>
           </form>
         </div>
       </div>
