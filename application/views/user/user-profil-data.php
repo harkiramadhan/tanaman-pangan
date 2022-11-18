@@ -230,12 +230,41 @@
                         </div>
 
 
+
+                        <div class="row d-flex align-items-center form-group">
+                           <div class="col-md-4">
+                              <p class="text-muted font-weight-bold mb-0">Produk dijual  Bulanan<sup class="text-danger">*</sup></p>
+                           </div>
+                           <div class="col-md-8">
+                              <div class="input-group input-group-sm mb-0">
+                                 <input type="text" name="produksi_olahan" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?= $user->produksi_olahan ?>">
+                                 <div class="input-group-append">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Kg</span>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+
                         <div class="row d-flex align-items-center form-group">
                            <div class="col-md-4">
                               <p class="text-muted font-weight-bold mb-0">Membutuhkan Produk<sup class="text-danger">*</sup></p>
                            </div>
                            <div class="col-md-8">
                               <input type="text" name="membutuhkan_produk" class="form-control font-weight-bold text-muted" value="<?= $user->membutuhkan_produk ?>" placeholder="Tulis ">
+                           </div>
+                        </div>
+
+                        <div class="row d-flex align-items-center form-group">
+                           <div class="col-md-4">
+                              <p class="text-muted font-weight-bold mb-0">Produk dibutuhkan Bulanan<sup class="text-danger">*</sup></p>
+                           </div>
+                           <div class="col-md-8">
+                              <div class="input-group input-group-sm mb-0">
+                                 <input type="text" name="produksi_olahan" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?= $user->produksi_olahan ?>">
+                                 <div class="input-group-append">
+                                    <span class="input-group-text" id="inputGroup-sizing-sm">Kg</span>
+                                 </div>
+                              </div>
                            </div>
                         </div>
 
