@@ -140,7 +140,7 @@ class User extends CI_Controller {
 			'instagram' => $this->input->post('instagram', TRUE),
 			'facebook' => $this->input->post('facebook', TRUE),
 			'tiktok' => $this->input->post('tiktok', TRUE),
-			'youtube' => $this->input->post('youtube', TRUE)
+			'youtube' => $this->input->post('youtube', TRUE),
 		];
 		$this->db->where('id', $this->session->userdata('userid'))->update('user', $dataUpdate);
 		if($this->db->affected_rows() > 0){
@@ -167,6 +167,8 @@ class User extends CI_Controller {
 			'jenis_aisintan' => $this->input->post('jenis_aisintan', TRUE),
 			'menjual_produk' => $this->input->post('menjual_produk', TRUE),
 			'membutuhkan_produk' => $this->input->post('membutuhkan_produk', TRUE),
+			'produk_dijual_bulanan' => $this->input->post('produk_dijual_bulanan', TRUE),
+			'produk_dibutuhkan_bulanan' => $this->input->post('produk_dibutuhkan_bulanan', TRUE),
 			'keterangan' => $this->input->post('keterangan', TRUE)
 		];
 		$this->db->where('id', $userid)->update('user', $dataUpdate);

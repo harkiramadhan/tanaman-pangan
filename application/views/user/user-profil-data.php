@@ -235,7 +235,7 @@
                            </div>
                            <div class="col-md-8">
                               <div class="input-group input-group-sm mb-0">
-                                 <input type="text" name="produksi_olahan" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?= $user->produksi_olahan ?>">
+                                 <input type="text" name="produk_dijual_bulanan" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?= $user->produk_dijual_bulanan ?>">
                                  <div class="input-group-append">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Kg</span>
                                  </div>
@@ -258,7 +258,7 @@
                            </div>
                            <div class="col-md-8">
                               <div class="input-group input-group-sm mb-0">
-                                 <input type="text" name="produksi_olahan" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?= $user->produksi_olahan ?>">
+                                 <input type="text" name="produk_dibutuhkan_bulanan" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?= $user->produk_dibutuhkan_bulanan ?>">
                                  <div class="input-group-append">
                                     <span class="input-group-text" id="inputGroup-sizing-sm">Kg</span>
                                  </div>

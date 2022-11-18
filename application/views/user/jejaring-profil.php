@@ -105,7 +105,7 @@
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Produk Dijual</th>
-                                 <td class="p-3"> Kg <sup class="text-danger">/bulan</sup></td>
+                                 <td class="p-3"><?= ($jejaring->produk_dijual_bulanan) ? $jejaring->produk_dijual_bulanan : ' - ' ?> Kg <sup class="text-danger">/bulan</sup></td>
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Membutuhkan Produk</th>
@@ -113,7 +113,7 @@
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Produk Dibutuhkan</th>
-                                 <td class="p-3"> Kg <sup class="text-danger">/bulan</sup></td>
+                                 <td class="p-3"><?= ($jejaring->produk_dibutuhkan_bulanan) ? $jejaring->produk_dibutuhkan_bulanan : ' - ' ?> Kg <sup class="text-danger">/bulan</sup></td>
                               </tr>
                            </tbody>
                         </table>
