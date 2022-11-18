@@ -14,10 +14,26 @@ class Jejaring extends CI_Controller {
 			'M_User',
 			'M_Role'
 		]);
+		
+		$this->load->library('image_lib');
 		if($this->session->userdata('admin') != TRUE){
 			redirect('admin/auth','refresh');
 		}
 	}
+
+	private function resizeImage($filename, $path){
+        $config['image_library'] = 'gd2';  
+        $config['source_image'] = $path.$filename;  
+        $config['create_thumb'] = FALSE;  
+        $config['maintain_ratio'] = TRUE;  
+        $config['quality'] = '75%';  
+        $config['new_image'] = $path.$filename;  
+        $config['width'] = 500;              
+  
+        $this->image_lib->initialize($config);
+        $this->image_lib->resize();  
+        $this->image_lib->clear();
+    }
 	
 	public function index(){
         $var = [
