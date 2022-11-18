@@ -16,11 +16,16 @@
 	</main>
   
 	<!--   Core JS Files   -->
+	<script>
+		var baseUrl = '<?= site_url() ?>'
+	</script>
+	<script src="<?= base_url('assets/vendor/jquery/jquery.min.js') ?>"></script>
 	<script src="<?= base_url('assets/js/admin/core/popper.min.js')?>"></script>
 	<script src="<?= base_url('assets/js/admin/core/bootstrap.min.js')?>"></script>
 	<script src="<?= base_url('assets/js/admin/plugins/perfect-scrollbar.min.js')?>"></script>
 	<script src="<?= base_url('assets/js/admin/plugins/smooth-scrollbar.min.js')?>"></script>
 	<script src="<?= base_url('assets/js/admin/plugins/chartjs.min.js')?>"></script>
+	<script src="<?= base_url('assets/vendor/select2/js/select2.min.js') ?>"></script>
 	
 	<!-- Main Quill library -->
 	<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
@@ -54,6 +59,14 @@
          };
          var editor = new Quill('#editor', options);
 	</script>
+	<?php 
+         if(@$ajax) {
+               foreach(@$ajax as $a){
+                  echo "<script src='".base_url('assets/js/admin/custom/' . $a).".js'></script>";
+               }
+         }
+               
+      ?>
 </body>
 
 </html>

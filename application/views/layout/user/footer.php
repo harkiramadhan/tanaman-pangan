@@ -75,25 +75,25 @@
       <script>
          var baseUrl = '<?= site_url() ?>'
       </script>
-      <script src="<?= base_url() ?>assets/vendor/jquery/jquery.min.js"></script>
-      <script src="<?= base_url() ?>assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+      <script src="<?= base_url('assets/vendor/jquery/jquery.min.js') ?>"></script>
+      <script src="<?= base_url('assets/vendor/bootstrap/js/bootstrap.bundle.min.js') ?>"></script>
       <!-- Contact form JavaScript -->
       <!-- Do not edit these files! In order to set the email address and subject line for the contact form go to the bin/contact_me.php file. -->
-      <script src="<?= base_url() ?>assets/js/jqBootstrapValidation.js"></script>
-      <script src="<?= base_url() ?>assets/js/contact_me.js"></script>
+      <script src="<?= base_url('assets/js/jqBootstrapValidation.js') ?>"></script>
+      <script src="<?= base_url('assets/js/contact_me.js') ?>"></script>
       <!-- Slick -->
-      <script src="<?= base_url() ?>assets/vendor/slick-master/slick/slick.js" type="text/javascript" charset="utf-8"></script>
+      <script src="<?= base_url('assets/vendor/slick-master/slick/slick.js') ?>" type="text/javascript" charset="utf-8"></script>
       <!-- lightgallery -->
-      <script src="<?= base_url() ?>assets/vendor/lightgallery-master/dist/js/lightgallery-all.min.js"></script>
+      <script src="<?= base_url('assets/vendor/lightgallery-master/dist/js/lightgallery-all.min.js') ?>"></script>
       <!-- select2 Js -->
-      <script src="<?= base_url() ?>assets/vendor/select2/js/select2.min.js"></script>
+      <script src="<?= base_url('assets/vendor/select2/js/select2.min.js') ?>"></script>
       
 
       <!-- Main Quill library -->
       <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
       
       <!-- Custom -->
-      <script src="<?= base_url() ?>assets/js/custom.js"></script>
+      <script src="<?= base_url('assets/js/custom.js') ?>"></script>
       <?php 
          if(@$ajax) {
                foreach(@$ajax as $a){

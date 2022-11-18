@@ -44,7 +44,11 @@
 											<td>
 												<div class="d-flex px-2 py-1">
 													<div>
-														<img src="https://demos.creative-tim.com/argon-dashboard/assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
+														<?php if($row->img): ?>
+															<img src="<?= base_url('uploads/profile/' . $row->img) ?>" class="avatar avatar-sm me-3" alt="user1">
+														<?php else: ?>
+															<img src="https://demos.creative-tim.com/argon-dashboard/assets/img/team-2.jpg" class="avatar avatar-sm me-3" alt="user1">
+														<?php endif; ?>
 													</div>
 													<div class="d-flex flex-column justify-content-center">
 														<h6 class="mb-0 text-sm"><?= $row->nama ?></h6>
@@ -57,9 +61,9 @@
 											</td>
 											<td class="align-top">
 												<div class="ms-auto text-center">
-													<a class="btn btn-link btn-sm py-0 text-info px-2 mb-0" href="#" target="__BLANK"><i class="far fa-eye" aria-hidden="true"></i></a>
+													<a class="btn btn-link btn-sm py-0 text-info px-2 mb-0" href="<?= site_url('jejaring/' . $row->id) ?>" target="__BLANK"><i class="far fa-eye" aria-hidden="true"></i></a>
 													<button type="button" class="btn btn-link btn-sm py-0 text-danger px-2 mb-0 btn-remove" data-id="5"><i class="far fa-trash-alt" aria-hidden="true"></i></button>
-													<a class="btn btn-link btn-sm py-0 text-dark px-2 mb-0" href="#"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+													<a class="btn btn-link btn-sm py-0 text-dark px-2 mb-0" href="<?= site_url('admin/jejaring/' . $row->id) ?>"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
 												</div>
 											</td>
 										</tr>

@@ -37,6 +37,8 @@
 	<!-- Quill Assets CDN -->
 	<!-- Theme included stylesheets -->
 	<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+	<link href="<?= base_url('assets/vendor/select2/css/select2-bootstrap.css') ?>" />
+	<link href="<?= base_url('assets/vendor/select2/css/select2.min.css') ?>" rel="stylesheet">
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
