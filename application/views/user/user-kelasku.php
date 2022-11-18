@@ -25,65 +25,35 @@
                            <a href="account.html" class="text-success">Tinjau Profil<i class="fa fa-arrow-right ml-2"></i></a>
                         </div>
                         <div class="p-3 border-bottom">
-                           <div class="table-responsive box-table mt-3">
-                              <table class="table table-bordered">
+                           <div class="table-responsive box-table mt-0">
+                              <table class="table table-bordered mb-0">
                                  <thead>
                                     <tr>
-                                       <th>ORDER SUMMARY</th>
-                                       <th>ORDER DATE</th>
-                                       <th>DUE ON</th>
-                                       <th>TOTAL</th>
-                                       <th>STATUS</th>
+                                       <th class="text-center" width="5%">#</th>
+                                       <th class="text-center" width="10%">KELAS</th>
+                                       <th class="text-center" width="10%">TANGGAL</th>
+                                       <th class="text-center" width="10%">STATUS</th>
+                                       <th class="text-center" width="10%">AKSI</th>
                                     </tr>
                                  </thead>
                                  <tbody>
                                     <tr>
+                                       <td class="text-center">1</td>
                                        <td>
                                           <a href="#" class="make-black">
-                                             <img class="order-proposal-image" src="images/senatopcustudio.jpg">
-                                             <p class="order-proposal-title">Logo Design</p>
+                                             <img class="order-proposal-image rounded mb-2 mr-3" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" style="width: 100px;">
+                                             <p class="h6 order-proposal-title">Pelatihan Tani Trainer - Social Media untuk bisnis pertanian</p>
                                           </a>
                                        </td>
-                                       <td>March 23, 2021</td>
-                                       <td>March 24, 2021</td>
-                                       <td>$15.00</td>
-                                       <td><button class="btn btn-sm btn-success">Progress</button></td>
-                                    </tr>
-                                    <tr>
                                        <td>
-                                          <a href="#">
-                                             <img class="order-proposal-image" src="images/designerheather.jpg">
-                                             <p class="order-proposal-title">Accounting book keeping</p>
-                                          </a>
+                                          12 September 2022
+                                          <br>
+                                          10.00 - 02.00 WIB
                                        </td>
-                                       <td>November 07, 2019</td>
-                                       <td>November 14, 2019</td>
-                                       <td>$1.00</td>
-                                       <td><button class="btn btn-sm btn-success">Cancelled</button></td>
-                                    </tr>
-                                    <tr>
-                                       <td>
-                                          <a href="#">
-                                             <img class="order-proposal-image" src="images/artsi3d.jpg">
-                                             <p class="order-proposal-title">Brand Style Guides</p>
-                                          </a>
+                                       <td class="text-center">
+                                          <span class="btn btn-sm btn-warning">BERJALAN</span>
                                        </td>
-                                       <td>November 05, 2019</td>
-                                       <td>November 06, 2019</td>
-                                       <td>$10.00</td>
-                                       <td><button class="btn btn-sm btn-success">Cancelled</button></td>
-                                    </tr>
-                                    <tr>
-                                       <td>
-                                          <a href="#">
-                                             <img class="order-proposal-image" src="images/senatopcustudio.jpg">
-                                             <p class="order-proposal-title">Design profile</p>
-                                          </a>
-                                       </td>
-                                       <td>November 09, 2019</td>
-                                       <td>November 10, 2019</td>
-                                       <td>$1,000.00</td>
-                                       <td><button class="btn btn-sm btn-success">Cancelled</button></td>
+                                       <td><button class="btn btn-sm btn-success w-100">PROGRESS</button></td>
                                     </tr>
                                  </tbody>
                               </table>

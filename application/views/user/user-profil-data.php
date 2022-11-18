@@ -229,8 +229,6 @@
                            </div>
                         </div>
 
-
-
                         <div class="row d-flex align-items-center form-group">
                            <div class="col-md-4">
                               <p class="text-muted font-weight-bold mb-0">Produk dijual  Bulanan<sup class="text-danger">*</sup></p>
