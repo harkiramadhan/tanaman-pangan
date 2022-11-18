@@ -45,20 +45,6 @@
 	<!-- Control Center for Soft Dashboard: parallax effects, scripts for the example pages etc -->
 	<script src="<?= base_url('assets/js/admin/argon-dashboard.min.js?v=2.0.4') ?>"></script>
 
-	<script>
-         var toolbarOptions = [['bold', 'italic', 'underline', 'strike'], ['link', 'image'], [{ 'align': [] }],  [{ 'list': 'ordered'}, { 'list': 'bullet' }]];
-
-         var options = {
-         debug: 'info',
-         modules: {
-            toolbar: toolbarOptions
-         },
-         placeholder: 'Tulis deskripsi...',
-         // readOnly: true,
-         theme: 'snow'
-         };
-         var editor = new Quill('#editor', options);
-	</script>
 	<?php 
          if(@$ajax) {
                foreach(@$ajax as $a){

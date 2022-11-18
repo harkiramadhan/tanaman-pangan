@@ -317,6 +317,14 @@
 								<input type="text" name="keterangan" class="form-control" placeholder="Tulis" value="<?= $jejaring->keterangan ?>" required="">
 							</div>
 
+							<input type="hidden" name="deskripsi" id="deskripsi" value="<?= $jejaring->deskripsi ?>">
+							<div class="form-group">
+								<label class="form-control-label" for="input-nama">Deskripsi Tanitrainer <span class="text-danger">*</span></label>
+								<div class="rounded" id="editor">
+
+								</div>
+							</div>
+
                         </div>
 						<div class="col-12 mt-3 d-grid">
 							<button type="submit" class="btn bg-gradient-dark mb-0">SIMPAN</button>

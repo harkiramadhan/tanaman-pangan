@@ -16,7 +16,7 @@
 								<option value="3">Gambar</option>
 							</select>
 							<a class="btn bg-gradient-dark mb-0 d-flex justify-content-center align-content-center align-items-center"
-								href="<?= site_url('admin/jejaring/detail') ?>">
+								href="<?= site_url('admin/publikasi/add') ?>">
 								<i class="fas fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;
 								<span class="d-lg-inline d-none">Publikasi</span>
 							</a>

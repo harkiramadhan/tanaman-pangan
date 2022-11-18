@@ -1,4 +1,20 @@
+var toolbarOptions = [['bold', 'italic', 'underline', 'strike'], ['link'],  [{ 'list': 'ordered'}, { 'list': 'bullet' }]];
+var options = {
+    debug: 'info',
+    modules: {
+        toolbar: toolbarOptions
+    },
+    placeholder: 'Tulis deskripsi...',
+    theme: 'snow'
+};
+var editor = new Quill('#editor', options);
+editor.pasteHTML($('#deskripsi').val());
+editor.on('text-change', function(delta, oldDelta, source) {
+    console.log(editor.container.firstChild.innerHTML)
+    $('#deskripsi').val(editor.container.firstChild.innerHTML)
+});
 $('select').select2()
+
 
 $('#select-prov').change(function(){
     var provid = $(this).find(':selected').val()

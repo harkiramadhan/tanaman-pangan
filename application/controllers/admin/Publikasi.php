@@ -19,6 +19,16 @@ class Publikasi extends CI_Controller {
 		$this->load->view('layout/admin/footer', $var);
 	}
 
+	public function add(){
+        $var = [
+			'title' => "Tambah Publikasi"
+		];
+
+		$this->load->view('layout/admin/header', $var);
+		$this->load->view('admin/publikasi-detail', $var);
+		$this->load->view('layout/admin/footer', $var);
+	}
+
 	public function detail(){
         $var = [
 			'title' => "Detail Publikasi"
