@@ -128,110 +128,119 @@
 
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Kategori Lembaga <span class="text-danger">*</span></label>
-								<input type="text" name="kategorilembaga" class="form-control" placeholder="Kategori Lembaga" required="">
+								<select class="form-control" name="kelembagaan_id" required>
+                                 <option value=""> Pilih Kelembagaan</option>
+                                 <?php foreach($lembaga->result() as $l){ ?>
+                                    <option <?= ($jejaring->kelembagaan_id == $l->id) ? 'selected' : '' ?> value="<?= $l->id ?>"> <?= $l->kelembagaan ?></option>
+                                 <?php } ?>
+                              </select>
 							</div>
 
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Lahan Dikelola <span class="text-danger">*</span></label>
-								<input type="text" name="lahandikelola" class="form-control" placeholder="Lahan Dikelola" required="">
+								<input type="text" name="lahan_yg_dikelola" class="form-control" placeholder="Lahan Dikelola" value="<?= $jejaring->lahan_yg_dikelola ?>" required="">
 							</div>
 
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Komoditas <span class="text-danger">*</span></label>
-								<input type="text" name="komoditas" class="form-control" placeholder="Komoditas" required="">
+								<select class="form-control js-example-basic-multiple" name="komoditas_id[]" multiple="multiple">
+                                 <?php 
+                                    foreach($komoditas->result() as $k){ 
+                                       $cek = $this->db->get_where('user_komoditas', [
+                                          'user_id' => $jejaring->id,
+                                          'komoditas_id' => $k->id
+                                       ]);
+                                 ?>
+                                    <option <?= ($cek->num_rows() > 0) ? 'selected' : '' ?> value="<?= $k->id ?>"> <?= $k->komoditas ?></option>
+                                 <?php } ?>
+                              </select>
 							</div>
 
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Rata2 Produksi Tahunan <span class="text-danger">*</span></label>
-								<input type="text" name="produksitahunan" class="form-control" placeholder="Rata2 Produksi Tahunan" required="">
+								<input type="text" name="rata_produksi_tahun" class="form-control" placeholder="Rata2 Produksi Tahunan" value="<?= $jejaring->rata_produksi_tahun ?>" required="">
 							</div>
 
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Kategori Olahan <span class="text-danger">*</span></label>
-								<input type="text" name="kategoriolahan" class="form-control" placeholder="Kategori Olahan" required="">
+								<select class="form-control js-example-basic-multiple" name="kategori_olahan_id[]" multiple="multiple">
+                                 <?php 
+                                    foreach($kategori_olahan->result() as $ko){ 
+                                       $cekOlahan = $this->db->get_where('user_kategori_olahan', [
+                                          'user_id' => $jejaring->id,
+                                          'kategori_olahan_id' => $ko->id
+                                       ]);
+                                 ?>
+                                    <option <?= ($cekOlahan->num_rows() > 0) ? 'selected' : '' ?> value="<?= $ko->id ?>"> <?= ucfirst($ko->kategori_olahan) ?></option>
+                                 <?php } ?>
+                              </select>
 							</div>
 
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Jenis Olahan <span class="text-danger">*</span></label>
-								<input type="text" name="jenisolahan" class="form-control" placeholder="Jenis Olahan" required="">
+								<input type="text" name="jenis_olahan" class="form-control" placeholder="Jenis Olahan" value="<?= $jejaring->jenis_olahan ?>" required="">
 							</div>
 
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Produksi Olahan Bulanan <span class="text-danger">*</span></label>
-								<input type="text" name="produksiolahanbulanan" class="form-control" placeholder="Produksi Olahan Bulanan" required="">
+								<input type="text" name="produksi_olahan" class="form-control" placeholder="Produksi Olahan Bulanan" value="<?= $jejaring->produksi_olahan ?>" required="">
 							</div>
 
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Jenis Pupuk <span class="text-danger">*</span></label>
-								<input type="text" name="jenispupuk" class="form-control" placeholder="Jenis Pupuk" required="">
+								<input type="text" name="jenis_pupuk" class="form-control" placeholder="Jenis Pupuk" value="<?= $jejaring->jenis_pupuk ?>" required="">
 							</div>
 
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Jenis Pestisida <span class="text-danger">*</span></label>
-								<input type="text" name="jenispestisida" class="form-control" placeholder="Jenis Pestisida" required="">
+								<input type="text" name="jenis_pestisida" class="form-control" placeholder="Jenis Pestisida" value="<?= $jejaring->jenis_pestisida ?>" required="">
 							</div>
 
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Jenis Alsintan <span class="text-danger">*</span></label>
-								<input type="text" name="jenisalsintan" class="form-control" placeholder="Jenis Alsintan" required="">
+								<input type="text" name="jenis_aisintan" class="form-control" placeholder="Jenis Alsintan" value="<?= $jejaring->jenis_aisintan ?>" required="">
 							</div>
 
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Menjual Produk <span class="text-danger">*</span></label>
-								<input type="text" name="menjualproduk" class="form-control" placeholder="Menjual Produk" required="">
+								<input type="text" name="menjual_produk" class="form-control" placeholder="Menjual Produk" value="<?= $jejaring->menjual_produk ?>" required="">
 							</div>
 
 							<div class="form-group">
-								<label class="form-control-label" for="input-nama">Menjual Produk <span class="text-danger">*</span></label>
-								<input type="text" name="menjualproduk" class="form-control" placeholder="Menjual Produk" required="">
+								<label class="form-control-label" for="input-nama">Produk dijual  Bulanan <span class="text-danger">*) Kg</span></label>
+								<input type="text" name="produk_dijual_bulanan" class="form-control" placeholder="Produk dijual  Bulanan" value="<?= $jejaring->produk_dijual_bulanan ?>" required="">
 							</div>
 
 							<div class="form-group">
                                 <label class="form-control-label" for="input-nama">Penjualan <span class="text-danger">*</span></label>
-                                <div class="form-check mb-2 ms-1">
-                                   <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                   <label class="form-check-label" for="inlineCheckbox1">Dalam Kabupaten/Kota</label>
-                                </div>
-                                <div class="form-check mb-2 ms-1">
-                                   <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                   <label class="form-check-label" for="inlineCheckbox1">Antar Kabupaten/Kota</label>
-                                </div>
-                                <div class="form-check mb-2 ms-1">
-                                   <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                   <label class="form-check-label" for="inlineCheckbox1">Antar Provinsi</label>
-                                </div>
-                                <div class="form-check mb-2 ms-1">
-                                   <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                   <label class="form-check-label" for="inlineCheckbox1">Expor</label>
-                                </div>                                
+                                <?php 
+									foreach($penjualan->result() as $p){ 
+										$cekPenjualan = $this->db->get_where('user_penjualan', [
+										'user_id' => $jejaring->id,
+										'penjualan_id' => $p->id
+										]);
+								?>
+									<div class="form-check mb-2 ms-1">
+										<input class="form-check-input" <?= ($cekPenjualan->num_rows() > 0) ? 'checked' : '' ?> name="penjualan_id[]" type="checkbox" id="inlineCheckbox<?= $p->id ?>" value="<?= $p->id ?>">
+										<label class="form-check-label" for="inlineCheckbox<?= $p->id ?>"> <?= ucfirst($p->jenis_penjualan) ?></label>
+									</div>
+								<?php } ?>                             
 							</div>
 
                             <div class="form-group">
                                 <label class="form-control-label" for="input-nama">Tertarik <span class="text-danger">*</span></label>
+								<?php 
+                                 foreach($ketertarikan->result() as $kt){ 
+                                    $cekKetertarikan = $this->db->get_where('user_tertarik', [
+                                       'user_id' => $jejaring->id,
+                                       'ketertarikan_id' => $kt->id
+                                    ]);
+                              	?>
                                 <div class="form-check mb-2 ms-1">
-                                   <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                   <label class="form-check-label" for="inlineCheckbox1">Jual Produk Segar</label>
-                                </div>
-                                <div class="form-check mb-2 ms-1">
-                                   <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                   <label class="form-check-label" for="inlineCheckbox1">Jual Produk Olahan</label>
-                                </div>
-                                <div class="form-check mb-2 ms-1">
-                                   <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                   <label class="form-check-label" for="inlineCheckbox1">Jual Saprodi</label>
-                                </div>
-                                <div class="form-check mb-2 ms-1">
-                                   <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                   <label class="form-check-label" for="inlineCheckbox1">Beli Produk Segar</label>
-                                </div>
-                                <div class="form-check mb-2 ms-1">
-                                   <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                   <label class="form-check-label" for="inlineCheckbox1">Beli Produk Olahan</label>
-                                </div>
-                                <div class="form-check mb-2 ms-1">
-                                   <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                   <label class="form-check-label" for="inlineCheckbox1">Beli Saprodi</label>
-                                </div>
+									<input class="form-check-input" <?= ($cekKetertarikan->num_rows() > 0) ? 'checked' : '' ?> name="ketertarikan_id[]" type="checkbox" id="inlineCheckbox<?= $kt->id ?>" value="<?= $kt->id ?>">
+									<label class="form-check-label" for="inlineCheckbox<?= $kt->id ?>"> <?= ucfirst($kt->jenis_ketertarikan) ?></label>
+								</div>
+								<?php } ?>
                             </div>
 
                         </div>

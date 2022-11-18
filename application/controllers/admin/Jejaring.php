@@ -6,7 +6,11 @@ class Jejaring extends CI_Controller {
 
 		$this->load->model([
 			'M_Jejaring',
-			'M_Wilayah'
+			'M_Wilayah',
+			'M_Komoditas',
+			'M_Penjualan',
+			'M_Kategori_olahan',
+			'M_Ketertarikan'
 		]);
 		if($this->session->userdata('admin') != TRUE){
 			redirect('admin/auth','refresh');
@@ -29,6 +33,11 @@ class Jejaring extends CI_Controller {
 			'title' => 'Detail Jejaring',
 			'jejaring' => $this->M_Jejaring->getByUserid($id),
 			'provinsi' => $this->M_Wilayah->getProvinsi(),
+			'lembaga' => $this->db->get('kelembagaan'),
+			'komoditas' => $this->M_Komoditas->getAll(),
+			'penjualan' => $this->M_Penjualan->getAll(),
+			'kategori_olahan' => $this->M_Kategori_olahan->getAll(),
+			'ketertarikan' => $this->M_Ketertarikan->getAll(),
 			'ajax' => [
 				'profil'
 			]
