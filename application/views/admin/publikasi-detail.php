@@ -9,53 +9,72 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<form method="post" action="#" enctype="multipart/form-data">
+				<form method="post" action="<?= site_url('admin/publikasi/update/' . $publikasi->id) ?>" enctype="multipart/form-data">
 					<div class="row">
-                        <div class="col-lg-12">
-                            <div class="mb-3 mt-2 text-center">										
-                                <p>Gambar Cover</p>
-                                <img src="http://localhost/tax-session/uploads/pelatihan/b6bf8464f52f204a2220dd05ef6c341f.jpg" class="img-fluid img-center shadow rounded" style="max-height: 250px" id="image-preview">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-control-label" for="input-gambar">Upload Cover
-                                <span class="text-danger">*</span></label>
-                                <div class="mb-3">
-                                    <input class="form-control" type="file" name="file" id="image-source" onchange="previewImage()">
-                                </div>
-                            </div>
+            <div class="col-lg-12">
+                <div class="mb-3 mt-2 text-center">										
+                    <p>Gambar Cover</p>
+                    <?php if($publikasi->cover_img): ?>
+                      <img src="<?= base_url('uploads/publikasi/' . $publikasi->cover_img) ?>" class="img-fluid img-center shadow rounded" style="max-height: 250px" id="image-preview">
+                    <?php else: ?>
+                      <img src="" class="img-fluid img-center shadow rounded d-none" style="max-height: 250px" id="image-preview">
+                    <?php endif; ?>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" for="input-gambar">Upload Cover
+                    <span class="text-danger">*</span></label>
+                    <div class="mb-3">
+                        <input class="form-control" type="file" name="cover_img" id="image-source" onchange="previewImage()">
+                    </div>
+                </div>
 
-							<div class="form-group">
-								<label class="form-control-label" for="input-nama">Judul Publikasi <span class="text-danger">*</span></label>
-								<input type="text" name="judulpublikasi" class="form-control" placeholder="Judul Publikasi" required="">
-							</div>
+                <div class="form-group">
+                  <label class="form-control-label" for="input-nama">Judul Publikasi <span class="text-danger">*</span></label>
+                  <input type="text" name="judul" class="form-control" placeholder="Judul Publikasi" value="<?= $publikasi->judul ?>" required="">
+                </div>
 
-							<div class="form-group">
-								<label class="form-control-label" for="input-nama">Tanggal Publikasi <span class="text-danger">*</span></label>
-								<input type="date" name="tanggalpublikasi" class="form-control" placeholder="Tanggal Publikasi" required="">
-							</div>
+                <div class="form-group">
+                  <label class="form-control-label" for="input-nama">Tanggal Publikasi <span class="text-danger">*</span></label>
+                  <input type="date" name="tanggal" class="form-control" placeholder="Tanggal Publikasi" value="<?= $publikasi->tanggal ?>" required="">
+                </div>
 
-							<div class="form-group">
-								<label class="form-control-label" for="input-nama">Kategori Publikasi <span class="text-danger">*</span></label>
-								<input type="text" name="kategoripublikasi" class="form-control" placeholder="Kategori Publikasi" required="">
-							</div>
+							  <div class="form-group">
+								  <label class="form-control-label" for="input-nama">Kategori Publikasi <span class="text-danger">*</span></label>
+								  <select name="kategori_id"class="form-control" required>
+                      <option value=""> Kategori Publikasi</option>
+                      <?php foreach($kategori->result() as $k){ ?>
+                          <option <?= ($publikasi->kategori_id == $k->id) ? 'selected' : '' ?> value="<?= $k->id ?>">  <?= $k->kategori ?></option>
+                      <?php } ?>
+                  </select>
+							  </div>
 
-							<div class="form-group">
-								<label class="form-control-label" for="input-nama">Link Sumber <span class="text-danger">*</span></label>
-                                <p class="text-sm bg-warning text-white p-1 rounded px-2 font-italic">Jika link diisi, publikasi akan diarahkan langsung sesuai dengan link yang dicantumkan</p>								
-                                <input type="text" name="linksumber" class="form-control" placeholder="Tulis link sumber" required="">
-							</div>
+                <div class="form-group">
+                  <label class="form-control-label" for="input-nama">Link Sumber <span class="text-danger">*</span></label>
+                  <p class="text-sm bg-warning text-white p-1 rounded px-2 font-italic">Jika link diisi, publikasi akan diarahkan langsung sesuai dengan link yang dicantumkan</p>								
+                  <input type="text" name="link" class="form-control" placeholder="Tulis link sumber" value="<?= $publikasi->link ?>" >
+                </div>
 
-                            <div>
-                            <label class="form-control-label" for="input-nama">Deskripsi Publikasi <span class="text-danger">*</span></label>
-                            <div class="rounded" id="editor">
+                <div class="form-group">
+                    <label class="form-control-label" for="input-nama">Deskripsi Publikasi <span class="text-danger">*</span></label>
+                    <input type="hidden" name="deskripsi" id="deskripsi" value="<?= $publikasi->deskripsi ?>">
+                    <div class="rounded" id="editor">
 
-                            </div>
-                            </div>
+                    </div>
+                </div>
 
-                        </div>
+                <div class="form-group">
+                  <label class="form-control-label" for="input-nama">Status <span class="text-danger">*</span></label>
+                  <select name="status" id="" class="form-control" required>
+                      <option value=""> Status Publikasi</option>
+                      <option <?= ($publikasi->status == 1) ? 'selected' : '' ?> value="1"> Aktif</option>
+                      <option <?= ($publikasi->status == 2) ? 'selected' : '' ?> value="2"> Draft</option>
+                  </select>
+                </div>
+
+            </div>
 						<div class="col-12 mt-3 d-grid">
 							<button type="submit" class="btn bg-gradient-dark mb-0">SIMPAN</button>
-							<button type="button" class="btn btn-link mb-0 text-secondary mt-2">KEMBALI</button>
+							<a href="<?= site_url('admin/publikasi') ?>" type="button" class="btn btn-link mb-0 text-secondary mt-2">KEMBALI</a>
 						</div>
 					</div>
 				</form>

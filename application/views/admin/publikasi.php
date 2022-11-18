@@ -28,50 +28,45 @@
 						<table class="table align-items-center mb-0 display" id="example" style="width:100%">
 							<thead class="bg-light opacity-5">
 								<tr>
-									<th class="text-uppercase text-dark text-xxs text-center font-weight-bolder opacity-10"
-										width="1px">#
-									</th>
-									<th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-10">
-										Publikasi</th>
-									<th
-										class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-10">
-										Status</th>
-									<th
-										class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-10">
-										Aksi</th>
+									<th class="text-uppercase text-dark text-xxs text-center font-weight-bolder opacity-10"width="1px">#</th>
+									<th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Publikasi</th>
+									<th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Status</th>
+									<th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Aksi</th>
 								</tr>
 							</thead>
 							<tbody>
 
 								<!-- Jika ada data pelatihan -->
+								<?php foreach($publikasi->result() as $row): ?>
 								<tr>
 									<td class="align-top text-center text-sm">1</td>
 									<td>
 										<div class="d-flex px-2 py-1">
 											<div>
-												<img src="https://demos.creative-tim.com/argon-dashboard/assets/img/team-2.jpg"
-													class="avatar avatar-sm me-3" alt="user1">
+												<?php if($row->cover_img): ?>
+													<img src="<?= base_url('uploads/publikasi/' . $row->cover_img) ?>"class="avatar avatar-sm me-3" alt="user1">
+												<?php else: ?>
+													<img src="https://demos.creative-tim.com/argon-dashboard/assets/img/team-2.jpg"class="avatar avatar-sm me-3" alt="user1">
+												<?php endif; ?>
 											</div>
 											<div class="d-flex flex-column justify-content-center">
-												<h6 class="mb-0 text-sm">Pembukaan Program Tani Trainer</h6>
-												<p class="small text-xs text-secondary mb-0">BTS Propaktani</p>
+												<h6 class="mb-0 text-sm"><?= $row->judul ?></h6>
+												<p class="small text-xs text-secondary mb-0"><?= $row->kategori ?></p>
 											</div>
 										</div>
 									</td>
 									<td class="align-top text-center text-sm">
-										<span class="badge badge-sm bg-gradient-success">Aktif</span>
+										<span class="badge badge-sm bg-gradient-success"><?= ($row->status == 1) ? 'Aktif' : 'Draft' ?></span>
 									</td>
 									<td class="align-top">
 										<div class="ms-auto text-center">
-											<a class="btn btn-link btn-sm py-0 text-info px-2 mb-0" href="#" target="__BLANK"><i class="far fa-eye" aria-hidden="true"></i></a>
-											<button type="button"
-												class="btn btn-link btn-sm py-0 text-danger px-2 mb-0 btn-remove"
-												data-id="5"><i class="far fa-trash-alt" aria-hidden="true"></i></button>
-											<a class="btn btn-link btn-sm py-0 text-dark px-2 mb-0" href="#"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+											<a class="btn btn-link btn-sm py-0 text-info px-2 mb-0" href="<?= site_url('publikasi/' . $row->flag) ?>" target="__BLANK"><i class="far fa-eye" aria-hidden="true"></i></a>
+											<button type="button" class="btn btn-link btn-sm py-0 text-danger px-2 mb-0 btn-remove"data-id="5"><i class="far fa-trash-alt" aria-hidden="true"></i></button>
+											<a class="btn btn-link btn-sm py-0 text-dark px-2 mb-0" href="<?= site_url('admin/publikasi/' . $row->id) ?>"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
 										</div>
 									</td>
 								</tr>
-
+								<?php endforeach; ?>
 							</tbody>
 						</table>
 					</div>
