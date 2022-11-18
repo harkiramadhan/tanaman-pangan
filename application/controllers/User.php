@@ -40,6 +40,7 @@ class User extends CI_Controller {
 			'title' => 'Dashboard User',
 			'user' => $this->M_User->getById($this->session->userdata('userid')),
 			'provinsi' => $this->M_Wilayah->getProvinsi(),
+			'role' => $this->M_Role->getAll(),
 			'ajax' => [
 				'profil'
 			]
@@ -125,6 +126,7 @@ class User extends CI_Controller {
 
 		$dataUpdate = [
 			'img' => $filename,
+			'role_id' => $this->input->post('role_id', TRUE),
 			'nama' => $this->input->post('nama', TRUE),
 			'hp' => $this->input->post('hp', TRUE),
 			'alamat' => $this->input->post('alamat', TRUE),
@@ -134,7 +136,11 @@ class User extends CI_Controller {
 			'desa_kel' => $this->input->post('desa_kel', TRUE),
 			'cover_img' => $coverName,
 			'maps' => $this->input->post('maps', TRUE),
-			'deskripsi' => $this->input->post('deskripsi', TRUE)
+			'deskripsi' => $this->input->post('deskripsi', TRUE),
+			'instagram' => $this->input->post('instagram', TRUE),
+			'facebook' => $this->input->post('facebook', TRUE),
+			'tiktok' => $this->input->post('tiktok', TRUE),
+			'youtube' => $this->input->post('youtube', TRUE)
 		];
 		$this->db->where('id', $this->session->userdata('userid'))->update('user', $dataUpdate);
 		if($this->db->affected_rows() > 0){

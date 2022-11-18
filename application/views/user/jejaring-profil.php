@@ -181,19 +181,19 @@
                         </div>
                         <div class="d-flex align-items-top mb-2">
                            <p class="mb-0 text-muted">Instagram</p>
-                           <p class="font-weight-bold text-dark mb-0 mt-0 ml-auto">@ptwijayakusuma</p>
+                           <p class="font-weight-bold text-dark mb-0 mt-0 ml-auto"><?= ($jejaring->instagram) ? '@' . $jejaring->instagram : ' - ' ?></p>
                         </div>
                         <div class="d-flex align-items-top mb-2">
                            <p class="mb-0 text-muted">Facebook</p>
-                           <p class="font-weight-bold text-dark mb-0 mt-0 ml-auto">@ptwijayakusuma</p>
+                           <p class="font-weight-bold text-dark mb-0 mt-0 ml-auto"><?= ($jejaring->facebook) ? '@' . $jejaring->facebook : ' - ' ?></p>
                         </div>
                         <div class="d-flex align-items-top mb-2">
                            <p class="mb-0 text-muted">Youtube</p>
-                           <p class="font-weight-bold text-dark mb-0 mt-0 ml-auto">-</p>
+                           <p class="font-weight-bold text-dark mb-0 mt-0 ml-auto"><?= ($jejaring->youtube) ? '@' . $jejaring->youtube : ' - ' ?></p>
                         </div>
                         <div class="d-flex align-items-top mb-2">
                            <p class="mb-0 text-muted">Tiktok</p>
-                           <p class="font-weight-bold text-dark mb-0 mt-0 ml-auto">@ptwijayakusuma</p>
+                           <p class="font-weight-bold text-dark mb-0 mt-0 ml-auto"><?= ($jejaring->tiktok) ? '@' . $jejaring->tiktok : ' - ' ?></p>
                         </div>
                      </div>
                   </div>

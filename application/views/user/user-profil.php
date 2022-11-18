@@ -24,7 +24,7 @@
                <div>
                   <div class="row p-3 border-bottom">
                      <div class="col">
-                        <span class="badge badge-warning mb-0 py-2 px-2 text-uppercase">Petani/Produsen Pangan</span>
+                        <span class="badge badge-warning mb-0 py-2 px-2 text-uppercase"><?= $user->role ?></span>
                      </div>
                      <div class="col text-right">
                         <a href="<?= site_url('jejaring/' . $user->id) ?>" class="text-success" target="__BLANK">Tinjau Profil<i class="fa fa-arrow-right ml-2"></i></a>
@@ -86,7 +86,12 @@
                               <p class="text-muted font-weight-bold mb-0">Peran</p>
                            </div>
                            <div class="col-md-8">
-                              <input type="text" name="nama" class="form-control font-weight-bold text-muted" value="<?= $user->nama ?>" placeholder="Isi Nama Lengkap" required>
+                              <select class="form-control" name="role_id" required>
+                                 <option value=""> Pilih Peran</option>
+                                 <?php foreach($role->result() as $r): ?>
+                                    <option <?= ($user->role_id == $r->id) ? 'selected' : '' ?> value="<?= $r->id ?>"> <?= $r->role ?></option>
+                                 <?php endforeach; ?>
+                              </select>
                            </div>
                         </div>
 
@@ -203,7 +208,7 @@
                               <p class="text-muted font-weight-bold mb-0">Facebook</p>
                            </div>
                            <div class="col-md-8">
-                              <input type="text" name="facebook" class="form-control font-weight-bold text-muted" value="" placeholder="Link profil facebookmu">
+                              <input type="text" name="facebook" class="form-control font-weight-bold text-muted" value="<?= $user->facebook ?>" placeholder="Link profil facebookmu">
                            </div>
                         </div>
 
@@ -212,7 +217,7 @@
                               <p class="text-muted font-weight-bold mb-0">Instagram</p>
                            </div>
                            <div class="col-md-8">
-                              <input type="text" name="Instagram" class="form-control font-weight-bold text-muted" value="" placeholder="Link profil Instagrammu">
+                              <input type="text" name="instagram" class="form-control font-weight-bold text-muted" value="<?= $user->instagram ?>" placeholder="Link profil Instagrammu">
                            </div>
                         </div>
 
@@ -221,7 +226,7 @@
                               <p class="text-muted font-weight-bold mb-0">Tiktok</p>
                            </div>
                            <div class="col-md-8">
-                              <input type="text" name="Tiktok" class="form-control font-weight-bold text-muted" value="" placeholder="Link profil Tiktokmu">
+                              <input type="text" name="tiktok" class="form-control font-weight-bold text-muted" value="<?= $user->tiktok ?>" placeholder="Link profil Tiktokmu">
                            </div>
                         </div>
 
@@ -230,7 +235,7 @@
                               <p class="text-muted font-weight-bold mb-0">Youtube</p>
                            </div>
                            <div class="col-md-8">
-                              <input type="text" name="Youtube" class="form-control font-weight-bold text-muted" value="" placeholder="Link profil Youtubemu">
+                              <input type="text" name="youtube" class="form-control font-weight-bold text-muted" value="<?= $user->youtube ?>" placeholder="Link profil Youtubemu">
                            </div>
                         </div>
 

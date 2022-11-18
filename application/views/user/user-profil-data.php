@@ -24,7 +24,7 @@
                <div>
                   <div class="row p-3 border-bottom">
                      <div class="col">
-                        <span class="badge badge-warning mb-0 py-2 px-2 text-uppercase">Petani/Produsen Pangan</span>
+                        <span class="badge badge-warning mb-0 py-2 px-2 text-uppercase"><?= $user->role ?></span>
                      </div>
                      <div class="col text-right">
                         <a href="<?= site_url('jejaring/' . $user->id) ?>" class="text-success" target="__BLANK">Tinjau Profil<i class="fa fa-arrow-right ml-2"></i></a>
