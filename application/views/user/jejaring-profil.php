@@ -85,19 +85,19 @@
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Lahan</th>
-                                 <td class="p-3"><?= $jejaring->lahan_yg_dikelola ?> Hektar</td>
+                                 <td class="p-3"><?= ($jejaring->lahan_yg_dikelola) ? $jejaring->lahan_yg_dikelola : ' - ' ?> Hektar</td>
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Produksi</th>
-                                 <td class="p-3"><?= $jejaring->rata_produksi_tahun ?> Kg <sup class="text-danger">/tahun</sup></td>
+                                 <td class="p-3"><?= ($jejaring->rata_produksi_tahun) ? $jejaring->rata_produksi_tahun : ' - ' ?> Kg <sup class="text-danger">/tahun</sup></td>
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Kebutuhan</th>
-                                 <td class="p-3"><?= $jejaring->rata_produksi_bulan ?> Kg <sup class="text-danger">/bulan</sup></td>
+                                 <td class="p-3"><?= ($jejaring->rata_produksi_bulan) ? $jejaring->rata_produksi_bulan : ' - ' ?> Kg <sup class="text-danger">/bulan</sup></td>
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Menjual Produk</th>
-                                 <td class="p-3"> Kentang</td>
+                                 <td class="p-3"> <?= ($jejaring->menjual_produk) ? $jejaring->menjual_produk : ' - ' ?></td>
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Produk Dijual</th>
@@ -105,11 +105,11 @@
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Membutuhkan Produk</th>
-                                 <td class="p-3"> Kentang</td>
+                                 <td class="p-3"> <?= ($jejaring->membutuhkan_produk) ? $jejaring->membutuhkan_produk : ' - ' ?></td>
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Produk Dibutuhkan</th>
-                                 <td class="p-3">10 Kg <sup class="text-danger">/bulan</sup></td>
+                                 <td class="p-3"> Kg <sup class="text-danger">/bulan</sup></td>
                               </tr>
                            </tbody>
                         </table>
