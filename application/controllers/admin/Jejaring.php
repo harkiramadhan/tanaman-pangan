@@ -10,7 +10,9 @@ class Jejaring extends CI_Controller {
 			'M_Komoditas',
 			'M_Penjualan',
 			'M_Kategori_olahan',
-			'M_Ketertarikan'
+			'M_Ketertarikan',
+			'M_User',
+			'M_Role'
 		]);
 		if($this->session->userdata('admin') != TRUE){
 			redirect('admin/auth','refresh');
@@ -38,6 +40,7 @@ class Jejaring extends CI_Controller {
 			'penjualan' => $this->M_Penjualan->getAll(),
 			'kategori_olahan' => $this->M_Kategori_olahan->getAll(),
 			'ketertarikan' => $this->M_Ketertarikan->getAll(),
+			'role' => $this->M_Role->getAll(),
 			'ajax' => [
 				'profil'
 			]
@@ -48,6 +51,134 @@ class Jejaring extends CI_Controller {
 	}
 
 	/* Action Here */
+	function save($userid){
+		$user = $this->M_User->getById($userid);
+		$config['upload_path'] = './uploads/profile';  
+		$config['allowed_types'] = 'jpg|jpeg|png'; 
+		$config['encrypt_name'] = TRUE;
+		$this->load->library('upload', $config);
+        if($this->upload->do_upload('file')){
+			if($user->img != NULL){
+				@unlink('./uploads/profile/' . @$user->img);
+			}
+			
+            $data = $this->upload->data();
+            $filename = $data['file_name'];
+			$this->resizeImage($filename, './uploads/profile/'); 
+        }else{
+			$filename = $user->img;
+		}
+
+		$config['upload_path'] = './uploads/cover';  
+		$config['allowed_types'] = 'jpg|jpeg|png'; 
+		$config['encrypt_name'] = TRUE;
+		$this->load->library('upload', $config, 'cover');
+		if($this->cover->do_upload('cover_img')){
+			if($user->cover_img != NULL){
+				@unlink('./uploads/cover/' . @$user->cover_img);
+			}
+
+			$coverData = $this->cover->data();
+			$coverName = $coverData['file_name'];
+			$this->resizeImage($coverName, './uploads/cover/');
+		}else{
+			$coverName = $user->cover_img;
+		}
+
+		$dataUpdate = [
+			'img' => $filename,
+			'role_id' => $this->input->post('role_id', TRUE),
+			'nama' => $this->input->post('nama', TRUE),
+			'hp' => $this->input->post('hp', TRUE),
+			'alamat' => $this->input->post('alamat', TRUE),
+			'prov' => $this->input->post('prov', TRUE),
+			'kab_kota' => $this->input->post('kab_kota', TRUE),
+			'kec' => $this->input->post('kec', TRUE),
+			'desa_kel' => $this->input->post('desa_kel', TRUE),
+			'cover_img' => $coverName,
+			'maps' => $this->input->post('maps', TRUE),
+			'deskripsi' => $this->input->post('deskripsi', TRUE),
+			'instagram' => $this->input->post('instagram', TRUE),
+			'facebook' => $this->input->post('facebook', TRUE),
+			'tiktok' => $this->input->post('tiktok', TRUE),
+			'youtube' => $this->input->post('youtube', TRUE),
+			'nama_kelembagaan' => $this->input->post('nama_kelembagaan', TRUE),
+			'kelembagaan_id' => $this->input->post('kelembagaan_id', TRUE),
+			'lahan_yg_dikelola' => $this->input->post('lahan_yg_dikelola', TRUE),
+			'rata_produksi_tahun' => $this->input->post('rata_produksi_tahun', TRUE),
+			'rata_produksi_bulan' => $this->input->post('rata_produksi_bulan', TRUE),
+			'jenis_olahan' => $this->input->post('jenis_olahan', TRUE),
+			'produksi_olahan' => $this->input->post('produksi_olahan', TRUE),
+			'jenis_pupuk' => $this->input->post('jenis_pupuk', TRUE),
+			'jenis_pestisida' => $this->input->post('jenis_pestisida', TRUE),
+			'jenis_aisintan' => $this->input->post('jenis_aisintan', TRUE),
+			'menjual_produk' => $this->input->post('menjual_produk', TRUE),
+			'membutuhkan_produk' => $this->input->post('membutuhkan_produk', TRUE),
+			'produk_dijual_bulanan' => $this->input->post('produk_dijual_bulanan', TRUE),
+			'produk_dibutuhkan_bulanan' => $this->input->post('produk_dibutuhkan_bulanan', TRUE),
+			'keterangan' => $this->input->post('keterangan', TRUE)
+		];
+		$this->db->where('id', $userid)->update('user', $dataUpdate);
+		if($this->db->affected_rows() > 0){
+			$this->session->set_userdata('success', "Data Berhasil Di Simpan");
+		}else{
+			$this->session->set_userdata('error', "Data Gagal Di Simpan");
+		}
+
+		$penjualan = $this->input->post('penjualan_id[]', TRUE);
+		if(count($penjualan) > 0){
+			$this->db->where('user_id', $userid)->delete('user_penjualan');
+			foreach($penjualan as $p){
+				$this->db->insert('user_penjualan', [
+					'user_id' => $userid,
+					'penjualan_id' => $p
+				]);
+			}
+		}else{
+			$this->db->where('user_id', $userid)->delete('user_penjualan');
+		}
+
+		$ketertarikan = $this->input->post('ketertarikan_id[]', TRUE);
+		if(count($ketertarikan) > 0){
+			$this->db->where('user_id', $userid)->delete('user_tertarik');
+			foreach($ketertarikan as $kt){
+				$this->db->insert('user_tertarik', [
+					'user_id' => $userid,
+					'ketertarikan_id' => $kt
+				]);
+			}
+		}else{
+			$this->db->where('user_id', $userid)->delete('user_tertarik');
+		}
+
+		$kategori_olahan = $this->input->post('kategori_olahan_id[]', TRUE);
+		if(count($kategori_olahan) > 0){
+			$this->db->where('user_id', $userid)->delete('user_kategori_olahan');
+			foreach($kategori_olahan as $ko){
+				$this->db->insert('user_kategori_olahan', [
+					'user_id' => $userid,
+					'kategori_olahan_id' => $ko
+				]);
+			}
+		}else{
+			$this->db->where('user_id', $userid)->delete('user_kategori_olahan');
+		}
+
+		$komoditas = $this->input->post('komoditas_id[]', TRUE);
+		if(count($komoditas) > 0){
+			$this->db->where('user_id', $userid)->delete('user_komoditas');
+			foreach($komoditas as $k){
+				$this->db->insert('user_komoditas', [
+					'user_id' => $userid,
+					'komoditas_id' => $k
+				]);
+			}
+		}else{
+			$this->db->where('user_id', $userid)->delete('user_komoditas');
+		}
+		
+		redirect($_SERVER['HTTP_REFERER']);
+	}
 }
 
 	

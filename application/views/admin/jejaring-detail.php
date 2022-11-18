@@ -12,7 +12,7 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<form method="post" action="#" enctype="multipart/form-data">
+				<form method="post" action="<?= site_url('admin/jejaring/save/' . $jejaring->id) ?>" enctype="multipart/form-data">
 					<div class="row">
                         <div class="col-lg-12">
 							<div class="row">
@@ -54,6 +54,19 @@
                                 <span class="text-danger">*</span></label>
                                 <div class="mb-3">
                                     <input class="form-control" type="file" name="cover_img" id="image-source" onchange="previewImage2()">
+                                </div>
+                            </div>
+
+							<div class="form-group">
+                                <label class="form-control-label" for="input-gambar">Peran
+                                <span class="text-danger">*</span></label>
+                                <div class="mb-3">
+									<select class="form-control" name="role_id" required>
+									<option value=""> Pilih Peran</option>
+									<?php foreach($role->result() as $r): ?>
+										<option <?= ($jejaring->role_id == $r->id) ? 'selected' : '' ?> value="<?= $r->id ?>"> <?= $r->role ?></option>
+									<?php endforeach; ?>
+								</select>
                                 </div>
                             </div>
 
