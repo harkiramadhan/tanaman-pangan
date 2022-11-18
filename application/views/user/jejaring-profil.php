@@ -74,13 +74,17 @@
                               <tr class="border-bottom">
                                  <th class="p-3">Komoditas</th>
                                  <td class="p-3"><?php 
-                                    $copy = $komoditas->result();
-                                    foreach($komoditas->result() as $k){
-                                       echo $k->komoditas;
-                                       if(next($copy)){
-                                          echo ", ";
+                                    if($komoditas->num_rows() > 0):
+                                       $copy = $komoditas->result();
+                                       foreach($komoditas->result() as $k){
+                                          echo $k->komoditas;
+                                          if(next($copy)){
+                                             echo ", ";
+                                          }
                                        }
-                                 }
+                                    else:
+                                       echo " - ";
+                                    endif;
                                  ?></td>
                               </tr>
                               <tr class="border-bottom">
@@ -126,34 +130,38 @@
                               <tr class="border-bottom">
                                  <th class="p-3" width="40%;">Kategori</th>
                                  <td class="p-3"><?php 
-                                    $copyOlahan = $kategori_olahan->result();
-                                    foreach($kategori_olahan->result() as $o){
-                                       echo ucfirst($o->kategori_olahan);
-                                       if(next($copyOlahan)){
-                                          echo ", ";
+                                    if($kategori_olahan->num_rows() > 0):
+                                       $copyOlahan = $kategori_olahan->result();
+                                       foreach($kategori_olahan->result() as $o){
+                                          echo ucfirst($o->kategori_olahan);
+                                          if(next($copyOlahan)){
+                                             echo ", ";
+                                          }
                                        }
-                                 }
+                                    else:
+                                       echo " - ";
+                                    endif;
                                  ?></td>
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Jenis</th>
-                                 <td class="p-3"><?= $jejaring->jenis_olahan ?></td>
+                                 <td class="p-3"><?= ($jejaring->jenis_olahan) ? $jejaring->jenis_olahan : ' - ' ?></td>
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Produksi</th>
-                                 <td class="p-3"><?= $jejaring->rata_produksi_bulan ?> Kg <sup class="text-danger">/bulan</sup></td>
+                                 <td class="p-3"><?= ($jejaring->rata_produksi_bulan) ? $jejaring->rata_produksi_bulan : ' - ' ?> Kg <sup class="text-danger">/bulan</sup></td>
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Pupuk</th>
-                                 <td class="p-3"><?= $jejaring->jenis_pupuk ?></td>
+                                 <td class="p-3"><?= ($jejaring->jenis_pupuk) ? $jejaring->jenis_pupuk : ' - ' ?></td>
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Pestisida</th>
-                                 <td class="p-3"><?= $jejaring->jenis_pestisida ?></td>
+                                 <td class="p-3"><?= ($jejaring->jenis_pestisida) ? $jejaring->jenis_pestisida : ' - ' ?></td>
                               </tr>
                               <tr class="border-bottom">
                                  <th class="p-3">Alsintan</th>
-                                 <td class="p-3"><?= $jejaring->jenis_aisintan ?></td>
+                                 <td class="p-3"><?= ($jejaring->jenis_aisintan) ? $jejaring->jenis_aisintan : ' -' ?></td>
                               </tr>
                            </tbody>
                         </table>
@@ -245,17 +253,31 @@
                         <div class="linked-accounts px-3 py-2 border-bottom">
                            <h6 class="font-weight-bold">Penjualan</h6>
                            <ul>
-                              <?php foreach($penjualan->result() as $p): ?>
-                                 <li class="mb-1"><i class="fa fa-check-circle mr-2 text-info" aria-hidden="true"></i><span class="text"><?= $p->jenis_penjualan ?></span></li>
-                              <?php endforeach; ?>
+                              <?php 
+                                 if($penjualan->num_rows() > 0):
+                                    foreach($penjualan->result() as $p): ?>
+                                       <li class="mb-1"><i class="fa fa-check-circle mr-2 text-info" aria-hidden="true"></i><span class="text"><?= $p->jenis_penjualan ?></span></li>
+                              <?php 
+                                    endforeach; 
+                                 else:
+                                    echo " - ";
+                                 endif;
+                              ?>
                            </ul>
                         </div>
                         <div class="linked-accounts px-3 py-2">
                            <h6 class="font-weight-bold">Tertarik</h6>
                            <ul>
-                              <?php foreach($tertarik->result() as $t): ?>
+                              <?php 
+                                 if($tertarik->num_rows() > 0):
+                                    foreach($tertarik->result() as $t): ?>
                                  <li class="mb-1"><i class="fa fa-check-circle mr-2 text-info" aria-hidden="true"></i><span class="text"><?= $t->jenis_ketertarikan ?></span></li>
-                              <?php endforeach; ?>
+                              <?php 
+                                    endforeach; 
+                                 else:
+                                    echo " - ";
+                                 endif;
+                              ?>
                            </ul>
                         </div>
                      </div>
