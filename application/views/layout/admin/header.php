@@ -95,14 +95,49 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link <?= ($this->uri->segment(2) == 'pengaturan') ? 'active' : '' ?>" href="<?= site_url('admin/pengaturan') ?>">
-						<div
-							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-							<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
-						</div>
-						<span class="nav-link-text ms-1">Landing Page</span>
+					<a data-bs-toggle="collapse" href="#applicationsExamples" class="nav-link" aria-controls="applicationsExamples" role="button" aria-expanded="false">
+					<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+						<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+					</div>
+					<span class="nav-link-text ms-1">Landing Page</span>
 					</a>
-				</li>
+					<div class="collapse" id="applicationsExamples" style="">
+						<ul class="nav ms-0">
+							<li class="nav-item">
+								<a class="nav-link " href="../../pages/applications/kanban.html">
+								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+								</div>
+								<span class="sidenav-normal"> Kanban </span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="../../pages/applications/kanban.html">
+								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+								</div>
+								<span class="sidenav-normal"> Kanban </span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="../../pages/applications/kanban.html">
+								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+								</div>
+								<span class="sidenav-normal"> Kanban </span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link " href="../../pages/applications/kanban.html">
+								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+								</div>
+								<span class="sidenav-normal"> Kanban </span>
+								</a>
+							</li>
+						</ul>
+					</div>
+				</li>	
 			</ul>
 		</div>
 	</aside>
