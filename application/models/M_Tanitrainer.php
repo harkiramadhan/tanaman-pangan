@@ -16,4 +16,12 @@ class M_Tanitrainer extends CI_Model{
             'flag' => $flag
         ])->row();
     }
+
+    function getPaginate($rowno,$rowperpage){
+        return $this->db->select('t.*')
+                        ->from('tanitrainer t')
+                        ->where([
+                            't.status' => 1
+                        ])->limit($rowperpage, $rowno)->order_by('tanggal DESC, id DESC')->get();
+    }
 }

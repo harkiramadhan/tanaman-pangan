@@ -4,34 +4,27 @@
             <div class="row">
                <div class="col-lg-8 left order-2">
                    <ol class="d-lg-flex d-none px-0 py-0 mb-3">
-                       <li class="small breadcrumb-item "><a href="#" class="text-info"><i class="fa fa-home mr-2"></i>Beranda</a></li>
-                       <li class="small breadcrumb-item"><a href="#" class="text-info">Tani Trainer</a></li>
-                       <li class="small breadcrumb-item active text-dark text-truncate" aria-current="page">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah</li>
+                       <li class="small breadcrumb-item "><a href="<?= site_url('') ?>" class="text-info"><i class="fa fa-home mr-2"></i>Beranda</a></li>
+                       <li class="small breadcrumb-item"><a href="<?= site_url('tanitrainer') ?>" class="text-info">Tani Trainer</a></li>
+                       <li class="small breadcrumb-item active text-dark text-truncate" aria-current="page"><?= $data->judul ?></li>
                    </ol>
-                  <h2 class="p-0">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah</h2>
+                  <h2 class="p-0"><?= $data->judul ?></h2>
                   <div class="user-info d-flex mb-3 mt-2 small text-dark">
-                        <span class="orders-in-queue"><i class="fa fa-calendar mr-2"></i>Senin, 12 September 2022</span>
+                        <span class="orders-in-queue"><i class="fa fa-calendar mr-2"></i><?= longdate_indo($data->tanggal) ?></span>
                     </div>
                   
                   <div id="description" class="description text-justify">
-                     <h3>Deskripsi</h3>
-                     <p>I have 7+ years of experience in Mobile App & Web Wireframing & Mobile app UI</p>
-                     <p>I will create a Clickable Mobile App Wireframe in the Marvel app. Marvel is the best platform to
-                        create Mobile App Interactive Wireframes
-                     </p>
-                     <p>We specialize in UX Design, UI Design, Usability Testing, Wireframing, and Prototyping. In our work
-                        we try to transform highly complex concepts into simple, approachable applications. I believe that
-                        it is important to create things that look and feel great.
-                     </p>
-                     <p>It'll help you to demonstrate your idea to your developers or Investors. Why don't we do something
-                        together?
-                     </p>
+                     <?= $data->deskripsi ?>
                   </div>
                </div>
                <div class="col-lg-4 right order-lg-2 order-1 mb-3">
                   <div class="sticky">
                      <div class="tab-content p-3">
-                     <img class="img-fluid w-100 mb-3 rounded" src="<?= base_url() ?>assets/images/list/v5.png" alt="Alt" style="height: 200px;">
+                        <?php if($data->img): ?>
+                           <img class="img-fluid w-100 mb-3 rounded" src="<?= base_url('uploads/tanitrainer/' . $data->img) ?>" alt="Alt" style="height: 200px;">
+                        <?php else: ?>
+                           <img class="img-fluid w-100 mb-3 rounded" src="<?= base_url('assets/images/list/v5.png') ?>" alt="Alt" style="height: 200px;">
+                        <?php endif; ?>
                      <div class="header">
                         <h1><b class="title">Gratis</b></h1>
                         <p class="mb-3">Segera daftarkan dirimu, untuk menjadi perserta Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah </p>

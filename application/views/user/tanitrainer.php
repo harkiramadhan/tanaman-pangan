@@ -87,106 +87,52 @@
                      </div>
                   </div>
                   <div class="row">
+                     <?php foreach($data->result() as $row){ ?>
                     <div class="col-lg-4">
                         <a href="product-detail.html">
-                        <img class="img-fluid" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" />
+                           <?php if($row->img): ?>
+                              <img class="img-fluid" src="<?= base_url('uploads/tanitrainer/' . $row->img) ?>" />
+                           <?php else: ?>
+                              <img class="img-fluid" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" />
+                           <?php endif; ?>
                         </a>
                         <div class="inner-slider">
                             <div class="inner-wrapper">
-                                <div class="d-flex align-items-center">
-                                <span class="seller-name">
-                                    <a href="profile.html">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah </a>
-                                    <span class="level hint--top level-one-seller">
-                                    12 September 2022 - 1 Januari 2023
+                                 <div class="d-flex align-items-center">
+                                    <span class="seller-name">
+                                          <a href="<?= site_url('tanitrainer/' . $row->flag) ?>"><?= $row->judul ?> </a>
+                                          <span class="level hint--top level-one-seller"><?= longdate_indo($row->tanggal) ?></span>
                                     </span>
-                                </span>
-                                </div>
-                                <h3 class="mb-2">Pelatihan Sejuta Petani dan Penyuluh Vol.3 dengan tema Pemanfaatan KUR untuk Agribisnis.</h3>
-                                <div class="footer">
-                                <a href="#" class="c-btn btn-block c-fill-color-btn">Lihat Kelas</a>
-                                </div>
+                                 </div>
+                                 <h3 class="mb-2"><?= $row->deskripsi ?></h3>
+                                 <div class="footer">
+                                    <a href="<?= site_url('tanitrainer/' . $row->flag) ?>" class="c-btn btn-block c-fill-color-btn">Lihat Kelas</a>
+                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="product-detail.html">
-                        <img class="img-fluid" src="http://kagama.co/wp-content/uploads/2018/08/Petani.jpg" />
-                        </a>
-                        <div class="inner-slider">
-                            <div class="inner-wrapper">
-                                <div class="d-flex align-items-center">
-                                <span class="seller-name">
-                                    <a href="profile.html">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah </a>
-                                    <span class="level hint--top level-one-seller">
-                                    12 September 2022 - 1 Januari 2023
-                                    </span>
-                                </span>
-                                </div>
-                                <h3 class="mb-2">Pelatihan Sejuta Petani dan Penyuluh Vol.3 dengan tema Pemanfaatan KUR untuk Agribisnis.</h3>
-                                <div class="footer">
-                                <a href="#" class="c-btn btn-block c-fill-color-btn">Daftar Pelatihan</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="product-detail.html">
-                        <img class="img-fluid" src="https://www.suarakeadilan.org/images/2022/02/03/petani.jpg" />
-                        </a>
-                        <div class="inner-slider">
-                            <div class="inner-wrapper">
-                                <div class="d-flex align-items-center">
-                                <span class="seller-name">
-                                    <a href="profile.html">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah </a>
-                                    <span class="level hint--top level-one-seller">
-                                    12 September 2022 - 1 Januari 2023
-                                    </span>
-                                </span>
-                                </div>
-                                <h3 class="mb-2">Pelatihan Sejuta Petani dan Penyuluh Vol.3 dengan tema Pemanfaatan KUR untuk Agribisnis.</h3>
-                                <div class="footer">
-                                <a href="#" class="c-btn btn-block c-fill-color-btn">Daftar Pelatihan</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <a href="product-detail.html">
-                        <img class="img-fluid" src="https://geotimes.id/wp-content/uploads/2018/09/petani-indonesia-dan-luar-negeri-ibarat-bumi-dan-langit_1514300885-b-1068x715.jpg" />
-                        </a>
-                        <div class="inner-slider">
-                            <div class="inner-wrapper">
-                                <div class="d-flex align-items-center">
-                                <span class="seller-name">
-                                    <a href="profile.html">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah </a>
-                                    <span class="level hint--top level-one-seller">
-                                    12 September 2022 - 1 Januari 2023
-                                    </span>
-                                </span>
-                                </div>
-                                <h3 class="mb-2">Pelatihan Sejuta Petani dan Penyuluh Vol.3 dengan tema Pemanfaatan KUR untuk Agribisnis.</h3>
-                                <div class="footer">
-                                <a href="#" class="c-btn btn-block c-fill-color-btn">Daftar Pelatihan</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                     </div>
+                     <?php } ?>
                   </div>
                   <div class="footer-pagination text-center">
                      <nav class="mb-0 mt-0" aria-label="Page navigation example">
                         <ul class="pagination mb-0">
                            <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Previous">
+                              <a class="page-link" href="<?= ($page > 1) ? site_url('tanitrainer?page=' . $previous) : '#' ?>" aria-label="Previous">
                                  <span aria-hidden="true"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
                                  <!--                    <span class="sr-only"></span>-->
                               </a>
                            </li>
-                           <li class="page-item"><a class="page-link" href="#">1</a></li>
-                           <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                           <li class="page-item"><a class="page-link" href="#">4</a></li>
-                           <li class="page-item"><a class="page-link" href="#">5</a></li>
+                           <?php for($i=1; $i <= $count; $i++): ?>
+                              <?php if($i == 1 && $this->input->get('page', TRUE) == NULL): ?>
+                                 <li class="page-item active">
+                              <?php else: ?>
+                                 <li class="page-item <?= ($this->input->get('page', TRUE) == $i) ? 'active' : '' ?>">
+                              <?php endif; ?>
+                                 <a class="page-link" href="<?= site_url('tanitrainer?page=' . $i) ?>"><?= $i ?></a>
+                              </li>
+                           <?php endfor; ?>
                            <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Next">
+                              <a class="page-link" href="<?= ($page < $count) ? site_url('tanitrainer?page=' . $next) : '#' ?>" aria-label="Next">
                                  <span aria-hidden="true"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
                                  <!--                    <span class="sr-only"></span>-->
                               </a>
