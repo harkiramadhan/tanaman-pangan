@@ -6,7 +6,7 @@
                <div class="col-md-12 text-center">
                   <h1 class="mt-0 mb-3 text-white">Tentang Kami</h1>
                   <div class="breadcrumbs">
-                     <p class="mb-0 text-white"><a class="text-white" href="#">Home</a>  /  <span class="text-success">Tentang Kami</span></p>
+                     <p class="mb-0 text-white"><a class="text-white" href="<?= site_url('') ?>">Home</a>  /  <span class="text-success">Tentang Kami</span></p>
                   </div>
                </div>
             </div>
