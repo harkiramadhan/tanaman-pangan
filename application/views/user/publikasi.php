@@ -68,7 +68,11 @@
                     <div class="col">
                         <div class="box shadow-sm rounded bg-white mb-3">
                            <?php foreach($data->result() as $row): ?>
-                           <a href="<?= base_url('publikasi/' . $row->flag) ?>">
+                           <?php if($row->link): ?>
+                              <a href="<?= $row->link ?>" target="__BLANK">
+                           <?php else: ?>
+                              <a href="<?= base_url('publikasi/' . $row->flag) ?>">
+                           <?php endif; ?>
                               <div class="box-body d-flex p-3 border-bottom">
                                  <?php if($row->cover_img): ?>
                                     <img class="img-fluid rounded mb-auto" src="<?= base_url('uploads/publikasi/' . $row->cover_img) ?>" alt="" style="height: 130px; width: 130px;">

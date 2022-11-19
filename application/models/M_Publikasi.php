@@ -25,7 +25,7 @@ class M_Publikasi extends CI_Model{
 
     function getByFlag($flag, $id=false){
         if($id){
-            $this->db->where('id !=', $id);
+            $this->db->where('p.id !=', $id);
         }
         return $this->db->select('p.*, kp.kategori')
                         ->from('publikasi p')
