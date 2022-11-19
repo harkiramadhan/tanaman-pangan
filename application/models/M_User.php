@@ -28,4 +28,14 @@ class M_User extends CI_Model{
                             'u.hp' => $hp
                         ])->get()->row();
     }
+
+    function getByRole($roleid){
+        return $this->db->select('u.*, r.role, k.kelembagaan')
+                        ->from('user u')
+                        ->join('role r', 'u.role_id = r.id')
+                        ->join('kelembagaan k', 'u.kelembagaan_id = k.id', "LEFT")
+                        ->where([
+                            'u.role_id' => $roleid
+                        ])->get();
+    }
 }
