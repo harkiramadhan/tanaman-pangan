@@ -81,10 +81,17 @@ class Publikasi extends CI_Controller {
 			$this->resizeImage($filename, './uploads/publikasi/'); 
         }
 
+		$cekFlag = $this->M_Publikasi->getByFlag(strtolower(str_replace([' '], ['-'], $this->input->post('judul', TRUE))));
+		if(@$cekFlag->id){
+			$flag = strtolower(str_replace([' '], ['-'], $this->input->post('judul', TRUE))). $cekFlag->id;
+		}else{
+			$flag = strtolower(str_replace([' '], ['-'], $this->input->post('judul', TRUE)));
+		}
+
 		$dataInsert = [
 			'cover_img' => $filename,
 			'judul' => $this->input->post('judul', TRUE),
-			'flag' => strtolower(str_replace([' '], ['-'], $this->input->post('judul', TRUE))),
+			'flag' => $flag,
 			'tanggal' => $this->input->post('tanggal', TRUE),
 			'kategori_id' => $this->input->post('kategori_id', TRUE),
 			'link' => $this->input->post('link', TRUE),

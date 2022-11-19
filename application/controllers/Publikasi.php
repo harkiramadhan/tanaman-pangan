@@ -43,14 +43,15 @@ class Publikasi extends CI_Controller {
 	
 	}
 
-	public function detail(){
+	public function detail($flag){
         $var = [
 			'title' => "Detail Publikasi",
 			'user' => $this->M_User->getById($this->session->userdata('userid')),
+			'data' => $this->M_Publikasi->getByFlag($flag),
+			'latest' => $this->M_Publikasi->getLatest()
 		];
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/publikasi-detail', $var);
 		$this->load->view('layout/user/footer', $var);
-	
 	}
 }
