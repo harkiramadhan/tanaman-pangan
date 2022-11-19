@@ -6,7 +6,7 @@
                <div class="col-md-12 text-center">
                   <h1 class="mt-0 mb-3 text-white">Publikasi</h1>
                   <div class="breadcrumbs">
-                     <p class="mb-0 text-white"><a class="text-white" href="#">Home</a>  /  <span class="text-success">Publikasi</span></p>
+                     <p class="mb-0 text-white"><a class="text-white" href="<?= site_url('') ?>">Home</a>  /  <span class="text-success">Publikasi</span></p>
                   </div>
                </div>
             </div>
@@ -34,22 +34,12 @@
                               </div>
                               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                  <div class="filters-card-body card-shop-filters">
-                                    <div class="custom-control custom-checkbox">
-                                       <input type="checkbox" class="custom-control-input" id="cb1">
-                                       <label class="custom-control-label" for="cb1">Dokumen </label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                       <input type="checkbox" class="custom-control-input" id="cb2">
-                                       <label class="custom-control-label" for="cb2">Berita</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                       <input type="checkbox" class="custom-control-input" id="cb3">
-                                       <label class="custom-control-label" for="cb3">Video</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                       <input type="checkbox" class="custom-control-input" id="cb4">
-                                       <label class="custom-control-label" for="cb4">Gambar</label>
-                                    </div>
+                                    <?php foreach($kategori->result() as $kt){ ?>
+                                       <div class="custom-control custom-checkbox">
+                                          <input type="checkbox" name="kategori_id[]" class="custom-control-input" id="cb<?= $kt->id ?>">
+                                          <label class="custom-control-label" for="cb<?= $kt->id ?>">  <?= $kt->kategori ?></label>
+                                       </div>
+                                    <?php } ?>
                                  </div>
                               </div>
                            </div>
@@ -64,10 +54,10 @@
                            <p class="mb-2">463 Publikasi Tersedia</p>
                            <div class="sorting d-flex align-items-center">
                               <p>Tampilkan</p>
-                              <select class="custom-select custom-select-sm border-0 shadow-sm ml-2">
-                                 <option>Semua</option>
-                                 <option>Terbaru</option>
-                                 <option>A-Z</option>
+                              <select class="custom-select custom-select-sm border-0 shadow-sm ml-2" id="order">
+                                 <option value="Semua"> Semua</option>
+                                 <option value="Terbaru"> Terbaru</option>
+                                 <option value="A-Z"> A-Z</option>
                               </select>
                            </div>
                         </div>
@@ -77,36 +67,29 @@
                   <div class="row">
                     <div class="col">
                         <div class="box shadow-sm rounded bg-white mb-3">
-                           <a href="#">
+                           <?php foreach($data->result() as $row): ?>
+                           <a href="<?= base_url('publikasi/' . $row->flag) ?>">
                               <div class="box-body d-flex p-3 border-bottom">
-                                 <img class="img-fluid rounded mb-auto" src="<?= base_url() ?>assets/images/l3.png" alt="" style="height: 130px; width: 130px;">
+                                 <?php if($row->cover_img): ?>
+                                    <img class="img-fluid rounded mb-auto" src="<?= base_url('uploads/publikasi/' . $row->cover_img) ?>" alt="" style="height: 130px; width: 130px;">
+                                 <?php else: ?>
+                                    <img class="img-fluid rounded mb-auto" src="<?= base_url('assets/images/l3.png') ?>" alt="" style="height: 130px; width: 130px;">
+                                 <?php endif; ?>
                                  <div class="d-flex flex-column align-items-top job-item-header pb-2 ml-3">
                                        <div class="mb-3">
-                                          <div class="text-truncate text-info text-uppercase"><i class="fa fa-file mr-2"></i>Berita</div>
-                                          <h6 class="font-weight-bold text-dark my-1">Mentan SYL Dorong Petani Milenial Indonesia Timur Bangun Konsepsi dan Networking</h6>
-                                          <div class="text-gray-900">Rabu, 14 September 2022</div>
+                                          <div class="text-truncate text-info text-uppercase">
+                                             <i class="<?= $row->icon ?> mr-2"></i><?= $row->kategori ?>
+                                          </div>
+                                          <h6 class="font-weight-bold text-dark my-1"><?= $row->judul ?></h6>
+                                          <div class="text-gray-900"><?= longdate_indo($row->tanggal) ?></div>
                                        </div>
-                                       <a href="#" class="ml-auto mt-auto text-danger">
+                                       <a href="<?= site_url('publikasi/' . $row->flag) ?>" class="ml-auto mt-auto text-danger">
                                           <span class="d-lg-inline d-none">Selengkapnya</span> <i class="fa fa-arrow-right ml-3"></i>
                                        </a>
                                  </div>
                               </div>
                            </a>
-                           <a href="#">
-                              <div class="box-body d-flex p-3 border-bottom">
-                                 <img class="img-fluid rounded mb-auto" src="<?= base_url() ?>assets/images/l3.png" alt="" style="height: 130px; width: 130px;">
-                                 <div class="d-flex flex-column align-items-top job-item-header pb-2 ml-3">
-                                       <div class="mb-3">
-                                          <div class="text-truncate text-info text-uppercase"><i class="fa fa-play mr-2"></i>Video</div>
-                                          <h6 class="font-weight-bold text-dark my-1">Mentan SYL Dorong Petani Milenial Indonesia Timur Bangun Konsepsi dan Networking</h6>
-                                          <div class="text-gray-900">Rabu, 14 September 2022</div>
-                                       </div>
-                                       <a href="#" class="ml-auto mt-auto text-danger">
-                                          <span class="d-lg-inline d-none">Selengkapnya</span> <i class="fa fa-arrow-right ml-3"></i>
-                                       </a>
-                                 </div>
-                              </div>
-                           </a>
+                           <?php endforeach; ?>
                         </div>
                     </div>
                   </div>
@@ -114,17 +97,22 @@
                      <nav class="mb-0 mt-0" aria-label="Page navigation example">
                         <ul class="pagination mb-0">
                            <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Previous">
+                              <a class="page-link" href="<?= ($page > 1) ? site_url('publikasi?page=' . $previous) : '#' ?>" aria-label="Previous">
                                  <span aria-hidden="true"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
                                  <!--                    <span class="sr-only"></span>-->
                               </a>
                            </li>
-                           <li class="page-item"><a class="page-link" href="#">1</a></li>
-                           <li class="page-item active"><a class="page-link" href="#">2</a></li>
-                           <li class="page-item"><a class="page-link" href="#">4</a></li>
-                           <li class="page-item"><a class="page-link" href="#">5</a></li>
+                           <?php for($i=1; $i <= $count; $i++): ?>
+                              <?php if($i == 1 && $this->input->get('page', TRUE) == NULL): ?>
+                                 <li class="page-item active">
+                              <?php else: ?>
+                                 <li class="page-item <?= ($this->input->get('page', TRUE) == $i) ? 'active' : '' ?>">
+                              <?php endif; ?>
+                                 <a class="page-link" href="<?= site_url('publikasi?page=' . $i) ?>"><?= $i ?></a>
+                              </li>
+                           <?php endfor; ?>
                            <li class="page-item">
-                              <a class="page-link" href="#" aria-label="Next">
+                              <a class="page-link" href="<?= ($page < $count) ? site_url('publikasi?page=' . $next) : '#' ?>" aria-label="Next">
                                  <span aria-hidden="true"><i class="fa fa-chevron-right" aria-hidden="true"></i></span>
                                  <!--                    <span class="sr-only"></span>-->
                               </a>
