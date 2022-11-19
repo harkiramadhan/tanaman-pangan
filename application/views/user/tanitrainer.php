@@ -104,7 +104,7 @@
                                           <span class="level hint--top level-one-seller"><?= longdate_indo($row->tanggal) ?></span>
                                     </span>
                                  </div>
-                                 <h3 class="mb-2"><?= $row->deskripsi ?></h3>
+                                 <h3 class="mb-2"><?= mb_strimwidth($row->deskripsi, 0, 200, "...") ?></h3>
                                  <div class="footer">
                                     <a href="<?= site_url('tanitrainer/' . $row->flag) ?>" class="c-btn btn-block c-fill-color-btn">Lihat Kelas</a>
                                  </div>
