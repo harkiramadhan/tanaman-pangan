@@ -42,7 +42,8 @@ class Tanitrainer extends CI_Controller {
         $var = [
 			'title' => "Tani Trainer",
 			'user' => $this->M_User->getById($this->session->userdata('userid')),
-			'data' => $this->M_Tanitrainer->getByFlag($flag)
+			'data' => $this->M_Tanitrainer->getByFlag($flag),
+			'tanitrainer' => $this->M_Tanitrainer->getPaginate(1, 10, $flag)
 		];
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/tanitrainer-detail', $var);

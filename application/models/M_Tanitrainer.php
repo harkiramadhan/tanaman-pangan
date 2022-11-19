@@ -17,7 +17,10 @@ class M_Tanitrainer extends CI_Model{
         ])->row();
     }
 
-    function getPaginate($rowno,$rowperpage){
+    function getPaginate($rowno,$rowperpage, $flag=false){
+        if($flag){
+            $this->db->where('t.flag !=', $flag);
+        }
         return $this->db->select('t.*')
                         ->from('tanitrainer t')
                         ->where([

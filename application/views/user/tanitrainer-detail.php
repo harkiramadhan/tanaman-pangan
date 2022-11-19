@@ -41,90 +41,31 @@
                      <div class="col-lg-12">
                         <h3>Tani Trainer</h3>
                         <div class="view recent-slider recommended-slider">
+                           <?php foreach($tanitrainer->result() as $row): ?>
                            <div>
-                              <a href="product-detail.html">
-                              <img class="img-fluid" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" />
+                              <a href="<?= site_url('tanitrainer/' . $row->flag) ?>">
+                                 <?php if($row->img): ?>
+                                    <img class="img-fluid" src="<?= base_url('uploads/tanitrainer/' . $row->img) ?>" />
+                                 <?php else: ?>
+                                    <img class="img-fluid" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" />
+                                 <?php endif; ?>
                               </a>
                               <div class="inner-slider">
                                  <div class="inner-wrapper">
                                     <div class="d-flex align-items-center">
                                        <span class="seller-name">
-                                          <a href="profile.html">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah </a>
-                                          <span class="level hint--top level-one-seller">
-                                          12 September 2022 - 1 Januari 2023
-                                          </span>
+                                          <a href="profile.html"><?= $row->judul ?> </a>
+                                          <span class="level hint--top level-one-seller"><?= longdate_indo($row->tanggal) ?></span>
                                        </span>
                                     </div>
-                                    <h3 class="mb-2">Pelatihan Sejuta Petani dan Penyuluh Vol.3 dengan tema Pemanfaatan KUR untuk Agribisnis.</h3>
+                                    <h3 class="mb-2"><?= mb_strimwidth($row->deskripsi, 0, 200, "...") ?></h3>
                                     <div class="footer">
-                                       <a href="#" class="c-btn btn-block c-fill-color-btn">Daftar Pelatihan</a>
+                                       <a href="<?= site_url('tanitrainer/' . $row->flag) ?>" class="c-btn btn-block c-fill-color-btn">Daftar Pelatihan</a>
                                     </div>
                                  </div>
                               </div>
                            </div>
-                           <div>
-                              <a href="product-detail.html">
-                              <img class="img-fluid" src="http://kagama.co/wp-content/uploads/2018/08/Petani.jpg" />
-                              </a>
-                              <div class="inner-slider">
-                                 <div class="inner-wrapper">
-                                    <div class="d-flex align-items-center">
-                                       <span class="seller-name">
-                                          <a href="profile.html">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah </a>
-                                          <span class="level hint--top level-one-seller">
-                                          12 September 2022 - 1 Januari 2023
-                                          </span>
-                                       </span>
-                                    </div>
-                                    <h3 class="mb-2">Pelatihan Sejuta Petani dan Penyuluh Vol.3 dengan tema Pemanfaatan KUR untuk Agribisnis.</h3>
-                                    <div class="footer">
-                                       <a href="#" class="c-btn btn-block c-fill-color-btn">Daftar Pelatihan</a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div>
-                              <a href="product-detail.html">
-                              <img class="img-fluid" src="https://www.suarakeadilan.org/images/2022/02/03/petani.jpg" />
-                              </a>
-                              <div class="inner-slider">
-                                 <div class="inner-wrapper">
-                                    <div class="d-flex align-items-center">
-                                       <span class="seller-name">
-                                          <a href="profile.html">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah </a>
-                                          <span class="level hint--top level-one-seller">
-                                          12 September 2022 - 1 Januari 2023
-                                          </span>
-                                       </span>
-                                    </div>
-                                    <h3 class="mb-2">Pelatihan Sejuta Petani dan Penyuluh Vol.3 dengan tema Pemanfaatan KUR untuk Agribisnis.</h3>
-                                    <div class="footer">
-                                       <a href="#" class="c-btn btn-block c-fill-color-btn">Daftar Pelatihan</a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
-                           <div>
-                              <a href="product-detail.html">
-                              <img class="img-fluid" src="https://geotimes.id/wp-content/uploads/2018/09/petani-indonesia-dan-luar-negeri-ibarat-bumi-dan-langit_1514300885-b-1068x715.jpg" />
-                              </a>
-                              <div class="inner-slider">
-                                 <div class="inner-wrapper">
-                                    <div class="d-flex align-items-center">
-                                       <span class="seller-name">
-                                          <a href="profile.html">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah </a>
-                                          <span class="level hint--top level-one-seller">
-                                          12 September 2022 - 1 Januari 2023
-                                          </span>
-                                       </span>
-                                    </div>
-                                    <h3 class="mb-2">Pelatihan Sejuta Petani dan Penyuluh Vol.3 dengan tema Pemanfaatan KUR untuk Agribisnis.</h3>
-                                    <div class="footer">
-                                       <a href="#" class="c-btn btn-block c-fill-color-btn">Daftar Pelatihan</a>
-                                    </div>
-                                 </div>
-                              </div>
-                           </div>
+                           <?php endforeach; ?>
                         </div>
                      </div>
                   </div>
