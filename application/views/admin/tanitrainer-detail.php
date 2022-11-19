@@ -56,6 +56,26 @@
                   </select>
                 </div>
 
+                <div class="form-group">
+                  <label class="form-control-label" for="input-nama">Cocok Untuk <span class="text-danger">*</span></label>
+                  <div class="form-check mb-2 ms-1">
+                      <input class="form-check-input" checked="" name="" type="checkbox" id="" value="">
+                      <label class="form-check-label" for="">Petani/Produsen</label>
+                  </div>
+                  <div class="form-check mb-2 ms-1">
+                      <input class="form-check-input" name="" type="checkbox" id="" value="">
+                      <label class="form-check-label" for="">Usaha Olahan</label>
+                  </div>
+                  <div class="form-check mb-2 ms-1">
+                      <input class="form-check-input" checked="" name="" type="checkbox" id="" value="">
+                      <label class="form-check-label" for="">Offtaker</label>
+                  </div>
+                  <div class="form-check mb-2 ms-1">
+                      <input class="form-check-input" name="" type="checkbox" id="" value="">
+                      <label class="form-check-label" for="">Eksportir</label>
+                  </div>                      
+							  </div>
+
             </div>
 						<div class="col-12 mt-3 d-grid">
 							<button type="submit" class="btn bg-gradient-dark mb-0">SIMPAN</button>
