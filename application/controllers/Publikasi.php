@@ -7,7 +7,8 @@ class Publikasi extends CI_Controller {
 		$this->load->model([
 			'M_User',
 			'M_Publikasi',
-			'M_Kategori_publikasi'
+			'M_Kategori_publikasi',
+			'M_Tanitrainer'
 		]);
 	}
 
@@ -48,7 +49,8 @@ class Publikasi extends CI_Controller {
 			'title' => "Detail Publikasi",
 			'user' => $this->M_User->getById($this->session->userdata('userid')),
 			'data' => $this->M_Publikasi->getByFlag($flag),
-			'latest' => $this->M_Publikasi->getLatest()
+			'latest' => $this->M_Publikasi->getLatest(),
+			'tanitrainer' => $this->M_Tanitrainer->getPaginate(1, 10)
 		];
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/publikasi-detail', $var);
