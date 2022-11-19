@@ -11,7 +11,9 @@ class M_Publikasi extends CI_Model{
         return $this->db->select('p.*, kp.kategori')
                         ->from('publikasi p')
                         ->join('kategori_publikasi kp', 'p.kategori_id = kp.id')
-                        ->order_by('tanggal DESC, id DESC')->get()->row();
+                        ->where([
+                            'p.status' => 1
+                        ])->order_by('tanggal DESC, id DESC')->get()->row();
     }
 
     function getById($id){
@@ -21,7 +23,10 @@ class M_Publikasi extends CI_Model{
                         ->where('p.id', $id)->get()->row();
     }
 
-    function getByFlag($flag){
+    function getByFlag($flag, $id=false){
+        if($id){
+            $this->db->where('id !=', $id);
+        }
         return $this->db->select('p.*, kp.kategori')
                         ->from('publikasi p')
                         ->join('kategori_publikasi kp', 'p.kategori_id = kp.id')
@@ -32,6 +37,8 @@ class M_Publikasi extends CI_Model{
         return $this->db->select('p.*, kp.kategori, kp.icon')
                         ->from('publikasi p')
                         ->join('kategori_publikasi kp', 'p.kategori_id = kp.id')
-                        ->limit($rowperpage, $rowno)->order_by('tanggal DESC, id DESC')->get();
+                        ->where([
+                            'p.status' => 1
+                        ])->limit($rowperpage, $rowno)->order_by('tanggal DESC, id DESC')->get();
     }
 }

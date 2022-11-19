@@ -63,3 +63,6 @@ $route['jejaring/(:num)'] = 'jejaring/detail/$1';
 
 $route['publikasi/(:any)'] = 'publikasi/detail/$1';
 $route['admin/publikasi/(:num)'] = 'admin/publikasi/detail/$1';
+
+$route['tanitrainer/(:any)'] = 'tanitrainer/detail/$1';
+$route['admin/tanitrainer/(:num)'] = 'admin/tanitrainer/detail/$1';

@@ -9,38 +9,43 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<form method="post" action="#" enctype="multipart/form-data">
+				<form method="post" action="<?= site_url('admin/tanitrainer/update/' . $data->id) ?>" enctype="multipart/form-data">
 					<div class="row">
             <div class="col-lg-12">
-              <div class="mb-3 mt-2 text-center">										
-                  <p>Gambar Cover</p>
-                  <img src="http://localhost/tax-session/uploads/pelatihan/b6bf8464f52f204a2220dd05ef6c341f.jpg" class="img-fluid img-center shadow rounded" style="max-height: 250px" id="image-preview">
-              </div>
-
-              <div class="form-group">
-                  <label class="form-control-label" for="input-gambar">Upload Cover
-                  <span class="text-danger">*</span></label>
-                  <div class="mb-3">
-                      <input class="form-control" type="file" name="file" id="image-source" onchange="previewImage()">
-                  </div>
-              </div>
-
-							<div class="form-group">
-								<label class="form-control-label" for="input-nama">Judul Tanitrainer <span class="text-danger">*</span></label>
-								<input type="text" name="judulTanitrainer" class="form-control" placeholder="Judul Tanitrainer" required="">
-							</div>
-
-							<div class="form-group">
-								<label class="form-control-label" for="input-nama">Tanggal Tanitrainer <span class="text-danger">*</span></label>
-								<input type="date" name="tanggalTanitrainer" class="form-control" placeholder="Tanggal Tanitrainer" required="">
-							</div>
-
-              <div>
-                <label class="form-control-label" for="input-nama">Deskripsi Tanitrainer <span class="text-danger">*</span></label>
-                <div class="rounded" id="editor">
-
+                <div class="mb-3 mt-2 text-center">										
+                    <p>Gambar Cover</p>
+                    <?php if($data->img): ?>
+                      <img src="<?= base_url('uploads/tanitrainer/' . $data->img) ?>" class="img-fluid img-center shadow rounded" style="max-height: 250px" id="image-preview">
+                    <?php else: ?>
+                      <img src="#" class="img-fluid img-center shadow rounded d-none" style="max-height: 250px" id="image-preview">
+                    <?php endif; ?>
                 </div>
-              </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="input-gambar">Upload Cover
+                    <span class="text-danger">*</span></label>
+                    <div class="mb-3">
+                        <input class="form-control" type="file" name="img" id="image-source" onchange="previewImage()">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="input-nama">Judul Tanitrainer <span class="text-danger">*</span></label>
+                    <input type="text" name="judul" class="form-control" placeholder="Judul Tanitrainer" value="<?= $data->judul ?>" required="">
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" for="input-nama">Tanggal Tanitrainer <span class="text-danger">*</span></label>
+                    <input type="date" name="tanggal" class="form-control" placeholder="Tanggal Tanitrainer" value="<?= $data->tanggal ?>" required="">
+                </div>
+
+                <div class="form-group">
+                    <input type="hidden" name="deskripsi" id="deskripsi" value="<?= $data->deskripsi ?>">
+                    <label class="form-control-label" for="input-nama">Deskripsi Tanitrainer <span class="text-danger">*</span></label>
+                    <div class="rounded" id="editor">
+
+                    </div>
+                </div>
 
             </div>
 						<div class="col-12 mt-3 d-grid">

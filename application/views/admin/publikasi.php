@@ -37,9 +37,11 @@
 							<tbody>
 
 								<!-- Jika ada data pelatihan -->
-								<?php foreach($publikasi->result() as $row): ?>
+								<?php 
+								$no = 1;
+								foreach($publikasi->result() as $row): ?>
 								<tr>
-									<td class="align-top text-center text-sm">1</td>
+									<td class="align-top text-center text-sm"><?= $no++ ?></td>
 									<td>
 										<div class="d-flex px-2 py-1">
 											<div>
