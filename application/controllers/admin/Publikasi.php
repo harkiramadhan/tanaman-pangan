@@ -83,9 +83,9 @@ class Publikasi extends CI_Controller {
 
 		$cekFlag = $this->M_Publikasi->getByFlag(strtolower(str_replace([' '], ['-'], $this->input->post('judul', TRUE))));
 		if(@$cekFlag->id){
-			$flag = strtolower(str_replace([' '], ['-'], $this->input->post('judul', TRUE))). $cekFlag->id;
+			$flag = strtolower(str_replace([' ', '.', ','], ['-', '', ''], $this->input->post('judul', TRUE))). $cekFlag->id;
 		}else{
-			$flag = strtolower(str_replace([' '], ['-'], $this->input->post('judul', TRUE)));
+			$flag = strtolower(str_replace([' ', '.', ','], ['-', '', ''], $this->input->post('judul', TRUE)));
 		}
 
 		$dataInsert = [
@@ -129,9 +129,9 @@ class Publikasi extends CI_Controller {
 
 		$cekFlag = $this->M_Publikasi->getByFlag(strtolower(str_replace([' '], ['-'], $this->input->post('judul', TRUE))), $id);
 		if(@$cekFlag->id){
-			$flag = strtolower(str_replace([' '], ['-'], $this->input->post('judul', TRUE))). $cekFlag->id;
+			$flag = strtolower(str_replace([' ', '.', ','], ['-', '', ''], $this->input->post('judul', TRUE))). $cekFlag->id;
 		}else{
-			$flag = strtolower(str_replace([' '], ['-'], $this->input->post('judul', TRUE)));
+			$flag = strtolower(str_replace([' ', '.', ','], ['-', '', ''], $this->input->post('judul', TRUE)));
 		}
 
 		$dataUpdate = [

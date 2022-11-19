@@ -5,7 +5,8 @@ class Tanitrainer extends CI_Controller {
 		parent::__construct();
 
 		$this->load->model([
-			'M_Tanitrainer'
+			'M_Tanitrainer',
+			'M_Role'
 		]);
 		$this->load->library('image_lib');
 		if($this->session->userdata('admin') != TRUE){
@@ -41,6 +42,7 @@ class Tanitrainer extends CI_Controller {
 	public function add(){
 		$var = [
 			'title' => "Tambah Tani Trainer",
+			'role' => $this->M_Role->getAll(),
 			'ajax' => [
 				'tanitrainer'
 			]
@@ -54,6 +56,7 @@ class Tanitrainer extends CI_Controller {
         $var = [
 			'title' => "Detail Tanitrainer",
 			'data' => $this->M_Tanitrainer->getById($id),
+			'role' => $this->M_Role->getAll(),
 			'ajax' => [
 				'tanitrainer'
 			]
@@ -94,6 +97,17 @@ class Tanitrainer extends CI_Controller {
 		];
 		$this->db->insert('tanitrainer', $dataInsert);
 		if($this->db->affected_rows() > 0){
+			$tanitrainerid = $this->db->insert_id();
+			$roleid = $this->input->post('role_id[]', TRUE);
+			if(count($roleid) > 0){
+				foreach($roleid as $row){
+					$this->db->insert('tanitrainer_role', [
+						'tanitrainer_id' => $tanitrainerid,
+						'role_id' => $row
+					]);
+				}
+			}
+
 			$this->session->set_flashdata('success', "Data Berhasil Di Simpan");
 		}else{
 			$this->session->set_flashdata('error', "Data Gagal Di Simpan");
@@ -128,6 +142,19 @@ class Tanitrainer extends CI_Controller {
 			$flag = strtolower(str_replace([' ', '.', ','], ['-', '', ''], $this->input->post('judul', TRUE)));
 		}
 
+		$roleid = $this->input->post('role_id[]', TRUE);
+		if(count($roleid) > 0){
+			$this->db->where('tanitrainer_id', $id)->delete('tanitrainer_role');
+			foreach($roleid as $row){
+				$this->db->insert('tanitrainer_role', [
+					'tanitrainer_id' => $id,
+					'role_id' => $row
+				]);
+			}
+		}else{
+			$this->db->where('tanitrainer_id', $id)->delete('tanitrainer_role');
+		}
+
 		$dataUpdate = [
 			'img' => $filename,
 			'judul' => $this->input->post('judul', TRUE),
@@ -143,7 +170,7 @@ class Tanitrainer extends CI_Controller {
 			$this->session->set_flashdata('error', "Data Gagal Di Simpan");
 		}
 
-		redirect($_SERVER['HTTP_REFERER']);
+		redirect($_SERVER['HTTP_REFERER']);	
 	}
 }
 

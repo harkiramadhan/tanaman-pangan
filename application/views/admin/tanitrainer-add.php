@@ -54,22 +54,12 @@
 
                             <div class="form-group">
                                 <label class="form-control-label" for="input-nama">Cocok Untuk <span class="text-danger">*</span></label>
+                                <?php foreach($role->result() as $row){ ?>
                                 <div class="form-check mb-2 ms-1">
-                                    <input class="form-check-input" checked="" name="" type="checkbox" id="" value="">
-                                    <label class="form-check-label" for="">Petani/Produsen</label>
+                                    <input class="form-check-input" name="role_id[]" type="checkbox" id="check-role-<?= $row->id ?>" value="<?= $row->id ?>">
+                                    <label class="form-check-label" for="check-role-<?= $row->id ?>"> <?= $row->role ?></label>
                                 </div>
-                                <div class="form-check mb-2 ms-1">
-                                    <input class="form-check-input" name="" type="checkbox" id="" value="">
-                                    <label class="form-check-label" for="">Usaha Olahan</label>
-                                </div>
-                                <div class="form-check mb-2 ms-1">
-                                    <input class="form-check-input" checked="" name="" type="checkbox" id="" value="">
-                                    <label class="form-check-label" for="">Offtaker</label>
-                                </div>
-                                <div class="form-check mb-2 ms-1">
-                                    <input class="form-check-input" name="" type="checkbox" id="" value="">
-                                    <label class="form-check-label" for="">Eksportir</label>
-                                </div>                      
+                                <?php } ?>
 							</div>
                         </div>
 						<div class="col-12 mt-3 d-grid">

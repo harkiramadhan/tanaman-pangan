@@ -58,24 +58,19 @@
 
                 <div class="form-group">
                   <label class="form-control-label" for="input-nama">Cocok Untuk <span class="text-danger">*</span></label>
-                  <div class="form-check mb-2 ms-1">
-                      <input class="form-check-input" checked="" name="" type="checkbox" id="" value="">
-                      <label class="form-check-label" for="">Petani/Produsen</label>
-                  </div>
-                  <div class="form-check mb-2 ms-1">
-                      <input class="form-check-input" name="" type="checkbox" id="" value="">
-                      <label class="form-check-label" for="">Usaha Olahan</label>
-                  </div>
-                  <div class="form-check mb-2 ms-1">
-                      <input class="form-check-input" checked="" name="" type="checkbox" id="" value="">
-                      <label class="form-check-label" for="">Offtaker</label>
-                  </div>
-                  <div class="form-check mb-2 ms-1">
-                      <input class="form-check-input" name="" type="checkbox" id="" value="">
-                      <label class="form-check-label" for="">Eksportir</label>
-                  </div>                      
+                  <?php 
+                    foreach($role->result() as $row){ 
+                      $cekRole = $this->db->get_where('tanitrainer_role', [
+                        'tanitrainer_id' => $data->id,
+                        'role_id' => $row->id
+                      ]);
+                  ?>
+                    <div class="form-check mb-2 ms-1">
+                        <input class="form-check-input" <?= ($cekRole->num_rows() > 0) ? 'checked' : '' ?> name="role_id[]" type="checkbox" id="check-role-<?= $row->id ?>" value="<?= $row->id ?>">
+                        <label class="form-check-label" for="check-role-<?= $row->id ?>"> <?= $row->role ?></label>
+                    </div>
+                  <?php } ?>
 							  </div>
-
             </div>
 						<div class="col-12 mt-3 d-grid">
 							<button type="submit" class="btn bg-gradient-dark mb-0">SIMPAN</button>
