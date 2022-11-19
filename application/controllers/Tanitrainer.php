@@ -6,7 +6,8 @@ class Tanitrainer extends CI_Controller {
 
 		$this->load->model([
 			'M_User',
-			'M_Tanitrainer'
+			'M_Tanitrainer',
+			'M_Role'
 		]);
 	}
 
@@ -25,6 +26,7 @@ class Tanitrainer extends CI_Controller {
         $var = [
 			'title' => "Tani Trainer",
 			'user' => $this->M_User->getById($this->session->userdata('userid')),
+			'role' => $this->M_Role->getAll(),
 			'data' => $this->M_Tanitrainer->getPaginate($halaman_awal, $batas),
 			'count' => $total_halaman,
 			'next' => $next,

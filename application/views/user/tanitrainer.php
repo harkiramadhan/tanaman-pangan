@@ -34,34 +34,12 @@
                               </div>
                               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                                  <div class="filters-card-body card-shop-filters">
-                                    <div class="custom-control custom-checkbox">
-                                       <input type="checkbox" class="custom-control-input" id="cb1">
-                                       <label class="custom-control-label" for="cb1">Petani/Produsen </label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                       <input type="checkbox" class="custom-control-input" id="cb2">
-                                       <label class="custom-control-label" for="cb2">Usaha Olahan</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                       <input type="checkbox" class="custom-control-input" id="cb3">
-                                       <label class="custom-control-label" for="cb3">Offtaker</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                       <input type="checkbox" class="custom-control-input" id="cb4">
-                                       <label class="custom-control-label" for="cb4">Eksportir</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                       <input type="checkbox" class="custom-control-input" id="cb3">
-                                       <label class="custom-control-label" for="cb3">Penyedia Bibit</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                       <input type="checkbox" class="custom-control-input" id="cb3">
-                                       <label class="custom-control-label" for="cb3">Penyedia Pupuk</label>
-                                    </div>
-                                    <div class="custom-control custom-checkbox">
-                                       <input type="checkbox" class="custom-control-input" id="cb3">
-                                       <label class="custom-control-label" for="cb3">Penyedia Alsintan</label>
-                                    </div>
+                                    <?php foreach($role->result() as $r){ ?>
+                                       <div class="custom-control custom-checkbox">
+                                          <input type="checkbox" class="custom-control-input" id="cb<?= $r->id ?>" value="<?= $r->id ?>">
+                                          <label class="custom-control-label" for="cb<?= $r->id ?>"> <?= $r->role ?> </label>
+                                       </div>
+                                    <?php } ?>
                                  </div>
                               </div>
                            </div>
