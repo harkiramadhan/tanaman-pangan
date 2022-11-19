@@ -1,6 +1,17 @@
 <?php
 class M_Jejaring extends CI_Model {
-    function getAll(){
+    function getAll($where=false){
+        if($where != NULL){
+            foreach($where as $row){
+                if($row['column'] == 'komoditas_id'){
+                    $this->db->join('user_komoditas uk', 'uk.user_id = u.id');
+                    $this->db->where('uk.komoditas_id', $row['value']);
+                    $this->db->group_by('uk.user_id');
+                }else{
+                    $this->db->where($row['column'], $row['value']);
+                }
+            }
+        }
         return $this->db->select('u.*, r.role, k.kelembagaan')
                         ->select('p.prov_name provinsi, c.city_name kota, d.dis_name kabupaten, s.subdis_name kelurahan')
                         ->from('user u')
@@ -13,7 +24,18 @@ class M_Jejaring extends CI_Model {
                         ->order_by('u.created_at', "DESC")->get();
     }
 
-    function getPaginate($rowno,$rowperpage){
+    function getPaginate($rowno,$rowperpage,$where=false){
+        if($where != NULL){
+            foreach($where as $row){
+                if($row['column'] == 'komoditas_id'){
+                    $this->db->join('user_komoditas uk', 'uk.user_id = u.id');
+                    $this->db->where('uk.komoditas_id', $row['value']);
+                    $this->db->group_by('uk.user_id');
+                }else{
+                    $this->db->where($row['column'], $row['value']);
+                }
+            }
+        }
         return $this->db->select('u.*, r.role, k.kelembagaan')
                         ->select('p.prov_name provinsi, c.city_name kota, d.dis_name kecamatan, s.subdis_name kelurahan')
                         ->from('user u')

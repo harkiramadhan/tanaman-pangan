@@ -1,4 +1,4 @@
-
+      <input type="hidden" id="page" value="<?= ($this->input->get('page', TRUE)) ? $this->input->get('page', TRUE) : 1 ?>">
       <!-- Inner Header -->
       <section class="py-5 bg-dark inner-header">
          <div class="container">
@@ -24,24 +24,24 @@
                   </div>
                   <div class="sorting d-flex align-items-center ml-3">
                      <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="select-komoditas">
-                        <option selected disabled>Komoditas</option>
+                        <option value="" selected disabled>Komoditas</option>
                         <option value="semua"> Semua</option>
                         <?php foreach($komoditas->result() as $k){ ?>
-                           <option value="<?= $k->id ?>"> <?= ucwords(ucfirst($k->komoditas)) ?></option>
+                           <option <?= ($this->input->get('komoditasid', TRUE) == $k->id) ? 'selected' : '' ?> value="<?= $k->id ?>"> <?= ucwords(ucfirst($k->komoditas)) ?></option>
                         <?php } ?>
                      </select>
-                     <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;">
-                        <option selected disabled>Peran</option>
+                     <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="select-role">
+                        <option value="" selected disabled>Peran</option>
                         <option value="semua">Semua</option>
                         <?php foreach($role->result() as $r){ ?>
-                           <option value="<?= $r->id ?>"> <?= $r->role ?></option>
+                           <option <?= ($this->input->get('roleid', TRUE) == $r->id) ? 'selected' : '' ?> value="<?= $r->id ?>"> <?= $r->role ?></option>
                         <?php } ?>
                      </select>
-                     <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;">
-                        <option selected disabled>Wilayah</option>
+                     <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="select-prov">
+                        <option value="" selected disabled>Wilayah</option>
                         <option value="semua">Semua</option>
                         <?php foreach($provinsi->result() as $p){ ?>
-                           <option value="<?= $p->prov_id ?>"> <?= ucwords(strtolower($p->prov_name)) ?></option>
+                           <option <?= ($this->input->get('provid', TRUE) == $p->prov_id) ? 'selected' : '' ?> value="<?= $p->prov_id ?>"> <?= ucwords(strtolower($p->prov_name)) ?></option>
                         <?php } ?>
                      </select>
                   </div>

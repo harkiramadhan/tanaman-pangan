@@ -17,6 +17,32 @@ class Jejaring extends CI_Controller {
 	}
 
 	public function index(){
+		$roleid = $this->input->get('roleid', TRUE);
+		$provid = $this->input->get('provid', TRUE);
+		$komoditasid = $this->input->get('komoditasid', TRUE);
+
+		$where = [];
+		if($roleid != NULL && $roleid != 'semua'){
+			array_push($where, [
+				'column' =>'u.role_id', 
+				'value' => $roleid
+			]);
+		}
+
+		if($provid != NULL && $provid != 'semua'){
+			array_push($where, [
+				'column' => 'u.prov', 
+				'value' => $provid
+			]);
+		}
+
+		if($komoditasid != NULL && $komoditasid != 'semua'){
+			array_push($where, [
+				'column' => 'komoditas_id', 
+				'value' => $komoditasid
+			]);
+		}
+
 		$batas = 16;
 		$page = $this->input->get('page', TRUE);
 		$halaman = isset($page) ? (int)$page : 1;
@@ -25,7 +51,7 @@ class Jejaring extends CI_Controller {
 		$previous = $halaman - 1;
 		$next = $halaman + 1;
 
-		$jumlah_data = $this->M_Jejaring->getAll()->num_rows();
+		$jumlah_data = $this->M_Jejaring->getAll($where)->num_rows();
 		$total_halaman = ceil($jumlah_data / $batas);
 
         $var = [
@@ -35,7 +61,7 @@ class Jejaring extends CI_Controller {
 			'role' => $this->M_Role->getAll(),
 			'provinsi' => $this->M_Wilayah->getProvinsi(),
 			'count' => $total_halaman,
-			'data' => $this->M_Jejaring->getPaginate($halaman_awal, $batas),
+			'data' => $this->M_Jejaring->getPaginate($halaman_awal, $batas, $where),
 			'next' => $next,
 			'previous' => $previous,
 			'page' => $halaman,
