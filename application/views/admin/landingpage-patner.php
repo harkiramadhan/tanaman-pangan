@@ -28,13 +28,29 @@
 								</tr>
 							</thead>
 							<tbody>
-								<!-- Jika ada data pelatihan -->
-                                <!-- <tr>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td></td>
-                                </tr> -->
+								<!-- Jika ada data -->
+                                <tr>
+									<td class="align-top text-center text-sm">1</td>
+									<td>
+										<div class="d-flex px-2 py-1">
+											<div>
+												<img src="http://localhost/tanaman-pangan/uploads/profile/e2700833f9c1b55b75b9c393e4853e75.png" class="avatar avatar-sm me-3" alt="user1">
+											</div>
+											<div class="d-flex flex-column justify-content-center">
+												<h6 class="mb-0 text-sm">Judul Logo</h6>
+											</div>
+										</div>
+									</td>
+									<td class="align-top text-center text-sm">
+										<span class="badge badge-sm bg-gradient-success">Aktif</span> 
+									</td>
+									<td class="align-top">
+										<div class="ms-auto text-center">
+											<button type="button" class="btn btn-link btn-sm py-0 text-danger px-2 mb-0 btn-remove" data-id=""><i class="far fa-trash-alt" aria-hidden="true"></i></button>
+											<button type="button" class="btn btn-link btn-sm py-0 text-info px-2 mb-0 btn-edit" data-id=""><i class="fas fa-pencil-alt" aria-hidden="true"></i></button>
+										</div>
+									</td>
+								</tr>
                             
 
 								<!-- Jika tidak ada data sama sekali -->
@@ -91,12 +107,16 @@
 							<input type="text" name="" class="form-control font-weight-bold text-muted">
 						</div>
 					</div>
-					<div class="row d-flex align-items-center form-group mt-2">
+					<div class="row d-flex align-items-center form-group">
 						<div class="col-md-4">
 						<p class="text-muted font-weight-bold mb-0">Status</p>
 						</div>
 						<div class="col-md-8">
-							<input type="text" name="" class="form-control font-weight-bold text-muted">
+							<select class="form-control form-control-alternative me-3" id="sortBulanAgenda">
+								<option value="semua" selected="">Pilih</option>
+								<option value="1">Aktif</option>
+								<option value="2">Draft</option>
+							</select>
 						</div>
 					</div>
 					<div class="text-right">

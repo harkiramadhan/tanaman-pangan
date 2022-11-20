@@ -88,6 +88,18 @@
                                 <input type="text" name="" class="form-control font-weight-bold text-muted">
                             </div>
                         </div>
+                        <div class="row d-flex align-items-center form-group">
+                            <div class="col-md-4">
+                            <p class="text-muted font-weight-bold mb-0">Status</p>
+                            </div>
+                            <div class="col-md-8">
+                                <select class="form-control form-control-alternative me-3" id="sortBulanAgenda">
+                                    <option value="semua" selected="">Pilih</option>
+                                    <option value="1">Aktif</option>
+                                    <option value="2">Draft</option>
+                                </select>
+                            </div>
+                        </div>
                         <div class="text-right">
                             <button type="submit" class="btn btn-dark w-100 mb-0">SIMPAN</button>
                             <button type="button" class="btn btn-transparant shadow-none w-100 mb-0">KEMBALI</button>
