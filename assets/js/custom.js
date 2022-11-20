@@ -96,6 +96,36 @@ $(document).ready(function () {
 		]
 	});
 
+	$('.patner-slider').slick({
+		slidesToShow: 8,
+		centerMode: true,
+		autoplay:true,
+		autoplaySpeed:1500,
+		slidesToScroll: 1,
+		arrows: false,
+		fade: false,
+		responsive: [{
+				breakpoint: 1099,
+				settings: {
+					slidesToShow: 6,
+				}
+			},
+			{
+				breakpoint: 1024,
+				settings: {
+					slidesToShow: 4,
+				}
+			},
+			{
+				breakpoint: 600,
+				settings: {
+					slidesToShow: 3,
+				}
+			}
+
+		]
+	});
+
 	$('.service-slider').slick({
 		slidesToShow: 5,
 		slidesToScroll: 1,

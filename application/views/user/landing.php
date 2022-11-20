@@ -25,18 +25,81 @@
             </div>
          </div>
       </section>
-      <!--       social -->
-      <ul class="d-flex flex-row trusted-by bg-white border-bottom py-3">
-         <li><img src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo_small.png" style="height: 40px; width: auto;"></li>
-         <li><img src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo-bps.jpg" style="height: 40px; width: auto;"></li>
-         <li><img src="https://tanamanpangan.pertanian.go.id/assets/img/link/RANrB.png" style="height: 40px; width: auto;"></li>
-         <li><img src="https://tanamanpangan.pertanian.go.id/assets/img/link/sedang_1634785548_LAPOR_LOGO-removebg-preview.png" style="height: 40px; width: auto;"></li>
-         <li><img src="https://tanamanpangan.pertanian.go.id/assets/img/link/Logo_BPN-KemenATR_(2017).png" style="height: 40px; width: auto;"></li>
-         <li><img src="https://tanamanpangan.pertanian.go.id/assets/img/link/bapanasbkp1.png" style="height: 40px; width: auto;"></li>
-         <li><img src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo-lpse.jpg" style="height: 40px; width: auto;"></li>
-         <li><img src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo-sms-center.png" style="height: 40px; width: auto;"></li>
-      </ul>
-      <!--       social -->
+
+      <div class="market-wrapper bg-white border-bottom">
+
+         <div class="container">
+
+            <div class="row  py-3 shadow-none patner-slider">
+               <div class="col justify-items-center">
+                  <img class="mx-auto" src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo_small.png" style="height: 40px; width: auto;">
+               </div>
+               <div class="col justify-items-center">
+                  <img class="mx-auto" src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo-bps.jpg" style="height: 40px; width: auto;">
+               </div>
+               <div class="col justify-items-center">
+                  <img class="mx-auto" src="https://tanamanpangan.pertanian.go.id/assets/img/link/RANrB.png" style="height: 40px; width: auto;">
+               </div>
+               <div class="col justify-items-center">
+                  <img class="mx-auto" src="https://tanamanpangan.pertanian.go.id/assets/img/link/sedang_1634785548_LAPOR_LOGO-removebg-preview.png" style="height: 40px; width: auto;">
+               </div>
+               <div class="col justify-items-center">
+                  <img class="mx-auto" src="https://tanamanpangan.pertanian.go.id/assets/img/link/Logo_BPN-KemenATR_(2017).png" style="height: 40px; width: auto;">
+               </div>
+               <div class="col justify-items-center">
+                  <img class="mx-auto" src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo_small.png" style="height: 40px; width: auto;">
+               </div>
+               <div class="col justify-items-center">
+                  <img class="mx-auto" src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo_small.png" style="height: 40px; width: auto;">
+               </div>
+               <div class="col justify-items-center">
+                  <img class="mx-auto" src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo_small.png" style="height: 40px; width: auto;">
+               </div>
+            </div>
+            <!-- <ul class="d-flex flex-row trusted-by py-3 shadow-none patner-slider">
+               <li class="text-center">
+                  <div class="text-center">
+                     <img src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo_small.png" style="height: 40px; width: auto;">
+                  </div>
+               </li>
+               <li class="text-center">
+                  <div class="text-center">
+                     <img src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo-bps.jpg" style="height: 40px; width: auto;">
+                  </div>
+               </li>
+               <li class="text-center">
+                  <div class="text-center">
+                     <img src="https://tanamanpangan.pertanian.go.id/assets/img/link/RANrB.png" style="height: 40px; width: auto;">
+                  </div>
+               </li>
+               <li class="text-center">
+                  <div class="text-center">
+                     <img src="https://tanamanpangan.pertanian.go.id/assets/img/link/sedang_1634785548_LAPOR_LOGO-removebg-preview.png" style="height: 40px; width: auto;">
+                  </div>
+               </li>
+               <li class="text-center">
+                  <div class="text-center">
+                     <img src="https://tanamanpangan.pertanian.go.id/assets/img/link/Logo_BPN-KemenATR_(2017).png" style="height: 40px; width: auto;">
+                  </div>
+               </li>
+               <li class="text-center">
+                  <div class="text-center">
+                     <img src="https://tanamanpangan.pertanian.go.id/assets/img/link/bapanasbkp1.png" style="height: 40px; width: auto;">
+                  </div>
+               </li>
+               <li class="text-center">
+                  <div class="text-center">
+                     <img src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo-lpse.jpg" style="height: 40px; width: auto;">
+                  </div>
+               </li>
+               <li class="text-center">
+                  <div class="text-center">
+                     <img src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo-sms-center.png" style="height: 40px; width: auto;">
+                  </div>
+               </li>
+            </ul> -->
+         </div>
+      </div>
 
       
       <!--    about section -->
