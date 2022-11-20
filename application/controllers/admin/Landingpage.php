@@ -45,17 +45,6 @@ class Landingpage extends CI_Controller {
 		$this->load->view('admin/landingpage-patner', $var);
 		$this->load->view('layout/admin/footer', $var);
 	}
-
-	public function statistic(){
-        $var = [
-			'title' => 'Statistic Landing Page',
-			'role' => $this->M_Role->getAll()
-		];
-		
-		$this->load->view('layout/admin/header', $var);
-		$this->load->view('admin/landingpage-statistic', $var);
-		$this->load->view('layout/admin/footer', $var);
-	}
 	
 	public function komoditas(){
         $var = [

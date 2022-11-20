@@ -8,10 +8,10 @@
 							<h6 class="mb-0">DAFTAR BANNERS</h6>
 						</div>
 						<div class="col-4 text-end d-flex align-content-center align-items-center justify-content-end">
-							<a class="btn bg-gradient-dark mb-0 d-flex justify-content-center align-content-center align-items-center" href="http://localhost/tanaman-pangan/admin/publikasi/add">
+							<button class="btn bg-gradient-dark mb-0 d-flex justify-content-center align-content-center align-items-center"  data-bs-toggle="modal" data-bs-target="#modalTambahBanner">
 								<i class="fas fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;
 								<span class="d-lg-inline d-none">Banner</span>
-							</a>
+							</button>
 						</div>
 					</div>
 				</div>
@@ -53,11 +53,54 @@
 		</div>
 	</div>
 
-
-	<div class="modal fade" id="modal-remove" tabindex="-1" role="dialog" aria-labelledby="modal-notification" aria-hidden="true">
-		<div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
-			<div class="modal-content remove-content">
-
+	<!-- Modal -->
+	<div class="modal fade" id="modalTambahBanner" tabindex="-1" aria-labelledby="modalTambahBanner" aria-hidden="true">
+		<div class="modal-dialog modal-md">
+			<div class="modal-content">
+			<div class="modal-header">
+				<h1 class="modal-title fs-5" id="modalTambahBanner">Tambah Banner</h1>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+			</div>
+			<div class="modal-body">
+				<form action="#" method="POST">
+					<img src="" class="img-fluid img-center shadow rounded d-none" style="max-height: 250px" id="image-preview">
+					<div class="row d-flex align-items-center form-group">
+						<div class="col-md-4">
+						<p class="text-muted font-weight-bold mb-0">Judul</p>
+						</div>
+						<div class="col-md-8">
+							<input type="text" name="" class="form-control font-weight-bold text-muted">
+						</div>
+					</div>
+					<div class="row d-flex align-items-center form-group">
+						<div class="col-md-4">
+						<p class="text-muted font-weight-bold mb-0">Gambar</p>
+						</div>
+						<div class="col-md-8">
+							<input class="form-control" type="file" name="" id="image-source" onchange="previewImage()">
+						</div>
+					</div>
+					<div class="row d-flex align-items-center form-group">
+						<div class="col-md-4">
+						<p class="text-muted font-weight-bold mb-0">Link</p>
+						</div>
+						<div class="col-md-8">
+							<input type="text" name="" class="form-control font-weight-bold text-muted">
+						</div>
+					</div>
+					<div class="row d-flex align-items-center form-group mt-2">
+						<div class="col-md-4">
+						<p class="text-muted font-weight-bold mb-0">Status</p>
+						</div>
+						<div class="col-md-8">
+							<input type="text" name="" class="form-control font-weight-bold text-muted">
+						</div>
+					</div>
+					<div class="text-right">
+						<button type="submit" class="btn btn-dark w-100 mb-0">SIMPAN</button>
+						<button type="button" class="btn btn-transparant shadow-none w-100 mb-0">KEMBALI</button>
+					</div>
+				</form>
 			</div>
 		</div>
 	</div>

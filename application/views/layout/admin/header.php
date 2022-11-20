@@ -95,7 +95,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link <?= ($this->uri->segment(2) == 'faq') ? 'active' : '' ?>" href="<?= site_url('admin/tanitrainer') ?>">
+					<a class="nav-link <?= ($this->uri->segment(2) == 'faq') ? 'active' : '' ?>" href="<?= site_url('admin/faq') ?>">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 							<i class="fas fa-question text-dark text-lg opacity-10" style="top: 0px;"></i>
@@ -135,30 +135,6 @@
 									<i class="fas fa-handshake text-dark text-lg opacity-10" style="top: 0px;"></i>
 								</div>
 								<span class="sidenav-normal"> Patner </span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link py-2 <?= ($this->uri->segment(3) == 'statistic') ? 'active' : '' ?> " href="<?= site_url('admin/landingpage/statistic') ?>">
-								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-									<i class="fas fa-table text-dark text-lg opacity-10" style="top: 0px;"></i>
-								</div>
-								<span class="sidenav-normal"> Statistics </span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link py-2 <?= ($this->uri->segment(3) == 'komoditas') ? 'active' : '' ?> " href="<?= site_url('admin/landingpage/komoditas') ?>">
-								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-									<i class="fas fa-leaf text-dark text-lg opacity-10" style="top: 0px;"></i>
-								</div>
-								<span class="sidenav-normal"> Komoditas </span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link py-2 <?= ($this->uri->segment(3) == 'publikasi') ? 'active' : '' ?> " href="<?= site_url('admin/landingpage/publikasi') ?>">
-								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-									<i class="fas fa-newspaper text-dark text-lg opacity-10" style="top: 0px;"></i>
-								</div>
-								<span class="sidenav-normal"> Publikasi </span>
 								</a>
 							</li>
 							<li class="nav-item">
