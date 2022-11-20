@@ -1,6 +1,6 @@
 <?php
 
-class Landingpage extends CI_Controller {
+class Faq extends CI_Controller {
 	function __construct(){
 		parent::__construct();
 
@@ -15,23 +15,12 @@ class Landingpage extends CI_Controller {
 
 	public function index(){
         $var = [
-			'title' => 'Landing Page',
+			'title' => 'FAQ Page',
 			'role' => $this->M_Role->getAll()
 		];
 		
 		$this->load->view('layout/admin/header', $var);
-		$this->load->view('admin/landingpage', $var);
-		$this->load->view('layout/admin/footer', $var);
-	}
-
-	public function header(){
-        $var = [
-			'title' => 'Landing Page',
-			'role' => $this->M_Role->getAll()
-		];
-		
-		$this->load->view('layout/admin/header', $var);
-		$this->load->view('admin/landingpage-header', $var);
+		$this->load->view('admin/faq', $var);
 		$this->load->view('layout/admin/footer', $var);
 	}
 }

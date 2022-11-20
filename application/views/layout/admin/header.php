@@ -95,44 +95,111 @@
 					</a>
 				</li>
 				<li class="nav-item">
+					<a class="nav-link <?= ($this->uri->segment(2) == 'tanitrainer') ? 'active' : '' ?>" href="<?= site_url('admin/tanitrainer') ?>">
+						<div
+							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+							<i class="fas fa-question text-dark text-lg opacity-10" style="top: 0px;"></i>
+						</div>
+						<span class="nav-link-text ms-1">FAQ</span>
+					</a>
+				</li>
+				<li class="nav-item">
+					<a class="nav-link <?= ($this->uri->segment(2) == 'tanitrainer') ? 'active' : '' ?>" href="<?= site_url('admin/tanitrainer') ?>">
+						<div
+							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+							<i class="fas fa-address-card text-dark text-lg opacity-10" style="top: 0px;"></i>
+						</div>
+						<span class="nav-link-text ms-1">Tentang Kami</span>
+					</a>
+				</li>
+				<li class="nav-item">
 					<a data-bs-toggle="collapse" href="#applicationsExamples" class="nav-link" aria-controls="applicationsExamples" role="button" aria-expanded="false">
 					<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-						<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+						<i class="fas fa-file text-dark text-lg opacity-10" style="top: 0px;"></i>
 					</div>
 					<span class="nav-link-text ms-1">Landing Page</span>
 					</a>
 					<div class="collapse" id="applicationsExamples" style="">
-						<ul class="nav ms-0">
+						<ul class="nav ms-4">
 							<li class="nav-item">
-								<a class="nav-link " href="../../pages/applications/kanban.html">
+								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
 								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+									<i class="fas fa-puzzle-piece text-dark text-lg opacity-10" style="top: 0px;"></i>
 								</div>
-								<span class="sidenav-normal"> Kanban </span>
+								<span class="sidenav-normal"> Header </span>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link " href="../../pages/applications/kanban.html">
+								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
 								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
 								</div>
-								<span class="sidenav-normal"> Kanban </span>
+								<span class="sidenav-normal"> Jejaring </span>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link " href="../../pages/applications/kanban.html">
+								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
 								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
 								</div>
-								<span class="sidenav-normal"> Kanban </span>
+								<span class="sidenav-normal"> Cari Komoditas </span>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link " href="../../pages/applications/kanban.html">
+								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
 								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
 								</div>
-								<span class="sidenav-normal"> Kanban </span>
+								<span class="sidenav-normal"> Tani Trainer </span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
+								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+								</div>
+								<span class="sidenav-normal"> Publikasi </span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
+								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+								</div>
+								<span class="sidenav-normal"> BTS Propaktani </span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
+								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+								</div>
+								<span class="sidenav-normal"> Benefit Tani Trainer </span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
+								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+								</div>
+								<span class="sidenav-normal"> Testimoni </span>
+								</a>
+							</li>
+							
+							<li class="nav-item">
+								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
+								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+								</div>
+								<span class="sidenav-normal"> FAQ </span>
+								</a>
+							</li>
+							<li class="nav-item">
+								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
+								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+								</div>
+								<span class="sidenav-normal"> Pertanyaan </span>
 								</a>
 							</li>
 						</ul>

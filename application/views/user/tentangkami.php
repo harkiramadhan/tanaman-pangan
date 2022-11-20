@@ -76,38 +76,3 @@
          </div>
       </section>
       <!-- End What We Provide -->
-      <!-- Trusted Agents -->
-      <section class="py-5 bg-white">
-         <div class="section-title text-center mb-5">
-            <h2>Trusted Agents</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-         </div>
-         <div class="container">
-            <div class="row">
-               <div class="col-lg-4 col-md-4">
-                  <div class="agents-card text-center">
-                     <img class="img-fluid mb-4" src="<?= base_url() ?>assets/images/user/s1.png" alt="">
-                     <p class="mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
-                     <h6 class="mb-0 text-success">- Stave Martin</h6>
-                     <small>Buying Agent</small>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-4">
-                  <div class="agents-card text-center">
-                     <img class="img-fluid mb-4" src="<?= base_url() ?>assets/images/user/s2.png" alt="">
-                     <p class="mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
-                     <h6 class="mb-0 text-success">- Mark Smith</h6>
-                     <small>Selling Agent</small>
-                  </div>
-               </div>
-               <div class="col-lg-4 col-md-4">
-                  <div class="agents-card text-center">
-                     <img class="img-fluid mb-4" src="<?= base_url() ?>assets/images/user/s3.png" alt="">
-                     <p class="mb-4">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been.</p>
-                     <h6 class="mb-0 text-success">- Ryan Printz</h6>
-                     <small>Real Estate Broker</small>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </section>
