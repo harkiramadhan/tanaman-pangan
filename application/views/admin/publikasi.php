@@ -23,7 +23,7 @@
 						</div>
 					</div>
 				</div>
-				<div class="card-body px-0 pt-0 pb-2">
+				<div class="card-body px-0 pt-0 pb-0">
 					<div class="table-responsive p-0">
 						<table class="table align-items-center mb-0 display" id="example" style="width:100%">
 							<thead class="bg-light opacity-5">
@@ -69,6 +69,17 @@
 									</td>
 								</tr>
 								<?php endforeach; ?>
+
+
+								<!-- Jika tidak ada data sama sekali -->
+
+								<tr>
+                                    <td colspan="4" class="text-center py-4 mb-0">
+
+									Data masih kosong
+
+									</td>
+                                </tr>
 							</tbody>
 						</table>
 					</div>

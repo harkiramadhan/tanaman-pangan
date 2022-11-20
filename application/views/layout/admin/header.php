@@ -95,7 +95,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link <?= ($this->uri->segment(2) == 'tanitrainer') ? 'active' : '' ?>" href="<?= site_url('admin/tanitrainer') ?>">
+					<a class="nav-link <?= ($this->uri->segment(2) == 'faq') ? 'active' : '' ?>" href="<?= site_url('admin/tanitrainer') ?>">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 							<i class="fas fa-question text-dark text-lg opacity-10" style="top: 0px;"></i>
@@ -104,7 +104,7 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link <?= ($this->uri->segment(2) == 'tanitrainer') ? 'active' : '' ?>" href="<?= site_url('admin/tanitrainer') ?>">
+					<a class="nav-link <?= ($this->uri->segment(2) == 'tentangkami') ? 'active' : '' ?>" href="<?= site_url('admin/tanitrainer') ?>">
 						<div
 							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 							<i class="fas fa-address-card text-dark text-lg opacity-10" style="top: 0px;"></i>
@@ -113,93 +113,68 @@
 					</a>
 				</li>
 				<li class="nav-item">
-					<a data-bs-toggle="collapse" href="#applicationsExamples" class="nav-link" aria-controls="applicationsExamples" role="button" aria-expanded="false">
+					<a data-bs-toggle="collapse" href="#applicationsExamples" class="nav-link  <?= ($this->uri->segment(2) == 'landingpage') ? 'active' : '' ?>" aria-controls="applicationsExamples" role="button" aria-expanded="false">
 					<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 						<i class="fas fa-file text-dark text-lg opacity-10" style="top: 0px;"></i>
 					</div>
 					<span class="nav-link-text ms-1">Landing Page</span>
 					</a>
-					<div class="collapse" id="applicationsExamples" style="">
-						<ul class="nav ms-4">
+					<div class="collapse <?= ($this->uri->segment(2) == 'landingpage') ? 'show' : '' ?>" id="applicationsExamples" style="">
+						<ul class="nav ms-0">
 							<li class="nav-item">
-								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
+								<a class="nav-link py-2 <?= ($this->uri->segment(3) == 'banner') ? 'active' : '' ?>" href="<?= site_url('admin/landingpage/banner') ?>">
 								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-									<i class="fas fa-puzzle-piece text-dark text-lg opacity-10" style="top: 0px;"></i>
+									<i class="fas fa-images text-dark text-lg opacity-10" style="top: 0px;"></i>
 								</div>
-								<span class="sidenav-normal"> Header </span>
+								<span class="sidenav-normal"> Banner </span>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
+								<a class="nav-link py-2 <?= ($this->uri->segment(3) == 'patner') ? 'active' : '' ?> " href="<?= site_url('admin/landingpage/patner') ?>">
 								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+									<i class="fas fa-handshake text-dark text-lg opacity-10" style="top: 0px;"></i>
 								</div>
-								<span class="sidenav-normal"> Jejaring </span>
+								<span class="sidenav-normal"> Patner </span>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
+								<a class="nav-link py-2 <?= ($this->uri->segment(3) == 'statistic') ? 'active' : '' ?> " href="<?= site_url('admin/landingpage/statistic') ?>">
 								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+									<i class="fas fa-table text-dark text-lg opacity-10" style="top: 0px;"></i>
 								</div>
-								<span class="sidenav-normal"> Cari Komoditas </span>
+								<span class="sidenav-normal"> Statistics </span>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
+								<a class="nav-link py-2 <?= ($this->uri->segment(3) == 'komoditas') ? 'active' : '' ?> " href="<?= site_url('admin/landingpage/komoditas') ?>">
 								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+									<i class="fas fa-leaf text-dark text-lg opacity-10" style="top: 0px;"></i>
 								</div>
-								<span class="sidenav-normal"> Tani Trainer </span>
+								<span class="sidenav-normal"> Komoditas </span>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
+								<a class="nav-link py-2 <?= ($this->uri->segment(3) == 'publikasi') ? 'active' : '' ?> " href="<?= site_url('admin/landingpage/publikasi') ?>">
 								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+									<i class="fas fa-newspaper text-dark text-lg opacity-10" style="top: 0px;"></i>
 								</div>
 								<span class="sidenav-normal"> Publikasi </span>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
+								<a class="nav-link py-2 <?= ($this->uri->segment(3) == 'testimoni') ? 'active' : '' ?> " href="<?= site_url('admin/landingpage/testimoni') ?>">
 								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
-								</div>
-								<span class="sidenav-normal"> BTS Propaktani </span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
-								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
-								</div>
-								<span class="sidenav-normal"> Benefit Tani Trainer </span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
-								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+									<i class="fas fa-star text-dark text-lg opacity-10" style="top: 0px;"></i>
 								</div>
 								<span class="sidenav-normal"> Testimoni </span>
 								</a>
 							</li>
-							
 							<li class="nav-item">
-								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
+								<a class="nav-link py-2 <?= ($this->uri->segment(3) == 'kegiatan') ? 'active' : '' ?> " href="<?= site_url('admin/landingpage/kegiatan') ?>">
 								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
 								</div>
-								<span class="sidenav-normal"> FAQ </span>
-								</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link py-2 " href="../../pages/applications/kanban.html">
-								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-									<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
-								</div>
-								<span class="sidenav-normal"> Pertanyaan </span>
+								<span class="sidenav-normal"> Kalender Kegiatan </span>
 								</a>
 							</li>
 						</ul>

@@ -24,14 +24,80 @@ class Landingpage extends CI_Controller {
 		$this->load->view('layout/admin/footer', $var);
 	}
 
-	public function header(){
+	public function banner(){
         $var = [
 			'title' => 'Landing Page',
 			'role' => $this->M_Role->getAll()
 		];
 		
 		$this->load->view('layout/admin/header', $var);
-		$this->load->view('admin/landingpage-header', $var);
+		$this->load->view('admin/landingpage-banners', $var);
+		$this->load->view('layout/admin/footer', $var);
+	}
+
+	public function patner(){
+        $var = [
+			'title' => 'Patner Landing Page',
+			'role' => $this->M_Role->getAll()
+		];
+		
+		$this->load->view('layout/admin/header', $var);
+		$this->load->view('admin/landingpage-patner', $var);
+		$this->load->view('layout/admin/footer', $var);
+	}
+
+	public function statistic(){
+        $var = [
+			'title' => 'Statistic Landing Page',
+			'role' => $this->M_Role->getAll()
+		];
+		
+		$this->load->view('layout/admin/header', $var);
+		$this->load->view('admin/landingpage-statistic', $var);
+		$this->load->view('layout/admin/footer', $var);
+	}
+	
+	public function komoditas(){
+        $var = [
+			'title' => 'Komoditas Landing Page',
+			'role' => $this->M_Role->getAll()
+		];
+		
+		$this->load->view('layout/admin/header', $var);
+		$this->load->view('admin/landingpage-komoditas', $var);
+		$this->load->view('layout/admin/footer', $var);
+	}
+
+	public function publikasi(){
+        $var = [
+			'title' => 'Publikasi Landing Page',
+			'role' => $this->M_Role->getAll()
+		];
+		
+		$this->load->view('layout/admin/header', $var);
+		$this->load->view('admin/landingpage-publikasi', $var);
+		$this->load->view('layout/admin/footer', $var);
+	}
+
+	public function testimoni(){
+        $var = [
+			'title' => 'Testimoni Landing Page',
+			'role' => $this->M_Role->getAll()
+		];
+		
+		$this->load->view('layout/admin/header', $var);
+		$this->load->view('admin/landingpage-testimoni', $var);
+		$this->load->view('layout/admin/footer', $var);
+	}
+	
+	public function kegiatan(){
+        $var = [
+			'title' => 'Kegiatan Landing Page',
+			'role' => $this->M_Role->getAll()
+		];
+		
+		$this->load->view('layout/admin/header', $var);
+		$this->load->view('admin/landingpage-kegiatan', $var);
 		$this->load->view('layout/admin/footer', $var);
 	}
 }

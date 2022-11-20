@@ -45,6 +45,16 @@
                                         </div>
                                     </td>
                                 </tr>
+
+								<!-- Jika tidak ada data sama sekali -->
+
+								<tr>
+                                    <td colspan="4" class="text-center py-4 mb-0">
+
+									Data masih kosong
+
+									</td>
+                                </tr>
                             </tbody>
 						</table>
 					</div>
@@ -52,16 +62,16 @@
 			</div>
 		</div>
 
-	<!-- Modal -->
-    <div class="modal fade" id="modalFAQ" tabindex="-1" aria-labelledby="modalFAQ" aria-hidden="true">
-        <div class="modal-dialog modal-md">
-            <div class="modal-content">
-            <div class="modal-header">
-                <h1 class="modal-title fs-5" id="modalFAQ">Tambah Pertanyaan</h1>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                <form action="#" method="POST">
+        <!-- Modal -->
+        <div class="modal fade" id="modalFAQ" tabindex="-1" aria-labelledby="modalFAQ" aria-hidden="true">
+            <div class="modal-dialog modal-md">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="modalFAQ">Tambah Pertanyaan</h1>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="#" method="POST">
                         <div class="row d-flex align-items-center form-group">
                             <div class="col-md-4">
                             <p class="text-muted font-weight-bold mb-0">Pertanyaan</p>
@@ -82,7 +92,7 @@
                             <button type="submit" class="btn btn-dark w-100 mb-0">SIMPAN</button>
                             <button type="button" class="btn btn-transparant shadow-none w-100 mb-0">KEMBALI</button>
                         </div>
-                </form>
+                    </form>
                 </div>
             </div>
         </div>
