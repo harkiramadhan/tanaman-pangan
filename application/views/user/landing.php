@@ -414,7 +414,7 @@
                      <div class="service">
                         <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
                         <h3 style="top: none !important; bottom: 30px !important;">
-                           <i class="fa fa-play-circle fa-1x fa-lg mb-3"></i>
+                           <i class="fas fa-photo-video fa-1x fa-lg mb-3"></i>
                            <span style="font-size: 24px !important;">BTS</span>
                            <span class="font-weight-light mt-1">12 items</span>
                         </h3>
@@ -427,7 +427,20 @@
                      <div class="service">
                         <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
                         <h3 style="top: none !important; bottom: 30px !important;">
-                           <i class="fa fa-file fa-1x fa-lg mb-3"></i>
+                           <i class="fas fa-folder-open fa-1x fa-lg mb-3"></i>
+                           <span style="font-size: 24px !important;">Dokumen</span>
+                           <span class="font-weight-light mt-1">12 items</span>
+                        </h3>
+                     </div>
+                  </a>
+               </div>
+
+               <div class="col">
+                  <a href="">
+                     <div class="service">
+                        <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
+                        <h3 style="top: none !important; bottom: 30px !important;">
+                           <i class="fas fa-newspaper fa-1x fa-lg mb-3"></i>
                            <span style="font-size: 24px !important;">Berita</span>
                            <span class="font-weight-light mt-1">12 items</span>
                         </h3>
@@ -440,7 +453,7 @@
                      <div class="service">
                         <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
                         <h3 style="top: none !important; bottom: 30px !important;">
-                           <i class="fa fa-play-circle fa-1x fa-lg mb-3"></i>
+                           <i class="fas fa-video fa-1x fa-lg mb-3"></i>
                            <span style="font-size: 24px !important;">Video</span>
                            <span class="font-weight-light mt-1">12 items</span>
                         </h3>
@@ -453,7 +466,7 @@
                      <div class="service">
                         <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
                         <h3 style="top: none !important; bottom: 30px !important;">
-                           <i class="fa fa-play-circle fa-1x fa-lg mb-3"></i>
+                           <i class="fas fa-image fa-1x fa-lg mb-3"></i>
                            <span style="font-size: 24px !important;">Galeri</span>
                            <span class="font-weight-light mt-1">12 items</span>
                         </h3>
@@ -466,7 +479,7 @@
                      <div class="service">
                         <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
                         <h3 style="top: none !important; bottom: 30px !important;">
-                           <i class="fa fa-play-circle fa-1x fa-lg mb-3"></i>
+                           <i class="fas fa-mobile fa-1x fa-lg mb-3"></i>
                            <span style="font-size: 24px !important;">Sosial Media</span>
                            <span class="font-weight-light mt-1">12 items</span>
                         </h3>

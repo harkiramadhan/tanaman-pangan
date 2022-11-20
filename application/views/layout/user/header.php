@@ -10,8 +10,10 @@
       <link rel="icon" type="image/png" href="http://app3.pertanian.go.id/propaktani/portal/assets/img/logo_login.png">
       <!-- Bootstrap core CSS -->
       <link href="<?= base_url('assets/vendor/bootstrap/css/bootstrap.min.css') ?>" rel="stylesheet">
-      <!-- Font Awesome-->
-      <link href="<?= base_url('assets/vendor/fontawesome/css/font-awesome.min.css') ?>" rel="stylesheet">
+      
+      <!-- Font Awesome Icons -->
+      <script src="https://kit.fontawesome.com/42d5adcbca.js" crossorigin="anonymous"></script>
+      
       <!-- Material Design Icons -->
       <link href="<?= base_url('assets/vendor/icons/css/materialdesignicons.min.css') ?>" media="all" rel="stylesheet" type="text/css">
       <!-- Slick -->
