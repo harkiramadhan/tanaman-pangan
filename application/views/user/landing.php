@@ -109,7 +109,7 @@
             <ul class="categories-list mb-0 statistic-slider">
                <li>
                   <a href="#">
-                     <img src="<?= base_url() ?>assets/images/graphics.svg" alt="" loading="lazy">
+                     <img src="<?= base_url() ?>assets/images/thumbnail/role/1_Petani:Produsen.png" alt="" loading="lazy">
                      <span class="h4 mb-4">2000</span>
                      <br class="my-2">
                      <span>Petani/Produsen</span>
@@ -117,7 +117,7 @@
                </li>
                <li>
                   <a href="#">
-                     <img src="<?= base_url() ?>assets/images/online-marketing.svg" alt="Digital Marketing" loading="lazy">
+                     <img src="<?= base_url() ?>assets/images/thumbnail/role/2_Usaha Olahan.png" alt="Digital Marketing" loading="lazy">
                      <span class="h4 mb-4">2000</span>
                      <br class="my-2">
                      <span>Usaha Olahan</span>
