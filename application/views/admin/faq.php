@@ -22,39 +22,42 @@
 								<tr>
 									<th class="text-uppercase text-dark text-xxs text-center font-weight-bolder opacity-10" width="1px">#</th>
 									<th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Pertanyaan</th>
+                                    <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Status</th>
 									<th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Aksi</th>
 								</tr>
 							</thead>
 							<tbody>
 								<!-- Jika ada data pelatihan -->
+                                <?php if($faq->num_rows() > 0): ?>
+                                    <?php $no = 1; foreach($faq->result() as $row){ ?>
                                 <tr>
-                                    <td class="align-top text-center text-sm">1</td>
+                                    <td class="align-top text-center text-sm"><?= $no++ ?></td>
                                     <td>
                                         <div class="d-flex px-2 py-1">
                                             <div class="d-flex flex-column justify-content-center">
-                                                <h6 class="mb-0 text-sm">Apa itu program jejaring yang ada di website ini?</h6>
-                                                <p class="small text-xs text-secondary mb-0">Petani/Produsen Pangan Segar</p>
+                                                <h6 class="mb-0 text-sm"><?= $row->question ?></h6>
+                                                <p class="small text-xs text-secondary mb-0"><?= $row->answer ?></p>
                                             </div>
                                         </div>
                                     </td>
+                                    <td class="align-top text-center text-sm">
+										<span class="badge badge-sm <?= ($row->status == 1) ? 'bg-gradient-success' : 'bg-gradient-danger' ?>"><?= ($row->status == 1) ? 'Aktif' : 'Draft' ?></span> 
+									</td>
                                     <td class="align-top">
                                         <div class="ms-auto text-center">
-                                            <a class="btn btn-link btn-sm py-0 text-info px-2 mb-0" href="#" target="__BLANK"><i class="far fa-eye" aria-hidden="true"></i></a>
                                             <button type="button" class="btn btn-link btn-sm py-0 text-danger px-2 mb-0 btn-remove" data-id="5"><i class="far fa-trash-alt" aria-hidden="true"></i></button>
-                                            <a class="btn btn-link btn-sm py-0 text-dark px-2 mb-0" href="#"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+                                            <button type="button" class="btn btn-link btn-sm py-0 text-dark px-2 mb-0 btn-edit" data-id="<?= $row->id ?>"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button>
                                         </div>
                                     </td>
                                 </tr>
 
 								<!-- Jika tidak ada data sama sekali -->
-
-								<tr>
-                                    <td colspan="4" class="text-center py-4 mb-0">
-
-									Data masih kosong
-
-									</td>
-                                </tr>
+                                    <?php } ?>
+                                <?php else: ?>
+                                    <tr>
+                                        <td colspan="4" class="text-center py-4 mb-0">Data masih kosong</td>
+                                    </tr>
+                                <?php endif; ?>
                             </tbody>
 						</table>
 					</div>
@@ -64,48 +67,56 @@
 
         <!-- Modal -->
         <div class="modal fade" id="modalFAQ" tabindex="-1" aria-labelledby="modalFAQ" aria-hidden="true">
-            <div class="modal-dialog modal-md">
+            <div class="modal-dialog modal-lg">
                 <div class="modal-content">
-                <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="modalFAQ">Tambah Pertanyaan</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                </div>
-                <div class="modal-body">
-                    <form action="#" method="POST">
-                        <div class="row d-flex align-items-center form-group">
-                            <div class="col-md-4">
-                            <p class="text-muted font-weight-bold mb-0">Pertanyaan</p>
+                    <div class="modal-header">
+                        <h1 class="modal-title fs-5" id="modalFAQ">Tambah Pertanyaan</h1>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <form action="<?= site_url('admin/faq/create') ?>" method="POST">
+                            <div class="row d-flex align-items-center form-group">
+                                <div class="col-md-4">
+                                    <p class="text-muted font-weight-bold mb-0">Pertanyaan</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="question" class="form-control font-weight-bold text-muted" required>
+                                </div>
                             </div>
-                            <div class="col-md-8">
-                                <input type="text" name="" class="form-control font-weight-bold text-muted">
+                            <div class="row d-flex align-items-center form-group">
+                                <div class="col-md-4">
+                                    <p class="text-muted font-weight-bold mb-0">Jawaban</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <input type="text" name="answer" class="form-control font-weight-bold text-muted" required>
+                                </div>
                             </div>
-                        </div>
-                        <div class="row d-flex align-items-center form-group">
-                            <div class="col-md-4">
-                            <p class="text-muted font-weight-bold mb-0">Jawaban</p>
+                            <div class="row d-flex align-items-center form-group">
+                                <div class="col-md-4">
+                                    <p class="text-muted font-weight-bold mb-0">Status</p>
+                                </div>
+                                <div class="col-md-8">
+                                    <select class="form-control form-control-alternative me-3" name="status" required>
+                                        <option value="" selected="" disabled>Pilih</option>
+                                        <option value="1">Aktif</option>
+                                        <option value="2">Draft</option>
+                                    </select>
+                                </div>
                             </div>
-                            <div class="col-md-8">
-                                <input type="text" name="" class="form-control font-weight-bold text-muted">
+                            <div class="text-right">
+                                <button type="submit" class="btn btn-dark w-100 mb-0">SIMPAN</button>
+                                <button type="button" class="btn btn-transparant shadow-none w-100 mb-0">KEMBALI</button>
                             </div>
-                        </div>
-                        <div class="row d-flex align-items-center form-group">
-                            <div class="col-md-4">
-                            <p class="text-muted font-weight-bold mb-0">Status</p>
-                            </div>
-                            <div class="col-md-8">
-                                <select class="form-control form-control-alternative me-3" id="sortBulanAgenda">
-                                    <option value="semua" selected="">Pilih</option>
-                                    <option value="1">Aktif</option>
-                                    <option value="2">Draft</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="text-right">
-                            <button type="submit" class="btn btn-dark w-100 mb-0">SIMPAN</button>
-                            <button type="button" class="btn btn-transparant shadow-none w-100 mb-0">KEMBALI</button>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+
+        <div class="modal fade" id="editFaq" tabindex="-1" aria-labelledby="editFaq" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content edit-content">
+                    
+                </div>
+            </div>
+        </div>
