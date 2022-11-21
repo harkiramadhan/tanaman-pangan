@@ -40,6 +40,8 @@ class Testimoni extends CI_Controller{
 		$this->load->view('layout/admin/footer', $var);
     }
 
+    /* Ajax Here! */
+
     /* Action Here! */
     function create(){
         $config['upload_path'] = './uploads/testimoni';  
