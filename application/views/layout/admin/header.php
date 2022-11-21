@@ -110,26 +110,29 @@
 					</div>
 					<span class="nav-link-text ms-1">Landing Page</span>
 					</a>
-					<div class="collapse <?= ($this->uri->segment(2) == 'landingpage') ? 'show' : '' ?>" id="applicationsExamples" style="">
+					<div class="collapse <?= (
+							$this->uri->segment(2) == 'banners' || 
+							$this->uri->segment(2) == 'partner' ||
+							$this->uri->segment(2) == 'testimoni') ? 'show' : '' ?>" id="applicationsExamples" style="">
 						<ul class="nav ms-0">
 							<li class="nav-item">
-								<a class="nav-link py-2 <?= ($this->uri->segment(3) == 'banner') ? 'active' : '' ?>" href="<?= site_url('admin/landingpage/banner') ?>">
-								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-									<i class="fas fa-images text-dark text-lg opacity-10" style="top: 0px;"></i>
-								</div>
-								<span class="sidenav-normal"> Banner </span>
+								<a class="nav-link py-2 <?= ($this->uri->segment(2) == 'banners') ? 'active' : '' ?>" href="<?= site_url('admin/banners') ?>">
+									<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+										<i class="fas fa-images text-dark text-lg opacity-10" style="top: 0px;"></i>
+									</div>
+									<span class="sidenav-normal"> Banner </span>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link py-2 <?= ($this->uri->segment(3) == 'patner') ? 'active' : '' ?> " href="<?= site_url('admin/landingpage/patner') ?>">
-								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
-									<i class="fas fa-handshake text-dark text-lg opacity-10" style="top: 0px;"></i>
-								</div>
-								<span class="sidenav-normal"> Patner </span>
+								<a class="nav-link py-2 <?= ($this->uri->segment(2) == 'partner') ? 'active' : '' ?> " href="<?= site_url('admin/partner') ?>">
+									<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+										<i class="fas fa-handshake text-dark text-lg opacity-10" style="top: 0px;"></i>
+									</div>
+									<span class="sidenav-normal"> Patner </span>
 								</a>
 							</li>
 							<li class="nav-item">
-								<a class="nav-link py-2 <?= ($this->uri->segment(3) == 'testimoni') ? 'active' : '' ?> " href="<?= site_url('admin/landingpage/testimoni') ?>">
+								<a class="nav-link py-2 <?= ($this->uri->segment(2) == 'testimoni') ? 'active' : '' ?> " href="<?= site_url('admin/testimoni') ?>">
 								<div class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
 									<i class="fas fa-star text-dark text-lg opacity-10" style="top: 0px;"></i>
 								</div>

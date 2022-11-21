@@ -68,7 +68,7 @@ class Faq extends CI_Controller {
 					</div>
 					<div class="text-right">
 						<button type="submit" class="btn btn-dark w-100 mb-0">SIMPAN</button>
-						<button type="button" class="btn btn-transparant shadow-none w-100 mb-0">KEMBALI</button>
+						<button data-bs-dismiss="modal" type="button" class="btn btn-transparant shadow-none w-100 mb-0">KEMBALI</button>
 					</div>
 				</form>
 			</div>
