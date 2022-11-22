@@ -10,7 +10,11 @@ class Landing extends CI_Controller {
 			'M_Partner',
 			'M_Role',
 			'M_Komoditas',
-			'M_Tanitrainer'
+			'M_Tanitrainer',
+			'M_Kategori_publikasi',
+			'M_Publikasi',
+			'M_Kegiatan',
+			'M_Faq'
 		]);
 	}
 	
@@ -22,7 +26,10 @@ class Landing extends CI_Controller {
 			'partner' => $this->M_Partner->getActive(),
 			'role' => $this->M_Role->getAll(),
 			'komoditas' => $this->M_Komoditas->getAll(),
-			'tanitrainer' => $this->M_Tanitrainer->getPaginate(1, 10)
+			'tanitrainer' => $this->M_Tanitrainer->getPaginate(1, 10),
+			'kategoriPublikasi' => $this->M_Kategori_publikasi->getAll(),
+			'kegiatan' => $this->M_Kegiatan->getActive(),
+			'faq' => $this->M_Faq->getActive()
 		];
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/landing', $var);

@@ -41,4 +41,13 @@ class M_Publikasi extends CI_Model{
                             'p.status' => 1
                         ])->limit($rowperpage, $rowno)->order_by('tanggal DESC, id DESC')->get();
     }
+
+    function countByCategory($kategoriid){
+        return $this->db->select('p.id')
+                        ->from('publikasi p')
+                        ->where([
+                            'p.status' => 1,
+                            'p.kategori_id' => $kategoriid
+                        ])->get()->num_rows();
+    }
 }

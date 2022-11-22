@@ -295,83 +295,23 @@
          <div class="container">
             <h2>Publikasi Penting Kami</h2>
             <div class="row service-slider">
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
-                        <h3 style="top: none !important; bottom: 30px !important;">
-                           <i class="fas fa-photo-video fa-1x fa-lg mb-3"></i>
-                           <span style="font-size: 24px !important;">BTS</span>
-                           <span class="font-weight-light mt-1">12 items</span>
-                        </h3>
-                     </div>
-                  </a>
-               </div>
-
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
-                        <h3 style="top: none !important; bottom: 30px !important;">
-                           <i class="fas fa-folder-open fa-1x fa-lg mb-3"></i>
-                           <span style="font-size: 24px !important;">Dokumen</span>
-                           <span class="font-weight-light mt-1">12 items</span>
-                        </h3>
-                     </div>
-                  </a>
-               </div>
-
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
-                        <h3 style="top: none !important; bottom: 30px !important;">
-                           <i class="fas fa-newspaper fa-1x fa-lg mb-3"></i>
-                           <span style="font-size: 24px !important;">Berita</span>
-                           <span class="font-weight-light mt-1">12 items</span>
-                        </h3>
-                     </div>
-                  </a>
-               </div>
-
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
-                        <h3 style="top: none !important; bottom: 30px !important;">
-                           <i class="fas fa-video fa-1x fa-lg mb-3"></i>
-                           <span style="font-size: 24px !important;">Video</span>
-                           <span class="font-weight-light mt-1">12 items</span>
-                        </h3>
-                     </div>
-                  </a>
-               </div>
-
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
-                        <h3 style="top: none !important; bottom: 30px !important;">
-                           <i class="fas fa-image fa-1x fa-lg mb-3"></i>
-                           <span style="font-size: 24px !important;">Galeri</span>
-                           <span class="font-weight-light mt-1">12 items</span>
-                        </h3>
-                     </div>
-                  </a>
-               </div>
-
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
-                        <h3 style="top: none !important; bottom: 30px !important;">
-                           <i class="fas fa-mobile fa-1x fa-lg mb-3"></i>
-                           <span style="font-size: 24px !important;">Sosial Media</span>
-                           <span class="font-weight-light mt-1">12 items</span>
-                        </h3>
-                     </div>
-                  </a>
-               </div>
+               <?php 
+                  foreach($kategoriPublikasi->result() as $kp): 
+                     $countPublikasi = $this->M_Publikasi->countByCategory($kp->id);
+               ?>
+                  <div class="col">
+                     <a href="">
+                        <div class="service">
+                           <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('<?= base_url('assets/images/thumbnail/publikasi/' . $kp->img) ?>');">
+                           <h3 style="top: none !important; bottom: 30px !important;">
+                              <i class="<?= $kp->icon ?> fa-1x fa-lg mb-3"></i>
+                              <span style="font-size: 24px !important;"><?= $kp->kategori ?></span>
+                              <span class="font-weight-light mt-1"><?= $countPublikasi ?> items</span>
+                           </h3>
+                        </div>
+                     </a>
+                  </div>
+               <?php endforeach; ?>
             </div>
          </div>
       </div>
@@ -476,36 +416,18 @@
                   <h6 class="m-0"><i class="fa fa-calendar mr-3"></i>Kalender Kegiatan</h6>
                </div>
                <div class="box-body p-0">
+                  <?php foreach($kegiatan->result() as $kg): ?>
                   <div class="p-3 d-flex align-items-center border-bottom osahan-post-header">
-                     <div class="dropdown-list-image mr-3 d-lg-flex d-none align-items-center bg-danger justify-content-center rounded-circle text-white"><i class="fa fa-play"></i></div>
+                     <div class="dropdown-list-image mr-3 d-lg-flex d-none align-items-center bg-danger justify-content-center rounded-circle text-white"><i class="<?= $kg->icon ?>"></i></div>
                      <div class="font-weight-bold mr-3">
-                        <div class="text-truncate">Pelatihan Sejuta Petani</div>
-                        <div class="small">12 - September 2022 - 1 Januari 2023, 09.00 - 12.00 WIB</div>
+                        <div class="text-truncate"><?= $kg->judul ?></div>
+                        <div class="small"><?= longdate_indo($kg->tanggal) ?></div>
                      </div>
                      <a href="#" class="ml-auto mb-auto text-info">
                         <span class="d-lg-inline d-none">Selengkapnya</span> <i class="fa fa-arrow-right ml-3"></i>
                      </a>
                   </div>
-                  <div class="p-3 d-flex align-items-center border-bottom osahan-post-header">
-                     <div class="dropdown-list-image mr-3 d-lg-flex d-none align-items-center bg-danger justify-content-center rounded-circle text-white"><i class="fa fa-play"></i></div>
-                     <div class="font-weight-bold mr-3">
-                        <div class="text-truncate">Pelatihan Sejuta Petani</div>
-                        <div class="small">12 - September 2022 - 1 Januari 2023, 09.00 - 12.00 WIB</div>
-                     </div>
-                     <a href="#" class="ml-auto mb-auto text-info">
-                        <span class="d-lg-inline d-none">Selengkapnya</span> <i class="fa fa-arrow-right ml-3"></i>
-                     </a>
-                  </div>
-                  <div class="p-3 d-flex align-items-center border-bottom osahan-post-header">
-                     <div class="dropdown-list-image mr-3 d-lg-flex d-none align-items-center bg-danger justify-content-center rounded-circle text-white"><i class="fa fa-play"></i></div>
-                     <div class="font-weight-bold mr-3">
-                        <div class="text-truncate">Pelatihan Sejuta Petani</div>
-                        <div class="small">12 - September 2022 - 1 Januari 2023, 09.00 - 12.00 WIB</div>
-                     </div>
-                     <a href="#" class="ml-auto mb-auto text-info">
-                        <span class="d-lg-inline d-none">Selengkapnya</span> <i class="fa fa-arrow-right ml-3"></i>
-                     </a>
-                  </div>
+                  <?php endforeach; ?>
                </div>
             </div>
          </div>
@@ -520,63 +442,25 @@
             <!-- End Title -->
             <!-- Syncing Accordion -->
             <div id="syncingAccordion">
+               <?php $no=1; foreach($faq->result() as $f): ?>
                <!-- Card -->
                <div class="box shadow-sm rounded bg-white mb-2">
-                  <div id="syncingHeadingOne">
+                  <div id="syncingHeadingOne<?= $f->id ?>">
                      <h5 class="mb-0">
-                        <button class="shadow-none btn btn-block d-flex justify-content-between card-btn p-3" data-toggle="collapse" data-target="#syncingCollapseOne" aria-expanded="false" aria-controls="syncingCollapseOne">
-                        Apa itu program Tanaman Pangan?
-                        <span class="card-btn-arrow">
-                        <span class="mdi mdi-chevron-down"></span>
-                        </span>
+                        <button class="shadow-none btn btn-block d-flex justify-content-between card-btn p-3" data-toggle="collapse" data-target="#syncingCollapseOne<?= $f->id ?>" aria-expanded="false" aria-controls="syncingCollapseOne<?= $f->id ?>">
+                           <?= $f->question ?>
+                           <span class="card-btn-arrow">
+                           <span class="mdi mdi-chevron-down"></span>
+                           </span>
                         </button>
                      </h5>
                   </div>
-                  <div id="syncingCollapseOne" class="collapse show" aria-labelledby="syncingHeadingOne" data-parent="#syncingAccordion">
-                     <div class="card-body border-top p-3 text-muted">
-                        Program ini nantinya akan fokus dalam 3 hal, yang pertama adalah dalam pengadaan pelatiha tani trainer yang bertujuan nantinya para petani bisa lebih berkembang. Selanjutnya adalah jejaring, dimana antara petani, gapoktan atau elemen yang lain bisa bertemu di program jejaring. Terahir adalah publikasi informasi penting tentnag program.
-                     </div>
+                  <div id="syncingCollapseOne<?= $f->id ?>" class="collapse <?= ($no == 1) ? 'show' : '' ?>" aria-labelledby="syncingHeadingOne<?= $f->id ?>" data-parent="#syncingAccordion">
+                     <div class="card-body border-top p-3 text-muted"><?= $f->answer ?></div>
                   </div>
                </div>
                <!-- End Card -->
-               <!-- Card -->
-               <div class="box shadow-sm rounded bg-white mb-2">
-                  <div id="syncingHeadingTwo">
-                     <h5 class="mb-0">
-                        <button class="shadow-none btn btn-block d-flex justify-content-between card-btn collapsed p-3" data-toggle="collapse" data-target="#syncingCollapseTwo" aria-expanded="false" aria-controls="syncingCollapseTwo">
-                        Bagaimana cara mendaftarkan diri ke program ini?
-                        <span class="card-btn-arrow">
-                        <span class="mdi mdi-chevron-down"></span>
-                        </span>
-                        </button>
-                     </h5>
-                  </div>
-                  <div id="syncingCollapseTwo" class="collapse" aria-labelledby="syncingHeadingTwo" data-parent="#syncingAccordion">
-                     <div class="card-body border-top p-3 text-muted">
-                        Untuk mendaftarkan bisa melalui tombol "Daftar" yang ada di ujung kanan atas dari website.
-                     </div>
-                  </div>
-               </div>
-               <!-- End Card -->
-               <!-- Card -->
-               <div class="box shadow-sm rounded bg-white mb-2">
-                  <div id="syncingHeadingThree">
-                     <h5 class="mb-0">
-                        <button class="shadow-none btn btn-block d-flex justify-content-between card-btn collapsed p-3" data-toggle="collapse" data-target="#syncingCollapseThree" aria-expanded="false" aria-controls="syncingCollapseThree">
-                        Apakah ada biaya yang di keluarkan untuk mengikuti program ini?
-                        <span class="card-btn-arrow">
-                        <span class="mdi mdi-chevron-down"></span>
-                        </span>
-                        </button>
-                     </h5>
-                  </div>
-                  <div id="syncingCollapseThree" class="collapse" aria-labelledby="syncingHeadingThree" data-parent="#syncingAccordion">
-                     <div class="card-body border-top p-3 text-muted">
-                        Sampai dengan saat ini, program masih berjalan tanpa adanya biaya yang di bebankan oleh peserta. Oleh karena itu kami sangat menganjurkan untuk mendaftarkan dan mengikuti kegiatan.
-                     </div>
-                  </div>
-               </div>
-               <!-- End Card -->
+               <?php $no++; endforeach; ?>
             </div>
             <!-- End Syncing Accordion -->
          </div>

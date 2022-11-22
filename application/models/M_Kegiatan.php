@@ -15,7 +15,7 @@ class M_Kegiatan extends CI_Model{
     }
 
     function getActive(){
-        return $this->db->select('k.*, kp.kategori')
+        return $this->db->select('k.*, kp.kategori, kp.icon')
                         ->from('kegiatan k')
                         ->join('kategori_publikasi kp', 'k.kategori_id = kp.id')
                         ->where('k.status', 1)->get();
