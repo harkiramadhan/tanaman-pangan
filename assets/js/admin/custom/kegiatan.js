@@ -1,7 +1,7 @@
 $('.btn-edit').click(function(){
     var id = $(this).attr('data-id')
     $.ajax({
-        url: baseUrl + 'admin/testimoni/edit/' + id,
+        url: baseUrl + 'admin/kegiatan/edit/' + id,
         type: 'get',
         beforeSend: function(){
             $('.edit-content').empty()
@@ -16,7 +16,7 @@ $('.btn-edit').click(function(){
 $('.btn-remove').click(function(){
     var id = $(this).attr('data-id')
     $.ajax({
-        url: baseUrl + 'admin/testimoni/remove/' + id,
+        url: baseUrl + 'admin/kegiatan/remove/' + id,
         type: 'get',
         beforeSend: function(){
             $('.remove-content').empty()

@@ -45,7 +45,7 @@
 									</td>
                                     <td class="align-top">
                                         <div class="ms-auto text-center">
-                                            <button type="button" class="btn btn-link btn-sm py-0 text-danger px-2 mb-0 btn-remove" data-id="5"><i class="far fa-trash-alt" aria-hidden="true"></i></button>
+                                            <button type="button" class="btn btn-link btn-sm py-0 text-danger px-2 mb-0 btn-remove" data-id="<?= $row->id ?>"><i class="far fa-trash-alt" aria-hidden="true"></i></button>
                                             <button type="button" class="btn btn-link btn-sm py-0 text-dark px-2 mb-0 btn-edit" data-id="<?= $row->id ?>"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button>
                                         </div>
                                     </td>
@@ -116,6 +116,14 @@
         <div class="modal fade" id="editFaq" tabindex="-1" aria-labelledby="editFaq" aria-hidden="true">
             <div class="modal-dialog modal-lg">
                 <div class="modal-content edit-content">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="modal fade" id="modalRemove" tabindex="-1" aria-labelledby="modalRemove" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content remove-content">
                     
                 </div>
             </div>

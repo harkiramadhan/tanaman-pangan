@@ -31,7 +31,10 @@ class Tanitrainer extends CI_Controller {
 	public function index(){
         $var = [
 			'title' => "Admin Tanitrainer",
-			'tanitrainer' => $this->M_Tanitrainer->getAll()
+			'tanitrainer' => $this->M_Tanitrainer->getAll(),
+			'ajax' => [
+				'tanitrainer2'
+			]
 		];
 
 		$this->load->view('layout/admin/header', $var);
@@ -65,6 +68,38 @@ class Tanitrainer extends CI_Controller {
 		$this->load->view('layout/admin/header', $var);
 		$this->load->view('admin/tanitrainer-detail', $var);
 		$this->load->view('layout/admin/footer', $var);
+	}
+
+	/* Ajax Here! */
+	function remove($id){
+		$data = $this->M_Tanitrainer->getById($id);
+
+		?>
+			<div class="modal-header">
+				<h6 class="modal-title" id="modal-title-notification">Hapus Tani Trainer</h6>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="py-3 text-center">
+					<h1><i class="fas fa-bell"></i></h1>
+					<h4 class="text-gradient text-danger mt-4">Hapus Tani Trainer!</h4>
+					<div class="text-center">
+						<?php if($data->img): ?>
+							<img src="<?= base_url('uploads/tanitrainer/' . $data->img) ?>" class="img-fluid img-center shadow rounded mb-5" style="max-height: 250px" id="image-preview2">
+						<?php endif; ?>
+					</div>
+					<p><?= $data->judul ?></p>
+				</div>
+			</div>
+			<form action="<?= site_url('admin/tanitrainer/delete/' . $id) ?>" method="post">
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-danger w-100 mb-0">HAPUS</button>
+					<button data-bs-dismiss="modal" type="button" class="btn btn-transparant shadow-none w-100 mb-0">KEMBALI</button>
+				</div>
+			</form>
+		<?php
 	}
 
 	/* Action Here! */
@@ -168,6 +203,22 @@ class Tanitrainer extends CI_Controller {
 			$this->session->set_flashdata('success', "Data Berhasil Di Simpan");
 		}else{
 			$this->session->set_flashdata('error', "Data Gagal Di Simpan");
+		}
+
+		redirect($_SERVER['HTTP_REFERER']);	
+	}
+
+	function delete($id){
+		$data = $this->M_Tanitrainer->getById($id);
+
+		if($data->img != NULL){
+			@unlink('./uploads/tanitrainer/' . @$data->img);
+		}	
+		$this->db->where('id', $id)->delete('tanitrainer');
+		if($this->db->affected_rows() > 0){
+			$this->session->set_flashdata('success', "Data Berhasil Di Hapus");
+		}else{
+			$this->session->set_flashdata('error', "Data Gagal Di Hapus");
 		}
 
 		redirect($_SERVER['HTTP_REFERER']);	

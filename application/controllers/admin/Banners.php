@@ -121,6 +121,37 @@ class Banners extends CI_Controller {
 		<?php
 	}
 
+	function remove($id){
+		$banners = $this->M_Banners->getById($id);
+
+		?>
+			<div class="modal-header">
+				<h6 class="modal-title" id="modal-title-notification">Hapus Banner</h6>
+				<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">
+					<span aria-hidden="true">×</span>
+				</button>
+			</div>
+			<div class="modal-body">
+				<div class="py-3 text-center">
+					<h1><i class="fas fa-bell"></i></h1>
+					<h4 class="text-gradient text-danger mt-4">Hapus Banner!</h4>
+					<div class="text-center">
+						<?php if($banners->img): ?>
+							<img src="<?= base_url('uploads/banners/' . $banners->img) ?>" class="img-fluid img-center shadow rounded mb-5" style="max-height: 250px" id="image-preview2">
+						<?php endif; ?>
+					</div>
+					<p><?= $banners->judul ?></p>
+				</div>
+			</div>
+			<form action="<?= site_url('admin/banners/delete/' . $id) ?>" method="post">
+				<div class="modal-footer">
+					<button type="submit" class="btn btn-danger w-100 mb-0">HAPUS</button>
+					<button data-bs-dismiss="modal" type="button" class="btn btn-transparant shadow-none w-100 mb-0">KEMBALI</button>
+				</div>
+			</form>
+		<?php
+	}
+
 	/* Action Here! */
 	function create(){
 		$config['upload_path'] = './uploads/banners';  
@@ -179,6 +210,22 @@ class Banners extends CI_Controller {
 			$this->session->set_flashdata('suecces', "Data Berhasil Di Simpan");
 		}else{
 			$this->session->set_flashdata('error', "Data Gagal Di Simpan");
+		}
+		
+		redirect($_SERVER['HTTP_REFERER']);
+	}
+
+	function delete($id){
+		$banners = $this->M_Banners->getById($id);
+		if(@$banners->img){
+			@unlink('./uploads/banners/' . @$banners->img);
+		}
+
+		$this->db->where('id', $id)->delete('banners');
+		if($this->db->affected_rows() > 0){
+			$this->session->set_flashdata('suecces', "Data Berhasil Di Hapus");
+		}else{
+			$this->session->set_flashdata('error', "Data Gagal Di Hapus");
 		}
 		
 		redirect($_SERVER['HTTP_REFERER']);

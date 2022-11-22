@@ -49,7 +49,7 @@
 											</td>
 											<td class="align-top">
 												<div class="ms-auto text-center">
-													<button type="button" class="btn btn-link btn-sm py-0 text-danger px-2 mb-0 btn-remove" data-id=""><i class="far fa-trash-alt" aria-hidden="true"></i></button>
+													<button type="button" class="btn btn-link btn-sm py-0 text-danger px-2 mb-0 btn-remove" data-id="<?= $row->id ?>"><i class="far fa-trash-alt" aria-hidden="true"></i></button>
 													<button type="button" class="btn btn-link btn-sm py-0 text-info px-2 mb-0 btn-edit" data-id="<?= $row->id ?>"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button>
 												</div>
 											</td>
@@ -79,13 +79,15 @@
 				</div>
 				<div class="modal-body">
 					<form action="<?= site_url('admin/testimoni/create') ?>" method="POST" enctype="multipart/form-data">
-						<img src="" class="img-fluid img-center shadow rounded d-none" style="max-height: 250px" id="image-preview">
+						<div class="text-center">
+							<img src="" class="img-fluid img-center shadow rounded d-none mb-5" style="max-height: 250px" id="image-preview">
+						</div>
 						<div class="row d-flex align-items-center form-group">
 							<div class="col-md-4">
 								<p class="text-muted font-weight-bold mb-0">Gambar</p>
 							</div>
 							<div class="col-md-8">
-								<input class="form-control" type="file" name="img" id="image-source" onchange="previewImage()">
+								<input class="form-control" type="file" name="img" id="image-source" onchange="previewImage()" required>
 							</div>
 						</div>
 						<div class="row d-flex align-items-center form-group">
@@ -118,7 +120,7 @@
 							</div>
 							<div class="col-md-8">
 								<select class="form-control form-control-alternative me-3" name="status" required>
-									<option value="" selected="">Pilih</option>
+									<option value="" selected="" disabled>Pilih</option>
 									<option value="1">Aktif</option>
 									<option value="2">Draft</option>
 								</select>
@@ -126,10 +128,26 @@
 						</div>
 						<div class="text-right">
 							<button type="submit" class="btn btn-dark w-100 mb-0">SIMPAN</button>
-							<button type="button" class="btn btn-transparant shadow-none w-100 mb-0">KEMBALI</button>
+							<button data-bs-dismiss="modal" type="button" class="btn btn-transparant shadow-none w-100 mb-0">KEMBALI</button>
 						</div>
 					</form>
 				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="modalEdit" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content edit-content">
+				
+			</div>
+		</div>
+	</div>
+
+	<div class="modal fade" id="modalRemove" tabindex="-1" aria-labelledby="modalRemove" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
+			<div class="modal-content remove-content">
+				
 			</div>
 		</div>
 	</div>

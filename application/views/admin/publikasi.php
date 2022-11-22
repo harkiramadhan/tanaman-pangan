@@ -35,51 +35,44 @@
 								</tr>
 							</thead>
 							<tbody>
-
-								<!-- Jika ada data pelatihan -->
-								<?php 
-								$no = 1;
-								foreach($publikasi->result() as $row): ?>
-								<tr>
-									<td class="align-top text-center text-sm"><?= $no++ ?></td>
-									<td>
-										<div class="d-flex px-2 py-1">
-											<div>
-												<?php if($row->cover_img): ?>
-													<img src="<?= base_url('uploads/publikasi/' . $row->cover_img) ?>"class="avatar avatar-sm me-3" alt="user1">
-												<?php else: ?>
-													<img src="https://demos.creative-tim.com/argon-dashboard/assets/img/team-2.jpg"class="avatar avatar-sm me-3" alt="user1">
-												<?php endif; ?>
-											</div>
-											<div class="d-flex flex-column justify-content-center">
-												<h6 class="mb-0 text-sm"><?= $row->judul ?></h6>
-												<p class="small text-xs text-secondary mb-0"><?= $row->kategori ?></p>
-											</div>
-										</div>
-									</td>
-									<td class="align-top text-center text-sm">
-										<span class="badge badge-sm bg-gradient-success"><?= ($row->status == 1) ? 'Aktif' : 'Draft' ?></span>
-									</td>
-									<td class="align-top">
-										<div class="ms-auto text-center">
-											<a class="btn btn-link btn-sm py-0 text-info px-2 mb-0" href="<?= site_url('publikasi/' . $row->flag) ?>" target="__BLANK"><i class="far fa-eye" aria-hidden="true"></i></a>
-											<button type="button" class="btn btn-link btn-sm py-0 text-danger px-2 mb-0 btn-remove"data-id="5"><i class="far fa-trash-alt" aria-hidden="true"></i></button>
-											<a class="btn btn-link btn-sm py-0 text-dark px-2 mb-0" href="<?= site_url('admin/publikasi/' . $row->id) ?>"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
-										</div>
-									</td>
-								</tr>
-								<?php endforeach; ?>
-
-
-								<!-- Jika tidak ada data sama sekali -->
-
-								<tr>
-                                    <td colspan="4" class="text-center py-4 mb-0">
-
-									Data masih kosong
-
-									</td>
-                                </tr>
+								<?php if($publikasi->num_rows() > 0): ?>
+									<!-- Jika ada data pelatihan -->
+									<?php $no = 1; foreach($publikasi->result() as $row): ?>
+										<tr>
+											<td class="align-top text-center text-sm"><?= $no++ ?></td>
+											<td>
+												<div class="d-flex px-2 py-1">
+													<div>
+														<?php if($row->cover_img): ?>
+															<img src="<?= base_url('uploads/publikasi/' . $row->cover_img) ?>"class="avatar avatar-sm me-3" alt="user1">
+														<?php else: ?>
+															<img src="https://demos.creative-tim.com/argon-dashboard/assets/img/team-2.jpg"class="avatar avatar-sm me-3" alt="user1">
+														<?php endif; ?>
+													</div>
+													<div class="d-flex flex-column justify-content-center">
+														<h6 class="mb-0 text-sm"><?= $row->judul ?></h6>
+														<p class="small text-xs text-secondary mb-0"><?= $row->kategori ?></p>
+													</div>
+												</div>
+											</td>
+											<td class="align-top text-center text-sm">
+												<span class="badge badge-sm bg-gradient-success"><?= ($row->status == 1) ? 'Aktif' : 'Draft' ?></span>
+											</td>
+											<td class="align-top">
+												<div class="ms-auto text-center">
+													<a class="btn btn-link btn-sm py-0 text-info px-2 mb-0" href="<?= site_url('publikasi/' . $row->flag) ?>" target="__BLANK"><i class="far fa-eye" aria-hidden="true"></i></a>
+													<button type="button" class="btn btn-link btn-sm py-0 text-danger px-2 mb-0 btn-remove" data-id="<?= $row->id ?>"><i class="far fa-trash-alt" aria-hidden="true"></i></button>
+													<a class="btn btn-link btn-sm py-0 text-dark px-2 mb-0" href="<?= site_url('admin/publikasi/' . $row->id) ?>"><i class="fas fa-pencil-alt" aria-hidden="true"></i></a>
+												</div>
+											</td>
+										</tr>
+									<?php endforeach; ?>
+								<?php else: ?>
+									<!-- Jika tidak ada data sama sekali -->
+									<tr>
+										<td colspan="4" class="text-center py-4 mb-0">Data masih kosong</td>
+									</tr>
+								<?php endif; ?>
 							</tbody>
 						</table>
 					</div>
@@ -89,11 +82,10 @@
 	</div>
 
 
-	<div class="modal fade" id="modal-remove" tabindex="-1" role="dialog" aria-labelledby="modal-notification"
-		aria-hidden="true">
-		<div class="modal-dialog modal-danger modal-dialog-centered modal-" role="document">
+	<div class="modal fade" id="modalRemove" tabindex="-1" aria-labelledby="modalRemove" aria-hidden="true">
+		<div class="modal-dialog modal-lg">
 			<div class="modal-content remove-content">
-
+				
 			</div>
 		</div>
 	</div>
