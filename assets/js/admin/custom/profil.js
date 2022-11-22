@@ -19,7 +19,7 @@ $('select').select2()
 $('#select-prov').change(function(){
     var provid = $(this).find(':selected').val()
     $.ajax({
-        url: baseUrl + 'user/getKabupaten',
+        url: baseUrl + 'admin/jejaring/getKabupaten',
         type: 'get',
         data: { provid : provid},
         beforeSend: function(){
@@ -40,7 +40,7 @@ $('#select-prov').change(function(){
 $('#select-kab').change(function(){
     var kabid = $(this).find(':selected').val()
     $.ajax({
-        url: baseUrl + 'user/getKecamatan',
+        url: baseUrl + 'admin/jejaring/getKecamatan',
         type: 'get',
         data: { kabid : kabid},
         beforeSend: function(){
@@ -57,7 +57,7 @@ $('#select-kab').change(function(){
 $('#select-kec').change(function(){
     var kecid = $(this).find(':selected').val()
     $.ajax({
-        url: baseUrl + 'user/getKelurahan',
+        url: baseUrl + 'admin/jejaring/getKelurahan',
         type: 'get',
         data: { kecid : kecid},
         beforeSend: function(){

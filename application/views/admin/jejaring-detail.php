@@ -53,7 +53,7 @@
                                 <label class="form-control-label" for="input-gambar">Gambar Cover
                                 <span class="text-danger">*</span></label>
                                 <div class="mb-3">
-                                    <input class="form-control" type="file" name="cover_img" id="image-source" onchange="previewImage2()">
+                                    <input class="form-control" type="file" name="cover_img" id="image-source2" onchange="previewImage2()">
                                 </div>
                             </div>
 

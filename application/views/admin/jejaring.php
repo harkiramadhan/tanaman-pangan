@@ -14,7 +14,7 @@
 								<option value="2">Usaha Olahan Pangan</option>
 								<option value="3">Offtaker Pangan Segar/Olahan</option>
 							</select>
-							<a class="btn bg-gradient-dark mb-0 d-flex justify-content-center align-content-center align-items-center" href="<?= site_url('admin/jejaring/detail') ?>">
+							<a class="btn bg-gradient-dark mb-0 d-flex justify-content-center align-content-center align-items-center" href="<?= site_url('admin/jejaring/add') ?>">
 								<i class="fas fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;
 								<span class="d-lg-inline d-none">Jejaring</span>
 							</a>
