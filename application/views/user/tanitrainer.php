@@ -69,9 +69,9 @@
                     <div class="col-lg-4">
                         <a href="product-detail.html">
                            <?php if($row->img): ?>
-                              <img class="img-fluid" src="<?= base_url('uploads/tanitrainer/' . $row->img) ?>" />
+                              <img class="img-fluid" src="<?= base_url('uploads/tanitrainer/' . $row->img) ?>"  style="height: 170px;  object-fit: cover;"/>
                            <?php else: ?>
-                              <img class="img-fluid" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" />
+                              <img class="img-fluid" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg"  style="height: 170px;  object-fit: cover;"/>
                            <?php endif; ?>
                         </a>
                         <div class="inner-slider">
