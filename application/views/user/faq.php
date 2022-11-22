@@ -16,26 +16,24 @@
             <div class="row">
                <!-- Main Content -->
                <div class="col-md-12">
-                  <div id="basicsAccordion">
-                     <?php foreach($faq->result() as $row){ ?>
-                        <!-- Card -->
+                  <div id="syncingAccordion">
+                     <?php $no=1; foreach($faq->result() as $f){ ?>
                         <div class="box shadow-sm rounded bg-white mb-2">
-                           <div  id="basicsHeadingOne">
+                           <div id="syncingHeadingOne<?= $f->id ?>">
                               <h5 class="mb-0">
-                                 <button class="shadow-none btn btn-block d-flex justify-content-between card-btn p-3 collapsed" data-toggle="collapse" data-target="#basicsCollapseOne<?= $row->id ?>" aria-expanded="false" aria-controls="basicsCollapseOne<?= $row->id ?>">
-                                    <?= $row->question ?>
+                                 <button class="shadow-none btn btn-block d-flex justify-content-between card-btn p-3" data-toggle="collapse" data-target="#syncingCollapseOne<?= $f->id ?>" aria-expanded="false" aria-controls="syncingCollapseOne<?= $f->id ?>">
+                                    <?= $f->question ?>
                                     <span class="card-btn-arrow">
-                                       <span class="mdi mdi-chevron-down"></span>
+                                    <span class="mdi mdi-chevron-down"></span>
                                     </span>
                                  </button>
                               </h5>
                            </div>
-                           <div id="basicsCollapseOne<?= $row->id ?>" class="collapse" aria-labelledby="basicsHeadingOne" data-parent="#basicsAccordion" style="">
-                              <div class="card-body border-top p-3 text-muted"><?= $row->answer ?></div>
+                           <div id="syncingCollapseOne<?= $f->id ?>" class="collapse <?= ($no == 1) ? 'show' : '' ?>" aria-labelledby="syncingHeadingOne<?= $f->id ?>" data-parent="#syncingAccordion">
+                              <div class="card-body border-top p-3 text-muted"><?= $f->answer ?></div>
                            </div>
                         </div>
-                        <!-- End Card -->
-                     <?php } ?>
+                     <?php $no++; } ?>
                   </div>
                </div>
             </div>
