@@ -5,14 +5,12 @@ class Landing extends CI_Controller {
 		parent::__construct();
 
 		$this->load->model([
-			'M_Komoditas',
-			'M_Role',
 			'M_User',
-			'M_Wilayah',
-			'M_Kelembagaan',
-			'M_Penjualan',
-			'M_Kategori_olahan',
-			'M_Ketertarikan'
+			'M_Banners',
+			'M_Partner',
+			'M_Role',
+			'M_Komoditas',
+			'M_Tanitrainer'
 		]);
 	}
 	
@@ -20,6 +18,11 @@ class Landing extends CI_Controller {
         $var = [
 			'title' => "Landing Page",
 			'user' => $this->M_User->getById($this->session->userdata('userid')),
+			'banners' => $this->M_Banners->getActive(),
+			'partner' => $this->M_Partner->getActive(),
+			'role' => $this->M_Role->getAll(),
+			'komoditas' => $this->M_Komoditas->getAll(),
+			'tanitrainer' => $this->M_Tanitrainer->getPaginate(1, 10)
 		];
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/landing', $var);

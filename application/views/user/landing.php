@@ -4,21 +4,11 @@
          <div class="container">
             <div class="slider mt-0">
                <div id="aniimated-thumbnials" class="slider-for slick-slider-single">
-                  <a href="https://www.tokopedia.com/">
-                  <img class="img-fluid" src="<?= base_url() ?>assets/images/list/v1.png" style="height: 280px !important;" />
-                  </a>
-                  <a href="<?= base_url() ?>assets/images/list/v1.png">
-                  <img class="img-fluid" src="<?= base_url() ?>assets/images/list/v1.png" style="height: 280px !important;" />
-                  </a>
-                  <a href="<?= base_url() ?>assets/images/list/v1.png">
-                  <img class="img-fluid" src="<?= base_url() ?>assets/images/list/v1.png" style="height: 280px !important;" />
-                  </a>
-                  <a href="<?= base_url() ?>assets/images/list/v1.png">
-                  <img class="img-fluid" src="<?= base_url() ?>assets/images/list/v1.png" style="height: 280px !important;" />
-                  </a>
-                  <a href="<?= base_url() ?>assets/images/list/v1.png">
-                  <img class="img-fluid" src="<?= base_url() ?>assets/images/list/v1.png" style="height: 280px !important;" />
-                  </a>
+                  <?php foreach($banners->result() as $b): ?>
+                     <a href="<?= $b->link ?>">
+                        <img class="img-fluid" src="<?= base_url('uploads/banners/' . $b->img) ?>" alt="<?= $b->judul ?>" style="height: 280px !important;" />
+                     </a>
+                  <?php endforeach; ?>
                </div>
                <div class="slider-nav slick-slider-single">
                </div>
@@ -31,30 +21,11 @@
          <div class="container">
 
             <div class="row  py-3 shadow-none patner-slider">
-               <div class="col justify-items-center">
-                  <img class="mx-auto" src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo_small.png" style="height: 40px; width: auto;">
-               </div>
-               <div class="col justify-items-center">
-                  <img class="mx-auto" src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo-bps.jpg" style="height: 40px; width: auto;">
-               </div>
-               <div class="col justify-items-center">
-                  <img class="mx-auto" src="https://tanamanpangan.pertanian.go.id/assets/img/link/RANrB.png" style="height: 40px; width: auto;">
-               </div>
-               <div class="col justify-items-center">
-                  <img class="mx-auto" src="https://tanamanpangan.pertanian.go.id/assets/img/link/sedang_1634785548_LAPOR_LOGO-removebg-preview.png" style="height: 40px; width: auto;">
-               </div>
-               <div class="col justify-items-center">
-                  <img class="mx-auto" src="https://tanamanpangan.pertanian.go.id/assets/img/link/Logo_BPN-KemenATR_(2017).png" style="height: 40px; width: auto;">
-               </div>
-               <div class="col justify-items-center">
-                  <img class="mx-auto" src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo_small.png" style="height: 40px; width: auto;">
-               </div>
-               <div class="col justify-items-center">
-                  <img class="mx-auto" src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo_small.png" style="height: 40px; width: auto;">
-               </div>
-               <div class="col justify-items-center">
-                  <img class="mx-auto" src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo_small.png" style="height: 40px; width: auto;">
-               </div>
+               <?php foreach($partner->result() as $pt): ?>
+                  <div class="col justify-items-center">
+                     <img class="mx-auto" src="<?= base_url('uploads/partner/' . $pt->img) ?>" alt="<?= $pt->judul ?>" style="height: 40px; width: auto;">
+                  </div>
+               <?php endforeach; ?>
             </div>
             <!-- <ul class="d-flex flex-row trusted-by py-3 shadow-none patner-slider">
                <li class="text-center">
@@ -101,78 +72,32 @@
          </div>
       </div>
 
-      
       <!--    about section -->
       <div class="market-wrapper py-2 bg-white">
          <div class="container">
             <!-- <h2 class="text-center">Explore the marketplace</h2> -->
             <ul class="categories-list mb-0 statistic-slider">
+               <?php 
+                  foreach($role->result() as $r): 
+                     $countRole = $this->M_Role->countByRole($r->id);
+               ?>
                <li>
-                  <a href="#">
-                     <img src="<?= base_url() ?>assets/images/thumbnail/role/1_Petani:Produsen.png" alt="" loading="lazy">
-                     <span class="h4 mb-4">2000</span>
+                  <a href="<?= site_url('jejaring?page=1&komoditasid=&provid=&roleid=' . $r->id) ?>">
+                     <img src="<?= base_url('assets/images/thumbnail/role/' . $r->icon) ?>" alt="<?= $r->role ?>" loading="lazy">
+                     <span class="h4 mb-4"><?= $countRole ?></span>
                      <br class="my-2">
-                     <span>Petani/Produsen</span>
+                     <span><?= $r->role ?></span>
                   </a>
                </li>
-               <li>
-                  <a href="#">
-                     <img src="<?= base_url() ?>assets/images/thumbnail/role/2_Usaha Olahan.png" alt="Digital Marketing" loading="lazy">
-                     <span class="h4 mb-4">2000</span>
-                     <br class="my-2">
-                     <span>Usaha Olahan</span>
-                  </a>
-               </li>
-               <li>
-                  <a href="#">
-                     <img src="<?= base_url() ?>assets/images/writing-translation.svg" alt="Writing &amp; Translation" loading="lazy">
-                     <span class="h4 mb-4">2000</span>
-                     <br class="my-2">
-                     <span>Offtaker Pangan</span>
-                  </a>
-               </li>
-               <li>
-                  <a href="#">
-                     <img src="<?= base_url() ?>assets/images/video-animation.svg" alt="Video &amp; Animation" loading="lazy">
-                     <span class="h4 mb-4">2000</span>
-                     <br class="my-2">
-                     <span>Eksportir</span>
-                  </a>
-               </li>
-               <li>
-                  <a href="#">
-                     <img src="<?= base_url() ?>assets/images/music-audio.svg" alt="Music &amp; Audio" loading="lazy">
-                     <span class="h4 mb-4">2000</span>
-                     <br class="my-2">
-                     <span>Penyedia Bibit/Benih</span>
-                  </a>
-               </li>
-               <li>
-                  <a href="#">
-                     <img src="<?= base_url() ?>assets/images/programming.svg" alt="Programming &amp; Tech" loading="lazy">
-                     <span class="h4 mb-4">2000</span>
-                     <br class="my-2">
-                     <span>Penyedia Pupuk</span>
-                  </a>
-               </li>
-               <li>
-                  <a href="#">
-                     <img src="<?= base_url() ?>assets/images/business.svg" alt="Business" loading="lazy">
-                     <span class="h4 mb-4">2000</span>
-                     <br class="my-2">
-                     <span>Penyedia Alsintan</span>
-                  </a>
-               </li>
+               <?php endforeach; ?>
             </ul>
          </div>
       </div>
 
-      
-
       <div class="container pt-5 pb-5  ">
          <div class="row">
             <div class="col-12 text-center pt-1 pb-5">
-               <img src="<?= base_url() ?>assets/images/storyset/Indonesia_provinces_HDI_2021 1.svg" class="video-img w-75">
+               <img src="<?= base_url('assets/images/storyset/Indonesia_provinces_HDI_2021 1.svg') ?>" class="video-img w-75">
             </div>
             
             <div class="col-md-12">
@@ -302,7 +227,7 @@
                </div>
 
                <div class="text-center mt-5">
-                  <a href="#" class="c-btn c-fill-color-btn" tabindex="0">DAFTAR MENJADI JEJARING</a>
+                  <a href="<?= site_url('daftar') ?>" class="c-btn c-fill-color-btn" tabindex="0">DAFTAR MENJADI JEJARING</a>
                </div>
             </div>
          </div>
@@ -313,61 +238,22 @@
          <div class="container">
             <h2>Cari Komoditas</h2>
             <div class="row service-slider">
+               <?php foreach($komoditas->result() as $k): ?>
                <div class="col">
-                  <a href="">
+                  <a href="<?= site_url('jejaring?page=1&komoditasid='.$k->id.'&provid=&roleid=') ?>">
                      <div class="service">
-                        <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://jovee.id/wp-content/uploads/2021/07/1_J_SEO_manfaat_daun_singkong.jpg');">
-                        <h3 class="h1"><span>Singkong</span></h3>
+                        <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('<?= base_url('assets/images/thumbnail/komoditas/' . $k->img) ?>');">
+                        <h3 class="h1"><span> <?= $k->komoditas ?></span></h3>
                      </div>
                   </a>
                </div>
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img class="" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://cdn1-production-images-kly.akamaized.net/Cq0JGcRlrWieYHAMv_GwG5gufEM=/1200x675/smart/filters:quality(75):strip_icc():format(jpeg)/kly-media-production/medias/2914926/original/005311900_1568795429-2019-09-18.jpg');">
-                        <h3><span>Padi/Beras</span></h3>
-                     </div>
-                  </a>
-               </div>
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img class="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://asset.kompas.com/crops/SUtUYLeiCclWljut0zrslqBE7HM=/0x0:1000x667/750x500/data/photo/2021/10/04/615a966655301.jpg');">
-                        <h3><span>Jagung</span></h3>
-                     </div>
-                  </a>
-               </div>
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img class="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://img-cdn.medkomtek.com/YDjevmAi2tlxv1arGWxrPNehObs=/0x0/smart/filters:quality(75):strip_icc():format(webp)/article/4YsuprB4vuHL8SMsCTiTb/original/053780800_1571798592-Kedelai-Biji-bijian-dengan-Beragam-Manfaat-By-nnattalli-shutterstock.jpg');">
-                        <h3><span>Kedelai</span></h3>
-                     </div>
-                  </a>
-               </div>
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img class="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://akcdn.detik.net.id/visual/2020/11/23/ilustrasi-ubi-ungu-1_169.jpeg?w=650');">
-                        <h3><span>Ubi Jalar</span></h3>
-                     </div>
-                  </a>
-               </div>
-               <div class="col">
-                  <a href="">
-                     <div class="service">
-                        <img class="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('https://www.satuharapan.com/uploads/pics/news_81722_1554734688.jpg');">
-                        <h3><span>Shorgum</span></h3>
-                     </div>
-                  </a>
-               </div>
+               <?php endforeach; ?>
             </div>
          </div>
       </div>
       <!-- services-->
 
-
-      <!--       recent -->
+      <!-- recent -->
       <section class="py-5">
          <div class="view_slider recommended">
             <div class="container">
@@ -375,90 +261,27 @@
                   <div class="col-lg-12">
                      <h3>Tani Trainer</h3>
                      <div class="view recent-slider recommended-slider">
-                        <div>
-                           <a href="product-detail.html">
-                           <img class="img-fluid" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" />
-                           </a>
-                           <div class="inner-slider">
-                              <div class="inner-wrapper">
-                                 <div class="d-flex align-items-center">
-                                    <span class="seller-name">
-                                       <a href="profile.html">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah </a>
-                                       <span class="level hint--top level-one-seller">
-                                       12 September 2022 - 1 Januari 2023
+                        <?php foreach($tanitrainer->result() as $tt): ?>
+                           <div>
+                              <a href="<?= site_url('tanitrainer/' . $tt->flag) ?>">
+                                 <img class="img-fluid" src="<?= base_url('uploads/tanitrainer/' . $tt->img) ?>" />
+                              </a>
+                              <div class="inner-slider">
+                                 <div class="inner-wrapper">
+                                    <div class="d-flex align-items-center">
+                                       <span class="seller-name">
+                                          <a href="<?= site_url('tanitrainer/' . $tt->flag) ?>"><?= $tt->judul ?></a>
+                                          <span class="level hint--top level-one-seller"><?= longdate_indo($tt->tanggal) ?></span>
                                        </span>
-                                    </span>
-                                 </div>
-                                 <h3 class="mb-2">Pelatihan Sejuta Petani dan Penyuluh Vol.3 dengan tema Pemanfaatan KUR untuk Agribisnis.</h3>
-                                 <div class="footer">
-                                    <a href="#" class="c-btn btn-block c-fill-color-btn">Daftar Pelatihan</a>
+                                    </div>
+                                    <h3 class="mb-2"><?= mb_strimwidth($tt->deskripsi, 0, 200, "...") ?></h3>
+                                    <div class="footer">
+                                       <a href="<?= site_url('tanitrainer/' . $tt->flag) ?>" class="c-btn btn-block c-fill-color-btn">Daftar Pelatihan</a>
+                                    </div>
                                  </div>
                               </div>
                            </div>
-                        </div>
-                        <div>
-                           <a href="product-detail.html">
-                           <img class="img-fluid" src="http://kagama.co/wp-content/uploads/2018/08/Petani.jpg" />
-                           </a>
-                           <div class="inner-slider">
-                              <div class="inner-wrapper">
-                                 <div class="d-flex align-items-center">
-                                    <span class="seller-name">
-                                       <a href="profile.html">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah </a>
-                                       <span class="level hint--top level-one-seller">
-                                       12 September 2022 - 1 Januari 2023
-                                       </span>
-                                    </span>
-                                 </div>
-                                 <h3 class="mb-2">Pelatihan Sejuta Petani dan Penyuluh Vol.3 dengan tema Pemanfaatan KUR untuk Agribisnis.</h3>
-                                 <div class="footer">
-                                    <a href="#" class="c-btn btn-block c-fill-color-btn">Daftar Pelatihan</a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div>
-                           <a href="product-detail.html">
-                           <img class="img-fluid" src="https://www.suarakeadilan.org/images/2022/02/03/petani.jpg" />
-                           </a>
-                           <div class="inner-slider">
-                              <div class="inner-wrapper">
-                                 <div class="d-flex align-items-center">
-                                    <span class="seller-name">
-                                       <a href="profile.html">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah </a>
-                                       <span class="level hint--top level-one-seller">
-                                       12 September 2022 - 1 Januari 2023
-                                       </span>
-                                    </span>
-                                 </div>
-                                 <h3 class="mb-2">Pelatihan Sejuta Petani dan Penyuluh Vol.3 dengan tema Pemanfaatan KUR untuk Agribisnis.</h3>
-                                 <div class="footer">
-                                    <a href="#" class="c-btn btn-block c-fill-color-btn">Daftar Pelatihan</a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
-                        <div>
-                           <a href="product-detail.html">
-                           <img class="img-fluid" src="https://geotimes.id/wp-content/uploads/2018/09/petani-indonesia-dan-luar-negeri-ibarat-bumi-dan-langit_1514300885-b-1068x715.jpg" />
-                           </a>
-                           <div class="inner-slider">
-                              <div class="inner-wrapper">
-                                 <div class="d-flex align-items-center">
-                                    <span class="seller-name">
-                                       <a href="profile.html">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah </a>
-                                       <span class="level hint--top level-one-seller">
-                                       12 September 2022 - 1 Januari 2023
-                                       </span>
-                                    </span>
-                                 </div>
-                                 <h3 class="mb-2">Pelatihan Sejuta Petani dan Penyuluh Vol.3 dengan tema Pemanfaatan KUR untuk Agribisnis.</h3>
-                                 <div class="footer">
-                                    <a href="#" class="c-btn btn-block c-fill-color-btn">Daftar Pelatihan</a>
-                                 </div>
-                              </div>
-                           </div>
-                        </div>
+                        <?php endforeach; ?>
                      </div>
                   </div>
                </div>
