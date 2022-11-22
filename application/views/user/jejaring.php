@@ -67,7 +67,7 @@
                            <div class="inner-wrapper">
                               <div class="d-flex align-items-center">
                                  <span class="seller-image">
-                                    <img class="img-fluid"src="<?= base_url('uploads/profile/' . $row->img) ?>"alt='' />
+                                    <img class="img-fluid"src="<?= base_url('uploads/profile/' . $row->img) ?>" alt='' />
                                  </span>
                                  <span class="seller-name">
                                     <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1"><?= $row->nama ?></a>

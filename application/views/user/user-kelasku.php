@@ -13,8 +13,8 @@
                <div class="col-lg-3 mb-3">
                   <div class="bg-white rounded shadow-sm py-3 sidebar-fix">
                         <div class="dropdown-menu-show">
-                            <a class="dropdown-item py-2 active" href="edit-billing.html">Kelas Saya</a>
-                            <a class="dropdown-item py-2" href="edit-payment.html">Galeri</a>
+                            <a class="dropdown-item py-2 <?= ($this->uri->segment(2) == 'kelasku') ? 'active' : '' ?>" href="<?= site_url('user/kelasku') ?>">Kelas Saya</a>
+                            <a class="dropdown-item py-2 <?= ($this->uri->segment(2) == 'galeri') ? 'active' : '' ?>" href="<?= site_url('user/galeri') ?>">Galeri</a>
                         </div>
                     </div>
                </div>
@@ -22,7 +22,7 @@
                   <div class="bg-white rounded shadow-sm sidebar-page-right">
                      <div>
                         <div class="p-3 border-bottom text-right">
-                           <a href="account.html" class="text-success">Tinjau Profil<i class="fa fa-arrow-right ml-2"></i></a>
+                           <a href="account.html" class="text-success">Ikut Kelas Lainnya<i class="fa fa-arrow-right ml-2"></i></a>
                         </div>
                         <div class="p-3 border-bottom">
                            <div class="table-responsive box-table mt-0">

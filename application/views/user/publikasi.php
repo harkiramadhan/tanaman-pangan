@@ -87,7 +87,7 @@
                                           <h6 class="font-weight-bold text-dark my-1"><?= $row->judul ?></h6>
                                           <div class="text-gray-900"><?= longdate_indo($row->tanggal) ?></div>
                                        </div>
-                                       <a href="<?= site_url('publikasi/' . $row->flag) ?>" class="ml-auto mt-auto text-danger">
+                                       <a href="<?= site_url('publikasi/' . $row->flag) ?>" class="mt-auto text-danger">
                                           <span class="d-lg-inline d-none">Selengkapnya</span> <i class="fa fa-arrow-right ml-3"></i>
                                        </a>
                                  </div>
