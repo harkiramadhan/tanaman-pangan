@@ -97,7 +97,7 @@ $(document).ready(function () {
 	});
 
 	$('.patner-slider').slick({
-		slidesToShow: 8,
+		slidesToShow: 6,
 		centerMode: true,
 		autoplay:true,
 		autoplaySpeed:1500,
@@ -155,9 +155,9 @@ $(document).ready(function () {
 
 	/* web design */
 	$(function () {
-		$('#aniimated-thumbnials').lightGallery({
-			thumbnail: true,
-		});
+		// $('#aniimated-thumbnials').lightGallery({
+		// 	thumbnail: false,
+		// });
 
 		$('.slider-for').slick({
 			slidesToShow: 1,
@@ -209,9 +209,9 @@ $(document).ready(function () {
 	/* profile */
 
 	/* wireframe */
-	$('#aniimated-thumbnials').lightGallery({
-		thumbnail: true,
-	});
+	// $('#aniimated-thumbnials').lightGallery({
+	// 	thumbnail: false,
+	// });
 
 	$('.slider-for').slick({
 		slidesToShow: 1,

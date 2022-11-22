@@ -6,20 +6,19 @@
                <div id="aniimated-thumbnials" class="slider-for slick-slider-single">
                   <?php foreach($banners->result() as $b): ?>
                      <a href="<?= $b->link ?>">
-                        <img class="img-fluid" src="<?= base_url('uploads/banners/' . $b->img) ?>" alt="<?= $b->judul ?>" style="height: 280px !important;" />
+                        <img class="img-fluid" src="<?= base_url('uploads/banners/' . $b->img) ?>" alt="<?= $b->judul ?>" style="height: 280px !important; object-fit: cover;" />
                      </a>
                   <?php endforeach; ?>
                </div>
                <div class="slider-nav slick-slider-single">
+                  
                </div>
             </div>
          </div>
       </section>
 
       <div class="market-wrapper bg-white border-bottom">
-
          <div class="container">
-
             <div class="row  py-3 shadow-none patner-slider">
                <?php foreach($partner->result() as $pt): ?>
                   <div class="col justify-items-center">
@@ -27,48 +26,6 @@
                   </div>
                <?php endforeach; ?>
             </div>
-            <!-- <ul class="d-flex flex-row trusted-by py-3 shadow-none patner-slider">
-               <li class="text-center">
-                  <div class="text-center">
-                     <img src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo_small.png" style="height: 40px; width: auto;">
-                  </div>
-               </li>
-               <li class="text-center">
-                  <div class="text-center">
-                     <img src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo-bps.jpg" style="height: 40px; width: auto;">
-                  </div>
-               </li>
-               <li class="text-center">
-                  <div class="text-center">
-                     <img src="https://tanamanpangan.pertanian.go.id/assets/img/link/RANrB.png" style="height: 40px; width: auto;">
-                  </div>
-               </li>
-               <li class="text-center">
-                  <div class="text-center">
-                     <img src="https://tanamanpangan.pertanian.go.id/assets/img/link/sedang_1634785548_LAPOR_LOGO-removebg-preview.png" style="height: 40px; width: auto;">
-                  </div>
-               </li>
-               <li class="text-center">
-                  <div class="text-center">
-                     <img src="https://tanamanpangan.pertanian.go.id/assets/img/link/Logo_BPN-KemenATR_(2017).png" style="height: 40px; width: auto;">
-                  </div>
-               </li>
-               <li class="text-center">
-                  <div class="text-center">
-                     <img src="https://tanamanpangan.pertanian.go.id/assets/img/link/bapanasbkp1.png" style="height: 40px; width: auto;">
-                  </div>
-               </li>
-               <li class="text-center">
-                  <div class="text-center">
-                     <img src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo-lpse.jpg" style="height: 40px; width: auto;">
-                  </div>
-               </li>
-               <li class="text-center">
-                  <div class="text-center">
-                     <img src="https://tanamanpangan.pertanian.go.id/assets/img/link/logo-sms-center.png" style="height: 40px; width: auto;">
-                  </div>
-               </li>
-            </ul> -->
          </div>
       </div>
 
@@ -242,7 +199,7 @@
                <div class="col">
                   <a href="<?= site_url('jejaring?page=1&komoditasid='.$k->id.'&provid=&roleid=') ?>">
                      <div class="service">
-                        <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('<?= base_url('assets/images/thumbnail/komoditas/' . $k->img) ?>');">
+                        <img class=" border-2" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0) 55%), url('<?= base_url('assets/images/thumbnail/komoditas/' . $k->img) ?>');">
                         <h3 class="h1"><span> <?= $k->komoditas ?></span></h3>
                      </div>
                   </a>
@@ -264,7 +221,7 @@
                         <?php foreach($tanitrainer->result() as $tt): ?>
                            <div>
                               <a href="<?= site_url('tanitrainer/' . $tt->flag) ?>">
-                                 <img class="img-fluid" src="<?= base_url('uploads/tanitrainer/' . $tt->img) ?>" />
+                                 <img class="img-fluid" src="<?= base_url('uploads/tanitrainer/' . $tt->img) ?>" style="height: 170px;  object-fit: cover;" />
                               </a>
                               <div class="inner-slider">
                                  <div class="inner-wrapper">
@@ -302,7 +259,7 @@
                   <div class="col">
                      <a href="">
                         <div class="service">
-                           <img class=" border-2" src="" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('<?= base_url('assets/images/thumbnail/publikasi/' . $kp->img) ?>');">
+                           <img class=" border-2" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('<?= base_url('assets/images/thumbnail/publikasi/' . $kp->img) ?>');">
                            <h3 style="top: none !important; bottom: 30px !important;">
                               <i class="<?= $kp->icon ?> fa-1x fa-lg mb-3"></i>
                               <span style="font-size: 24px !important;"><?= $kp->kategori ?></span>
