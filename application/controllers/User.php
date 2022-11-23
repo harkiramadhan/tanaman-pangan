@@ -75,20 +75,6 @@ class User extends CI_Controller {
 		$this->load->view('layout/user/footer', $var);
 	}
 
-    public function kelasku(){
-        $var['title'] = "Dahboard User Data Pertanian";
-		$this->load->view('layout/user/header', $var);
-		$this->load->view('user/user-kelasku', $var);
-		$this->load->view('layout/user/footer', $var);
-	}
-
-	public function galeri(){
-        $var['title'] = "Dahboard User Data Pertanian";
-		$this->load->view('layout/user/header', $var);
-		$this->load->view('user/user-galeri', $var);
-		$this->load->view('layout/user/footer', $var);
-	}
-
 	/* Action Here! */
 	function saveProfile(){
 		$user = $this->M_User->getById($this->session->userdata('userid'));

@@ -16,6 +16,7 @@ class Tanitrainer extends CI_Controller {
 		$page = $this->input->get('page', TRUE);
 		$halaman = isset($page) ? (int)$page : 1;
 		$halaman_awal = ($halaman>1) ? ($halaman * $batas) - $batas : 0;
+		$roleid = $this->input->get('ids[]', TRUE);
 
 		$previous = $halaman - 1;
 		$next = $halaman + 1;
@@ -32,6 +33,9 @@ class Tanitrainer extends CI_Controller {
 			'next' => $next,
 			'previous' => $previous,
 			'page' => $halaman,
+			'ajax' => [
+				'tanitrainer'
+			]
 		];
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/tanitrainer', $var);

@@ -1,7 +1,7 @@
 <section class="pt-3">
    <div class="container">
          <ol class="breadcrumb px-0 py-0 mb-3" style="background: #f0f2f5;" >
-            <li class="breadcrumb-item small"><a href="#" class="text-info"><i class="fa fa-home mr-2"></i>Beranda</a></li>
+            <li class="breadcrumb-item small"><a href="<?= site_url('') ?>" class="text-info"><i class="fa fa-home mr-2"></i>Beranda</a></li>
             <li class="breadcrumb-item small"><a href="#" class="text-info">Akun</a></li>
             <li class="breadcrumb-item small active" aria-current="page">Profil Saya</li>
          </ol>

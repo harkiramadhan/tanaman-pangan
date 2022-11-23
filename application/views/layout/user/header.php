@@ -54,9 +54,9 @@
             <!-- Topbar Navbar -->
             <ul class="navbar-nav align-items-center ml-auto">
                <?php if($this->session->userdata('masuk') == TRUE): ?>
-                  <a href="<?= site_url('user/kelasku') ?>" class="btn btn-outline-success btn-lg font-weight-bold ml-2">Kelas Saya</a>            
+                  <a href="<?= site_url('kelas') ?>" class="btn btn-outline-success btn-lg font-weight-bold ml-2">Kelas Saya</a>            
                   <li class="nav-item dropdown no-arrow no-caret dropdown-user ml-2">
-                     <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="<?= base_url() ?>assets/images/user/s4.png"></a>
+                     <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="<?= base_url('assets/images/user/s4.png') ?>"></a>
                      <div class="dropdown-menu dropdown-menu-right border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
                         <h6 class="dropdown-header d-flex align-items-center">
                            <img class="dropdown-user-img" src="<?= base_url('assets/images/user/s4.png') ?>">
