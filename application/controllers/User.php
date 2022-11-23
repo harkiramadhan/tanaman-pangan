@@ -160,7 +160,7 @@ class User extends CI_Controller {
 		$this->db->where('id', $userid)->update('user', $dataUpdate);
 
 		$penjualan = $this->input->post('penjualan_id[]', TRUE);
-		if(count($penjualan) > 0){
+		if(!empty($penjualan)){
 			$this->db->where('user_id', $userid)->delete('user_penjualan');
 			foreach($penjualan as $p){
 				$this->db->insert('user_penjualan', [
@@ -173,7 +173,7 @@ class User extends CI_Controller {
 		}
 
 		$ketertarikan = $this->input->post('ketertarikan_id[]', TRUE);
-		if(count($ketertarikan) > 0){
+		if(!empty($ketertarikan)){
 			$this->db->where('user_id', $userid)->delete('user_tertarik');
 			foreach($ketertarikan as $kt){
 				$this->db->insert('user_tertarik', [
@@ -186,7 +186,7 @@ class User extends CI_Controller {
 		}
 
 		$kategori_olahan = $this->input->post('kategori_olahan_id[]', TRUE);
-		if(count($kategori_olahan) > 0){
+		if(!empty($kategori_olahan)){
 			$this->db->where('user_id', $userid)->delete('user_kategori_olahan');
 			foreach($kategori_olahan as $ko){
 				$this->db->insert('user_kategori_olahan', [
@@ -199,7 +199,7 @@ class User extends CI_Controller {
 		}
 
 		$komoditas = $this->input->post('komoditas_id[]', TRUE);
-		if(count($komoditas) > 0){
+		if(!empty($komoditas)){
 			$this->db->where('user_id', $userid)->delete('user_komoditas');
 			foreach($komoditas as $k){
 				$this->db->insert('user_komoditas', [

@@ -56,7 +56,7 @@
 												</div>
 											</td>
 											<td class="align-top text-center text-sm">
-												<span class="badge badge-sm bg-gradient-success"><?= ($row->status == 1) ? 'Aktif' : 'Draft' ?></span>
+												<span class="badge badge-sm <?= ($row->status == 1) ? 'bg-gradient-success' : 'bg-gradient-danger' ?>"><?= ($row->status == 1) ? 'Aktif' : 'Draft' ?></span> 
 											</td>
 											<td class="align-top">
 												<div class="ms-auto text-center">

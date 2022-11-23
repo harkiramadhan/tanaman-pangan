@@ -30,6 +30,7 @@
 									<th class="text-uppercase text-dark text-xxs text-center font-weight-bolder opacity-10"width="1px">#</th>
 									<th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Pelatihan</th>
 									<th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Status</th>
+									<th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Status Kegiatan</th>
 									<th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Aksi</th>
 								</tr>
 							</thead>
@@ -59,7 +60,10 @@
 												</div>
 											</td>
 											<td class="align-top text-center text-sm">
-												<span class="badge badge-sm bg-gradient-success"><?= ($row->status == 1) ? 'Aktif' : 'Tidak Aktif' ?></span>
+												<span class="badge badge-sm <?= ($row->status == 1) ? 'bg-gradient-success' : 'bg-gradient-danger' ?>"><?= ($row->status == 1) ? 'Aktif' : 'Draft' ?></span> 
+											</td>
+											<td class="align-top text-center text-sm">
+												<span class="badge badge-sm <?= ($row->status_kegiatan == 1) ? 'bg-info' : (($row->status_kegiatan == 2) ? 'bg-success' : 'bg-warning') ?>"><?= ($row->status_kegiatan == 1) ? 'Belum Berjalan' : (($row->status_kegiatan == 2) ? 'Berjalan' : 'Selesai') ?></span> 
 											</td>
 											<td class="align-top">
 												<div class="ms-auto text-center">

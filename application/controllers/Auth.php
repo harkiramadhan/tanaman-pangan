@@ -55,7 +55,7 @@ class Auth extends CI_Controller {
 			$this->db->insert('user', $dataInsert);
 			if($this->db->affected_rows() > 0){
 				$userid = $this->db->insert_id();
-				if(count($komoditas) > 0){
+				if(!empty($komoditas)){
 					foreach($komoditas as $k){
 						$dataInsertKomoditas = [
 							'user_id' => $userid,

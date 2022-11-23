@@ -128,13 +128,14 @@ class Tanitrainer extends CI_Controller {
 			'flag' => $flag,
 			'tanggal' => $this->input->post('tanggal', TRUE),
 			'deskripsi' => $this->input->post('deskripsi', TRUE),
-			'status' => $this->input->post('status', TRUE)
+			'status' => $this->input->post('status', TRUE),
+			'status_kegiatan' => $this->input->post('status_kegiatan', TRUE)
 		];
 		$this->db->insert('tanitrainer', $dataInsert);
 		if($this->db->affected_rows() > 0){
 			$tanitrainerid = $this->db->insert_id();
 			$roleid = $this->input->post('role_id[]', TRUE);
-			if(count($roleid) > 0){
+			if(!empty($roleid)){
 				foreach($roleid as $row){
 					$this->db->insert('tanitrainer_role', [
 						'tanitrainer_id' => $tanitrainerid,
@@ -178,7 +179,7 @@ class Tanitrainer extends CI_Controller {
 		}
 
 		$roleid = $this->input->post('role_id[]', TRUE);
-		if(count($roleid) > 0){
+		if(!empty($roleid)){
 			$this->db->where('tanitrainer_id', $id)->delete('tanitrainer_role');
 			foreach($roleid as $row){
 				$this->db->insert('tanitrainer_role', [
@@ -196,7 +197,8 @@ class Tanitrainer extends CI_Controller {
 			'flag' => $flag,
 			'tanggal' => $this->input->post('tanggal', TRUE),
 			'deskripsi' => $this->input->post('deskripsi', TRUE),
-			'status' => $this->input->post('status', TRUE)
+			'status' => $this->input->post('status', TRUE),
+			'status_kegiatan' => $this->input->post('status_kegiatan', TRUE)
 		];
 		$this->db->where('id', $id)->update('tanitrainer', $dataUpdate);
 		if($this->db->affected_rows() > 0){

@@ -46,9 +46,19 @@
                             <div class="form-group">
 								<label class="form-control-label" for="input-nama">Status <span class="text-danger">*</span></label>
                                 <select name="status" id="" class="form-control" required>
-                                    <option value=""> Status Publikasi</option>
+                                    <option value="" selected disabled> Status</option>
                                     <option value="1"> Aktif</option>
                                     <option value="2"> Draft</option>
+                                </select>
+							</div>
+
+                            <div class="form-group">
+								<label class="form-control-label" for="input-nama">Status Kegiatan<span class="text-danger">*</span></label>
+                                <select name="status_kegiatan" id="" class="form-control" required>
+                                    <option value="" selected disabled> Status Kegiatan</option>
+                                    <option value="1"> Belum Berjalan</option>
+                                    <option value="2"> Berjalan</option>
+                                    <option value="3"> Selesai</option>
                                 </select>
 							</div>
 
