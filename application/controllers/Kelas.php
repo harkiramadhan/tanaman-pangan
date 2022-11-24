@@ -5,6 +5,7 @@ class Kelas extends CI_Controller{
 
 		$this->load->model([
 			'M_User',
+			'M_Kelas'
 		]);
 
         $this->load->library('image_lib');
@@ -17,6 +18,7 @@ class Kelas extends CI_Controller{
         $var = [
             'title' => "Dahboard User Kelasku",
             'user' => $this->M_User->getById($this->session->userdata('userid')),
+			'kelas' => $this->M_Kelas->getByUser($this->session->userdata('userid')),
         ];
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/user-kelasku', $var);

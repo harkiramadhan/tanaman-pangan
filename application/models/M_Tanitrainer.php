@@ -27,4 +27,11 @@ class M_Tanitrainer extends CI_Model{
                             't.status' => 1
                         ])->limit($rowperpage, $rowno)->order_by('tanggal DESC, id DESC')->get();
     }
+
+    function checkUser($userid, $id){
+        return $this->db->get_where('user_tanitrainer', [
+            'user_id' => $userid,
+            'tanitrainer_id' => $id
+        ]);
+    }
 }

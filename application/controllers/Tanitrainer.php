@@ -47,10 +47,37 @@ class Tanitrainer extends CI_Controller {
 			'title' => "Tani Trainer",
 			'user' => $this->M_User->getById($this->session->userdata('userid')),
 			'data' => $this->M_Tanitrainer->getByFlag($flag),
-			'tanitrainer' => $this->M_Tanitrainer->getPaginate(1, 10, $flag)
+			'tanitrainer' => $this->M_Tanitrainer->getPaginate(1, 10, $flag),
+			'ajax' => [
+				'tanitrainer-detail'
+			]
 		];
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/tanitrainer-detail', $var);
 		$this->load->view('layout/user/footer', $var);
+	}
+
+	/* Action Here! */
+	function join(){
+		$userid = $this->session->userdata('userid');
+		$id = $this->input->post('tanitrainerid', TRUE);
+
+		if($userid){
+			$cek =  $this->M_Tanitrainer->checkUser($userid, $id);
+			if($cek->num_rows() > 0){}else{
+				$dataInsert = [
+					'user_id' => $this->session->userdata('userid'),
+					'tanitrainer_id' => $id
+				];
+				$this->db->insert('user_tanitrainer', $dataInsert);
+				if($this->db->affected_rows() > 0){
+					$this->session->set_flashdata('success', "Berhasil Mengikuti Tanitrainer");
+				}else{
+					$this->session->set_flashdata('error', "Gagal Mengikuti Tanitrainer");
+				}
+			}
+		}
+
+		// redirect($_SERVER['HTTP_REFERER']);
 	}
 }

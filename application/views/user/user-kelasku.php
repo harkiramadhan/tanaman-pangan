@@ -37,24 +37,22 @@
                               </tr>
                            </thead>
                            <tbody>
+                              <?php $no=1; foreach($kelas->result() as $row): ?>
                               <tr>
-                                 <td class="text-center">1</td>
+                                 <td class="text-center"><?= $no++ ?></td>
                                  <td>
-                                    <a href="#" class="make-black">
-                                       <img class="order-proposal-image rounded mb-2 mr-3" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" style="width: 100px;">
-                                       <p class="h6 order-proposal-title">Pelatihan Tani Trainer - Social Media untuk bisnis pertanian</p>
+                                    <a href="<?= site_url('tanitrainer/' . $row->flag) ?>" class="make-black">
+                                       <img class="order-proposal-image rounded mb-2 mr-3" src="<?= base_url('uploads/tanitrainer/' . $row->img) ?>" style="width: 100px;">
+                                       <p class="h6 order-proposal-title"><?= $row->judul ?></p>
                                     </a>
                                  </td>
-                                 <td>
-                                    12 September 2022
-                                    <br>
-                                    10.00 - 02.00 WIB
-                                 </td>
+                                 <td><?= longdate_indo($row->tanggal) ?></td>
                                  <td class="text-center">
-                                    <span class="btn btn-sm btn-warning">BERJALAN</span>
+                                    <span class="btn btn-sm w-100 <?= ($row->status_kegiatan == 1) ? 'btn-info' : (($row->status_kegiatan == 2) ? 'btn-success' : 'btn-warning') ?>"><?= ($row->status_kegiatan == 1) ? 'Belum Berjalan' : (($row->status_kegiatan == 2) ? 'Berjalan' : 'Selesai') ?></span> 
                                  </td>
                                  <td><button class="btn btn-sm btn-success w-100">PROGRESS</button></td>
                               </tr>
+                              <?php endforeach; ?>
                            </tbody>
                         </table>
                      </div>
