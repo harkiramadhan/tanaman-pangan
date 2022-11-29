@@ -30,7 +30,7 @@
       </div>
 
       <!--    about section -->
-      <div class="market-wrapper py-2 bg-white">
+      <div class="market-wrapper py-2 bg-white border-bottom">
          <div class="container">
             <!-- <h2 class="text-center">Explore the marketplace</h2> -->
             <ul class="categories-list mb-0 statistic-slider">
@@ -51,12 +51,65 @@
          </div>
       </div>
 
-      <div class="container pt-5 pb-5  ">
+      <div class="border-2 bg-white border-bottom">
+         <div class="container py-4">
+            <form class="row form-noborder">
+               <div class="col-lg-10 col-12">
+                  <div class="form-row justify-content-center">
+                     <div class="col-lg-4 col-md-3 col-sm-12 form-group">
+                        <p class="text-dark font-weight-bold mb-2">Saya Ingin</p>
+                        <div class="location-dropdown text-left">
+                           <i class="icofont-location-arrow"></i>
+                           <select class="custom-select form-control border-0 shadow-sm form-control-lg">
+                              <option> Pilih </option>
+                              <option> Membeli </option>
+                              <option> Menjual </option>
+                           </select>
+                        </div>
+                     </div>
+   
+                     <div class="col-lg-4 col-md-3 col-sm-12 form-group">                     
+                        <p class="text-dark font-weight-bold mb-2">Komoditas,</p>
+                        <div class="location-dropdown text-left">
+                           <i class="icofont-location-arrow"></i>
+                           <select class="custom-select form-control border-0 shadow-sm form-control-lg">
+                              <option> Pilih </option>
+                              <option> Padi/Beras </option>
+                              <option> Ubi </option>
+                           </select>
+                        </div>
+                     </div>
+   
+                     <div class="col-lg-4 col-md-3 col-sm-12 form-group">
+                        <p class="text-dark font-weight-bold mb-2">di Wilayah</p>
+                        <div class="location-dropdown text-left">
+                           <i class="icofont-location-arrow"></i>
+                           <select class="custom-select form-control border-0 shadow-sm form-control-lg">
+                              <option> Pilih </option>
+                              <option> Jawa Timur </option>
+                              <option> Jawa Tengah </option>
+                           </select>
+                        </div>
+                     </div>
+   
+                  </div>
+               </div>
+               <div class="col-lg-2 col-12 col-md-2 col-sm-12 form-group">
+                  <p class="text-white font-weight-bold mb-2 d-lg-block d-none">*</p>
+                  <button type="submit"
+                     class="btn btn-success btn-block btn-gradient shadow-sm"><i
+                     class="fa fa-search"></i></button>
+               </div>
+            </form>
+         </div>
+      </div>
+         
+      <div class="container pt-5 pb-5">
          <div class="row">
             <div class="col-12 text-center pt-1 pb-5">
                <img src="<?= base_url('assets/images/storyset/Indonesia_provinces_HDI_2021 1.svg') ?>" class="video-img w-75">
             </div>
-            
+         
             <div class="col-md-12">
                <h2 class="mb-5">Lebih Dekat Untuk Kolaborasi Antar <span class="font-weight-bold text-danger">#JEJARING</span>
                </h2>

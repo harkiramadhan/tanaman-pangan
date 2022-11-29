@@ -63,7 +63,7 @@
                         </div>
                         <div class="row d-flex align-items-center form-group">
                            <div class="col-md-4">
-                              <p class="text-muted font-weight-bold mb-0">Upload Gambar Cover<sup class="text-danger">*</sup></p>
+                              <p class="text-muted font-weight-bold mb-0">Upload Gambar Cover</p>
                            </div>
                            <div class="col-md-8">
                               <div class="custom-file">
@@ -74,7 +74,7 @@
                         </div>
                         <div class="row d-flex align-items-center form-group">
                            <div class="col-md-4">
-                              <p class="text-muted font-weight-bold mb-0">Penanggung Jawab<sup class="text-danger">*</sup></p>
+                              <p class="text-muted font-weight-bold mb-0">Nama<sup class="text-danger">*</sup></p>
                            </div>
                            <div class="col-md-8">
                               <input type="text" name="nama" class="form-control font-weight-bold text-muted" value="<?= $user->nama ?>" placeholder="Isi Nama Lengkap" required>
@@ -97,10 +97,10 @@
 
                         <div class="row d-flex align-items-center form-group">
                            <div class="col-md-4">
-                              <p class="text-muted font-weight-bold mb-0">Google Maps <sup class="text-danger">*</sup></p>
+                              <p class="text-muted font-weight-bold mb-0">Google Maps</p>
                            </div>
                            <div class="col-md-8">
-                              <input type="text" name="maps" class="form-control font-weight-bold text-muted" value="<?= $user->maps ?>" placeholder="Tambahkan link maps" required>
+                              <input type="text" name="maps" class="form-control font-weight-bold text-muted" value="<?= $user->maps ?>" placeholder="Tambahkan link maps">
                            </div>
                         </div>
 
@@ -114,14 +114,6 @@
                         </div>
 
                         <!-- FORM ALAMAT -->
-                        <div class="row d-flex align-items-center form-group">
-                           <div class="col-md-4">
-                              <p class="text-muted font-weight-bold mb-0">Alamat<sup class="text-danger">*</sup></p>
-                           </div>
-                           <div class="col-md-8">
-                              <input type="text" name="alamat" class="form-control font-weight-bold text-muted" value="<?= $user->alamat ?>" placeholder="Tulis Jalan, Perumahan, No, RT/RW" required>
-                           </div>
-                        </div>
                         <div class="row d-flex align-items-center form-group">
                            <div class="col-md-4">
                               <p class="text-muted font-weight-bold mb-0">Provinsi<sup class="text-danger">*</sup></p>
@@ -184,6 +176,15 @@
                                     <option value="<?= $kl->subdis_id ?>" <?= ($kl->subdis_id == $user->desa_kel) ? 'selected' : '' ?>> <?= ucwords(strtolower($kl->subdis_name)) ?></option>
                                  <?php }; endif; ?>
                               </select>
+                           </div>
+                        </div>
+
+                        <div class="row d-flex align-items-center form-group">
+                           <div class="col-md-4">
+                              <p class="text-muted font-weight-bold mb-0">Alamat<sup class="text-danger">*</sup></p>
+                           </div>
+                           <div class="col-md-8">
+                              <input type="text" name="alamat" class="form-control font-weight-bold text-muted" value="<?= $user->alamat ?>" placeholder="Tulis Jalan, Perumahan, No, RT/RW" required>
                            </div>
                         </div>
                         <!-- FORM ALAMAT END -->

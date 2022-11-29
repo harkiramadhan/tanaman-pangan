@@ -16,38 +16,65 @@
 
 <div class="main-page best-selling">
    <div class="view_slider recommended pt-5">
-      <div class="container mb-3">
-         <div class="sorting-div d-flex align-items-center justify-content-">
-            <p class="mb-2 d-lg-block d-none">463 Jejaring Tersedia</p>
-            <div class="sorting d-flex align-items-center ml-auto  d-lg-block d-none">
-               <p>Berdasarkan</p>
+      <div class="container mb-0">
+         <div class="row">
+
+            <div class="col-lg-6 col-12 ">
+               <div class="sorting-div d-flex align-items-center mb-3">
+                  <div class="sorting d-flex align-items-center">
+                     <!-- <p>Berdasarkan</p> -->
+                     <p class="">Anda ingin?</p>
+                  </div>
+                  <div class="sorting d-flex align-items-center ml-3" style="width: 200px !important;">
+                     <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="-komoditas">
+                        <option value="" selected disabled>Pilih</option>
+                        <option value="semua"> Membeli</option>
+                        <option value="semua"> Menjual</option>
+                     </select>
+                  </div>
+               </div>
+
+               <!-- Untuk menjual -->
+               <!-- <h3 class="d-lg-block d-none">Tawarkan komoditasmu kepada jejaring berikut.</h3> -->
+
+               <!-- Untuk membeli produk -->
+               <h3 class="d-lg-block d-none">Hubungi segera mereka, untuk kesediaan barang.</h3>
+
             </div>
-            <div class="sorting d-flex align-items-center ml-3">
-               <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="select-komoditas">
-                  <option value="" selected disabled>Komoditas</option>
-                  <option value="semua"> Semua</option>
-                  <?php foreach($komoditas->result() as $k){ ?>
-                     <option <?= ($this->input->get('komoditasid', TRUE) == $k->id) ? 'selected' : '' ?> value="<?= $k->id ?>"> <?= ucwords(ucfirst($k->komoditas)) ?></option>
-                  <?php } ?>
-               </select>
-               <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="select-role">
-                  <option value="" selected disabled>Peran</option>
-                  <option value="semua">Semua</option>
-                  <?php foreach($role->result() as $r){ ?>
-                     <option <?= ($this->input->get('roleid', TRUE) == $r->id) ? 'selected' : '' ?> value="<?= $r->id ?>"> <?= $r->role ?></option>
-                  <?php } ?>
-               </select>
-               <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="select-prov">
-                  <option value="" selected disabled>Wilayah</option>
-                  <option value="semua">Semua</option>
-                  <?php foreach($provinsi->result() as $p){ ?>
-                     <option <?= ($this->input->get('provid', TRUE) == $p->prov_id) ? 'selected' : '' ?> value="<?= $p->prov_id ?>"> <?= ucwords(strtolower($p->prov_name)) ?></option>
-                  <?php } ?>
-               </select>
+
+            <div class="col-lg-6 col-12">
+               <div class="sorting-div d-flex align-items-center justify-content-">
+                  <div class="sorting d-flex align-items-center ml-lg-auto ml-0 d-lg-block d-none">
+                     <p>Berdasarkan</p>
+                  </div>
+                  <div class="sorting d-flex align-items-center ml-3">
+                     <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="select-komoditas">
+                        <option value="" selected disabled>Komoditas</option>
+                        <option value="semua"> Semua</option>
+                        <?php foreach($komoditas->result() as $k){ ?>
+                           <option <?= ($this->input->get('komoditasid', TRUE) == $k->id) ? 'selected' : '' ?> value="<?= $k->id ?>"> <?= ucwords(ucfirst($k->komoditas)) ?></option>
+                        <?php } ?>
+                     </select>
+                     <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="select-role">
+                        <option value="" selected disabled>Peran</option>
+                        <option value="semua">Semua</option>
+                        <?php foreach($role->result() as $r){ ?>
+                           <option <?= ($this->input->get('roleid', TRUE) == $r->id) ? 'selected' : '' ?> value="<?= $r->id ?>"> <?= $r->role ?></option>
+                        <?php } ?>
+                     </select>
+                     <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="select-prov">
+                        <option value="" selected disabled>Wilayah</option>
+                        <option value="semua">Semua</option>
+                        <?php foreach($provinsi->result() as $p){ ?>
+                           <option <?= ($this->input->get('provid', TRUE) == $p->prov_id) ? 'selected' : '' ?> value="<?= $p->prov_id ?>"> <?= ucwords(strtolower($p->prov_name)) ?></option>
+                        <?php } ?>
+                     </select>
+                  </div>
+               </div>
             </div>
          </div>
-         <h3 class="d-lg-block d-none">Perluas Jejaringmu Sekarang</h3>
       </div>
+
       <div class="container">
          <div class="row">
 
