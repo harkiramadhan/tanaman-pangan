@@ -75,6 +75,16 @@ class User extends CI_Controller {
 		$this->load->view('layout/user/footer', $var);
 	}
 
+	public function pengaturan(){
+        $var = [
+			'title' => 'Dashboard User Atur Jual Beli',
+			'user' => $this->M_User->getById($this->session->userdata('userid')),
+		];
+		$this->load->view('layout/user/header', $var);
+		$this->load->view('user/user-profil-jualbeli', $var);
+		$this->load->view('layout/user/footer', $var);
+	}
+
 	/* Action Here! */
 	function saveProfile(){
 		$user = $this->M_User->getById($this->session->userdata('userid'));

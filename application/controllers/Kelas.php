@@ -24,4 +24,15 @@ class Kelas extends CI_Controller{
 		$this->load->view('user/user-kelasku', $var);
 		$this->load->view('layout/user/footer', $var);
     }
+
+	function detail(){
+        $var = [
+            'title' => "Dahboard Detail Kelas",
+            'user' => $this->M_User->getById($this->session->userdata('userid')),
+			'kelas' => $this->M_Kelas->getByUser($this->session->userdata('userid')),
+        ];
+		$this->load->view('layout/user/header', $var);
+		$this->load->view('user/user-kelasku-detail', $var);
+		$this->load->view('layout/user/footer', $var);
+    }
 }
