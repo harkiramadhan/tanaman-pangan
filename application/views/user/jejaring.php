@@ -82,7 +82,7 @@
                foreach($data->result() as $row): 
                   $komoditasUser = $this->M_Komoditas->getByUser($row->id);
             ?>
-               <div class="col-md-3">
+               <div class="col-lg-4 col-md-6 col-12">
                   <a href="<?= site_url('jejaring/' . $row->id) ?>">
                      <?php if($row->cover_img): ?>
                         <img class="img-fluid" src="<?= base_url('uploads/cover/' . $row->cover_img) ?>" />

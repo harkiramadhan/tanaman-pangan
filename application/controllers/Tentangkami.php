@@ -19,4 +19,6 @@ class Tentangkami extends CI_Controller {
 		$this->load->view('layout/user/footer', $var);
 	
 	}
+
+	
 }

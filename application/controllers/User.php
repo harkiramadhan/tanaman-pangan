@@ -76,8 +76,9 @@ class User extends CI_Controller {
 	}
 
 	public function pengaturan(){
+        
         $var = [
-			'title' => 'Dashboard User Atur Jual Beli',
+			'title' => 'Dashboard User Kata Sandi',
 			'user' => $this->M_User->getById($this->session->userdata('userid')),
 		];
 		$this->load->view('layout/user/header', $var);
