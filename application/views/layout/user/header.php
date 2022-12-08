@@ -37,7 +37,10 @@
          <div class="container">
             <!-- Sidebar Toggle (Topbar) -->
             <a class="navbar-brand" href="<?= site_url() ?>"><img src="http://app3.pertanian.go.id/propaktani/portal/assets/img/logo_login.png" alt=""></a>
-            <h6 class="mb-0 font-weight-bold">Propaktani</h6>
+            <div class="d-flex flex-column">
+               <h6 class="mb-0 font-weight-bold">Propaktani</h6>
+               <p class="mb-0 text-muted" style="font-size: 10px;">Membangun Jejaring Petani Pelaku Usahatani</p>
+            </div>
             
             <!-- Topbar Search -->
             <!-- <form class="d-none d-sm-inline-block form-inline mr-auto my-2 my-md-0 mw-100 navbar-search">

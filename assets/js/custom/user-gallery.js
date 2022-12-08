@@ -1,7 +1,7 @@
 function previewImage() {
     var element = document.getElementById("image-preview")
     element.classList.remove("d-none")
-    document.getElementById("image-preview").style.display = "block"
+    document.getElementById("image-preview").style.display = "inline"
 
     var oFReader = new FileReader()
     oFReader.readAsDataURL(document.getElementById("image-source").files[0])

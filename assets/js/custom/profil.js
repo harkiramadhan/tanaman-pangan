@@ -72,7 +72,7 @@ $('#select-kec').change(function(){
 function previewImage() {
     var element = document.getElementById("image-preview")
     element.classList.remove("d-none")
-    document.getElementById("image-preview").style.display = "block"
+    document.getElementById("image-preview").style.display = "inline"
 
     var oFReader = new FileReader()
     oFReader.readAsDataURL(document.getElementById("image-source").files[0])
@@ -84,7 +84,7 @@ function previewImage() {
 function previewImage2() {
     var element = document.getElementById("image-preview2")
     element.classList.remove("d-none")
-    document.getElementById("image-preview2").style.display = "block"
+    document.getElementById("image-preview2").style.display = "inline"
 
     var oFReader = new FileReader()
     oFReader.readAsDataURL(document.getElementById("image-source2").files[0])

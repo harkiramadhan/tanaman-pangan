@@ -42,7 +42,7 @@
 
             </div>
 
-            <div class="col-lg-6 col-12">
+            <div class="col-lg-6 col-12 mb-lg-0 mb-3">
                <div class="sorting-div d-flex align-items-center justify-content-">
                   <div class="sorting d-flex align-items-center ml-lg-auto ml-0 d-lg-block d-none">
                      <p>Berdasarkan</p>
@@ -83,6 +83,11 @@
                   $komoditasUser = $this->M_Komoditas->getByUser($row->id);
             ?>
                <div class="col-lg-4 col-md-6 col-12">
+
+                  <span class="badge badge-warning font-weight-bolder mb-2 p-2 position-absolute" style="left: 25px; top: 10px;"><i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i>MENJUAL</span>
+                  <span class="badge badge-warning font-weight-bolder mb-2 p-2 position-absolute text-uppercase" style="left: 110px; top: 10px;"><?= $row->role ?></span>
+
+                  <!-- <span class="badge badge-warning mb-2"><i class="fa fa-shopping-cart" aria-hidden="true"></i><?= $row->role ?></span> -->
                   <a href="<?= site_url('jejaring/' . $row->id) ?>">
                      <?php if($row->cover_img): ?>
                         <img class="img-fluid" src="<?= base_url('uploads/cover/' . $row->cover_img) ?>" />
@@ -92,17 +97,26 @@
                   </a>
                   <div class="inner-slider">
                      <div class="inner-wrapper">
+                        <h1 class="mb-0">12<sup class="text-danger" style="font-size: 24px !important;">kg</sup></h1>
+                        <h2 class="mb-1 mt-0 font-weight-normal p-0">
+                           Pakan Ayam
+                        </h2>
+                        <span class="">
+                           <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-2 font-weight-light text-dark text-xs"><i class="fa fa-user mr-2 text-secondary" aria-hidden="true"></i><?= $row->nama ?></a>
+                        </span>
+                        <hr class="margin-bottom mt-3 mb-2">
                         <div class="d-flex align-items-center">
                            <span class="seller-image">
-                              <img class="img-fluid"src="<?= base_url('uploads/profile/' . $row->img) ?>" alt='' />
-                           </span>
-                           <span class="seller-name">
-                              <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1"><?= $row->nama ?></a>
+                              <?php if($row->img): ?>
+                                 <img class="img-fluid" src="<?= base_url('uploads/profile/' . $row->img) ?>" />
+                              <?php else: ?>
+                                 <img class="img-fluid" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" />
+                              <?php endif; ?>
+                              <!-- <img class="img-fluid"src="<?= base_url('uploads/profile/' . $row->img) ?>" alt='' /> -->
                            </span>
                         </div>
-                        <span class="badge badge-warning"><?= $row->role ?></span>
-                        <h3 class="mb-1"><?= $row->keterangan ?></h3>
-                        <h3 class="mb-2 mt-0 font-weight-bold">
+                        <!-- <h3 class="mb-1"><?= $row->keterangan ?></h3> -->
+                        <h3 class="mb-1 mt-0 font-weight-bold">
                            Komoditas dijual:
                         </h3>
                         <?php foreach($komoditasUser->result() as $ku): ?>

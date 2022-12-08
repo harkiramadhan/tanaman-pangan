@@ -112,121 +112,19 @@
       </div>
    
       <div class="col-md-12">
-         <h2 class="mb-5">Lebih Dekat Untuk Kolaborasi Antar <span class="font-weight-bold text-danger">#JEJARING</span>
-         </h2>
-         <ul class="nav osahan-tabs nav-tabs flex-column flex-sm-row border-0 mb-4">
-            <li class="nav-item">
-               <a href="#active" data-toggle="tab" class="nav-link make-black active border-0 rounded"> 
-               PETANI/PRODUSEN
-               </a>
-            </li>
-            <li class="nav-item">
-               <a href="#delivered" data-toggle="tab" class="nav-link make-black border-0 rounded">
-               USAHA OLAHAN
-               </a>
-            </li>
-            <li class="nav-item">
-               <a href="#completed" data-toggle="tab" class="nav-link make-black border-0 rounded">
-               OFFTAKER PANGAN
-               </a>
-            </li>
-            <li class="nav-item">
-               <a href="#cancelled" data-toggle="tab" class="nav-link make-black border-0 rounded">
-               EKSPORTIR
-               </a>
-            </li>
-            <li class="nav-item">
-               <a href="#all" data-toggle="tab" class="nav-link make-black border-0 rounded">
-               JEJARING LAINNYA
-               </a>
-            </li>
-         </ul>
-         <div class="tab-content osahan-table border-0 px-3 pt-1">
+         <h2 class="mb-3">Keuntungan Mendaftar<span class="font-weight-bold text-danger"> Jejaring Hulu Hilirr Pasar (JHHP)</span></h2>
+         <p class="h6 font-weight-light mb-4">Membangun Jejaring Hulu Hilir Pasar (JHHP), menghubungkan antara petani & pelaku usaha pertanian agar lebih maju dan berkembang.</p>
+         <div class="tab-content osahan-table border-0 px-3 pt-1 mb-4">
             <div class="tab-pane active" id="active">
                <div class="about-section">
                   <div class="row align-items-center">
                      <div class="col-md-6">
-                        <h2>Sebagai Petani/Produsen? <br> Apa yang kamu dapat?</h2>
+                        <h2>Apa peran anda didalam jejaring, Apa Keuntungannya, Bagaimana Caranya?</h2>
                         <ul>
-                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg">Perluas Jejaringmu</span>Agar potensi produkmu lebih dikenal luas antar #JEJARING</li>
-                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg">Peluang Lebih Tinggi Sekian %</span>Kapan lagi produkmu akan lebih tinggi terjual dan dikenal sehingga bisa meningkatkan penjualan.</li>
-                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg">Berkembang Lebih Pesat</span>Perkembangan usahamu akan lebih meyakinkan dengan jejaring yang kuat dan kompak.</li>
-                        </ul>
-                     </div>
-                     <div class="col-md-6 text-right mt-lg-0 mt-5">
-                        <img src="<?= base_url() ?>assets/images/storyset/Group 1.png" class="video-img w-100 rounded-lg" style="border-radius: 15px !important;">
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="tab-pane" id="delivered">
-               <div class="about-section">
-                  <div class="row align-items-center">
-                     <div class="col-md-6">
-                        <h2>Give Your Business The Right Tools</h2>
-                        <ul>
-                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Full Transparency</span> A new shared dashboard allows you to track your team's activity, so that everyone is always in sync.</li>
-                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> VIP Customer Support
-                              </span>Quick response time and upgraded support solutions will help you to get what you need, when you need it.
-                           </li>
-                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Improved Billing Options</span>One team - one payment method. You can now add a card on file that every team member can use.</li>
-                        </ul>
-                     </div>
-                     <div class="col-md-6 text-right mt-lg-0 mt-5">
-                        <img src="<?= base_url() ?>assets/images/storyset/Group 1.png" class="video-img w-100 rounded-lg" style="border-radius: 15px !important;">
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="tab-pane" id="completed">
-               <div class="about-section">
-                  <div class="row align-items-center">
-                     <div class="col-md-6">
-                        <h2>Give Your Business The Right Tools</h2>
-                        <ul>
-                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Full Transparency</span> A new shared dashboard allows you to track your team's activity, so that everyone is always in sync.</li>
-                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> VIP Customer Support
-                              </span>Quick response time and upgraded support solutions will help you to get what you need, when you need it.
-                           </li>
-                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Improved Billing Options</span>One team - one payment method. You can now add a card on file that every team member can use.</li>
-                        </ul>
-                     </div>
-                     <div class="col-md-6 text-right mt-lg-0 mt-5">
-                        <img src="<?= base_url() ?>assets/images/storyset/Group 1.png" class="video-img w-100 rounded-lg" style="border-radius: 15px !important;">
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="tab-pane" id="cancelled">
-               <div class="about-section">
-                  <div class="row align-items-center">
-                     <div class="col-md-6">
-                        <h2>Give Your Business The Right Tools</h2>
-                        <ul>
-                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Full Transparency</span> A new shared dashboard allows you to track your team's activity, so that everyone is always in sync.</li>
-                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> VIP Customer Support
-                              </span>Quick response time and upgraded support solutions will help you to get what you need, when you need it.
-                           </li>
-                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Improved Billing Options</span>One team - one payment method. You can now add a card on file that every team member can use.</li>
-                        </ul>
-                     </div>
-                     <div class="col-md-6 text-right mt-lg-0 mt-5">
-                        <img src="<?= base_url() ?>assets/images/storyset/Group 1.png" class="video-img w-100 rounded-lg" style="border-radius: 15px !important;">
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <div class="tab-pane" id="all">
-               <div class="about-section">
-                  <div class="row align-items-center">
-                     <div class="col-md-6">
-                        <h2>Give Your Business The Right Tools</h2>
-                        <ul>
-                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Full Transparency</span> A new shared dashboard allows you to track your team's activity, so that everyone is always in sync.</li>
-                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> VIP Customer Support
-                              </span>Quick response time and upgraded support solutions will help you to get what you need, when you need it.
-                           </li>
-                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Improved Billing Options</span>One team - one payment method. You can now add a card on file that every team member can use.</li>
+                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg">Petani/produsen, usaha olahan:</span>dapat mempromosikan hasil produk, segar maupun olahan agar dikenal luas dan langsung terhubung dengan offtaker/konsumen tanpa perantara.</li>
+                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg">Offtaker, eksportir: </span>dapat mencari produk pertanian langsung dari petani/usaha pengolahan tanpa perantara sehingga lebih kompetitif untuk diolah, dipasarkan di dalam dan luar negeri.</li>
+                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg">Penyedia benih, pupuk, alsintan: </span>dapat mempublikasikan dan menawarkan produk langsung kepada petani/pelaku usaha tani sehingga produk dikenal luas.</li>
+                           <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg">Penyuluh, Pakar Pertanian: </span>berperan membimbing, mendampingi dan mencari solusi kepada petani, pelaku usaha pertanian.</li>
                         </ul>
                      </div>
                      <div class="col-md-6 text-right mt-lg-0 mt-5">
@@ -237,7 +135,36 @@
             </div>
          </div>
 
-         <div class="text-center mt-5">
+         <div class="row">
+            <!-- Main Content -->
+            <div class="col-md-6 mb-lg-0 mb-3">
+               <div class="box shadow-sm rounded bg-white mb-4 h-100">
+                  <div class="p-4 d-flex align-items-center">
+                     <i class="fa fa-user-plus text-success display-4"></i>
+                     <div class="ml-4">
+                        <h5 class="font-weight-normal text-dark mb-3 mt-0">Keuntungannya</h5>
+                        <p class="mb-0 text-muted">Terhubung jejaring sampai level kecamatan desa, promosi tanpa batas hasil pertanian atau produk, mempermudah pemasaran memotong rantai distribusi, diskusi seputar perkembangan pertanian
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="col-md-6">
+               <div class="box shadow-sm rounded bg-white mb-4 h-100">
+                  <div class="p-4 d-flex align-items-center">
+                     <i class="fa fa-question-circle text-success display-4"></i>
+                     <div class="ml-4">
+                        <h5 class="font-weight-normal text-dark mb-3 mt-0">Bagaimana caranya
+                        </h5>
+                        <p class="mb-0 text-muted">Daftar untuk mendapatkan user, lengkapi data dan profil anda, promosikan produk, update perkembangan dilapangan. 
+                        </p>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+
+         <div class="text-center mt-4">
             <a href="<?= site_url('daftar') ?>" class="c-btn c-fill-color-btn" tabindex="0">DAFTAR MENJADI JEJARING</a>
          </div>
       </div>
@@ -376,18 +303,23 @@
    <div class="about-section pt-5">
       <div class="row align-items-center">
          <div class="col-md-6">
-            <h2>Bergabung dengan kami
-               , <br>Perluas jejaring tani kamu
+
+         <h1 class="mb-3 p-0">Tani Treaner :<span class="font-weight-bold text-danger"></span></h1>
+         <p class="h6 font-weight-light mb-4"> Membangun Jejaring Hulu Hilir Pasar (JHHP), menghubungkan antara petani & pelaku usaha pertanian agar lebih maju dan berkembang.</p>
+            <h2> Apa materinya, Apa keuntungannya, bagaimana caranya ?
             </h2>
             <ul>
-               <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Akses Pelatihan Tani Trainer Lebih Mudah</span>
-                  Dengan mendaftar dan menjadi bagian dari kami, kamu bisa mendaftar seluruh kegiatan dengan lebih mudah.
+               <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg">Materi pelatihan budidaya :</span>
+                  Pertanian khususnya tanaman pangan membuat pupuk organik, pestisida alami, teknik budidaya, perbenihan, pengendalian hama.
                </li>
-               <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Kamu Prioritas Utama Kami
-                  </span>Tentu akan berbeda fasilitas yang kamu dapat, sebagai dan tidak sebagai bagian dari program jejaring kami.
+               <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg">Materi pasca panen :</span>
+                  Bagaimana penanganan pasca panen yang baik, mekanisasi mengurangi susut hasil, bagimana meningkatkan kualitas produks.
                </li>
-               <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg"> Perluas Jejaring Tani Kamu</span>
-                  Tidak secara local (Kab/Kota) tetapi se Nusantara akan bertemu di platform ini.
+               <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg">Materi hilirisasi :</span>
+               Bagaimana membuat berbagai macam produk olahan berbahan dasar produk pertanian yang menarik dan mempunyai nilai jual tinggi.
+               </li>
+               <li><span><img src="<?= base_url() ?>assets/images/checkmark.svg">Tidak hanya teori dari pelatih yang kompeten, tetapi langsung praktek di lahan</span>
+                  Pasca pelatihan, akan dibimbing, dimonitor dan dievaluasi perkembangannya di masing-masing daerah sehingga akan menjadi pelaku usaha pertanian yang mandiri serta tergabung dalam Jejaring JHHP.
                </li>
             </ul>
          </div>
