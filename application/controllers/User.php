@@ -162,11 +162,11 @@ class User extends CI_Controller {
 			'jenis_pupuk' => $this->input->post('jenis_pupuk', TRUE),
 			'jenis_pestisida' => $this->input->post('jenis_pestisida', TRUE),
 			'jenis_aisintan' => $this->input->post('jenis_aisintan', TRUE),
+			'keterangan' => $this->input->post('keterangan', TRUE),
 			'menjual_produk' => $this->input->post('menjual_produk', TRUE),
 			'membutuhkan_produk' => $this->input->post('membutuhkan_produk', TRUE),
 			'produk_dijual_bulanan' => $this->input->post('produk_dijual_bulanan', TRUE),
-			'produk_dibutuhkan_bulanan' => $this->input->post('produk_dibutuhkan_bulanan', TRUE),
-			'keterangan' => $this->input->post('keterangan', TRUE)
+			'produk_dibutuhkan_bulanan' => $this->input->post('produk_dibutuhkan_bulanan', TRUE),	
 		];
 		$this->db->where('id', $userid)->update('user', $dataUpdate);
 
@@ -222,6 +222,19 @@ class User extends CI_Controller {
 			$this->db->where('user_id', $userid)->delete('user_komoditas');
 		}
 		
+		redirect($_SERVER['HTTP_REFERER']);
+	}
+
+	function save(){
+		$userid = $this->session->userdata('userid');
+		$dataUpdate = [
+			'status' => $this->input->post('status', TRUE),
+			'menjual_produk' => $this->input->post('menjual_produk', TRUE),
+			'membutuhkan_produk' => $this->input->post('membutuhkan_produk', TRUE),
+			'produk_dijual_bulanan' => $this->input->post('produk_dijual_bulanan', TRUE),
+			'produk_dibutuhkan_bulanan' => $this->input->post('produk_dibutuhkan_bulanan', TRUE),
+		];
+		$this->db->where('id', $userid)->update('user', $dataUpdate);
 		redirect($_SERVER['HTTP_REFERER']);
 	}
 
