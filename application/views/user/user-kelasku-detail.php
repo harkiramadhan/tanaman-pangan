@@ -44,7 +44,7 @@
                               </tr>
                            </thead>
                            <tbody>
-                              <?php $no=1; foreach($kelas->result() as $row): ?>
+                              <?php $no=1; foreach($laporan->result() as $row): ?>
                               <tr>
                                  <td>
                                     <!-- Nampilin judul bold -->
@@ -54,7 +54,7 @@
 
                                     <!-- Lalu deskripsi font regular -->
                                     <p class="font-weight-regular mb-0">
-                                        <?= $row->judul ?><?= $row->judul ?>
+                                        <?= $row->desc ?>
                                     </p>
                                  </td>
                                  <td><?= date_indo($row->tanggal) ?></td>
@@ -90,7 +90,8 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="<?= site_url('gallery/create') ?>" enctype="multipart/form-data" method="POST">
+            <form action="<?= site_url('kelas/createLaporan') ?>" enctype="multipart/form-data" method="POST">
+                <input type="hidden" name="tanitrainer_id" value="<?= $this->uri->segment(2) ?>">
                 <div class="modal-body">
                     <div class="text-center">
                         <img src="" class="img-fluid img-center shadow rounded mb-4 d-none" style="max-height: 250px" id="image-preview">
@@ -111,7 +112,7 @@
                             <p class="text-muted font-weight-bold mb-0">Judul Update<sup class="text-danger">*</sup></p>
                         </div>
                         <div class="col-md-8">
-                            <input type="text" name="" class="form-control font-weight-bold text-muted" value="" required="">
+                            <input type="text" name="judul" class="form-control font-weight-bold text-muted" value="" required="">
                         </div>
                     </div>
 
@@ -120,7 +121,7 @@
                             <p class="text-muted font-weight-bold mb-0">Tanggal Update<sup class="text-danger">*</sup></p>
                         </div>
                         <div class="col-md-8">
-                            <input type="date" name="" class="form-control font-weight-bold text-muted" value="" required="">
+                            <input type="date" name="tanggal" class="form-control font-weight-bold text-muted" value="" required="">
                         </div>
                     </div>
 
@@ -129,7 +130,7 @@
                             <p class="text-muted font-weight-bold mb-0">Berita Update<sup class="text-danger">*</sup></p>
                         </div>
                         <div class="col-md-8">
-                            <textarea class="form-control" id="" rows="3"></textarea>
+                            <textarea class="form-control" id="" rows="3" name="desc"></textarea>
                         </div>
                     </div>
                     

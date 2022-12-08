@@ -57,6 +57,8 @@ $route['masuk'] = 'auth/index';
 $route['daftar'] = 'auth/daftar';
 $route['logout'] = 'auth/logout';
 
+$route['kelas/(:num)'] = 'kelas/detail/$1';
+
 $route['admin'] = 'admin/admin/index';
 $route['admin/jejaring/(:num)'] = 'admin/jejaring/detail/$1';
 $route['jejaring/(:num)'] = 'jejaring/detail/$1';

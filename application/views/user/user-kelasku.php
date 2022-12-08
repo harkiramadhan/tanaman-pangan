@@ -50,7 +50,9 @@
                                  <td class="text-center">
                                     <span class="btn btn-sm w-100 <?= ($row->status_kegiatan == 1) ? 'btn-info' : (($row->status_kegiatan == 2) ? 'btn-success' : 'btn-warning') ?>"><?= ($row->status_kegiatan == 1) ? 'Belum Berjalan' : (($row->status_kegiatan == 2) ? 'Berjalan' : 'Selesai') ?></span> 
                                  </td>
-                                 <td><button class="btn btn-sm btn-success w-100">PROGRESS</button></td>
+                                 <td>
+                                    <a href="<?= site_url('kelas/' . $row->id) ?>" class="btn btn-sm btn-success w-100">PROGRESS</a>
+                                 </td>
                               </tr>
                               <?php endforeach; ?>
                            </tbody>

@@ -8,4 +8,20 @@ class M_Kelas extends CI_Model{
                             'ut.user_id' => $userid
                         ])->get();
     }
+
+    function getById($id){
+        return $this->db->select('')
+                        ->from('user_tanitrainer ut')
+                        ->join('tanitrainer t', 't.id = ut.tanitrainer_id')
+                        ->where([
+                            't.id' => $id
+                        ])->get()->row();
+    }
+
+    function getLaporan($userid, $kelasid){
+        return $this->db->get_where('user_laporan', [
+                            'user_id' => $userid,
+                            'tanitrainer_id' => $kelasid
+                        ]);
+    }
 }
