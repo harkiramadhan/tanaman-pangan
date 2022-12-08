@@ -17,14 +17,22 @@ class Jejaring extends CI_Controller {
 	}
 
 	public function index(){
+		$type = $this->input->get('type', TRUE);
 		$roleid = $this->input->get('roleid', TRUE);
 		$provid = $this->input->get('provid', TRUE);
 		$komoditasid = $this->input->get('komoditasid', TRUE);
 
 		$where = [];
+		if($type != NULL){
+			array_push($where, [
+				'column' => 'u.status',
+				'value' => ($type == 1) ? 2 : 1
+			]);
+		}
+
 		if($roleid != NULL && $roleid != 'semua'){
 			array_push($where, [
-				'column' =>'u.role_id', 
+				'column' => 'u.role_id', 
 				'value' => $roleid
 			]);
 		}
@@ -71,7 +79,7 @@ class Jejaring extends CI_Controller {
 		];
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/jejaring', $var);
-		$this->load->view('layout/user/footer', $var);
+		$this->load->view('layout/user/footer', $var);	
 	}
 
 	public function detail($id){

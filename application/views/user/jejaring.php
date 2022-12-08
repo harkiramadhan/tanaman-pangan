@@ -26,10 +26,10 @@
                      <p class="">Anda ingin?</p>
                   </div>
                   <div class="sorting d-flex align-items-center ml-3" style="width: 200px !important;">
-                     <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="-komoditas">
+                     <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="select-type">
                         <option value="" selected disabled>Pilih</option>
-                        <option value="semua"> Membeli</option>
-                        <option value="semua"> Menjual</option>
+                        <option <?= ($this->input->get('type', TRUE) == 2) ? 'selected' : '' ?> value="2"> Membeli</option>
+                        <option <?= ($this->input->get('type', TRUE) == 1) ? 'selected' : '' ?> value="1"> Menjual</option>
                      </select>
                   </div>
                </div>
