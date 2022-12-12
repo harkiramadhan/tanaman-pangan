@@ -238,7 +238,7 @@
                $countPublikasi = $this->M_Publikasi->countByCategory($kp->id);
          ?>
             <div class="col">
-               <a href="">
+               <a href="<?= site_url('publikasi?ids['.$kp->id.']='.$kp->id.'&page=1') ?>">
                   <div class="service">
                      <img class=" border-2" style="height: 200px; object-fit: cover; background-size: cover; background-image: linear-gradient(170deg, rgba(44,221,155,1) 0%, rgba(29,200,204,0.8) 55%), url('<?= base_url('assets/images/thumbnail/publikasi/' . $kp->img) ?>');">
                      <h3 style="top: none !important; bottom: 30px !important;">
@@ -268,7 +268,7 @@
             $bts = $this->M_Publikasi->getByCategory(1, 3);
             foreach($bts->result() as $bt){ ?>
                <div class="col-md-4 col-12">
-                  <a href="#" class="guide picture-wrapper w-100">
+                  <a href="<?= site_url('publikasi/' . $bt->flag ) ?>" class="guide picture-wrapper w-100">
                      <img class="mb-2 w-100" style="border-radius: 10px; object-fit: cover; height: 220px; background-image: linear-gradient(160deg, rgba(29,200,204,0.8) 0%, rgba(44,221,155,0.2) 90%), url('https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg');">
                      <div class="content">
                         <h6><?= $bt->judul ?></h6>
