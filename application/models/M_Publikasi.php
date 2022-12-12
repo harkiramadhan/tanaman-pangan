@@ -50,4 +50,16 @@ class M_Publikasi extends CI_Model{
                             'p.kategori_id' => $kategoriid
                         ])->get()->num_rows();
     }
+
+    function getByCategory($kategoriid, $limit = FALSE){
+        if($limit){
+            $this->db->limit($limit);
+        }
+        return $this->db->select('p.*')
+                        ->from('publikasi p')
+                        ->where([
+                            'p.status' => 1,
+                            'p.kategori_id' => $kategoriid
+                        ])->order_by('tanggal DESC', 'timestamp DESC')->get();
+    }
 }

@@ -84,7 +84,7 @@
             ?>
                <div class="col-lg-4 col-md-6 col-12">
 
-                  <span class="badge badge-warning font-weight-bolder mb-2 p-2 position-absolute" style="left: 25px; top: 10px;"><i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i>MENJUAL</span>
+                  <span class="badge badge-warning font-weight-bolder mb-2 p-2 position-absolute" style="left: 25px; top: 10px;"><i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i><?= ($row->status == 1) ? 'MENJUAL' : 'MEMBELI' ?></span>
                   <span class="badge badge-warning font-weight-bolder mb-2 p-2 position-absolute text-uppercase" style="left: 110px; top: 10px;"><?= $row->role ?></span>
 
                   <!-- <span class="badge badge-warning mb-2"><i class="fa fa-shopping-cart" aria-hidden="true"></i><?= $row->role ?></span> -->
@@ -97,9 +97,9 @@
                   </a>
                   <div class="inner-slider">
                      <div class="inner-wrapper">
-                        <h1 class="mb-0">12<sup class="text-danger" style="font-size: 24px !important;">kg</sup></h1>
+                        <h1 class="mb-0"><?= ($row->status == 1) ? $row->produk_dijual_bulanan : $row->produk_dibutuhkan_bulanan ?><sup class="text-danger" style="font-size: 24px !important;">kg</sup></h1>
                         <h2 class="mb-1 mt-0 font-weight-normal p-0">
-                           Pakan Ayam
+                           <?= ($row->status == 1) ? ucfirst($row->menjual_produk) : ucfirst($row->membutuhkan_produk) ?>
                         </h2>
                         <span class="">
                            <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-2 font-weight-light text-dark text-xs"><i class="fa fa-user mr-2 text-secondary" aria-hidden="true"></i><?= $row->nama ?></a>
@@ -117,7 +117,7 @@
                         </div>
                         <!-- <h3 class="mb-1"><?= $row->keterangan ?></h3> -->
                         <h3 class="mb-1 mt-0 font-weight-bold">
-                           Komoditas dijual:
+                           Komoditas <?= ($row->status == 1) ? 'dijual' : 'dibutuhkan' ?>:
                         </h3>
                         <?php foreach($komoditasUser->result() as $ku): ?>
                            <span class="badge border border-2 bg-info text-white p-2 mb-1"><?= $ku->komoditas ?></span>

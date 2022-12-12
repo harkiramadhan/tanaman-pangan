@@ -225,9 +225,9 @@
                         <p class="mt-2 mb-2 font-weight-bold">Foto Lainnya</p>
                         <div class="gallery-box-main">
                            <div class="gallery-box">
-                              <img class="img-fluid" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" alt="" style="object-fit: cover; height: 70px;">
-                              <img class="img-fluid" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" alt="" style="object-fit: cover; height: 70px;">
-                              <img class="img-fluid" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg" alt="" style="object-fit: cover; height: 70px;">
+                              <?php foreach($gallery->result() as $g): ?>
+                                 <img class="img-fluid" src="<?= base_url('uploads/gallery/' . $g->img) ?>" alt="" style="object-fit: cover; height: 70px;">
+                              <?php endforeach; ?>
                            </div>
                         </div>
                      </div>
