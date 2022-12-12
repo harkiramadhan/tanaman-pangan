@@ -3,8 +3,8 @@
    <head>
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-      <meta name="description" content="Gurdeep singh osahan">
-      <meta name="author" content="Gurdeep singh osahan">
+      <meta name="description" content="Membangun Jejaring Hulu Hilir Pasar (JHHP), menghubungkan antara petani & pelaku usaha pertanian agar lebih maju dan berkembang.">
+      <meta name="author" content="Direktur Jendral Tanaman Pangan Kementrian Pertanian">
       <title><?= $title ?> - Propaktani</title>
       <!-- Favicon Icon -->
       <link rel="icon" type="image/png" href="http://app3.pertanian.go.id/propaktani/portal/assets/img/logo_login.png">
