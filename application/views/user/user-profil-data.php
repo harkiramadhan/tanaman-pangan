@@ -11,7 +11,7 @@
    <div class="container">
       <div class="row">
          <div class="col-lg-3 mb-3">
-            <div class="bg-white rounded shadow-sm py-3 sidebar-fix">
+            <div class="bg-white rounded shadow-sm pb-3 sidebar-fix">
                   <div class="dropdown-menu-show">
                      <a class="dropdown-item py-3" href="<?= site_url('user/pengaturan') ?>">
                         <div class="bg-dark rounded py-2 px-2 text-center text-white text-uppercase font-weight-bold" >Atur Kesediaan</div>

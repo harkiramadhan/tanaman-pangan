@@ -1,11 +1,11 @@
 		<div class="container-fluid py-4">
 			<div class="row">
-				<div class="col-12 mb-4">
-					<div class="card pb-0">
+				<div class="col-12 mb-3">
+					<div class="card pb-0 px-2">
 						<div class="card-header pb-0">
 						<h6 class="mb-0">STATISTIK DATA JEJARING</h6>
 						</div>
-						<div class="card-body p-3 pb-4">
+						<div class="card-body p-3 pb-2">
 							<div class="row">
 								<?php 
 									foreach($role->result() as $r){ 
@@ -22,12 +22,13 @@
 														</div>
 													</div>
 													<div class="col-4 text-end">
-														<div class="icon icon-shape bg-dark shadow-primary text-center rounded-circle">
-															<i class="fas fa-home text-lg opacity-10" aria-hidden="true"></i>
-														</div>
+														<img src="<?= base_url('assets/images/thumbnail/role/' . $r->icon) ?>" alt="" style="width: 40px;">
 													</div>
 												</div>
-												<p class="mb-0"><?= $r->role ?></p>
+												<p class="mb-0 text-sm font-weight-bold"><?= $r->role ?></p>
+												<a class="mb-0 icon-move-right text-danger font-italic" href="#" style="font-size: 14px;">Selengkapnya 
+													<i class="fa fa-arrow-right ms-3" aria-hidden="true"></i>
+												</a>
 											</div>
 										</div>
 									</div>

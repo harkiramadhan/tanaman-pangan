@@ -69,7 +69,7 @@
                            </div>
                         </h6>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="<?= site_url('user') ?>">
+                        <a class="dropdown-item" href="<?= site_url('user/pengaturan') ?>">
                            <div class="dropdown-item-icon">
                               <i class="fa fa-cog mr-2 text-dark" style=""></i>
                            </div>

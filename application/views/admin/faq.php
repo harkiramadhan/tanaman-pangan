@@ -21,7 +21,7 @@
 							<thead class="bg-light opacity-5">
 								<tr>
 									<th class="text-uppercase text-dark text-xxs text-center font-weight-bolder opacity-10" width="1px">#</th>
-									<th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Pertanyaan</th>
+									<th class="text-uppercase text-dark text-xxs font-weight-bolder opacity-10" width="50%">Pertanyaan</th>
                                     <th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Status</th>
 									<th class="text-center text-uppercase text-dark text-xxs font-weight-bolder opacity-10">Aksi</th>
 								</tr>
@@ -36,7 +36,7 @@
                                         <div class="d-flex px-2 py-1">
                                             <div class="d-flex flex-column justify-content-center">
                                                 <h6 class="mb-0 text-sm"><?= $row->question ?></h6>
-                                                <p class="small text-xs text-secondary mb-0"><?= $row->answer ?></p>
+                                                <p class="small text-xs text-secondary mb-0" style="white-space: pre-wrap;"><?= $row->answer ?></p>
                                             </div>
                                         </div>
                                     </td>

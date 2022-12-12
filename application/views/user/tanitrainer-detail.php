@@ -23,9 +23,9 @@
             <div class="sticky">
                <div class="tab-content p-3">
                   <?php if($data->img): ?>
-                     <img class="img-fluid w-100 mb-3 rounded" src="<?= base_url('uploads/tanitrainer/' . $data->img) ?>" alt="Alt" style="height: 200px;">
+                     <img class="img-fluid w-100 mb-3 rounded" style="object-fit: cover; height: 200px;" src="<?= base_url('uploads/tanitrainer/' . $data->img) ?>" alt="Alt" style="height: 200px;">
                   <?php else: ?>
-                     <img class="img-fluid w-100 mb-3 rounded" src="<?= base_url('assets/images/list/v5.png') ?>" alt="Alt" style="height: 200px;">
+                     <img class="img-fluid w-100 mb-3 rounded" style="object-fit: cover; height: 200px;" src="<?= base_url('assets/images/list/v5.png') ?>" alt="Alt" style="height: 200px;">
                   <?php endif; ?>
                <div class="header">
                   <h1><b class="title">Gratis</b></h1>
@@ -42,7 +42,7 @@
          </div>
       </div>
    </div>
-   <div class=" mt-5">
+   <div class=" mt-5 mb-5">
       <div class="view_slider recommended">
          <div class="">
             <div class="row">

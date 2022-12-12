@@ -97,14 +97,12 @@
                   </a>
                   <div class="inner-slider">
                      <div class="inner-wrapper">
-                        <h1 class="mb-0"><?= ($row->status == 1) ? $row->produk_dijual_bulanan : $row->produk_dibutuhkan_bulanan ?><sup class="text-danger" style="font-size: 24px !important;">kg</sup></h1>
-                        <h2 class="mb-1 mt-0 font-weight-normal p-0">
+                        <h1 class="mb-1"><?= ($row->status == 1) ? $row->produk_dijual_bulanan : $row->produk_dibutuhkan_bulanan ?><sup class="text-danger" style="font-size: 24px !important;">kg</sup></h1>
+                        <h6 class="mb-3 mt-0 font-weight-bold p-0">
                            <?= ($row->status == 1) ? ucfirst($row->menjual_produk) : ucfirst($row->membutuhkan_produk) ?>
-                        </h2>
-                        <span class="">
-                           <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-2 font-weight-light text-dark text-xs"><i class="fa fa-user mr-2 text-secondary" aria-hidden="true"></i><?= $row->nama ?></a>
-                        </span>
-                        <hr class="margin-bottom mt-3 mb-2">
+                        </h6>
+                        <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1 font-weight-light text-dark text-xs"><i class="fa fa-user mr-2 text-secondary" aria-hidden="true"></i><?= $row->nama ?></a>
+                        <hr class="margin-bottom mt-2 mb-2">
                         <div class="d-flex align-items-center">
                            <span class="seller-image">
                               <?php if($row->img): ?>

@@ -259,7 +259,7 @@
    <div class="container">
       <h2>
          BTS Pro Paktani
-         <a href="#" class="ml-auto mb-auto text-info">
+         <a href="<?= site_url('/publikasi?ids[1]=1&page=1') ?>" class="ml-auto mb-auto text-info">
             <span class="d-lg-inline d-none">Selengkapnya</span> <i class="fa fa-arrow-right ml-3"></i>
          </a>
       </h2>
@@ -268,11 +268,11 @@
             $bts = $this->M_Publikasi->getByCategory(1, 3);
             foreach($bts->result() as $bt){ ?>
                <div class="col-md-4 col-12">
-                  <a href="<?= site_url('publikasi/' . $bt->flag ) ?>" class="guide picture-wrapper w-100">
-                     <img class="mb-2 w-100" style="border-radius: 10px; object-fit: cover; height: 220px; background-image: linear-gradient(160deg, rgba(29,200,204,0.8) 0%, rgba(44,221,155,0.2) 90%), url('https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg');">
-                     <div class="content">
-                        <h6><?= $bt->judul ?></h6>
-                        <p><?= $bt->deskripsi ?></p>
+                  <a href="<?= site_url('publikasi/' . $bt->flag ) ?>" class="guide picture-wrapper w-100 border" style="border-radius: 10px;">
+                     <img class="mb-2 w-100" style="border-radius: 10px; object-fit: cover; height: 300px; background-image: linear-gradient(160deg, rgba(29,200,204,0.8) 0%, rgba(44,221,155,0.2) 90%), url('https://cdn-image.hipwee.com/wp-content/uploads/2016/04/tumblr_ni07ojSV3L1u8065mo1_1280-750x422.jpg');">
+                     <div class="content px-3">
+                        <h6 class="mb-0"><?= $bt->judul ?></h6>
+                        <p><?= longdate_indo($bt->tanggal) ?></p>
                      </div>
                   </a>
                </div>
