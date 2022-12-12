@@ -24,4 +24,8 @@ class M_Kelas extends CI_Model{
                             'tanitrainer_id' => $kelasid
                         ]);
     }
+
+    function getDetailById($id){
+        return $this->db->get_where('user_laporan', ['id' => $id])->row();
+    }
 }

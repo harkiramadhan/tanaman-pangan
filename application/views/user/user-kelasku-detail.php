@@ -20,58 +20,62 @@
          </div>
          <div class="col-lg-9">
             <div class="bg-white rounded shadow-sm sidebar-page-right">
-               <div>
-                  <div class="p-3 border-bottom text-left">
-                     <a href="<?= site_url('tanitrainer') ?>" class="text-success"><i class="fa fa-arrow-left mr-2"></i>Kembali ke Daftar Kelas</a>
-                  </div>
-                  <div class="p-3 border-bottom">
-                    <div class="row p-0 mb-2">
-                        <div class="col-8">
-                            <p class="mb-1">Update progress kelas</p>
-                            <h6 class="font-weight-bold">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah</h6>
+                <div>
+                    <div class="p-3 border-bottom text-left">
+                        <a href="<?= site_url('tanitrainer') ?>" class="text-success"><i class="fa fa-arrow-left mr-2"></i>Kembali ke Daftar Kelas</a>
+                    </div>
+                    <div class="p-3 border-bottom">
+                        <div class="row p-0 mb-2">
+                            <div class="col-8">
+                                <p class="mb-1">Update progress kelas</p>
+                                <h6 class="font-weight-bold"><?= $kelas->judul ?></h6>
+                            </div>
+                            <div class="col-4 text-right">
+                                <button class="btn btn-sm btn-success mb-3" data-toggle="modal" data-target="#exampleModal">KABAR <i class="fa fa-plus ml-1" aria-hidden="true"></i></button>
+                            </div>
                         </div>
-                        <div class="col-4 text-right">
-                            <button class="btn btn-sm btn-success mb-3" data-toggle="modal" data-target="#exampleModal">KABAR <i class="fa fa-plus ml-1" aria-hidden="true"></i></button>
+                        <div class="table-responsive box-table mt-0">
+                            <table class="table table-bordered mb-0">
+                            <thead>
+                                <tr>
+                                    <th width="5%"></th>
+                                    <th class="text-center" width="20%">LAPORAN</th>
+                                    <th class="text-center" width="5%">TANGGAL</th>
+                                    <th class="text-center" width="5%">AKSI</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php $no=1; foreach($laporan->result() as $row): ?>
+                                <tr>
+                                    <td class="text-center">
+                                        <img class="order-proposal-image rounded" src="<?= base_url('uploads/laporan/' . $row->img) ?>" style="max-width: 200px; height: 100px;  object-fit: cover;">
+                                    </td>
+                                    <td>
+                                        <!-- Nampilin judul bold -->
+                                        <p class="font-weight-bold mb-2">
+                                            <?= $row->judul ?>
+                                        </p>
+
+                                        <!-- Lalu deskripsi font regular -->
+                                        <p class="font-weight-regular mb-0">
+                                            <?= $row->desc ?>
+                                        </p>
+                                    </td>
+                                    <td><?= date_indo($row->tanggal) ?></td>
+                                    <td>
+                                        <div class="btn-group w-100" role="group" aria-label="Basic example">
+
+                                            <button class="btn btn-sm btn-success w-100 btn-edit" data-id="<?= $row->id ?>">UBAH</button>
+                                            <a href="<?= site_url('kelas/remove/' . $row->id) ?>" class="btn btn-sm btn-danger w-100 ml-1 btn-remove" data-id="<?= $row->id ?>">HAPUS</a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php endforeach; ?>
+                            </tbody>
+                            </table>
                         </div>
                     </div>
-                     <div class="table-responsive box-table mt-0">
-                        <table class="table table-bordered mb-0">
-                           <thead>
-                              <tr>
-                                 <th class="text-center" width="20%">LAPORAN</th>
-                                 <th class="text-center" width="5%">TANGGAL</th>
-                                 <th class="text-center" width="5%">AKSI</th>
-                              </tr>
-                           </thead>
-                           <tbody>
-                              <?php $no=1; foreach($laporan->result() as $row): ?>
-                              <tr>
-                                 <td>
-                                    <!-- Nampilin judul bold -->
-                                    <p class="font-weight-bold mb-2">
-                                        <?= $row->judul ?>
-                                    </p>
-
-                                    <!-- Lalu deskripsi font regular -->
-                                    <p class="font-weight-regular mb-0">
-                                        <?= $row->desc ?>
-                                    </p>
-                                 </td>
-                                 <td><?= date_indo($row->tanggal) ?></td>
-                                 <td>
-                                    <div class="btn-group w-100" role="group" aria-label="Basic example">
-
-                                        <button class="btn btn-sm btn-success w-100">UBAH</button>
-                                        <button class="btn btn-sm btn-danger w-100 ml-1">HAPUS</button>
-                                    </div>
-                                </td>
-                              </tr>
-                              <?php endforeach; ?>
-                           </tbody>
-                        </table>
-                     </div>
-                  </div>
-               </div>
+                </div>
             </div>
          </div>
       </div>
@@ -140,6 +144,14 @@
                     <button type="submit" class="btn btn-success">SIMPAN</button>
                 </div>
             </form>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modalEdit" tabindex="-1" aria-labelledby="modalEdit" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content edit-content">
+            
         </div>
     </div>
 </div>
