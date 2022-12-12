@@ -13,6 +13,31 @@ class Publikasi extends CI_Controller {
 	}
 
 	public function index(){
+		$ids = $this->input->get('ids[]', TRUE);
+		$order = $this->input->get('order', TRUE);
+
+		$where = [];
+		if($ids != NULL){
+			foreach($ids as $val){
+				array_push($where, $val);
+			}
+		}
+
+		$odr = [];
+		if($order != NULL){
+			if($order == 'A-Z'){
+				array_push($odr, [
+					'column' => 'judul',
+					'order' => 'ASC'
+				]);
+			}else{
+				array_push($odr, [
+					'column' => 'timestamp',
+					'order' => 'DESC'
+				]);
+			}
+		}
+
 		$batas = 10;
 		$page = $this->input->get('page', TRUE);
 		$halaman = isset($page) ? (int)$page : 1;
@@ -21,14 +46,15 @@ class Publikasi extends CI_Controller {
 		$previous = $halaman - 1;
 		$next = $halaman + 1;
 
-		$jumlah_data = $this->M_Publikasi->getAll()->num_rows();
+		$jumlah_data = $this->M_Publikasi->getAll($where)->num_rows();
 		$total_halaman = ceil($jumlah_data / $batas);
 
         $var = [
-			'title' =>"Pertanyaan Umum",
+			'title' =>"Publikasi",
 			'user' => $this->M_User->getById($this->session->userdata('userid')),
-			'data' => $this->M_Publikasi->getPaginate($halaman_awal, $batas),
+			'data' => $this->M_Publikasi->getPaginate($halaman_awal, $batas, $where, $odr),
 			'kategori' => $this->M_Kategori_publikasi->getAll(),
+			'total' => $jumlah_data,
 			'count' => $total_halaman,
 			'next' => $next,
 			'previous' => $previous,
@@ -41,7 +67,6 @@ class Publikasi extends CI_Controller {
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/publikasi', $var);
 		$this->load->view('layout/user/footer', $var);
-	
 	}
 
 	public function detail($flag){

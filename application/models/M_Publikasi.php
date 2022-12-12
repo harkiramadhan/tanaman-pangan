@@ -1,6 +1,10 @@
 <?php
 class M_Publikasi extends CI_Model{
-    function getAll(){
+    function getAll($where=FALSE){
+        if($where != NULL){
+            $this->db->or_where_in('p.kategori_id', $where);
+        }
+
         return $this->db->select('p.*, kp.kategori')
                         ->from('publikasi p')
                         ->join('kategori_publikasi kp', 'p.kategori_id = kp.id')
@@ -33,7 +37,17 @@ class M_Publikasi extends CI_Model{
                         ->where('p.flag', $flag)->get()->row();
     }
 
-    function getPaginate($rowno,$rowperpage){
+    function getPaginate($rowno,$rowperpage, $where = FALSE, $order = FALSE){
+        if($where != NULL){
+            $this->db->or_where_in('p.kategori_id', $where);
+        }
+
+        if($order != NULL){
+            foreach($order as $row){
+                $this->db->order_by($row['column'], $row['order']);
+            }
+        }
+
         return $this->db->select('p.*, kp.kategori, kp.icon')
                         ->from('publikasi p')
                         ->join('kategori_publikasi kp', 'p.kategori_id = kp.id')
