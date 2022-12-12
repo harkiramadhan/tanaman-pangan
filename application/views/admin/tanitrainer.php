@@ -37,7 +37,9 @@
 							<tbody>
 								<?php if($tanitrainer->num_rows() > 0): ?>
 									<!-- Jika ada data pelatihan -->
-									<?php $no = 1; foreach($tanitrainer->result() as $row){ ?>
+									<?php $no = 1; foreach($tanitrainer->result() as $row){ 
+										$count = $this->M_Tanitrainer->getUserByClass($row->id)->num_rows();
+									?>
 										<tr>
 											<td class="align-top text-center text-sm"><?= $no++ ?></td>
 											<td>
@@ -53,7 +55,7 @@
 														<h6 class="mb-0 text-sm"><?= $row->judul ?></h6>
 														<a href="#" class="text-xs font-weight-bold mb-0 mt-1">
 															<i class="fa fa-user me-2 text-success" aria-hidden="true"></i>
-															<span class="text-dark">200 Peserta</span>
+															<span class="text-dark"><?= $count ?> Peserta</span>
 															<i class="fa fa-arrow-right text-success ms-2" aria-hidden="true"></i>
 														</a>
 													</div>

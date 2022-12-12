@@ -34,4 +34,10 @@ class M_Tanitrainer extends CI_Model{
             'tanitrainer_id' => $id
         ]);
     }
+
+    function getUserByClass($id){
+        return $this->db->get_where('user_tanitrainer', [
+                            'tanitrainer_id' => $id
+                        ]);
+    }
 }
