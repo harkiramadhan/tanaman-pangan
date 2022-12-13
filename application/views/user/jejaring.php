@@ -84,8 +84,8 @@
             ?>
                <div class="col-lg-4 col-md-6 col-12">
 
-                  <span class="badge badge-warning font-weight-bolder mb-2 p-2 position-absolute" style="left: 25px; top: 10px;"><i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i><?= ($row->status == 1) ? 'MENJUAL' : 'MEMBELI' ?></span>
-                  <span class="badge badge-warning font-weight-bolder mb-2 p-2 position-absolute text-uppercase" style="left: 110px; top: 10px;"><?= $row->role ?></span>
+                  <span class="badge badge-warning font-weight-bolder mb-2 p-2 position-absolute" style="left: 25px; top: 10px;"><i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i><?= ($row->status == 1) ? 'MENAWARKAN' : 'MEMBUTUHKAN' ?></span>
+                  <span class="badge badge-warning font-weight-bolder mb-2 p-2 position-absolute text-uppercase" style="left: 150px; top: 10px;"><?= $row->role ?></span>
 
                   <!-- <span class="badge badge-warning mb-2"><i class="fa fa-shopping-cart" aria-hidden="true"></i><?= $row->role ?></span> -->
                   <a href="<?= site_url('jejaring/' . $row->id) ?>">
@@ -97,6 +97,8 @@
                   </a>
                   <div class="inner-slider">
                      <div class="inner-wrapper">
+                        <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1 font-weight-light text-dark text-xs"><?= ($row->status == 1) ? 'Menjual Produk:' : 'Membutuhkan Produk:' ?></a>
+
                         <h1 class="mb-1"><?= ($row->status == 1) ? $row->produk_dijual_bulanan : $row->produk_dibutuhkan_bulanan ?><sup class="text-danger" style="font-size: 24px !important;">kg</sup></h1>
                         <h6 class="mb-3 mt-0 font-weight-bold p-0">
                            <?= ($row->status == 1) ? ucfirst($row->menjual_produk) : ucfirst($row->membutuhkan_produk) ?>

@@ -67,11 +67,11 @@
             <div class="row">
                <?php foreach($data->result() as $row){ ?>
                <div class="col-lg-4">
-                  <a href="product-detail.html">
+                  <a href="<?= site_url('tanitrainer/' . $row->flag) ?>">
                      <?php if($row->img): ?>
                         <img class="img-fluid" src="<?= base_url('uploads/tanitrainer/' . $row->img) ?>"  style="height: 170px;  object-fit: cover;"/>
                      <?php else: ?>
-                        <img class="img-fluid" src="https://asset.kompas.com/crops/ScXltG26qzSypU8o2xMryodhDnM=/0x0:1000x667/750x500/data/photo/2020/01/29/5e30e9bc69af5.jpg"  style="height: 170px;  object-fit: cover;"/>
+                        <img class="img-fluid" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>"  style="height: 170px;  object-fit: cover;"/>
                      <?php endif; ?>
                   </a>
                   <div class="inner-slider">
@@ -97,7 +97,7 @@
                      <li class="page-item">
                         <a class="page-link" href="<?= ($page > 1) ? site_url('tanitrainer?page=' . $previous) : '#' ?>" aria-label="Previous">
                            <span aria-hidden="true"><i class="fa fa-chevron-left" aria-hidden="true"></i></span>
-                           <!--                    <span class="sr-only"></span>-->
+                           <!--<span class="sr-only"></span>-->
                         </a>
                      </li>
                      <?php for($i=1; $i <= $count; $i++): ?>

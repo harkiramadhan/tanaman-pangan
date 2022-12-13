@@ -22,7 +22,7 @@
             <div class="bg-white rounded shadow-sm sidebar-page-right">
                 <div>
                     <div class="p-3 border-bottom text-left">
-                        <a href="<?= site_url('tanitrainer') ?>" class="text-success"><i class="fa fa-arrow-left mr-2"></i>Kembali ke Daftar Kelas</a>
+                        <a href="<?= site_url('kelas') ?>" class="text-success"><i class="fa fa-arrow-left mr-2"></i>Kembali ke Daftar Kelas</a>
                     </div>
                     <div class="p-3 border-bottom">
                         <div class="row p-0 mb-2">

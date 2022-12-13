@@ -41,7 +41,7 @@
                               <?php if($user->img): ?>
                                  <img src="<?= base_url('uploads/profile/' . $user->img) ?>" class="img-fluid mt-2 rounded-circle mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview">
                               <?php else: ?>
-                                 <img src="https://public-assets.envato-static.com/assets/common/icons-buttons/default-user-2962fd43ee315eafee8bfc08f02fee84687beb0499de44e5ab2873399944b0fe.jpg" class="img-fluid mt-2 rounded-circle mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview">
+                                 <img src="<?= base_url('assets/images/placeholder/square-placeholder-propaktani.png')?>" class="img-fluid mt-2 rounded-circle mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview">
                               <?php endif; ?>
                            </div>
                            <div class="col-md-6 col-12 text-center">
@@ -49,7 +49,7 @@
                                  <?php if($user->cover_img): ?>
                                     <img src="<?= base_url('uploads/cover/' . $user->cover_img) ?>" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 200px; height: 100px; object-fit: cover;" id="image-preview2">
                                  <?php else: ?>
-                                    <img src="https://public-assets.envato-static.com/assets/common/icons-buttons/default-user-2962fd43ee315eafee8bfc08f02fee84687beb0499de44e5ab2873399944b0fe.jpg" class="img-fluid mt-2 rounded-circle mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview2">
+                                    <img src="<?= base_url('assets/images/placeholder/square-placeholder-propaktani.png')?>" class="img-fluid mt-2 rounded-circle mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview2">
                                  <?php endif; ?>
                            </div>
                         </div>
