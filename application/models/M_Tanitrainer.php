@@ -17,15 +17,27 @@ class M_Tanitrainer extends CI_Model{
         ])->row();
     }
 
-    function getPaginate($rowno,$rowperpage, $flag=false){
+    function getPaginate($rowno, $rowperpage, $flag = false, $whereRole = FALSE, $where = FALSE){
         if($flag){
             $this->db->where('t.flag !=', $flag);
         }
+
+        if($where != NULL){
+            foreach($where as $row){
+                $this->db->where($row['column'], $row['value']);
+            }
+        }
+
+        if($whereRole != NULL){
+            $this->db->or_where_in('tr.role_id', $whereRole);
+        }
+
         return $this->db->select('t.*')
                         ->from('tanitrainer t')
+                        ->join('tanitrainer_role tr', 't.id = tr.tanitrainer_id', "LEFT")
                         ->where([
                             't.status' => 1
-                        ])->limit($rowperpage, $rowno)->order_by('tanggal DESC, id DESC')->get();
+                        ])->limit($rowperpage, $rowno)->order_by('tanggal DESC, id DESC')->group_by('tr.tanitrainer_id')->get();
     }
 
     function checkUser($userid, $id){

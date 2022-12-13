@@ -54,10 +54,10 @@
                      <p class="mb-2">463 Pelatihan Tersedia</p>
                      <div class="sorting d-flex align-items-center">
                         <p>Tampilkan</p>
-                        <select class="custom-select custom-select-sm border-0 shadow-sm ml-2">
-                           <option>Semua</option>
-                           <option>Aktif</option>
-                           <option>Selesai</option>
+                        <select class="custom-select custom-select-sm border-0 shadow-sm ml-2" id="select-status">
+                           <option <?= ($this->input->get('status', TRUE) == 'Semua') ? 'selected' : '' ?> value="Semua">Semua</option>
+                           <option <?= ($this->input->get('status', TRUE) == 'Aktif') ? 'selected' : '' ?> value="Aktif">Aktif</option>
+                           <option <?= ($this->input->get('status', TRUE) == 'Selesai') ? 'selected' : '' ?> value="Selesai">Selesai</option>
                         </select>
                      </div>
                   </div>

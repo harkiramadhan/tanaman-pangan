@@ -17,6 +17,30 @@ class Tanitrainer extends CI_Controller {
 		$halaman = isset($page) ? (int)$page : 1;
 		$halaman_awal = ($halaman>1) ? ($halaman * $batas) - $batas : 0;
 		$roleid = $this->input->get('ids[]', TRUE);
+		$status = $this->input->get('status', TRUE);
+
+		$whereRole = [];
+		if($roleid != NULL){
+			foreach($roleid as $val){
+				array_push($whereRole, $val);
+			}
+		}
+
+		$where = [];
+		if($status != NULL){
+			if($status == 'Selesai'){
+				array_push($where, [
+					'column' => 't.status_kegiatan',
+					'value' => 3
+				]);
+			}elseif($status == 'Aktif'){
+				array_push($where, [
+					'column' => 't.status_kegiatan !=',
+					'value' => 3
+				]);
+			}
+		}
+
 
 		$previous = $halaman - 1;
 		$next = $halaman + 1;
@@ -28,7 +52,7 @@ class Tanitrainer extends CI_Controller {
 			'title' => "Tani Trainer",
 			'user' => $this->M_User->getById($this->session->userdata('userid')),
 			'role' => $this->M_Role->getAll(),
-			'data' => $this->M_Tanitrainer->getPaginate($halaman_awal, $batas),
+			'data' => $this->M_Tanitrainer->getPaginate($halaman_awal, $batas, [],$whereRole, $where),
 			'count' => $total_halaman,
 			'next' => $next,
 			'previous' => $previous,
@@ -78,6 +102,6 @@ class Tanitrainer extends CI_Controller {
 			}
 		}
 
-		// redirect($_SERVER['HTTP_REFERER']);
+		redirect($_SERVER['HTTP_REFERER']);
 	}
 }
