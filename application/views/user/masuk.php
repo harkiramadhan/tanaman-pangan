@@ -15,7 +15,7 @@
                         <h5 class="text-danger"><strong><?= $this->session->flashdata('error') ?></strong></h5>
                      </div>
                   <?php endif; ?>
-                  
+
                   <div class="form-group">
                      <label class="mb-1">No HP/WA</label>
                      <div class="position-relative icon-form-control">
@@ -41,7 +41,7 @@
                   </div>
                   <div class="text-center mt-3 border-top pt-3">
                      <p class="small text-muted">Belum memiliki akun?</p>
-                     <button type="button" class="btn btn-outline-secondary btn-block">DAFTAR SEKARANG</button>
+                     <a href="<?= site_url('daftar') ?>" type="button" class="btn btn-outline-secondary btn-block">DAFTAR SEKARANG</a>
                   </div>
                </form>
             </div>
