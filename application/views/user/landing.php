@@ -326,8 +326,9 @@
          </div>
          <div class="text-content">
             <p>"<?= $ts->deskripsi ?>"</p>
-            <span><?= $ts->nama." &#8212; ".$ts->jabatan ?></span>
-            <img alt="Company logo" src="<?= base_url() ?>assets/images/haerfest-logo.png" loading="lazy">
+            <h4 class="font-weight-light mb-0 p-0"><?= $ts->nama?></h4>
+            <span class="font-weight-bold"><?= $ts->jabatan?></span>
+            <!-- <img alt="Company logo" src="<?= base_url() ?>assets/images/haerfest-logo.png" loading="lazy"> -->
          </div>
       </div>
    </div>

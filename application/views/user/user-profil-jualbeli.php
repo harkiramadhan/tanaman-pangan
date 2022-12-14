@@ -92,7 +92,7 @@
 
                            <div class="row d-flex align-items-center form-group px-3">
                               <div class="col-md-4">
-                                 <p class="text-muted font-weight-bold mb-0">Produk dibutuhkan Bulanan<sup class="text-danger">*</sup></p>
+                                 <p class="text-muted font-weight-bold mb-0">Volume dibutuhkan<sup class="text-danger">*</sup></p>
                               </div>
                               <div class="col-md-8">
                                  <div class="input-group input-group-sm mb-0">

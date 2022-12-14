@@ -271,7 +271,7 @@
                               </div>
                            </div>
                            
-                           <div class="row d-flex align-items-center form-group border-bottom">
+                           <!-- <div class="row d-flex align-items-center form-group border-bottom">
                               <div class="col-md-4">
                                  <p class="text-muted font-weight-bold mb-0 align-top">Tertarik<sup class="text-danger">*</sup></p>
                               </div>
@@ -289,9 +289,9 @@
                                     </div>
                                  <?php } ?>
                               </div>
-                           </div>
+                           </div> -->
 
-                           <div class="row d-flex align-items-center form-group">
+                           <!-- <div class="row d-flex align-items-center form-group">
                               <div class="col-md-4">
                                  <p class="text-muted font-weight-bold mb-0">Menjual Produk<sup class="text-danger">*</sup></p>
                               </div>
@@ -337,7 +337,6 @@
                               </div>
                            </div>
 
-
                            <div class="row d-flex align-items-center form-group">
                               <div class="col-md-4">
                                  <p class="text-muted font-weight-bold mb-0">Keterangan Tambahan<sup class="text-danger">*</sup></p>
@@ -345,7 +344,7 @@
                               <div class="col-md-8">
                                  <input type="text" name="keterangan" class="form-control font-weight-bold text-muted" value="<?= $user->keterangan ?>" placeholder="Tulis">
                               </div>
-                           </div>
+                           </div> -->
                            
                            <div class="text-right">
                               <button class="btn btn-success">Simpan Perubahan</button>
