@@ -51,7 +51,7 @@
             <div class="row">
                <div class="col-lg-12">
                   <div class="sorting-div d-flex align-items-center justify-content-between">
-                     <p class="mb-2">463 Pelatihan Tersedia</p>
+                     <p class="mb-2"><?= $total_data ?> Pelatihan Tersedia</p>
                      <div class="sorting d-flex align-items-center">
                         <p>Tampilkan</p>
                         <select class="custom-select custom-select-sm border-0 shadow-sm ml-2" id="select-status">

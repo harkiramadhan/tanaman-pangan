@@ -1,7 +1,21 @@
 <?php
 class M_Tanitrainer extends CI_Model{
-    function getAll(){
-        return $this->db->get('tanitrainer');
+    function getAll($whereRole = FALSE, $where = FALSE){
+        if($where != NULL){
+            $this->db->where('t.status', 1);
+            foreach($where as $row){
+                $this->db->where($row['column'], $row['value']);
+            }
+        }
+
+        if($whereRole != NULL){
+            $this->db->or_where_in('tr.role_id', $whereRole);
+        }
+
+        return $this->db->select('t.*')
+                        ->from('tanitrainer t')
+                        ->join('tanitrainer_role tr', 't.id = tr.tanitrainer_id', "LEFT")
+                        ->group_by('tr.tanitrainer_id')->get();
     }
 
     function getById($id){

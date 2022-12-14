@@ -45,7 +45,7 @@ class Tanitrainer extends CI_Controller {
 		$previous = $halaman - 1;
 		$next = $halaman + 1;
 
-		$jumlah_data = $this->M_Tanitrainer->getAll()->num_rows();
+		$jumlah_data = $this->M_Tanitrainer->getAll($whereRole, $where)->num_rows();
 		$total_halaman = ceil($jumlah_data / $batas);
 
         $var = [
@@ -53,6 +53,7 @@ class Tanitrainer extends CI_Controller {
 			'user' => $this->M_User->getById($this->session->userdata('userid')),
 			'role' => $this->M_Role->getAll(),
 			'data' => $this->M_Tanitrainer->getPaginate($halaman_awal, $batas, [],$whereRole, $where),
+			'total_data' => $jumlah_data,
 			'count' => $total_halaman,
 			'next' => $next,
 			'previous' => $previous,
