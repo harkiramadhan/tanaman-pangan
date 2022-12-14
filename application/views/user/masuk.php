@@ -10,6 +10,12 @@
                   <p class="text-muted">Yuk masuk, untuk kelola akun kamu</p>
                </div>
                <form action="<?= site_url('auth/login') ?>" method="POST">
+                  <?php if($this->session->flashdata('error')): ?>
+                     <div class="form-group text-center">
+                        <h5 class="text-danger"><strong><?= $this->session->flashdata('error') ?></strong></h5>
+                     </div>
+                  <?php endif; ?>
+                  
                   <div class="form-group">
                      <label class="mb-1">No HP/WA</label>
                      <div class="position-relative icon-form-control">
