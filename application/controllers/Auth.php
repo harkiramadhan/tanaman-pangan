@@ -42,39 +42,46 @@ class Auth extends CI_Controller {
 		$nama = $this->input->post('nama', TRUE);
 		$nohp = $this->input->post('hp', TRUE);
 		$roleid = $this->input->post('role_id', TRUE);
-
-		if($password != $validate){
-			$this->session->set_flashdata('error', "Password Tidak Cocok");
+		
+		$cekNoHp = $this->db->get_where('user', ['hp' => $nohp]);
+		if($cekNoHp->num_rows() > 0){
+			$this->session->set_flashdata('error', "Nomor HP $nohp Sudah Tersedia");
+			redirect($_SERVER['HTTP_REFERER']);
 		}else{
-			$dataInsert = [
-				'nama' => $nama,
-				'hp' => $nohp,
-				'password' => $password,
-				'role_id' => $roleid,
-			];
-			$this->db->insert('user', $dataInsert);
-			if($this->db->affected_rows() > 0){
-				$userid = $this->db->insert_id();
-				if(!empty($komoditas)){
-					foreach($komoditas as $k){
-						$dataInsertKomoditas = [
-							'user_id' => $userid,
-							'komoditas_id' => $k
-						];
-						$this->db->insert('user_komoditas', $dataInsertKomoditas);
-					}
-				}
-
-				$this->session->set_userdata('masuk', TRUE);
-				$this->session->set_userdata('userid', $userid);
-				$this->session->set_userdata('nama', $nama);
-				$this->session->set_userdata('roleid', $roleid);
-
-				
-				redirect('user','refresh');
+			if($password != $validate){
+				$this->session->set_flashdata('error', "Password Tidak Cocok");
 			}else{
-				$this->session->set_flashdata('error', "Gagal Mendaftar, Silahkan Coba Kembali!");
+				$dataInsert = [
+					'nama' => $nama,
+					'hp' => $nohp,
+					'password' => $password,
+					'role_id' => $roleid,
+				];
+				$this->db->insert('user', $dataInsert);
+				if($this->db->affected_rows() > 0){
+					$userid = $this->db->insert_id();
+					if(!empty($komoditas)){
+						foreach($komoditas as $k){
+							$dataInsertKomoditas = [
+								'user_id' => $userid,
+								'komoditas_id' => $k
+							];
+							$this->db->insert('user_komoditas', $dataInsertKomoditas);
+						}
+					}
+	
+					$this->session->set_userdata('masuk', TRUE);
+					$this->session->set_userdata('userid', $userid);
+					$this->session->set_userdata('nama', $nama);
+					$this->session->set_userdata('roleid', $roleid);
+	
+					
+					redirect('user','refresh');
+				}else{
+					$this->session->set_flashdata('error', "Gagal Mendaftar, Silahkan Coba Kembali!");
+				}
 			}
+
 		}
 
 	}

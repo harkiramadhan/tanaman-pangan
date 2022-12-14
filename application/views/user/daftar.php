@@ -10,6 +10,12 @@
                   <p class="text-muted">Daftarkan diri kamu untuk mendapatkan jejaring yang lebih luas</p>
                </div>
                <form action="<?= site_url('auth/register') ?>" method="POST">
+                  <?php if($this->session->flashdata('error')): ?>
+                     <div class="form-group text-center">
+                        <h5 class="text-danger"><strong><?= $this->session->flashdata('error') ?></strong></h5>
+                     </div>
+                  <?php endif; ?>
+                  
                   <div class="form-group">
                      <label class="mb-1">Nama</label>
                      <div class="position-relative icon-form-control">
