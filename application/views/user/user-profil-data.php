@@ -56,19 +56,28 @@
                               </select>
                            </div>
                         </div>
-                        <div class="row d-flex align-items-center form-group">
-                           <div class="col-md-4">
-                              <p class="text-muted font-weight-bold mb-0">Lahan Dikelola<sup class="text-danger">*</sup></p>
-                           </div>
-                           <div class="col-md-8">
-                              <div class="input-group input-group-sm mb-0">
-                                 <input type="text" name="lahan_yg_dikelola" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?= $user->lahan_yg_dikelola ?>">
-                                 <div class="input-group-append">
-                                    <span class="input-group-text" id="inputGroup-sizing-sm">Hektar</span>
+                        
+                        <?php if(
+                           $user->role_id != 2 &&
+                           $user->role_id != 3 &&
+                           $user->role_id != 4 &&
+                           $user->role_id != 7
+                        ): ?>
+                           <div class="row d-flex align-items-center form-group">
+                              <div class="col-md-4">
+                                 <p class="text-muted font-weight-bold mb-0">Lahan Dikelola<sup class="text-danger">*</sup></p>
+                              </div>
+                              <div class="col-md-8">
+                                 <div class="input-group input-group-sm mb-0">
+                                    <input type="text" name="lahan_yg_dikelola" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?= $user->lahan_yg_dikelola ?>">
+                                    <div class="input-group-append">
+                                       <span class="input-group-text" id="inputGroup-sizing-sm">Hektar</span>
+                                    </div>
                                  </div>
                               </div>
                            </div>
-                        </div>
+                        <?php endif; ?>
+
                         <div class="row d-flex align-items-center form-group">
                            <div class="col-md-4">
                               <p class="text-muted font-weight-bold mb-0">Komoditas<sup class="text-danger">*</sup></p>
@@ -87,6 +96,14 @@
                               </select>
                            </div>
                         </div>
+
+                        <?php if(
+                           $user->role_id != 2 &&
+                           $user->role_id != 3 &&
+                           $user->role_id != 4 &&
+                           $user->role_id != 6 &&
+                           $user->role_id != 7
+                        ): ?>
                         <div class="row d-flex align-items-center form-group">
                            <div class="col-md-4">
                               <p class="text-muted font-weight-bold mb-0">Rata<sup class="">2</sup> Produksi Tahunan<sup class="text-danger">*</sup></p>
@@ -100,6 +117,14 @@
                               </div>
                            </div>
                         </div>
+                        <?php endif; ?>
+
+                        <?php if(
+                           $user->role_id != 1 &&
+                           $user->role_id != 5 &&
+                           $user->role_id != 6 &&
+                           $user->role_id != 7
+                        ): ?>
                         <div class="row d-flex align-items-center form-group">
                            <div class="col-md-4">
                               <p class="text-muted font-weight-bold mb-0">Rata<sup class="">2</sup> Kebutuhan Bulanan<sup class="text-danger">*</sup></p>
@@ -113,75 +138,113 @@
                               </div>
                            </div>
                         </div>
+                        <?php endif; ?>
 
-                        <div class="row d-flex align-items-center form-group">
-                           <div class="col-md-4">
-                              <p class="text-muted font-weight-bold mb-0">Kategori Olahan<sup class="text-danger">*</sup></p>
+                        <?php if(
+                           $user->role_id != 1 &&
+                           $user->role_id != 5
+                        ): ?>
+                           <div class="row d-flex align-items-center form-group">
+                              <div class="col-md-4">
+                                 <p class="text-muted font-weight-bold mb-0">Kategori Olahan<sup class="text-danger">*</sup></p>
+                              </div>
+                              <div class="col-md-8">
+                                 <select class="form-control js-example-basic-multiple" name="kategori_olahan_id[]" multiple="multiple">
+                                    <?php 
+                                       foreach($kategori_olahan->result() as $ko){ 
+                                          $cekOlahan = $this->db->get_where('user_kategori_olahan', [
+                                             'user_id' => $this->session->userdata('userid'),
+                                             'kategori_olahan_id' => $ko->id
+                                          ]);
+                                    ?>
+                                       <option <?= ($cekOlahan->num_rows() > 0) ? 'selected' : '' ?> value="<?= $ko->id ?>"> <?= ucfirst($ko->kategori_olahan) ?></option>
+                                    <?php } ?>
+                                 </select>
+                              </div>
                            </div>
-                           <div class="col-md-8">
-                              <select class="form-control js-example-basic-multiple" name="kategori_olahan_id[]" multiple="multiple">
-                                 <?php 
-                                    foreach($kategori_olahan->result() as $ko){ 
-                                       $cekOlahan = $this->db->get_where('user_kategori_olahan', [
-                                          'user_id' => $this->session->userdata('userid'),
-                                          'kategori_olahan_id' => $ko->id
-                                       ]);
-                                 ?>
-                                    <option <?= ($cekOlahan->num_rows() > 0) ? 'selected' : '' ?> value="<?= $ko->id ?>"> <?= ucfirst($ko->kategori_olahan) ?></option>
-                                 <?php } ?>
-                              </select>
-                           </div>
-                        </div>
-                        <div class="row d-flex align-items-center form-group">
-                           <div class="col-md-4">
-                              <p class="text-muted font-weight-bold mb-0">Jenis Olahan<sup class="text-danger">*</sup></p>
-                           </div>
-                           <div class="col-md-8">
-                              <input type="text" name="jenis_olahan" class="form-control font-weight-bold text-muted" value="<?= $user->jenis_olahan ?>" placeholder="Tulis Jenis olahan">
-                           </div>
-                        </div>
+                        <?php endif; ?>
 
-                        <div class="row d-flex align-items-center form-group">
-                           <div class="col-md-4">
-                              <p class="text-muted font-weight-bold mb-0">Produksi Olahan Bulanan<sup class="text-danger">*</sup></p>
+                        <?php if(
+                           $user->role_id != 1 &&
+                           $user->role_id != 5
+                        ): ?>
+                           <div class="row d-flex align-items-center form-group">
+                              <div class="col-md-4">
+                                 <p class="text-muted font-weight-bold mb-0">Jenis Olahan<sup class="text-danger">*</sup></p>
+                              </div>
+                              <div class="col-md-8">
+                                 <input type="text" name="jenis_olahan" class="form-control font-weight-bold text-muted" value="<?= $user->jenis_olahan ?>" placeholder="Tulis Jenis olahan">
+                              </div>
                            </div>
-                           <div class="col-md-8">
-                              <div class="input-group input-group-sm mb-0">
-                                 <input type="text" name="produksi_olahan" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?= $user->produksi_olahan ?>">
-                                 <div class="input-group-append">
-                                    <span class="input-group-text" id="inputGroup-sizing-sm">Kg</span>
+
+                           <div class="row d-flex align-items-center form-group">
+                              <div class="col-md-4">
+                                 <p class="text-muted font-weight-bold mb-0">Produksi Olahan Bulanan<sup class="text-danger">*</sup></p>
+                              </div>
+                              <div class="col-md-8">
+                                 <div class="input-group input-group-sm mb-0">
+                                    <input type="text" name="produksi_olahan" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm" value="<?= $user->produksi_olahan ?>">
+                                    <div class="input-group-append">
+                                       <span class="input-group-text" id="inputGroup-sizing-sm">Kg</span>
+                                    </div>
                                  </div>
                               </div>
                            </div>
-                        </div>
+                        <?php endif; ?>
 
-                        <div class="row d-flex align-items-center form-group">
-                           <div class="col-md-4">
-                              <p class="text-muted font-weight-bold mb-0">Jenis Pupuk<sup class="text-danger">*</sup></p>
+                        <?php if(
+                           $user->role_id != 1 &&
+                           $user->role_id != 2 &&
+                           $user->role_id != 3 &&
+                           $user->role_id != 4 &&
+                           $user->role_id != 5 &&
+                           $user->role_id != 7
+                        ): ?>
+                           <div class="row d-flex align-items-center form-group">
+                              <div class="col-md-4">
+                                 <p class="text-muted font-weight-bold mb-0">Jenis Pupuk<sup class="text-danger">*</sup></p>
+                              </div>
+                              <div class="col-md-8">
+                                 <input type="text" name="jenis_pupuk" class="form-control font-weight-bold text-muted" value="<?= $user->jenis_pupuk ?>" placeholder="Tulis Jenis pupuk">
+                              </div>
                            </div>
-                           <div class="col-md-8">
-                              <input type="text" name="jenis_pupuk" class="form-control font-weight-bold text-muted" value="<?= $user->jenis_pupuk ?>" placeholder="Tulis Jenis pupuk">
-                           </div>
-                        </div>
+                        <?php endif; ?>
 
+                        <?php if(
+                           $user->role_id != 1 &&
+                           $user->role_id != 2 &&
+                           $user->role_id != 3 &&
+                           $user->role_id != 4 &&
+                           $user->role_id != 5 &&
+                           $user->role_id != 7
+                        ): ?>
+                           <div class="row d-flex align-items-center form-group">
+                              <div class="col-md-4">
+                                 <p class="text-muted font-weight-bold mb-0">Jenis Pestisida<sup class="text-danger">*</sup></p>
+                              </div>
+                              <div class="col-md-8">
+                                 <input type="text" name="jenis_pestisida" class="form-control font-weight-bold text-muted" value="<?= $user->jenis_pestisida ?>" placeholder="Tulis Jenis Pestisida">
+                              </div>
+                           </div>
+                        <?php endif; ?>
 
-                        <div class="row d-flex align-items-center form-group">
-                           <div class="col-md-4">
-                              <p class="text-muted font-weight-bold mb-0">Jenis Pestisida<sup class="text-danger">*</sup></p>
+                        <?php if(
+                           $user->role_id != 1 &&
+                           $user->role_id != 2 &&
+                           $user->role_id != 3 &&
+                           $user->role_id != 4 &&
+                           $user->role_id != 5 &&
+                           $user->role_id != 6
+                        ): ?>
+                           <div class="row d-flex align-items-center form-group">
+                              <div class="col-md-4">
+                                 <p class="text-muted font-weight-bold mb-0">Jenis Alsintan<sup class="text-danger">*</sup></p>
+                              </div>
+                              <div class="col-md-8">
+                                 <input type="text" name="jenis_aisintan" class="form-control font-weight-bold text-muted" value="<?= $user->jenis_aisintan ?>" placeholder="Tulis Jenis Alsintan">
+                              </div>
                            </div>
-                           <div class="col-md-8">
-                              <input type="text" name="jenis_pestisida" class="form-control font-weight-bold text-muted" value="<?= $user->jenis_pestisida ?>" placeholder="Tulis Jenis Pestisida">
-                           </div>
-                        </div>
-
-                        <div class="row d-flex align-items-center form-group">
-                           <div class="col-md-4">
-                              <p class="text-muted font-weight-bold mb-0">Jenis Alsintan<sup class="text-danger">*</sup></p>
-                           </div>
-                           <div class="col-md-8">
-                              <input type="text" name="jenis_aisintan" class="form-control font-weight-bold text-muted" value="<?= $user->jenis_aisintan ?>" placeholder="Tulis Jenis Alsintan">
-                           </div>
-                        </div>
+                        <?php endif; ?>
                         
                         <div class="row d-flex align-items-center form-group border-bottom">
                            <div class="col-md-4">

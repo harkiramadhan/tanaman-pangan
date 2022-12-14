@@ -59,10 +59,20 @@
                <?php if($this->session->userdata('masuk') == TRUE): ?>
                   <a href="<?= site_url('kelas') ?>" class="btn btn-outline-success btn-lg font-weight-bold ml-2">Kelas Saya</a>            
                   <li class="nav-item dropdown no-arrow no-caret dropdown-user ml-2">
-                     <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><img class="img-fluid" src="<?= base_url('assets/images/user/s4.png') ?>"></a>
+                     <a class="btn btn-icon btn-transparent-dark dropdown-toggle" id="navbarDropdownUserImage" href="javascript:void(0);" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <?php if($user->img): ?>
+                           <img class="img-fluid" src="<?= base_url('uploads/profile/' . $user->img) ?>">
+                        <?php else: ?>
+                           <img class="img-fluid" src="<?= base_url('assets/images/user/s4.png') ?>">
+                        <?php endif; ?>
+                     </a>
                      <div class="dropdown-menu dropdown-menu-right border-0 shadow animated--fade-in-up" aria-labelledby="navbarDropdownUserImage">
                         <h6 class="dropdown-header d-flex align-items-center">
-                           <img class="dropdown-user-img" src="<?= base_url('assets/images/user/s4.png') ?>">
+                           <?php if($user->img): ?>
+                              <img class="dropdown-user-img" src="<?= base_url('uploads/profile/' . $user->img) ?>">
+                           <?php else: ?>
+                              <img class="dropdown-user-img" src="<?= base_url('assets/images/user/s4.png') ?>">
+                           <?php endif; ?>
                            <div class="dropdown-user-details">
                               <div class="dropdown-user-details-name"><?= $user->nama ?></div>
                               <div class="dropdown-user-details-email bg-warning rounded text-dark p-1 mt-1"><?= $user->role ?></div>
