@@ -315,23 +315,24 @@
 
 
 <!-- testimonials -->
+<?php foreach($testimoni->result() as $ts){ ?>
 <div class="testi-wrap pt-5 pb-4">
    <div class="container">
       <div class="testimonial">
          <div class="video-modal">
             <div class="">
-               <img src="https://storage.nu.or.id/storage/post/16_9/mid/1616572339.jpg">
+               <img src="<?= base_url('uploads/testimoni/' . $ts->img) ?>">
             </div>
          </div>
          <div class="text-content">
-            <p>"Menjadi bagian dari jejaring tanaman pangan, sangat membantu saya dalam memperluas jejaring dan juga dalam memperluas keilmuan tentang hasil tani yang saya produksi."
-            </p>
-            <span>Alfian Rahmatullah</span>
+            <p>"<?= $ts->deskripsi ?>"</p>
+            <span><?= $ts->nama." &#8212; ".$ts->jabatan ?></span>
             <img alt="Company logo" src="<?= base_url() ?>assets/images/haerfest-logo.png" loading="lazy">
          </div>
       </div>
    </div>
 </div>
+<?php } ?>
 <!--       testimonials -->
 
 

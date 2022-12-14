@@ -6,30 +6,31 @@
                <div class="footer-list">
                   <h2>Program</h2>
                   <ul class="list">
-                     <li><a href="#">Tani Trainer</a></li>
-                     <li><a href="#">Jejaring</a></li>
-                     <li><a href="#">Publikasi Media</a></li>
+                     <li><a href="<?= site_url('tanitrainer') ?>">Tani Trainer</a></li>
+                     <li><a href="<?= site_url('jejaring') ?>">Jejaring</a></li>
+                     <li><a href="<?= site_url('publikasi') ?>">Publikasi Media</a></li>
                   </ul>
                </div>
                <div class="footer-list">
                   <h2>Peran</h2>
                   <ul class="list">
-                     <li><a href="#">Petani/Produsen Pangan</a></li>
-                     <li><a href="#">Usaha Olahan</a></li>
-                     <li><a href="#">Offtaker Pangan</a></li>
-                     <li><a href="#">Eksportir</a></li>
-                     <li><a href="#">Penyedia Bibit/Benih</a></li>
-                     <li><a href="#">Penyedia Pupuk</a></li>
-                     <li><a href="#">Penyedia Alsintan</a></li>
+                     <?php 
+                        $roleList = $this->db->get('role');
+                        foreach($roleList->result() as $rl){
+                     ?>
+                        <li><a href="<?= site_url('jejaring?page=1&&roleid=' . $rl->id) ?>"><?= $rl->role ?></a></li>
+                     <?php } ?>
                   </ul>
                </div>
                <div class="footer-list">
                   <h2>Publikasi</h2>
                   <ul class="list">
-                     <li><a href="#">Kebijakan</a></li>
-                     <li><a href="#">Gallery</a></li>
-                     <li><a href="#">Video</a></li>
-                     <li><a href="#">Berita</a></li>
+                     <?php
+                        $publikasiList = $this->db->get('kategori_publikasi');
+                        foreach($publikasiList->result() as $pl){
+                     ?>
+                        <li><a href="<?= site_url('publikasi?ids['. $pl->id .']='. $pl->id .'&page=1&order=Terbaru') ?>"><?= $pl->kategori ?></a></li>
+                     <?php } ?>
                   </ul>
                </div>
                <div class="footer-list">
@@ -51,7 +52,7 @@
                   <img src="http://app3.pertanian.go.id/propaktani/portal/assets/img/logo_login.png">
                   </a>
                </div>
-               <p>© Copyright 2022 Tanaman Pangan. All Rights Reserved
+               <p>© Copyright <?= date('Y') ?> Tanaman Pangan. All Rights Reserved
                </p>
                <ul class="social">
                   <li>

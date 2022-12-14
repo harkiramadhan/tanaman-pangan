@@ -9,6 +9,6 @@ class M_Testimoni extends CI_Model{
     }
 
     function getActive(){
-        return $this->db->get_where('testimoni', ['status' => 1]);
+        return $this->db->order_by('id', "DESC")->get_where('testimoni', ['status' => 1]);
     }
 }

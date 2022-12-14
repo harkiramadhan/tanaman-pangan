@@ -16,6 +16,7 @@ class Landing extends CI_Controller {
 			'M_Kegiatan',
 			'M_Faq',
 			'M_Wilayah',
+			'M_Testimoni'
 		]);
 	}
 	
@@ -31,7 +32,8 @@ class Landing extends CI_Controller {
 			'kategoriPublikasi' => $this->M_Kategori_publikasi->getAll(),
 			'kegiatan' => $this->M_Kegiatan->getActive(),
 			'provinsi' => $this->M_Wilayah->getProvinsi(),
-			'faq' => $this->M_Faq->getActive()
+			'faq' => $this->M_Faq->getActive(),
+			'testimoni' => $this->M_Testimoni->getActive()
 		];
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/landing', $var);
