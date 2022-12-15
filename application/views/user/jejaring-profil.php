@@ -281,6 +281,33 @@
             </div>
          </aside>
          <aside class="col col-xl-3 order-xl-3 col-lg-6 order-lg-3 col-md-6 col-sm-6 col-12">
+            <div class="d-flex flex-column mb-3">
+                     
+               <!-- Membutuhkan Produk -->
+   
+               <div class="border rounded p-2 px-3 bg-white mr-1 mb-2 d-flex flex-column w-100 shadow-sm">
+                  <a href="http://localhost/tanaman-pangan/jejaring/71" class="mb-2 font-weight-normal text-dark text-xs">Membutuhkan</a>
+                  <img class="img-fluid rounded mb-2" src="http://localhost/tanaman-pangan/assets/images/placeholder/main-placeholder-propaktani.png" style="object-fit: cover; height: 60px;">
+                  <div class="d-flex">
+                     <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;">12<span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
+                     <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
+                        Kacang Kemasan                                 </p>
+                  </div>
+               </div>
+   
+               <!-- Membutuhkan Produk -->
+               
+               <div class="border rounded p-2 px-3 bg-white mr-1 mb-2 d-flex flex-column w-100 shadow-sm">
+                  <a href="http://localhost/tanaman-pangan/jejaring/71" class="mb-2 font-weight-normal text-dark text-xs">Menjual</a>
+                  <img class="img-fluid rounded mb-2" src="http://localhost/tanaman-pangan/assets/images/placeholder/main-placeholder-propaktani.png" style="object-fit: cover; height: 60px;">
+                  <div class="d-flex">
+                     <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;">12<span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
+                     <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
+                        Kacang Kemasan                                 </p>
+                  </div>
+               </div>
+   
+            </div>
             <div class="box shadow-sm rounded bg-white mb-3">
                <div class="box-title border-bottom p-3">
                   <h6 class="m-0">Data Lainnya
