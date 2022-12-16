@@ -289,9 +289,8 @@
                   <a href="http://localhost/tanaman-pangan/jejaring/71" class="mb-2 font-weight-normal text-dark text-xs">Membutuhkan</a>
                   <img class="img-fluid rounded mb-2" src="http://localhost/tanaman-pangan/assets/images/placeholder/main-placeholder-propaktani.png" style="object-fit: cover; height: 60px;">
                   <div class="d-flex">
-                     <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;">12<span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
-                     <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
-                        Kacang Kemasan                                 </p>
+                     <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= $jejaring->produk_dibutuhkan_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
+                     <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs"><?= ucfirst($jejaring->membutuhkan_produk) ?></p>
                   </div>
                </div>
    
@@ -301,9 +300,8 @@
                   <a href="http://localhost/tanaman-pangan/jejaring/71" class="mb-2 font-weight-normal text-dark text-xs">Menjual</a>
                   <img class="img-fluid rounded mb-2" src="http://localhost/tanaman-pangan/assets/images/placeholder/main-placeholder-propaktani.png" style="object-fit: cover; height: 60px;">
                   <div class="d-flex">
-                     <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;">12<span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
-                     <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
-                        Kacang Kemasan                                 </p>
+                     <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= $jejaring->produk_dijual_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
+                     <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs"><?= ucfirst($jejaring->menjual_produk) ?></p>
                   </div>
                </div>
    

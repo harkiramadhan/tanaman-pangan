@@ -101,19 +101,6 @@
                         <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-3 font-weight-bold text-dark text-xs"><i class="fa fa-user mr-2 text-secondary" aria-hidden="true"></i><?= $row->nama ?></a>
 
                         <div class="d-flex flex-row mt-2">
-                        
-                           <!-- Membutuhkan Produk -->
-
-                           <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
-                              <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1 font-weight-light text-dark text-xs"><?= ($row->status == 1) ? 'Menjual' : 'Membutuhkan' ?></a>
-                              <img class="img-fluid rounded mb-2" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 40px;" />
-                              <div class="d-flex">
-                                 <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= ($row->status == 1) ? $row->produk_dijual_bulanan : $row->produk_dibutuhkan_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
-                                 <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
-                                    <?= ($row->status == 1) ? ucfirst($row->menjual_produk) : ucfirst($row->membutuhkan_produk) ?>
-                                 </p>
-                              </div>
-                           </div>
 
                            <!-- Membutuhkan Produk -->
                            
@@ -121,9 +108,22 @@
                               <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1 font-weight-light text-dark text-xs">Menjual</a>
                               <img class="img-fluid rounded mb-2" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 40px;" />
                               <div class="d-flex">
-                                 <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= ($row->status == 1) ? $row->produk_dijual_bulanan : $row->produk_dibutuhkan_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
+                                 <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= $row->produk_dijual_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
                                  <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
-                                    <?= ($row->status == 1) ? ucfirst($row->menjual_produk) : ucfirst($row->membutuhkan_produk) ?>
+                                    <?= ucfirst($row->menjual_produk) ?>
+                                 </p>
+                              </div>
+                           </div>
+                        
+                           <!-- Membutuhkan Produk -->
+
+                           <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
+                              <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1 font-weight-light text-dark text-xs">Membutuhkan</a>
+                              <img class="img-fluid rounded mb-2" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 40px;" />
+                              <div class="d-flex">
+                                 <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= $row->produk_dibutuhkan_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
+                                 <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
+                                    <?= ucfirst($row->membutuhkan_produk) ?>
                                  </p>
                               </div>
                            </div>
