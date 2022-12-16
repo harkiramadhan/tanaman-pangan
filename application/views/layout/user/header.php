@@ -136,9 +136,14 @@
             </div>
             <ul class="navbar-nav ml-auto">
                <li class="nav-item">
-                  <a class="nav-link">
-                     <img class="country-flag img-fluid" src="<?= base_url('assets/images/flag/uk.png') ?>">
-                     <span>English</span>
+                  <a class="nav-link" href="<?= site_url('language') ?>">
+                     <?php if($this->session->userdata('lang') == 'EN'): ?>
+                        <img class="country-flag img-fluid" src="<?= base_url('assets/images/flag/uk.png') ?>">
+                        <span>English</span>
+                     <?php else: ?>
+                        <img class="country-flag img-fluid" src="<?= base_url('assets/images/flag/id.png') ?>">
+                        <span>Indonesia</span>
+                     <?php endif; ?>
                   </a>
                </li>
             </ul>
