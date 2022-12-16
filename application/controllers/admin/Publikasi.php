@@ -32,6 +32,7 @@ class Publikasi extends CI_Controller {
         $var = [
 			'title' => "Admin Publikasi",
 			'publikasi' => $this->M_Publikasi->getAll(),
+			'kategori' => $this->M_Kategori_publikasi->getAll(),
 			'ajax' => [
 				'publikasi2'
 			]

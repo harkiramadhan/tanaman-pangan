@@ -42,6 +42,27 @@
 </head>
 
 <body class="g-sidenav-show   bg-gray-100">
+	<!-- Alert Code -->
+	<?php if($this->session->flashdata('success')): ?>
+		<div class="alert alert-success alert-dismissible fade show position-absolute top-0 end-0 border-0 d-flex me-4 mt-3 ms-4"  role="alert">
+		<span class="alert-icon"><i class="fa fa-bell me-2 text-white"></i></span>
+		<span class="alert-text text-white mt-0 font-weight-bold"><strong>Berhasil !</strong> - <?= $this->session->flashdata('success') ?></span>
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+			<i class="fa fa-times position-absolute text-white top-0 pe-2" style="margin-top: 20px; margin-right: 100px;"></i>
+		</button>
+		</div>
+	<?php endif; ?>
+
+	<?php if($this->session->flashdata('error')): ?>
+		<div class="alert alert-danger alert-dismissible fade show position-absolute top-3 end-0 border-0 d-flex me-4 mt-5 ms-4"  role="alert">
+		<span class="alert-icon"><i class="fa fa-bell me-2 text-white"></i></span>
+		<span class="alert-text text-white mt-0 font-weight-bold"><strong>Gagal !</strong> - <?= $this->session->flashdata('error') ?></span>
+		<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+			<i class="fa fa-times position-absolute text-white top-0 pe-2" style="margin-top: 20px; margin-right: 100px;"></i>
+		</button>
+		</div>
+	<?php endif; ?>
+	
 	<div class="min-height-300 bg-primary position-absolute w-100"></div>
 	<aside
 		class="sidenav bg-white navbar navbar-vertical navbar-expand-xs border-0 border-radius-xl my-3 fixed-start ms-4 "

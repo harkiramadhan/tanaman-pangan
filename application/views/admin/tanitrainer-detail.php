@@ -84,7 +84,7 @@
             </div>
 						<div class="col-12 mt-3 d-grid">
 							<button type="submit" class="btn bg-gradient-dark mb-0">SIMPAN</button>
-							<button type="button" class="btn btn-link mb-0 text-secondary mt-2">KEMBALI</button>
+							<a href="<?= site_url('admin/tanitrainer') ?>" class="btn btn-link mb-0 text-secondary mt-2">KEMBALI</a>
 						</div>
 					</div>
 				</form>

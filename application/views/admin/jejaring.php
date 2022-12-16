@@ -8,11 +8,11 @@
 							<h6 class="mb-0">DAFTAR JEJARING</h6>
 						</div>
 						<div class="col-4 text-end d-flex align-content-center align-items-center justify-content-center">
-							<select class="form-control form-control-alternative me-3" id="sortBulanAgenda">
-								<option value="semua" selected>Pilih Peran</option> 
-								<option value="1">Petani/Produsen Pangan Segar</option>
-								<option value="2">Usaha Olahan Pangan</option>
-								<option value="3">Offtaker Pangan Segar/Olahan</option>
+							<select class="form-control form-control-alternative me-3" id="shortData">
+								<option value="semua" selected>Semua Peran</option> 
+								<?php foreach($roles->result() as $r){ ?>
+									<option value="<?= $r->id ?>"><?= $r->role ?></option>
+								<?php } ?>
 							</select>
 							<a class="btn bg-gradient-dark mb-0 d-flex justify-content-center align-content-center align-items-center" href="<?= site_url('admin/jejaring/add') ?>">
 								<i class="fas fa-plus" aria-hidden="true"></i>&nbsp;&nbsp;
@@ -22,7 +22,7 @@
 						</div>
 					</div>
 					<div class="card-body px-0 pt-0 pb-0">
-						<div class="table-responsive p-0">
+						<div class="table-responsive p-0" style="max-height: 800px">
 							<table class="table align-items-center mb-0 display" id="example" style="width:100%">
 								<thead class="bg-light opacity-5">
 									<tr>
@@ -37,7 +37,7 @@
 									<?php if($jejaring->num_rows() > 0): ?>
 										<?php $no = 1; foreach($jejaring->result() as $row){ ?>
 											<!-- Jika ada data pelatihan -->
-											<tr>
+											<tr class="table-data" data-type="<?= $row->role_id ?>">
 												<td class="align-top text-center text-sm"><?= $no++ ?></td>
 												<td>
 													<div class="d-flex px-2 py-1">

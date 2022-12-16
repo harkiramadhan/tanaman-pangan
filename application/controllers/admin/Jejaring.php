@@ -38,7 +38,11 @@ class Jejaring extends CI_Controller {
 	public function index(){
         $var = [
 			'title' => 'Beranda Jejaring',
-			'jejaring' => $this->M_Jejaring->getAll()
+			'jejaring' => $this->M_Jejaring->getAll(),
+			'roles' => $this->M_Role->getAll(),
+			'ajax' => [
+				'jejaring'
+			]
 		];
 
 		$this->load->view('layout/admin/header', $var);

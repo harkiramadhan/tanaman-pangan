@@ -9,11 +9,11 @@
 						</div>
 						<div
 							class="col-4 text-end d-flex align-content-center align-items-center justify-content-center">
-							<select class="form-control form-control-alternative me-3" id="sortBulanAgenda">
-								<option value="semua" selected>Pilih Kategori</option>
-								<option value="1">BTS</option>
-								<option value="2">Video</option>
-								<option value="3">Gambar</option>
+							<select class="form-control form-control-alternative me-3" id="shortData">
+								<option value="semua" selected>Semua Kategori</option>
+								<?php foreach($kategori->result() as $kt){ ?>
+									<option value="<?= $kt->id ?>"><?= $kt->kategori ?></option>
+								<?php } ?>
 							</select>
 							<a class="btn bg-gradient-dark mb-0 d-flex justify-content-center align-content-center align-items-center"
 								href="<?= site_url('admin/publikasi/add') ?>">
@@ -24,7 +24,7 @@
 					</div>
 				</div>
 				<div class="card-body px-0 pt-0 pb-0">
-					<div class="table-responsive p-0">
+					<div class="table-responsive p-0" style="max-height: 800px">
 						<table class="table align-items-center mb-0 display" id="example" style="width:100%">
 							<thead class="bg-light opacity-5">
 								<tr>
@@ -38,7 +38,7 @@
 								<?php if($publikasi->num_rows() > 0): ?>
 									<!-- Jika ada data pelatihan -->
 									<?php $no = 1; foreach($publikasi->result() as $row): ?>
-										<tr>
+										<tr class="table-data" data-type="<?= $row->kategori_id ?>">
 											<td class="align-top text-center text-sm"><?= $no++ ?></td>
 											<td>
 												<div class="d-flex px-2 py-1">
