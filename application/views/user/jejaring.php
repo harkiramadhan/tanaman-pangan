@@ -76,6 +76,11 @@
       </div>
 
       <div class="container">
+
+         <div class="card p-5 text-center mb-3">
+            Data yang anda cari tidak ada
+         </div>
+
          <div class="row">
 
             <?php 

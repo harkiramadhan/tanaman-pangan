@@ -52,7 +52,7 @@
                   <img src="http://app3.pertanian.go.id/propaktani/portal/assets/img/logo_login.png">
                   </a>
                </div>
-               <p>© Copyright <?= date('Y') ?> Tanaman Pangan. All Rights Reserved
+               <p class="text-center" >© Copyright <?= date('Y') ?> Tanaman Pangan. All Rights Reserved
                </p>
                <ul class="social">
                   <li>

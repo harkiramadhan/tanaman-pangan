@@ -49,10 +49,6 @@
                                     <input class="form-check-input" name="status" type="checkbox" id="inlineCheckbox1" <?= ($user->status == 1) ? 'checked' : '' ?> value="1">
                                     <label class="form-check-label" for="inlineCheckbox1"> Menjual</label>
                                  </div>
-                                 <div class="form-check form-check-inline">
-                                    <input class="form-check-input" name="status" type="checkbox" id="inlineCheckbox2" <?= ($user->status == 2) ? 'checked' : '' ?> value="2">
-                                    <label class="form-check-label" for="inlineCheckbox2"> Membeli</label>
-                                 </div>
                               </div>
                            </div>
 
@@ -78,8 +74,39 @@
                                  </div>
                               </div>
                            </div>
+                           <div class="row d-flex align-items-center form-group px-3">
+                              <div class="col-md-4">
+                                 <p class="text-muted font-weight-bold mb-0">Upload Foto Produk<sup class="text-danger">*</sup></p>
+                              </div>
+                              <div class="col-md-8">
+                                 <div class="custom-file">
+                                    <input type="file" name="file" class="custom-file-input" id="image-source" aria-describedby="inputGroupFileAddon04" onchange="previewImage()">
+                                    <label class="custom-file-label" for="image-source">Choose file</label>
+                                 </div>
+                              </div>
+                           </div>
+                           
+                           <div class="row d-flex align-items-center form-group px-3">
+                              <div class="col-md-4">
+                              </div>
+                              <div class="col-md-8">
+                                 <img src="http://localhost/tanaman-pangan/assets/images/placeholder/square-placeholder-propaktani.png" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview">
+                              </div>
+                           </div>
                            
                            <hr class="margin-bottom">
+
+                           <div class="row d-flex align-items-center form-group px-3">
+                              <div class="col-md-4">
+                                 <p class="text-muted font-weight-bold mb-0 align-top">Status<sup class="text-danger">*</sup></p>
+                              </div>
+                              <div class="col-md-8 d-inline-block">
+                                 <div class="form-check form-check-inline">
+                                    <input class="form-check-input" name="status" type="checkbox" id="inlineCheckbox1" <?= ($user->status == 1) ? 'checked' : '' ?> value="1">
+                                    <label class="form-check-label" for="inlineCheckbox1"> Membutuhkan</label>
+                                 </div>
+                              </div>
+                           </div>
 
                            <div class="row d-flex align-items-center form-group px-3">
                               <div class="col-md-4">
@@ -101,6 +128,27 @@
                                        <span class="input-group-text" id="inputGroup-sizing-sm">Kg</span>
                                     </div>
                                  </div>
+                              </div>
+                           </div>
+
+                           <div class="row d-flex align-items-center form-group px-3">
+                              <div class="col-md-4">
+                                 <p class="text-muted font-weight-bold mb-0">Upload Foto Produk<sup class="text-danger">*</sup></p>
+                              </div>
+                              <div class="col-md-8">
+                                 <div class="custom-file">
+                                    <input type="file" name="file" class="custom-file-input" id="image-source" aria-describedby="inputGroupFileAddon04" onchange="previewImage()">
+                                    <label class="custom-file-label" for="image-source">Choose file</label>
+                                 </div>
+                              </div>
+                           </div>
+                           
+                           
+                           <div class="row d-flex align-items-center form-group px-3">
+                              <div class="col-md-4">
+                              </div>
+                              <div class="col-md-8">
+                                 <img src="http://localhost/tanaman-pangan/assets/images/placeholder/square-placeholder-propaktani.png" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview">
                               </div>
                            </div>
                            

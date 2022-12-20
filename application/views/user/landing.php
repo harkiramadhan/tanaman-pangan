@@ -5,7 +5,7 @@
          <div id="aniimated-thumbnials" class="slider-for slick-slider-single">
             <?php foreach($banners->result() as $b): ?>
                <a href="<?= $b->link ?>">
-                  <img class="img-fluid" src="<?= base_url('uploads/banners/' . $b->img) ?>" alt="<?= $b->judul ?>" style="height: 280px !important; object-fit: cover;" />
+                  <img class="img-fluid" src="<?= base_url('uploads/banners/' . $b->img) ?>" alt="<?= $b->judul ?>" style="height: auto !important; width: 100% !important; object-fit: cover;" />
                </a>
             <?php endforeach; ?>
          </div>

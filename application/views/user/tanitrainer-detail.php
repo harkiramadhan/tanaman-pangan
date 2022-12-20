@@ -34,6 +34,9 @@
                      <?php if($participant->num_rows() < 1): ?>
                         <button type="button" class="btn-register" data-trainerid="<?= $data->id ?>" data-userid="<?= $this->session->userdata('userid') ?>">DAFTAR SEKARANG</button>
                      <?php endif; ?>
+                     
+                     <p class="mb-3">Anda telah terdaftar pada kelas ini.</p>
+                     <button type="button" class="btn-register" data-trainerid="<?= $data->id ?>" data-userid="<?= $this->session->userdata('userid') ?>">KELAS SAYA</button>
                   <?php else: ?>
                      <button type="button" class="btn-register" data-url="<?= site_url('masuk') ?>">MASUK</button>
                   <?php endif; ?>

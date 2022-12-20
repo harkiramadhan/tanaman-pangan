@@ -64,6 +64,11 @@
                   <h3>Daftar Kelas Tani Trainer</h3>
                </div>
             </div>
+
+            <div class="card p-5 text-center mb-3">
+               Data yang anda cari tidak ada
+            </div>
+            
             <div class="row">
                <?php foreach($data->result() as $row){ ?>
                <div class="col-lg-4">

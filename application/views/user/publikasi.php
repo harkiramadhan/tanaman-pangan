@@ -64,7 +64,14 @@
                </div>
             </div>
             <div class="row">
+
+               
                <div class="col">
+
+                  <div class="card p-5 text-center mb-3">
+                     Data yang anda cari tidak ada
+                  </div>
+                  
                   <div class="box shadow-sm rounded bg-white mb-3">
                      <?php foreach($data->result() as $row): ?>
                      <?php if($row->link): ?>
