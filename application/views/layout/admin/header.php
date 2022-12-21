@@ -172,6 +172,15 @@
 						</ul>
 					</div>
 				</li>	
+				<li class="nav-item">
+					<a class="nav-link <?= ($this->uri->segment(2) == 'pengaturan') ? 'active' : '' ?>" href="<?= site_url('admin/pengaturan') ?>">
+						<div
+							class="icon icon-shape icon-sm border-radius-md text-center me-2 d-flex align-items-center justify-content-center">
+							<i class="fas fa-cog text-dark text-lg opacity-10" style="top: 0px;"></i>
+						</div>
+						<span class="nav-link-text ms-1">Pengaturan</span>
+					</a>
+				</li>
 			</ul>
 		</div>
 	</aside>
