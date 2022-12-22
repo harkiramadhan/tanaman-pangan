@@ -1,4 +1,6 @@
-
+<?php
+   $pengaturan = $this->db->get_where('pengaturan', ['id' => 1])->row();
+?>
       <!-- footer -->
       <footer class="bg-white border-top">
          <div class="container">
@@ -36,36 +38,40 @@
                <div class="footer-list">
                   <h2>Social Media</h2>
                   <ul class="list">
-                     <li><a href="#">Facebook</a>
+                     <li>
+                        <a target="__BLANK" href="<?= $pengaturan->facebook_link ?>">Facebook</a>
                      </li>
-                     <li><a href="#">Instagram</a>
+                     <li>
+                        <a target="__BLANK" href="<?= $pengaturan->instagram_link ?>">Instagram</a>
                      </li>
-                     <li><a href="#">Youtube</a>
+                     <li>
+                        <a target="__BLANK" href="<?= $pengaturan->youtube_link ?>">Youtube</a>
                      </li>
-                     <li><a href="#">Tiktok</a></li>
+                     <li>
+                        <a target="__BLANK" href="<?= $pengaturan->tiktok_link ?>">Tiktok</a>
+                     </li>
                   </ul>
                </div>
             </div>
             <div class="copyright">
                <div class="logo">
-                  <a href="index.html">
-                  <img src="http://app3.pertanian.go.id/propaktani/portal/assets/img/logo_login.png">
+                  <a href="<?= site_url() ?>">
+                     <img src="http://app3.pertanian.go.id/propaktani/portal/assets/img/logo_login.png">
                   </a>
                </div>
-               <p class="text-center" >© Copyright <?= date('Y') ?> Tanaman Pangan. All Rights Reserved
-               </p>
+               <p class="text-center" >© Copyright <?= date('Y') ?> Tanaman Pangan. All Rights Reserved</p>
                <ul class="social">
                   <li>
-                     <a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                     <a target="__BLANK" href="<?= $pengaturan->facebook_link ?>"><i class="fa fa-facebook" aria-hidden="true"></i></a>
                   </li>
-                  <li>
+                  <!-- <li>
                      <a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                  </li> -->
+                  <li>
+                     <a target="__BLANK" href="<?= $pengaturan->instagram_link ?>"><i class="fa fa-instagram" aria-hidden="true"></i></a>
                   </li>
                   <li>
-                     <a href="#"><i class="fa fa-instagram" aria-hidden="true"></i></a>
-                  </li>
-                  <li>
-                     <a href="#"><i class="fa fa-tiktok" aria-hidden="true"></i></a>
+                     <a target="__BLANK" href="<?= $pengaturan->tiktok_link ?>"><i class="fa fa-tiktok" aria-hidden="true"></i></a>
                   </li>
                </ul>
             </div>
