@@ -9,12 +9,12 @@
 				</div>
 			</div>
 			<div class="card-body">
-				<form method="post" action="http://localhost/tax-session/admin/pengaturan/save" enctype="multipart/form-data">
+				<form method="post" action="<?= site_url('admin/pengaturan/save') ?>" enctype="multipart/form-data">
 					<div class="row">
 						<div class="col-lg-12">
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Nomor Customer Service <span class="text-danger">*</span></label>
-								<input type="text" name="kontak" value="087888583949" class="form-control" placeholder="Nomor Kontak" required="">
+								<input type="text" name="kontak" value="<?= $data->kontak ?>" class="form-control" placeholder="Nomor Kontak" required="">
 							</div>
 						</div>
 
@@ -23,50 +23,50 @@
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Instagram <span class="text-danger">*</span></label>
-								<input type="text" name="instagram" value="taxsession_IG" class="form-control" placeholder="Instagram" required="">
+								<input type="text" name="instagram" value="<?= $data->instagram ?>" class="form-control" placeholder="Instagram" required="">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Instagram Link<span class="text-danger">*</span></label>
-								<input type="text" name="instagram" value="taxsession_IG" class="form-control" placeholder="Instagram" required="">
+								<input type="text" name="instagram_link" value="<?= $data->instagram_link ?>" class="form-control" placeholder="Instagram" required="">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Facebook <span class="text-danger">*</span></label>
-								<input type="text" name="facebook" value="Tax Session" class="form-control" placeholder="Facebook" required="">
+								<input type="text" name="facebook" value="<?= $data->facebook ?>" class="form-control" placeholder="Facebook" required="">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Facebook Link<span class="text-danger">*</span></label>
-								<input type="text" name="facebook" value="Tax Session" class="form-control" placeholder="Facebook" required="">
+								<input type="text" name="facebook_link" value="<?= $data->facebook_link ?>" class="form-control" placeholder="Facebook" required="">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Tiktok <span class="text-danger">*</span></label>
-								<input type="text" name="tiktok" value="taxsession_TT" class="form-control" placeholder="Tiktok" required="">
+								<input type="text" name="tiktok" value="<?= $data->tiktok ?>" class="form-control" placeholder="Tiktok" required="">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Tiktok Link<span class="text-danger">*</span></label>
-								<input type="text" name="tiktok" value="taxsession_TT" class="form-control" placeholder="Tiktok" required="">
+								<input type="text" name="tiktok_link" value="<?= $data->tiktok_link ?>" class="form-control" placeholder="Tiktok" required="">
 							</div>
 						</div>
                         
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Youtube <span class="text-danger">*</span></label>
-								<input type="text" name="youtube" value="taxsession_YT" class="form-control" placeholder="Youtube" required="">
+								<input type="text" name="youtube" value="<?= $data->youtube ?>" class="form-control" placeholder="Youtube" required="">
 							</div>
 						</div>
 						<div class="col-lg-6">
 							<div class="form-group">
 								<label class="form-control-label" for="input-nama">Youtube Link <span class="text-danger">*</span></label>
-								<input type="text" name="tiktok" value="taxsession_TT" class="form-control" placeholder="Tiktok" required="">
+								<input type="text" name="youtube_link" value="<?= $data->youtube_link ?>" class="form-control" placeholder="Tiktok" required="">
 							</div>
 						</div>
 
