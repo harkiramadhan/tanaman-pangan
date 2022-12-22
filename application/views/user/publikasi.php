@@ -68,39 +68,42 @@
                
                <div class="col">
 
-                  <div class="card p-5 text-center mb-3">
-                     Data yang anda cari tidak ada
-                  </div>
-                  
-                  <div class="box shadow-sm rounded bg-white mb-3">
-                     <?php foreach($data->result() as $row): ?>
-                     <?php if($row->link): ?>
-                        <a href="<?= $row->link ?>" target="__BLANK">
-                     <?php else: ?>
-                        <a href="<?= base_url('publikasi/' . $row->flag) ?>">
-                     <?php endif; ?>
-                        <div class="box-body d-flex p-3 border-bottom">
-                           <?php if($row->cover_img): ?>
-                              <img class="img-fluid rounded mb-auto" src="<?= base_url('uploads/publikasi/' . $row->cover_img) ?>" alt="" style="height: 130px; width: 130px;">
-                           <?php else: ?>
-                              <img class="img-fluid rounded mb-auto" src="<?= base_url('assets/images/l3.png') ?>" alt="" style="height: 130px; width: 130px;">
-                           <?php endif; ?>
-                           <div class="d-flex flex-column align-items-top job-item-header pb-2 ml-3">
-                                 <div class="mb-3">
-                                    <div class="text-truncate text-info text-uppercase">
-                                       <i class="<?= $row->icon ?> mr-2"></i><?= $row->kategori ?>
+                  <?php if($data->num_rows() > 0): ?>
+                     <div class="box shadow-sm rounded bg-white mb-3">
+                        <?php foreach($data->result() as $row): ?>
+                        <?php if($row->link): ?>
+                           <a href="<?= $row->link ?>" target="__BLANK">
+                        <?php else: ?>
+                           <a href="<?= base_url('publikasi/' . $row->flag) ?>">
+                        <?php endif; ?>
+                           <div class="box-body d-flex p-3 border-bottom">
+                              <?php if($row->cover_img): ?>
+                                 <img class="img-fluid rounded mb-auto" src="<?= base_url('uploads/publikasi/' . $row->cover_img) ?>" alt="" style="height: 130px; width: 130px;">
+                              <?php else: ?>
+                                 <img class="img-fluid rounded mb-auto" src="<?= base_url('assets/images/l3.png') ?>" alt="" style="height: 130px; width: 130px;">
+                              <?php endif; ?>
+                              <div class="d-flex flex-column align-items-top job-item-header pb-2 ml-3">
+                                    <div class="mb-3">
+                                       <div class="text-truncate text-info text-uppercase">
+                                          <i class="<?= $row->icon ?> mr-2"></i><?= $row->kategori ?>
+                                       </div>
+                                       <h6 class="font-weight-bold text-dark my-1"><?= $row->judul ?></h6>
+                                       <div class="text-gray-900"><?= longdate_indo($row->tanggal) ?></div>
                                     </div>
-                                    <h6 class="font-weight-bold text-dark my-1"><?= $row->judul ?></h6>
-                                    <div class="text-gray-900"><?= longdate_indo($row->tanggal) ?></div>
-                                 </div>
-                                 <a href="<?= site_url('publikasi/' . $row->flag) ?>" class="mt-auto text-danger">
-                                    <span class="d-lg-inline d-none">Selengkapnya</span> <i class="fa fa-arrow-right ml-3"></i>
-                                 </a>
+                                    <a href="<?= site_url('publikasi/' . $row->flag) ?>" class="mt-auto text-danger">
+                                       <span class="d-lg-inline d-none">Selengkapnya</span> <i class="fa fa-arrow-right ml-3"></i>
+                                    </a>
+                              </div>
                            </div>
-                        </div>
-                     </a>
-                     <?php endforeach; ?>
-                  </div>
+                        </a>
+                        <?php endforeach; ?>
+                     </div>
+                  <?php else: ?>
+                     <div class="card p-5 text-center mb-3">
+                        Data yang anda cari tidak ada
+                     </div>
+                  <?php endif; ?>
+
                </div>
             </div>
             <div class="footer-pagination text-center">
