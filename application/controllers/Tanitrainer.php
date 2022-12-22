@@ -89,16 +89,18 @@ class Tanitrainer extends CI_Controller {
 
 		if($userid){
 			$cek =  $this->M_Tanitrainer->checkUser($userid, $id);
-			if($cek->num_rows() > 0){}else{
+			if($cek->num_rows() > 0){
+				$this->session->set_flashdata('success', "Anda Telah Mengikuti Tanitrainer");
+			}else{
 				$dataInsert = [
 					'user_id' => $this->session->userdata('userid'),
 					'tanitrainer_id' => $id
 				];
 				$this->db->insert('user_tanitrainer', $dataInsert);
 				if($this->db->affected_rows() > 0){
-					$this->session->set_flashdata('success', "Berhasil Mengikuti Tanitrainer");
+					$this->session->set_flashdata('success', "Anda Berhasil Mengikuti Tanitrainer");
 				}else{
-					$this->session->set_flashdata('error', "Gagal Mengikuti Tanitrainer");
+					$this->session->set_flashdata('error', "Anda Gagal Mengikuti Tanitrainer");
 				}
 			}
 		}
