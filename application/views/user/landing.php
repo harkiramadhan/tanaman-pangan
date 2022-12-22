@@ -1,3 +1,7 @@
+<?php
+   $pengaturan = $this->db->get_where('pengaturan', ['id' => 1])->row();
+?>
+
 <!-- Begin Page Content -->
 <section class="py-3 homepage-search-block position-relative">
    <div class="container">
@@ -400,7 +404,7 @@
       <div class="content">
          <h2>Ada pertanyaan lebih?</h2>
          <p>Klik tombol berikut, untuk konsultasi lebih lenjut mengenai program kami</p>
-         <a href="#" class="c-btn c-fill-color-btn"><i class="fa fa-whatsapp mr-3"></i>Hubungi Sekarang</a>
+         <a target="__BLANK" href="https://api.whatsapp.com/send/?phone=<?= $pengaturan->kontak ?>" class="c-btn c-fill-color-btn"><i class="fa fa-whatsapp mr-3"></i>Hubungi Sekarang</a>
       </div>
    </div>
 </div>

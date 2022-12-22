@@ -77,99 +77,100 @@
 
       <div class="container">
 
-         <div class="card p-5 text-center mb-3">
-            Data yang anda cari tidak ada
-         </div>
+         <?php if($data->num_rows() > 0): ?>
+            <div class="row">
+               <?php 
+                  foreach($data->result() as $row): 
+                     $komoditasUser = $this->M_Komoditas->getByUser($row->id);
+               ?>
+                  <div class="col-lg-4 col-md-6 col-12">
 
-         <div class="row">
+                     <!-- <span class="badge badge-warning font-weight-bolder mb-2 p-2 position-absolute" style="left: 25px; top: 10px;"><i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i><?= ($row->status == 1) ? 'MENAWARKAN' : 'MEMBUTUHKAN' ?></span> -->
+                     <span class="badge badge-warning font-weight-bolder mb-2 p-2 position-absolute text-uppercase" style="left: 25px; top: 10px;"><?= $row->role ?></span>
 
-            <?php 
-               foreach($data->result() as $row): 
-                  $komoditasUser = $this->M_Komoditas->getByUser($row->id);
-            ?>
-               <div class="col-lg-4 col-md-6 col-12">
+                     <!-- <span class="badge badge-warning mb-2"><i class="fa fa-shopping-cart" aria-hidden="true"></i><?= $row->role ?></span> -->
+                     <a href="<?= site_url('jejaring/' . $row->id) ?>">
+                        <?php if($row->cover_img): ?>
+                           <img class="img-fluid" src="<?= base_url('uploads/cover/' . $row->cover_img) ?>" style="object-fit: cover; height: 200px;"/>
+                        <?php else: ?>
+                           <img class="img-fluid" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 200px;" />
+                        <?php endif; ?>
+                     </a>
+                     <div class="inner-slider">
+                        <div class="inner-wrapper">
 
-                  <!-- <span class="badge badge-warning font-weight-bolder mb-2 p-2 position-absolute" style="left: 25px; top: 10px;"><i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i><?= ($row->status == 1) ? 'MENAWARKAN' : 'MEMBUTUHKAN' ?></span> -->
-                  <span class="badge badge-warning font-weight-bolder mb-2 p-2 position-absolute text-uppercase" style="left: 25px; top: 10px;"><?= $row->role ?></span>
+                           <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-3 font-weight-bold text-dark text-xs"><i class="fa fa-user mr-2 text-secondary" aria-hidden="true"></i><?= $row->nama ?></a>
 
-                  <!-- <span class="badge badge-warning mb-2"><i class="fa fa-shopping-cart" aria-hidden="true"></i><?= $row->role ?></span> -->
-                  <a href="<?= site_url('jejaring/' . $row->id) ?>">
-                     <?php if($row->cover_img): ?>
-                        <img class="img-fluid" src="<?= base_url('uploads/cover/' . $row->cover_img) ?>" style="object-fit: cover; height: 200px;"/>
-                     <?php else: ?>
-                        <img class="img-fluid" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 200px;" />
-                     <?php endif; ?>
-                  </a>
-                  <div class="inner-slider">
-                     <div class="inner-wrapper">
+                           <div class="d-flex flex-row mt-2">
 
-                        <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-3 font-weight-bold text-dark text-xs"><i class="fa fa-user mr-2 text-secondary" aria-hidden="true"></i><?= $row->nama ?></a>
-
-                        <div class="d-flex flex-row mt-2">
-
-                           <!-- Membutuhkan Produk -->
+                              <!-- Membutuhkan Produk -->
+                              
+                              <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
+                                 <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1 font-weight-light text-dark text-xs">Menjual</a>
+                                 <img class="img-fluid rounded mb-2" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 40px;" />
+                                 <div class="d-flex">
+                                    <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= $row->produk_dijual_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
+                                    <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
+                                       <?= ucfirst($row->menjual_produk) ?>
+                                    </p>
+                                 </div>
+                              </div>
                            
-                           <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
-                              <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1 font-weight-light text-dark text-xs">Menjual</a>
-                              <img class="img-fluid rounded mb-2" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 40px;" />
-                              <div class="d-flex">
-                                 <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= $row->produk_dijual_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
-                                 <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
-                                    <?= ucfirst($row->menjual_produk) ?>
-                                 </p>
+                              <!-- Membutuhkan Produk -->
+
+                              <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
+                                 <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1 font-weight-light text-dark text-xs">Membutuhkan</a>
+                                 <img class="img-fluid rounded mb-2" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 40px;" />
+                                 <div class="d-flex">
+                                    <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= $row->produk_dibutuhkan_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
+                                    <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
+                                       <?= ucfirst($row->membutuhkan_produk) ?>
+                                    </p>
+                                 </div>
                               </div>
+
                            </div>
-                        
-                           <!-- Membutuhkan Produk -->
-
-                           <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
-                              <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1 font-weight-light text-dark text-xs">Membutuhkan</a>
-                              <img class="img-fluid rounded mb-2" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 40px;" />
-                              <div class="d-flex">
-                                 <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= $row->produk_dibutuhkan_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
-                                 <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
-                                    <?= ucfirst($row->membutuhkan_produk) ?>
-                                 </p>
-                              </div>
+      
+                           <div class="d-flex align-items-center mt-2">
+                              <span class="seller-image">
+                                 <?php if($row->img): ?>
+                                    <img class="img-fluid" src="<?= base_url('uploads/profile/' . $row->img) ?>" style="object-fit: cover;"/>
+                                 <?php else: ?>
+                                    <img class="img-fluid" src="<?= base_url('assets/images/placeholder/square-placeholder-propaktani.png')?>" style="object-fit: cover;"/>
+                                 <?php endif; ?>
+                                 <!-- <img class="img-fluid"src="<?= base_url('uploads/profile/' . $row->img) ?>" alt='' /> -->
+                              </span>
                            </div>
 
-                        </div>
-   
-                        <div class="d-flex align-items-center mt-2">
-                           <span class="seller-image">
-                              <?php if($row->img): ?>
-                                 <img class="img-fluid" src="<?= base_url('uploads/profile/' . $row->img) ?>" style="object-fit: cover;"/>
-                              <?php else: ?>
-                                 <img class="img-fluid" src="<?= base_url('assets/images/placeholder/square-placeholder-propaktani.png')?>" style="object-fit: cover;"/>
-                              <?php endif; ?>
-                              <!-- <img class="img-fluid"src="<?= base_url('uploads/profile/' . $row->img) ?>" alt='' /> -->
-                           </span>
-                        </div>
+                           <!-- <h3 class="mb-1"><?= $row->keterangan ?></h3> -->
+                           <h3 class="mb-1 mt-0 font-weight-bold">
+                              Komoditas <?= ($row->status == 1) ? 'dijual' : 'dibutuhkan' ?>:
+                           </h3>
+                           <?php foreach($komoditasUser->result() as $ku): ?>
+                              <span class="badge border border-2 bg-info text-white p-2 mb-1"><?= $ku->komoditas ?></span>
+                           <?php endforeach; ?>
+                           
+                           <div class="footer mt-2">
+                              <a href="<?= $row->maps ?>" class="text-dark" tabindex="0" <?= ($row->maps) ? 'target="__BLANK"' : '' ?>>
+                                 <i class="fa fa-map-marker fa-lg  ml-2 mr-3" aria-hidden="true"></i>
+                              </a>
+                              <a href="https://api.whatsapp.com/send/?phone=<?= $row->hp ?>&text&type=phone_number&app_absent=0" class="text-dark" tabindex="0" target="__BLANK">
+                                 <i class="fa fa-whatsapp  fa-lg ml-2 mr-3" aria-hidden="true"></i>
+                              </a>
 
-                        <!-- <h3 class="mb-1"><?= $row->keterangan ?></h3> -->
-                        <h3 class="mb-1 mt-0 font-weight-bold">
-                           Komoditas <?= ($row->status == 1) ? 'dijual' : 'dibutuhkan' ?>:
-                        </h3>
-                        <?php foreach($komoditasUser->result() as $ku): ?>
-                           <span class="badge border border-2 bg-info text-white p-2 mb-1"><?= $ku->komoditas ?></span>
-                        <?php endforeach; ?>
-                        
-                        <div class="footer mt-2">
-                           <a href="<?= $row->maps ?>" class="text-dark" tabindex="0" <?= ($row->maps) ? 'target="__BLANK"' : '' ?>>
-                              <i class="fa fa-map-marker fa-lg  ml-2 mr-3" aria-hidden="true"></i>
-                           </a>
-                           <a href="https://api.whatsapp.com/send/?phone=<?= $row->hp ?>&text&type=phone_number&app_absent=0" class="text-dark" tabindex="0" target="__BLANK">
-                              <i class="fa fa-whatsapp  fa-lg ml-2 mr-3" aria-hidden="true"></i>
-                           </a>
-
-                           <a href="<?= site_url('jejaring/' . $row->id) ?>" class="c-btn btn-block c-fill-color-btn" tabindex="0">CEK PROFIL</a>
+                              <a href="<?= site_url('jejaring/' . $row->id) ?>" class="c-btn btn-block c-fill-color-btn" tabindex="0">CEK PROFIL</a>
+                           </div>
                         </div>
                      </div>
                   </div>
-               </div>
-            <?php endforeach; ?>
-
-         </div>
+               <?php endforeach; ?>
+            </div>
+         <?php else: ?>
+            <div class="card p-5 text-center mb-3">
+               Data yang anda cari tidak ada
+            </div>
+         <?php endif; ?>
+         
       </div>
    </div>
    <div class="footer-pagination text-center">

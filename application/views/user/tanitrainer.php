@@ -65,37 +65,40 @@
                </div>
             </div>
 
-            <div class="card p-5 text-center mb-3">
-               Data yang anda cari tidak ada
-            </div>
-            
-            <div class="row">
-               <?php foreach($data->result() as $row){ ?>
-               <div class="col-lg-4">
-                  <a href="<?= site_url('tanitrainer/' . $row->flag) ?>">
-                     <?php if($row->img): ?>
-                        <img class="img-fluid" src="<?= base_url('uploads/tanitrainer/' . $row->img) ?>"  style="height: 170px;  object-fit: cover;"/>
-                     <?php else: ?>
-                        <img class="img-fluid" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>"  style="height: 170px;  object-fit: cover;"/>
-                     <?php endif; ?>
-                  </a>
-                  <div class="inner-slider">
-                        <div class="inner-wrapper">
-                           <div class="d-flex align-items-center">
-                              <span class="seller-name">
-                                    <a href="<?= site_url('tanitrainer/' . $row->flag) ?>"><?= $row->judul ?> </a>
-                                    <span class="level hint--top level-one-seller"><?= longdate_indo($row->tanggal) ?></span>
-                              </span>
+            <?php if($data->num_rows() > 0): ?>
+               <div class="row">
+                  <?php foreach($data->result() as $row){ ?>
+                  <div class="col-lg-4">
+                     <a href="<?= site_url('tanitrainer/' . $row->flag) ?>">
+                        <?php if($row->img): ?>
+                           <img class="img-fluid" src="<?= base_url('uploads/tanitrainer/' . $row->img) ?>"  style="height: 170px;  object-fit: cover;"/>
+                        <?php else: ?>
+                           <img class="img-fluid" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>"  style="height: 170px;  object-fit: cover;"/>
+                        <?php endif; ?>
+                     </a>
+                     <div class="inner-slider">
+                           <div class="inner-wrapper">
+                              <div class="d-flex align-items-center">
+                                 <span class="seller-name">
+                                       <a href="<?= site_url('tanitrainer/' . $row->flag) ?>"><?= $row->judul ?> </a>
+                                       <span class="level hint--top level-one-seller"><?= longdate_indo($row->tanggal) ?></span>
+                                 </span>
+                              </div>
+                              <h3 class="mb-2"><?= mb_strimwidth($row->deskripsi, 0, 200, "...") ?></h3>
+                              <div class="footer">
+                                 <a href="<?= site_url('tanitrainer/' . $row->flag) ?>" class="c-btn btn-block c-fill-color-btn">Lihat Kelas</a>
+                              </div>
                            </div>
-                           <h3 class="mb-2"><?= mb_strimwidth($row->deskripsi, 0, 200, "...") ?></h3>
-                           <div class="footer">
-                              <a href="<?= site_url('tanitrainer/' . $row->flag) ?>" class="c-btn btn-block c-fill-color-btn">Lihat Kelas</a>
-                           </div>
-                        </div>
+                     </div>
                   </div>
+                  <?php } ?>
                </div>
-               <?php } ?>
-            </div>
+            <?php else: ?>
+               <div class="card p-5 text-center mb-3">
+                  Data yang anda cari tidak ada
+               </div>
+            <?php endif; ?>
+
             <div class="footer-pagination text-center">
                <nav class="mb-0 mt-0" aria-label="Page navigation example">
                   <ul class="pagination mb-0">
