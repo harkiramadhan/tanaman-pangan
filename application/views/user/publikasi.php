@@ -91,7 +91,7 @@
                                        <div class="text-gray-900"><?= longdate_indo($row->tanggal) ?></div>
                                     </div>
                                     <a href="<?= site_url('publikasi/' . $row->flag) ?>" class="mt-auto text-danger">
-                                       <span class="d-lg-inline d-none">Selengkapnya</span> <i class="fa fa-arrow-right ml-3"></i>
+                                       <span class="d-lg-inline d-none"><?= ($this->session->userdata('lang') == 'EN') ? 'Read More' : 'Selengkapnya'  ?></span> <i class="fa fa-arrow-right ml-3"></i>
                                     </a>
                               </div>
                            </div>

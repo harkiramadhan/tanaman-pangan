@@ -43,7 +43,7 @@
                            </div>
                         </a>
                         <div class="box-title border-bottom p-3 text-center">
-                           <a class="ml-auto text-info" href="<?= site_url('publikasi/' . $latest->flag) ?>">Selengkapnya <i class="fa fa-arrow-right ml-2"></i></a>
+                           <a class="ml-auto text-info" href="<?= site_url('publikasi/' . $latest->flag) ?>"><?= ($this->session->userdata('lang') == 'EN') ? 'Read More' : 'Selengkapnya'  ?> <i class="fa fa-arrow-right ml-2"></i></a>
                         </div>
                     </div>
                   </div>

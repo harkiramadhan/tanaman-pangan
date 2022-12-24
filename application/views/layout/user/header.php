@@ -42,7 +42,13 @@
                <a class="navbar-brand" href="<?= site_url() ?>"><img src="http://app3.pertanian.go.id/propaktani/portal/assets/img/logo_login.png" alt=""></a>
                <div class="d-flex flex-column">
                   <h6 class="mb-0 font-weight-bold">Propaktani</h6>
-                  <p class="mb-0 text-muted d-lg-block d-none" style="font-size: 10px;">Membangun Jejaring Petani Pelaku Usahatani</p>
+                  <p class="mb-0 text-muted d-lg-block d-none" style="font-size: 10px;">
+                     <?php if($this->session->userdata('lang') == 'EN') : ?>
+                        Building Farmers’ Network Between Farming Employer
+                     <?php else: ?>
+                        Membangun Jejaring Petani Pelaku Usahatani
+                     <?php endif; ?>
+                  </p>
                </div>
                
                <!-- Topbar Search -->
@@ -98,13 +104,13 @@
                               <div class="dropdown-item-icon">
                                  <i class="fa fa-sign-out mr-2 text-danger" style=""></i>
                               </div>
-                              Keluar
+                              <?= ($this->session->userdata('lang') == 'EN') ? 'Logout' : 'Keluar' ?>
                            </a>
                         </div>
                      </li>
                   <?php else: ?>
-                     <a href="<?= site_url('masuk') ?>" class="btn btn-outline-success btn-lg font-weight-bold">Masuk</a>
-                     <a href="<?= site_url('daftar') ?>" class="btn btn-success btn-lg font-weight-bold ml-2">Daftar</a>    
+                     <a href="<?= site_url('masuk') ?>" class="btn btn-outline-success btn-lg font-weight-bold"><?= ($this->session->userdata('lang') == 'EN') ? 'Login' : 'Masuk' ?></a>
+                     <a href="<?= site_url('daftar') ?>" class="btn btn-success btn-lg font-weight-bold ml-2"><?= ($this->session->userdata('lang') == 'EN') ? 'Sign Up' : 'Daftar' ?></a>    
                   <?php endif; ?>
                </ul>
             </div>
@@ -118,22 +124,22 @@
                <div class="collapse navbar-collapse" id="navbarResponsive">
                   <ul class="navbar-nav">
                      <li class="nav-item">
-                        <a class="nav-link <?= ($this->uri->segment(1) == '') ? 'active' : '' ?>" href="<?= site_url('') ?>">Beranda</a>
+                        <a class="nav-link <?= ($this->uri->segment(1) == '') ? 'active' : '' ?>" href="<?= site_url('') ?>"><?= ($this->session->userdata('lang') == 'EN') ? 'Home Page' : 'Beranda' ?></a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link <?= ($this->uri->segment(1) == 'jejaring') ? 'active' : '' ?>" href="<?= site_url('jejaring') ?>"><i class="fa fa-users mr-2" style="color: #2CDD9B;"></i>Jejaring</a>
+                        <a class="nav-link <?= ($this->uri->segment(1) == 'jejaring') ? 'active' : '' ?>" href="<?= site_url('jejaring') ?>"><i class="fa fa-users mr-2" style="color: #2CDD9B;"></i><?= ($this->session->userdata('lang') == 'EN') ? 'Network' : 'Jejaring' ?></a>
                      </li>
                      <li class="nav-item">
                         <a class="nav-link <?= ($this->uri->segment(1) == 'tanitrainer') ? 'active' : '' ?>" href="<?= site_url('tanitrainer') ?>">Tani Trainer</a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link <?= ($this->uri->segment(1) == 'publikasi') ? 'active' : '' ?>" href="<?= site_url('publikasi') ?>">Publikasi</a>
+                        <a class="nav-link <?= ($this->uri->segment(1) == 'publikasi') ? 'active' : '' ?>" href="<?= site_url('publikasi') ?>"><?= ($this->session->userdata('lang') == 'EN') ? 'Publication' : 'Publikasi' ?></a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link <?= ($this->uri->segment(1) == 'faq') ? 'active' : '' ?>" href="<?= site_url('faq') ?>">FAQ</a>
+                        <a class="nav-link <?= ($this->uri->segment(1) == 'faq') ? 'active' : '' ?>" href="<?= site_url('faq') ?>"><?= ($this->session->userdata('lang') == 'EN') ? 'FAQs' : 'FAQ' ?></a>
                      </li>
                      <li class="nav-item">
-                        <a class="nav-link <?= ($this->uri->segment(1) == 'tentangkami') ? 'active' : '' ?>" href="<?= site_url('tentangkami') ?>">Tentang Kami</a>
+                        <a class="nav-link <?= ($this->uri->segment(1) == 'tentangkami') ? 'active' : '' ?>" href="<?= site_url('tentangkami') ?>"><?= $this->session->userdata('lang', 'EN') ? 'About Us' : 'Tentang Kami' ?></a>
                      </li>
                   </ul>
                </div>

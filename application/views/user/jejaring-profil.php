@@ -250,7 +250,7 @@
             <div class="box shadow-sm rounded bg-white mb-3">
                <div class="box-title border-bottom p-3 d-flex align-items-center">
                   <h6 class="m-0">Galleri</h6>
-                  <a class="ml-auto text-info" href="#">Selengkapnya <i class="fa fa-arrow-right ml-2"></i></a>
+                  <a class="ml-auto text-info" href="#"><?= ($this->session->userdata('lang') == 'EN') ? 'Read More' : 'Selengkapnya'  ?> <i class="fa fa-arrow-right ml-2"></i></a>
                </div>
                <div class="box-body p-3">
                   <p class="mb-2 font-weight-bold">Tampak Depan</p>
@@ -348,7 +348,7 @@
             <div class="box shadow-sm rounded bg-white mb-3">
                <div class="box-title border-bottom p-3 d-flex align-items-center">
                   <h6 class="m-0">Kelas Tani</h6>
-                  <a class="ml-auto text-info" href="#">Selengkapnya <i class="fa fa-arrow-right ml-2"></i></a>
+                  <a class="ml-auto text-info" href="#"><?= ($this->session->userdata('lang') == 'EN') ? 'Read More' : 'Selengkapnya'  ?> <i class="fa fa-arrow-right ml-2"></i></a>
                </div>
                <a href="job-profile.html">
                   <div class="border-bottom rounded bg-white job-item p-3 mb-0">
