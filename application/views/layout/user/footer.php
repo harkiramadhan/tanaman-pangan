@@ -9,34 +9,34 @@
                   <h2>Program</h2>
                   <ul class="list">
                      <li><a href="<?= site_url('tanitrainer') ?>">Tani Trainer</a></li>
-                     <li><a href="<?= site_url('jejaring') ?>">Jejaring</a></li>
-                     <li><a href="<?= site_url('publikasi') ?>">Publikasi Media</a></li>
+                     <li><a href="<?= site_url('jejaring') ?>"><?= ($this->session->userdata('lang') == 'EN') ? 'Network' : 'Jejaring' ?></a></li>
+                     <li><a href="<?= site_url('publikasi') ?>"><?= ($this->session->userdata('lang') == 'EN') ? 'Publication' : 'Publikasi Media' ?></a></li>
                   </ul>
                </div>
                <div class="footer-list">
-                  <h2>Peran</h2>
+                  <h2><?= ($this->session->userdata('lang') == 'EN') ? 'Role' : 'Peran' ?></h2>
                   <ul class="list">
                      <?php 
                         $roleList = $this->db->get('role');
                         foreach($roleList->result() as $rl){
                      ?>
-                        <li><a href="<?= site_url('jejaring?page=1&&roleid=' . $rl->id) ?>"><?= $rl->role ?></a></li>
+                        <li><a href="<?= site_url('jejaring?page=1&&roleid=' . $rl->id) ?>"><?= ($this->session->userdata('lang') == 'EN') ? $rl->role_en : $rl->role ?></a></li>
                      <?php } ?>
                   </ul>
                </div>
                <div class="footer-list">
-                  <h2>Publikasi</h2>
+                  <h2><?= ($this->session->userdata('lang') == 'EN') ? 'Publication' : 'Publikasi' ?></h2>
                   <ul class="list">
                      <?php
                         $publikasiList = $this->db->get('kategori_publikasi');
                         foreach($publikasiList->result() as $pl){
                      ?>
-                        <li><a href="<?= site_url('publikasi?ids['. $pl->id .']='. $pl->id .'&page=1&order=Terbaru') ?>"><?= $pl->kategori ?></a></li>
+                        <li><a href="<?= site_url('publikasi?ids['. $pl->id .']='. $pl->id .'&page=1&order=Terbaru') ?>"><?= ($this->session->userdata('lang') == 'EN') ? $pl->kategori_en : $pl->kategori ?></a></li>
                      <?php } ?>
                   </ul>
                </div>
                <div class="footer-list">
-                  <h2>Social Media</h2>
+                  <h2><?= ($this->session->userdata('lang') == 'EN') ? 'Social Media' : 'Sosial Media' ?></h2>
                   <ul class="list">
                      <li>
                         <a target="__BLANK" href="<?= $pengaturan->facebook_link ?>">Facebook</a>
