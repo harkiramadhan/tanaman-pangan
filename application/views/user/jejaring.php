@@ -4,9 +4,9 @@
    <div class="container">
       <div class="row">
          <div class="col-md-12 text-center">
-            <h1 class="mt-0 mb-3 text-white">Temukan Jejaringmu</h1>
+            <h1 class="mt-0 mb-3 text-white"><?= ($this->session->userdata('lang') == 'EN') ? 'Find Your Network' : 'Temukan Jejaringmu' ?></h1>
             <div class="breadcrumbs">
-               <p class="mb-0 text-white"><a class="text-white" href="<?= site_url('') ?>">Home</a> / <span class="text-success">Jejaring</span></p>
+               <p class="mb-0 text-white"><a class="text-white" href="<?= site_url('') ?>">Home</a> / <span class="text-success"><?= ($this->session->userdata('lang') == 'EN') ? 'Network' : 'Jejaring' ?></span></p>
             </div>
          </div>
       </div>
@@ -23,13 +23,13 @@
                <div class="sorting-div d-flex align-items-center mb-3">
                   <div class="sorting d-flex align-items-center">
                      <!-- <p>Berdasarkan</p> -->
-                     <p class="">Anda ingin?</p>
+                     <p class=""><?= ($this->session->userdata('lang') == 'EN') ? 'What do you want to?' : 'Anda ingin?' ?></p>
                   </div>
                   <div class="sorting d-flex align-items-center ml-3" style="width: 200px !important;">
                      <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="select-type">
-                        <option value="" selected disabled>Pilih</option>
-                        <option <?= ($this->input->get('type', TRUE) == 2) ? 'selected' : '' ?> value="2"> Membeli</option>
-                        <option <?= ($this->input->get('type', TRUE) == 1) ? 'selected' : '' ?> value="1"> Menjual</option>
+                        <option> <?= ($this->session->userdata('lang') == 'EN') ? 'Choose' : 'Pilih' ?> </option>
+                        <option <?= ($this->input->get('type', TRUE) == 2) ? 'selected' : '' ?> value="2"> <?= ($this->session->userdata('lang') == 'EN') ? 'Buy' : 'Membeli' ?> </option>
+                        <option <?= ($this->input->get('type', TRUE) == 1) ? 'selected' : '' ?> value="1"> <?= ($this->session->userdata('lang') == 'EN') ? 'Sell' : 'Menjual' ?> </option>
                      </select>
                   </div>
                </div>
@@ -38,33 +38,33 @@
                <!-- <h3 class="d-lg-block d-none">Tawarkan komoditasmu kepada jejaring berikut.</h3> -->
 
                <!-- Untuk membeli produk -->
-               <h3 class="d-lg-block d-none">Hubungi segera mereka, untuk kesediaan barang.</h3>
+               <h3 class="d-lg-block d-none"><?= ($this->session->userdata('lang') == 'EN') ? 'Contact them immediately, for the availability of goods' : 'Hubungi segera mereka, untuk kesediaan barang.' ?></h3>
 
             </div>
 
             <div class="col-lg-6 col-12 mb-lg-0 mb-3">
                <div class="sorting-div d-flex align-items-center justify-content-">
                   <div class="sorting d-flex align-items-center ml-lg-auto ml-0 d-lg-block d-none">
-                     <p>Berdasarkan</p>
+                     <p><?= ($this->session->userdata('lang') == 'EN') ? 'Based on' : 'Berdasarkan' ?></p>
                   </div>
                   <div class="sorting d-flex align-items-center ml-3">
                      <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="select-komoditas">
-                        <option value="" selected disabled>Komoditas</option>
-                        <option value="semua"> Semua</option>
+                        <option value="" selected disabled><?= ($this->session->userdata('lang') == 'EN') ? 'Commodity' : 'Komoditas' ?></option>
+                        <option value="semua"> <?= ($this->session->userdata('lang') == 'EN') ? 'All' : 'Semua' ?></option>
                         <?php foreach($komoditas->result() as $k){ ?>
-                           <option <?= ($this->input->get('komoditasid', TRUE) == $k->id) ? 'selected' : '' ?> value="<?= $k->id ?>"> <?= ucwords(ucfirst($k->komoditas)) ?></option>
+                           <option <?= ($this->input->get('komoditasid', TRUE) == $k->id) ? 'selected' : '' ?> value="<?= $k->id ?>"> <?= ($this->session->userdata('lang') == 'EN') ? ucwords(ucfirst($k->komoditas_en)) : ucwords(ucfirst($k->komoditas)) ?></option>
                         <?php } ?>
                      </select>
                      <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="select-role">
-                        <option value="" selected disabled>Peran</option>
-                        <option value="semua">Semua</option>
+                        <option value="" selected disabled><?= ($this->session->userdata('lang') == 'EN') ? 'Role' : 'Peran' ?></option>
+                        <option value="semua"> <?= ($this->session->userdata('lang') == 'EN') ? 'All' : 'Semua' ?></option>
                         <?php foreach($role->result() as $r){ ?>
-                           <option <?= ($this->input->get('roleid', TRUE) == $r->id) ? 'selected' : '' ?> value="<?= $r->id ?>"> <?= $r->role ?></option>
+                           <option <?= ($this->input->get('roleid', TRUE) == $r->id) ? 'selected' : '' ?> value="<?= $r->id ?>"> <?= ($this->session->userdata('lang') == 'EN') ? $r->role_en : $r->role ?></option>
                         <?php } ?>
                      </select>
                      <select class="custom-select custom-select-sm border-0 shadow-sm ml-2 mr-2" style="width: 200px !important;" id="select-prov">
-                        <option value="" selected disabled>Wilayah</option>
-                        <option value="semua">Semua</option>
+                        <option value="" selected disabled><?= ($this->session->userdata('lang') == 'EN') ? 'Region' : 'Wilayah'  ?></option>
+                        <option value="semua"> <?= ($this->session->userdata('lang') == 'EN') ? 'All' : 'Semua' ?></option>
                         <?php foreach($provinsi->result() as $p){ ?>
                            <option <?= ($this->input->get('provid', TRUE) == $p->prov_id) ? 'selected' : '' ?> value="<?= $p->prov_id ?>"> <?= ucwords(strtolower($p->prov_name)) ?></option>
                         <?php } ?>
@@ -86,7 +86,7 @@
                   <div class="col-lg-4 col-md-6 col-12">
 
                      <!-- <span class="badge badge-warning font-weight-bolder mb-2 p-2 position-absolute" style="left: 25px; top: 10px;"><i class="fa fa-shopping-cart mr-2" aria-hidden="true"></i><?= ($row->status == 1) ? 'MENAWARKAN' : 'MEMBUTUHKAN' ?></span> -->
-                     <span class="badge badge-warning font-weight-bolder mb-2 p-2 position-absolute text-uppercase" style="left: 25px; top: 10px;"><?= $row->role ?></span>
+                     <span class="badge badge-warning font-weight-bolder mb-2 p-2 position-absolute text-uppercase" style="left: 25px; top: 10px;"><?= ($this->session->userdata('lang') == 'EN') ? $row->role_en : $row->role ?></span>
 
                      <!-- <span class="badge badge-warning mb-2"><i class="fa fa-shopping-cart" aria-hidden="true"></i><?= $row->role ?></span> -->
                      <a href="<?= site_url('jejaring/' . $row->id) ?>">
