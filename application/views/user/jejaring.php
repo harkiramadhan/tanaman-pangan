@@ -103,6 +103,12 @@
 
                            <div class="d-flex flex-row mt-2">
 
+                              <!-- Keterangan jika tidak ada aktivitas -->
+
+                              <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
+                                 <p class="mb-0 font-weight-light text-dark text-xs text-center">Tidak ada aktivitas</p>
+                              </div>
+
                               <!-- Membutuhkan Produk -->
                               
                               <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
