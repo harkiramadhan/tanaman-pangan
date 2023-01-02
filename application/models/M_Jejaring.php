@@ -50,7 +50,7 @@ class M_Jejaring extends CI_Model {
     }
 
     function getByUserid($userid){
-        return $this->db->select('u.*, r.role, k.kelembagaan')
+        return $this->db->select('u.*, r.role, r.role_en, k.kelembagaan')
                         ->select('p.prov_name provinsi, c.city_name kota, d.dis_name kecamatan, s.subdis_name kelurahan')
                         ->from('user u')
                         ->join('role r', 'u.role_id = r.id')
