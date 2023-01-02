@@ -17,7 +17,11 @@
                      <li class="breadcrumb-item small active" aria-current="page"><?= $jejaring->nama_kelembagaan ?></li>
                   </ol>
                   <h5 class="font-weight-bold text-dark mb-1 mt-0"><?= $jejaring->nama_kelembagaan ?></h5>
-                  <p class="mb-0 text-muted"><a class="mr-2 font-weight-bold" href="#"> <i class="fa fa-map mr-1"></i> <?= "Kel." . ucfirst(strtolower($jejaring->kelurahan)) . ", Kec." . ucfirst(strtolower($jejaring->kecamatan)).". " . ucfirst(strtolower($jejaring->kota)) ." - ". ucfirst(strtolower($jejaring->provinsi))?></a></p>
+                  <p class="mb-0 text-muted"><a class="mr-2 font-weight-bold" href="#"> <i class="fa fa-map mr-1"></i> 
+                     <?php if($jejaring->kelurahan != NULL && $jejaring->kecamatan != NULL && $jejaring->kota != NULL && $jejaring->provinsi != NULL): ?>
+                        <?= "Kel." . ucfirst(strtolower($jejaring->kelurahan)) . ", Kec." . ucfirst(strtolower($jejaring->kecamatan)).". " . ucfirst(strtolower($jejaring->kota)) ." - ". ucfirst(strtolower($jejaring->provinsi))?></a>
+                     <?php endif; ?>
+                  </p>
                </div>
                <div class="profile-right ml-auto">
                   <a href="<?= $jejaring->maps ?>" class="btn btn-light mr-1 text-success" target="__BLANK"> &nbsp; <?= ($this->session->userdata('lang') == 'EN') ? 'Location' : 'Lokasi' ?> &nbsp; </a>
@@ -217,7 +221,10 @@
                </div>
                <div class="p-3 border-top border-bottom">
                   <h6 class="font-weight-bold text-dark mb-2 mt-0"><?= $jejaring->nama ?></h6>
-                  <p class="mb-0 text-muted"><?= $jejaring->alamat . ", Kel." . ucfirst(strtolower($jejaring->kelurahan)) . ", Kec." . ucfirst(strtolower($jejaring->kecamatan)).". " . ucfirst(strtolower($jejaring->kota)) ." - ". ucfirst(strtolower($jejaring->provinsi))?></p>
+                  <p class="mb-0 text-muted">
+                     <?php if($jejaring->kelurahan != NULL && $jejaring->kecamatan != NULL && $jejaring->kota != NULL && $jejaring->provinsi != NULL): ?>
+                        <?= $jejaring->alamat . ", Kel." . ucfirst(strtolower($jejaring->kelurahan)) . ", Kec." . ucfirst(strtolower($jejaring->kecamatan)).". " . ucfirst(strtolower($jejaring->kota)) ." - ". ucfirst(strtolower($jejaring->provinsi))?></p>
+                     <?php endif; ?>
                </div>
                <div class="p-3">
                   <div class="d-flex align-items-top mb-2">

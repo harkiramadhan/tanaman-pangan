@@ -6,7 +6,7 @@
          <div class="col-md-12 text-center">
             <h1 class="mt-0 mb-3 text-white">Tani Trainer</h1>
             <div class="breadcrumbs">
-               <p class="mb-0 text-white"><a class="text-white" href="<?= site_url('') ?>">Home</a>  /  <span class="text-success">Tani Trainer</span></p>
+               <p class="mb-0 text-white"><a class="text-white" href="<?= site_url('') ?>"><?= ($this->session->userdata('lang') == 'EN') ? 'Home' : 'Beranda' ?></a>  /  <span class="text-success">Tani Trainer</span></p>
             </div>
          </div>
       </div>
@@ -28,7 +28,7 @@
                         <div class="filters-card-header" id="headingOne">
                            <h6 class="mb-0">
                               <a href="#" class="btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                              Cocok Untuk <i class="mdi mdi-chevron-down float-right"></i>
+                                 <?= ($this->session->userdata('lang') == 'EN') ? 'Appropriate For' : 'Cocok Untuk' ?><i class="mdi mdi-chevron-down float-right"></i>
                               </a>
                            </h6>
                         </div>
@@ -37,7 +37,7 @@
                               <?php foreach($role->result() as $r){ ?>
                                  <div class="custom-control custom-checkbox">
                                     <input type="checkbox" name="ids[]" <?= ($this->input->get('ids['.$r->id.']') == $r->id) ? 'checked' : '' ?> class="custom-control-input filter" id="cb<?= $r->id ?>" value="<?= $r->id ?>">
-                                    <label class="custom-control-label" for="cb<?= $r->id ?>"> <?= $r->role ?> </label>
+                                    <label class="custom-control-label" for="cb<?= $r->id ?>"> <?= ($this->session->userdata('lang') == 'EN') ? $r->role_en : $r->role ?> </label>
                                  </div>
                               <?php } ?>
                            </div>
@@ -51,17 +51,17 @@
             <div class="row">
                <div class="col-lg-12">
                   <div class="sorting-div d-flex align-items-center justify-content-between">
-                     <p class="mb-2"><?= $total_data ?> Pelatihan Tersedia</p>
+                     <p class="mb-2"><?= $total_data ?> <?= ($this->session->userdata('lang') == 'EN') ? 'Training Available' : 'Pelatihan Tersedia' ?></p>
                      <div class="sorting d-flex align-items-center">
                         <p>Tampilkan</p>
                         <select class="custom-select custom-select-sm border-0 shadow-sm ml-2" id="select-status">
-                           <option <?= ($this->input->get('status', TRUE) == 'Semua') ? 'selected' : '' ?> value="Semua">Semua</option>
-                           <option <?= ($this->input->get('status', TRUE) == 'Aktif') ? 'selected' : '' ?> value="Aktif">Aktif</option>
-                           <option <?= ($this->input->get('status', TRUE) == 'Selesai') ? 'selected' : '' ?> value="Selesai">Selesai</option>
+                           <option <?= ($this->input->get('status', TRUE) == 'Semua') ? 'selected' : '' ?> value="Semua"><?= ($this->session->userdata('lang') == 'EN') ? 'All' : 'Semua' ?></option>
+                           <option <?= ($this->input->get('status', TRUE) == 'Aktif') ? 'selected' : '' ?> value="Aktif"><?= ($this->session->userdata('lang') == 'EN') ? 'Active' : 'Aktif' ?></option>
+                           <option <?= ($this->input->get('status', TRUE) == 'Selesai') ? 'selected' : '' ?> value="Selesai"><?= ($this->session->userdata('lang') == 'EN') ? 'Done' : 'Selesai' ?></option>
                         </select>
                      </div>
                   </div>
-                  <h3>Daftar Kelas Tani Trainer</h3>
+                  <h3><?= ($this->session->userdata('lang') == 'EN') ? 'Training Available' : 'List of Tani Trainer Class' ?></h3>
                </div>
             </div>
 
@@ -86,7 +86,7 @@
                               </div>
                               <h3 class="mb-2"><?= mb_strimwidth($row->deskripsi, 0, 200, "...") ?></h3>
                               <div class="footer">
-                                 <a href="<?= site_url('tanitrainer/' . $row->flag) ?>" class="c-btn btn-block c-fill-color-btn">Lihat Kelas</a>
+                                 <a href="<?= site_url('tanitrainer/' . $row->flag) ?>" class="c-btn btn-block c-fill-color-btn"><?= ($this->session->userdata('lang') == 'EN') ? 'See the Class' : 'Lihat Kelas' ?></a>
                               </div>
                            </div>
                      </div>
