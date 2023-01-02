@@ -102,39 +102,36 @@
                            <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-3 font-weight-bold text-dark text-xs"><i class="fa fa-user mr-2 text-secondary" aria-hidden="true"></i><?= $row->nama ?></a>
 
                            <div class="d-flex flex-row mt-2">
-
-                              <!-- Keterangan jika tidak ada aktivitas -->
-
-                              <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
-                                 <p class="mb-0 font-weight-light text-dark text-xs text-center">Tidak ada aktivitas</p>
-                              </div>
-
-                              <!-- Membutuhkan Produk -->
-                              
-                              <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
-                                 <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1 font-weight-light text-dark text-xs">Menjual</a>
-                                 <img class="img-fluid rounded mb-2" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 40px;" />
-                                 <div class="d-flex">
-                                    <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= $row->produk_dijual_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
-                                    <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
-                                       <?= ucfirst($row->menjual_produk) ?>
-                                    </p>
+                              <?php if($row->status == 1): ?>
+                                 <!-- Menjual Produk -->
+                                 <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
+                                    <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1 font-weight-light text-dark text-xs"><?= ($this->session->userdata('lang') == 'EN') ? 'Sell' : 'Menjual' ?></a>
+                                    <img class="img-fluid rounded mb-2" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 40px;" />
+                                    <div class="d-flex">
+                                       <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= $row->produk_dijual_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
+                                       <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
+                                          <?= ucfirst($row->menjual_produk) ?>
+                                       </p>
+                                    </div>
                                  </div>
-                              </div>
-                           
-                              <!-- Membutuhkan Produk -->
-
-                              <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
-                                 <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1 font-weight-light text-dark text-xs">Membutuhkan</a>
-                                 <img class="img-fluid rounded mb-2" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 40px;" />
-                                 <div class="d-flex">
-                                    <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= $row->produk_dibutuhkan_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
-                                    <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
-                                       <?= ucfirst($row->membutuhkan_produk) ?>
-                                    </p>
+                              <?php elseif($row->status == 2): ?>
+                                 <!-- Membutuhkan Produk -->
+                                 <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
+                                    <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1 font-weight-light text-dark text-xs"><?= ($this->session->userdata('lang') == 'EN') ? 'Needs' : 'Membutuhkan' ?></a>
+                                    <img class="img-fluid rounded mb-2" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 40px;" />
+                                    <div class="d-flex">
+                                       <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= $row->produk_dibutuhkan_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
+                                       <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
+                                          <?= ucfirst($row->membutuhkan_produk) ?>
+                                       </p>
+                                    </div>
                                  </div>
-                              </div>
-
+                              <?php else: ?>
+                                  <!-- Keterangan jika tidak ada aktivitas -->
+                                 <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
+                                    <p class="mb-0 font-weight-light text-dark text-xs text-center"><?= ($this->session->userdata('lang') == 'EN') ? 'No Activity' : 'Tidak ada aktivitas' ?></p>
+                                 </div>
+                              <?php endif; ?>
                            </div>
       
                            <div class="d-flex align-items-center mt-2">
@@ -150,10 +147,14 @@
 
                            <!-- <h3 class="mb-1"><?= $row->keterangan ?></h3> -->
                            <h3 class="mb-1 mt-0 font-weight-bold">
-                              Komoditas <?= ($row->status == 1) ? 'dijual' : 'dibutuhkan' ?>:
+                              <?php if($this->session->userdata('lang') == 'EN'): ?>
+                                 Comodity <?= ($row->status == 1) ? 'Sold' : 'Needed' ?>:
+                              <?php else: ?>
+                                 Komoditas <?= ($row->status == 1) ? 'dijual' : 'dibutuhkan' ?>:
+                              <?php endif; ?>
                            </h3>
                            <?php foreach($komoditasUser->result() as $ku): ?>
-                              <span class="badge border border-2 bg-info text-white p-2 mb-1"><?= $ku->komoditas ?></span>
+                              <span class="badge border border-2 bg-info text-white p-2 mb-1"><?= ($this->session->userdata('lang') == 'EN') ? $ku->komoditas_en : $ku->komoditas ?></span>
                            <?php endforeach; ?>
                            
                            <div class="footer mt-2">
@@ -164,7 +165,7 @@
                                  <i class="fa fa-whatsapp  fa-lg ml-2 mr-3" aria-hidden="true"></i>
                               </a>
 
-                              <a href="<?= site_url('jejaring/' . $row->id) ?>" class="c-btn btn-block c-fill-color-btn" tabindex="0">CEK PROFIL</a>
+                              <a href="<?= site_url('jejaring/' . $row->id) ?>" class="c-btn btn-block c-fill-color-btn" tabindex="0"><?= ($this->session->userdata('lang') == 'EN') ? 'CHECK PROFILE' : 'CEK PROFIL' ?></a>
                            </div>
                         </div>
                      </div>
@@ -173,7 +174,7 @@
             </div>
          <?php else: ?>
             <div class="card p-5 text-center mb-3">
-               Data yang anda cari tidak ada
+               <?= ($this->session->userdata('lang') == 'EN') ? 'The data you are looking for does not exist' : 'Data yang anda cari tidak ada' ?>
             </div>
          <?php endif; ?>
          

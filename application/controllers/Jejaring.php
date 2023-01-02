@@ -64,7 +64,7 @@ class Jejaring extends CI_Controller {
 		$total_halaman = ceil($jumlah_data / $batas);
 
         $var = [
-			'title' => "Temui Sesama Jejaring",
+			'title' => ($this->session->userdata('lang') == 'EN') ? 'Find Your Network' : '"Temui Sesama Jejaring"',
 			'user' => $this->M_User->getById($this->session->userdata('userid')),
 			'komoditas' => $this->M_Komoditas->getAll(),
 			'role' => $this->M_Role->getAll(),
