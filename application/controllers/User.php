@@ -80,6 +80,9 @@ class User extends CI_Controller {
         $var = [
 			'title' => 'Dashboard User Kata Sandi',
 			'user' => $this->M_User->getById($this->session->userdata('userid')),
+			'ajax' => [
+				'setting'
+			]
 		];
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/user-profil-jualbeli', $var);
@@ -89,6 +92,7 @@ class User extends CI_Controller {
 	/* Action Here! */
 	function saveProfile(){
 		$user = $this->M_User->getById($this->session->userdata('userid'));
+
 		$config['upload_path'] = './uploads/profile';  
 		$config['allowed_types'] = 'jpg|jpeg|png'; 
 		$config['encrypt_name'] = TRUE;
@@ -227,12 +231,50 @@ class User extends CI_Controller {
 
 	function save(){
 		$userid = $this->session->userdata('userid');
+		$user = $this->M_User->getById($userid);
+
+		/* Upload Produk Jual */
+		$config['upload_path'] = './uploads/produk';  
+		$config['allowed_types'] = 'jpg|jpeg|png'; 
+		$config['encrypt_name'] = TRUE;
+		$this->load->library('upload', $config);
+        if($this->upload->do_upload('img_jual')){
+			if($user->produk_jual != NULL){
+				@unlink('./uploads/produk/' . @$user->produk_jual);
+			}
+			
+            $data = $this->upload->data();
+            $filename = $data['file_name'];
+			$this->resizeImage($filename, './uploads/produk/'); 
+        }else{
+			$filename = $user->produk_jual;
+		}
+
+		/* Upload Produk Butuh */
+		$config['upload_path'] = './uploads/produk';  
+		$config['allowed_types'] = 'jpg|jpeg|png'; 
+		$config['encrypt_name'] = TRUE;
+		$this->load->library('upload', $config, 'cover');
+		if($this->cover->do_upload('img_butuh')){
+			if($user->produk_butuh != NULL){
+				@unlink('./uploads/produk/' . @$user->produk_butuh);
+			}
+
+			$coverData = $this->cover->data();
+			$produkButuhName = $coverData['file_name'];
+			$this->resizeImage($produkButuhName, './uploads/produk/');
+		}else{
+			$produkButuhName = $user->produk_butuh;
+		}
+
 		$dataUpdate = [
 			'status' => $this->input->post('status', TRUE),
 			'menjual_produk' => $this->input->post('menjual_produk', TRUE),
 			'membutuhkan_produk' => $this->input->post('membutuhkan_produk', TRUE),
 			'produk_dijual_bulanan' => $this->input->post('produk_dijual_bulanan', TRUE),
 			'produk_dibutuhkan_bulanan' => $this->input->post('produk_dibutuhkan_bulanan', TRUE),
+			'produk_jual' => $filename,
+			'produk_butuh' => $produkButuhName
 		];
 		$this->db->where('id', $userid)->update('user', $dataUpdate);
 		redirect($_SERVER['HTTP_REFERER']);

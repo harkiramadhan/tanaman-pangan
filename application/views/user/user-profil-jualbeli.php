@@ -39,7 +39,7 @@
                      $user->role_id != 9
                   ): ?>
                      <div class="py-3 border-bottom">
-                        <form action="<?= site_url('user/save') ?>" method="POST">
+                        <form action="<?= site_url('user/save') ?>" method="POST" enctype="multipart/form-data" method="POST">
                            <div class="row d-flex align-items-center form-group px-3">
                               <div class="col-md-4">
                                  <p class="text-muted font-weight-bold mb-0 align-top">Status<sup class="text-danger">*</sup></p>
@@ -80,7 +80,7 @@
                               </div>
                               <div class="col-md-8">
                                  <div class="custom-file">
-                                    <input type="file" name="file" class="custom-file-input" id="image-source" aria-describedby="inputGroupFileAddon04" onchange="previewImage()">
+                                    <input type="file" name="img_jual" class="custom-file-input" id="image-source" aria-describedby="inputGroupFileAddon04" onchange="previewImage()">
                                     <label class="custom-file-label" for="image-source">Choose file</label>
                                  </div>
                               </div>
@@ -90,7 +90,11 @@
                               <div class="col-md-4">
                               </div>
                               <div class="col-md-8">
-                                 <img src="http://localhost/tanaman-pangan/assets/images/placeholder/square-placeholder-propaktani.png" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview">
+                                 <?php if(@$user->produk_jual): ?>
+                                    <img src="<?= base_url('uploads/produk/' . $user->produk_jual) ?>" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview">
+                                 <?php else: ?>
+                                    <img src="http://localhost/tanaman-pangan/assets/images/placeholder/square-placeholder-propaktani.png" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview">
+                                 <?php endif; ?>
                               </div>
                            </div>
                            
@@ -137,7 +141,7 @@
                               </div>
                               <div class="col-md-8">
                                  <div class="custom-file">
-                                    <input type="file" name="file" class="custom-file-input" id="image-source" aria-describedby="inputGroupFileAddon04" onchange="previewImage()">
+                                    <input type="file" name="img_butuh" class="custom-file-input" id="image-source2" aria-describedby="inputGroupFileAddon04" onchange="previewImage2()">
                                     <label class="custom-file-label" for="image-source">Choose file</label>
                                  </div>
                               </div>
@@ -148,7 +152,11 @@
                               <div class="col-md-4">
                               </div>
                               <div class="col-md-8">
-                                 <img src="http://localhost/tanaman-pangan/assets/images/placeholder/square-placeholder-propaktani.png" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview">
+                                 <?php if(@$user->produk_butuh): ?>
+                                    <img src="<?= base_url('uploads/produk/' . $user->produk_butuh) ?>" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview2">
+                                 <?php else: ?>
+                                    <img src="http://localhost/tanaman-pangan/assets/images/placeholder/square-placeholder-propaktani.png" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview2">
+                                 <?php endif; ?>
                               </div>
                            </div>
                            
