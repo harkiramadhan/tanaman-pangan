@@ -9,7 +9,7 @@
               <p class="text-sm text-mute mb-0">Pelatihan Sejuta Petani, Pengelolaan Kesuburan Tanah</p>
 						</div>
 						<div class="col-4 text-end d-flex align-content-end align-items-end justify-content-end">
-                <a class="btn bg-gradient-dark mb-0 d-flex justify-content-start align-content-center align-items-center" href="http://localhost/tanaman-pangan/admin/jejaring/add">
+                <a class="btn bg-gradient-dark mb-0 d-flex justify-content-start align-content-center align-items-center" href="<?= site_url('admin/jejaring/add') ?>">
                   <i class="fas fa-download me-lg-3 me-0" aria-hidden="true"></i>
                   <span class="d-lg-inline d-none">Unduh Data</span>
                 </a>
@@ -84,7 +84,7 @@
             </div>
             <div class="card d-flex flex-row p-3 shadow-0 border mb-3">
               <div class="">
-                <img class="order-proposal-image rounded" src="http://localhost/tanaman-pangan/uploads/laporan/94b8a16f1c41e7758612c8bc6cbe7731.jpeg" style="max-width: 200px; height: 100px;  object-fit: cover;">
+                <img class="order-proposal-image rounded" src="<?= base_url('uploads/laporan/94b8a16f1c41e7758612c8bc6cbe7731.jpeg') ?>" style="max-width: 200px; height: 100px;  object-fit: cover;">
               </div>
               <div class="ms-3">
                 <h6 class="mb-0">Launching Propaktani</h6>
@@ -97,7 +97,7 @@
 
             <div class="card d-flex flex-row p-3 shadow-0 border mb-3">
               <div class="">
-                <img class="order-proposal-image rounded" src="http://localhost/tanaman-pangan/uploads/laporan/94b8a16f1c41e7758612c8bc6cbe7731.jpeg" style="max-width: 200px; height: 100px;  object-fit: cover;">
+                <img class="order-proposal-image rounded" src="<?= base_url('uploads/laporan/94b8a16f1c41e7758612c8bc6cbe7731.jpeg') ?>" style="max-width: 200px; height: 100px;  object-fit: cover;">
               </div>
               <div class="ms-3">
                 <h6 class="mb-0">Launching Propaktani</h6>

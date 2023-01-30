@@ -93,7 +93,7 @@
                                  <?php if(@$user->produk_jual): ?>
                                     <img src="<?= base_url('uploads/produk/' . $user->produk_jual) ?>" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview">
                                  <?php else: ?>
-                                    <img src="http://localhost/tanaman-pangan/assets/images/placeholder/square-placeholder-propaktani.png" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview">
+                                    <img src="<?= base_url('assets/images/placeholder/square-placeholder-propaktani.png') ?>" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview">
                                  <?php endif; ?>
                               </div>
                            </div>
@@ -155,7 +155,7 @@
                                  <?php if(@$user->produk_butuh): ?>
                                     <img src="<?= base_url('uploads/produk/' . $user->produk_butuh) ?>" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview2">
                                  <?php else: ?>
-                                    <img src="http://localhost/tanaman-pangan/assets/images/placeholder/square-placeholder-propaktani.png" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview2">
+                                    <img src="<?= base_url('assets/images/placeholder/square-placeholder-propaktani.png') ?>" class="img-fluid mt-2 rounded mb-4" alt="Responsive image" style="width: 100px; height: 100px; object-fit: cover;" id="image-preview2">
                                  <?php endif; ?>
                               </div>
                            </div>

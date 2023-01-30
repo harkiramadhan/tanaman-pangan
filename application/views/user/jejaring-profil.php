@@ -293,8 +293,12 @@
                <?php if($jejaring->status == 1): ?>
                   <!-- Menjual Produk -->
                   <div class="border rounded p-2 px-3 bg-white mr-1 mb-2 d-flex flex-column w-100 shadow-sm">
-                     <a href="http://localhost/tanaman-pangan/jejaring/71" class="mb-2 font-weight-normal text-dark text-xs"><?= ($this->session->userdata('lang') == 'EN') ? 'Sell' : 'Menjual' ?></a>
-                     <img class="img-fluid rounded mb-2" src="http://localhost/tanaman-pangan/assets/images/placeholder/main-placeholder-propaktani.png" style="object-fit: cover; height: 60px;">
+                     <a href="#" class="mb-2 font-weight-normal text-dark text-xs"><?= ($this->session->userdata('lang') == 'EN') ? 'Sell' : 'Menjual' ?></a>
+                     <?php if($jejaring->produk_jual): ?>
+                        <img class="img-fluid rounded mb-2" src="<?= base_url('uploads/produk/' . $jejaring->produk_jual) ?>" style="object-fit: cover; height: 60px;">
+                     <?php else: ?>
+                        <img class="img-fluid rounded mb-2" src="<?= site_url('assets/images/placeholder/main-placeholder-propaktani.png') ?>" style="object-fit: cover; height: 60px;">
+                     <?php endif; ?>
                      <div class="d-flex">
                         <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= $jejaring->produk_dijual_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
                         <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs"><?= ucfirst($jejaring->menjual_produk) ?></p>
@@ -303,8 +307,12 @@
                <?php elseif($jejaring->status == 2): ?>
                   <!-- Membutuhkan Produk -->
                   <div class="border rounded p-2 px-3 bg-white mr-1 mb-2 d-flex flex-column w-100 shadow-sm">
-                     <a href="http://localhost/tanaman-pangan/jejaring/71" class="mb-2 font-weight-normal text-dark text-xs"><?= ($this->session->userdata('lang') == 'EN') ? 'Needs' : 'Membutuhkan' ?></a>
-                     <img class="img-fluid rounded mb-2" src="http://localhost/tanaman-pangan/assets/images/placeholder/main-placeholder-propaktani.png" style="object-fit: cover; height: 60px;">
+                     <a href="#" class="mb-2 font-weight-normal text-dark text-xs"><?= ($this->session->userdata('lang') == 'EN') ? 'Needs' : 'Membutuhkan' ?></a>
+                     <?php if($jejaring->produk_beli): ?>
+                        <img class="img-fluid rounded mb-2" src="<?= base_url('uploads/produk/' . $jejaring->produk_beli) ?>" style="object-fit: cover; height: 60px;">
+                     <?php else: ?>
+                        <img class="img-fluid rounded mb-2" src="<?= site_url('assets/images/placeholder/main-placeholder-propaktani.png') ?>" style="object-fit: cover; height: 60px;">
+                     <?php endif; ?>
                      <div class="d-flex">
                         <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= $jejaring->produk_dibutuhkan_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
                         <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs"><?= ucfirst($jejaring->membutuhkan_produk) ?></p>

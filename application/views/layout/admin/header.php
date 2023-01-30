@@ -216,7 +216,7 @@
               </a>
               <ul class="dropdown-menu dropdown-menu-end px-2 py-2 me-sm-n4" aria-labelledby="dropdownMenuButton">
 				<li>
-					<a class="dropdown-item border-radius-md" href="http://localhost/tax-session/logout">
+					<a class="dropdown-item border-radius-md" href="<?= site_url('logout') ?>">
 					<div class="d-flex py-1">
 						<div class="d-flex flex-column justify-content-center">
 						<p class="text-sm mb-0">
