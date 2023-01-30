@@ -106,7 +106,11 @@
                                  <!-- Menjual Produk -->
                                  <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
                                     <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1 font-weight-light text-dark text-xs"><?= ($this->session->userdata('lang') == 'EN') ? 'Sell' : 'Menjual' ?></a>
-                                    <img class="img-fluid rounded mb-2" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 40px;" />
+                                    <?php if($row->produk_jual): ?>
+                                       <img class="img-fluid rounded mb-2" src="<?= base_url('uploads/produk/' . $row->produk_jual)?>" style="object-fit: cover; height: 40px;" />
+                                    <?php else: ?>
+                                       <img class="img-fluid rounded mb-2" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 40px;" />
+                                    <?php endif; ?>
                                     <div class="d-flex">
                                        <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= $row->produk_dijual_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
                                        <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
@@ -118,7 +122,11 @@
                                  <!-- Membutuhkan Produk -->
                                  <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
                                     <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1 font-weight-light text-dark text-xs"><?= ($this->session->userdata('lang') == 'EN') ? 'Needs' : 'Membutuhkan' ?></a>
-                                    <img class="img-fluid rounded mb-2" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 40px;" />
+                                    <?php if($row->produk_butuh): ?>
+                                       <img class="img-fluid rounded mb-2" src="<?= base_url('uploads/produk/' . $row->produk_butuh)?>" style="object-fit: cover; height: 40px;" />
+                                    <?php else: ?>
+                                       <img class="img-fluid rounded mb-2" src="<?= base_url('assets/images/placeholder/main-placeholder-propaktani.png')?>" style="object-fit: cover; height: 40px;" />
+                                    <?php endif; ?>
                                     <div class="d-flex">
                                        <h4 class="mb-0 p-2 bg-dark rounded text-white position-relative" style="font-size: 18px !important;"><?= $row->produk_dibutuhkan_bulanan ?><span class="badge badge-pill py-1 badge-info position-absolute" style="top: -5px; right: -6px; font-size: 8px;">kg</span></h4>
                                        <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs">
