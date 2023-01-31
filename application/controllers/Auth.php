@@ -12,6 +12,7 @@ class Auth extends CI_Controller {
 	}
 	public function index(){
         $var['title'] = "Masuk";
+		$var['pengaturan'] = $this->db->get_where('pengaturan', ['id' => 1])->row();
 		$this->load->view('layout/user/header', $var);
 		$this->load->view('user/masuk', $var);
 		$this->load->view('layout/user/footer', $var);

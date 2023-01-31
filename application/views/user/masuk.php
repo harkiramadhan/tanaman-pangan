@@ -37,7 +37,7 @@
                   <button class="btn btn-success btn-block text-uppercase" type="submit"> Masuk </button>
                   
                   <div class="pt-3 d-flex align-item-center">
-                     <a href="forgot-password.html">Lupa Password?</a>
+                     <a href="https://wa.me/<?= $pengaturan->kontak ?>" target="__BLANK">Lupa Password?</a>
                   </div>
                   <div class="text-center mt-3 border-top pt-3">
                      <p class="small text-muted">Belum memiliki akun?</p>
