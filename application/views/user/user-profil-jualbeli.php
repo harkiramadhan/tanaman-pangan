@@ -106,7 +106,7 @@
                               </div>
                               <div class="col-md-8 d-inline-block">
                                  <div class="form-check form-check-inline">
-                                    <input class="form-check-input" name="status" type="checkbox" id="inlineCheckbox1" <?= ($user->status == 1) ? 'checked' : '' ?> value="1">
+                                    <input class="form-check-input" name="status_butuh" type="checkbox" id="inlineCheckbox1" <?= ($user->status_butuh == 1) ? 'checked' : '' ?> value="1">
                                     <label class="form-check-label" for="inlineCheckbox1"> Membutuhkan</label>
                                  </div>
                               </div>

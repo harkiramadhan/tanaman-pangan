@@ -269,6 +269,7 @@ class User extends CI_Controller {
 
 		$dataUpdate = [
 			'status' => $this->input->post('status', TRUE),
+			'status_butuh' => $this->input->post('status_butuh', TRUE),
 			'menjual_produk' => $this->input->post('menjual_produk', TRUE),
 			'membutuhkan_produk' => $this->input->post('membutuhkan_produk', TRUE),
 			'produk_dijual_bulanan' => $this->input->post('produk_dijual_bulanan', TRUE),

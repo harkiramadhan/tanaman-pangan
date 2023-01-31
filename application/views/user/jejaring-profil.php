@@ -304,12 +304,14 @@
                         <p class="mb-0 mt-0 ml-2 font-weight-normal p-0 text-xs"><?= ucfirst($jejaring->menjual_produk) ?></p>
                      </div>
                   </div>
-               <?php elseif($jejaring->status == 2): ?>
+               <?php endif; ?>
+
+               <?php if($jejaring->status_butuh == 1): ?>
                   <!-- Membutuhkan Produk -->
                   <div class="border rounded p-2 px-3 bg-white mr-1 mb-2 d-flex flex-column w-100 shadow-sm">
                      <a href="#" class="mb-2 font-weight-normal text-dark text-xs"><?= ($this->session->userdata('lang') == 'EN') ? 'Needs' : 'Membutuhkan' ?></a>
-                     <?php if($jejaring->produk_beli): ?>
-                        <img class="img-fluid rounded mb-2" src="<?= base_url('uploads/produk/' . $jejaring->produk_beli) ?>" style="object-fit: cover; height: 60px;">
+                     <?php if($jejaring->produk_butuh): ?>
+                        <img class="img-fluid rounded mb-2" src="<?= base_url('uploads/produk/' . $jejaring->produk_butuh) ?>" style="object-fit: cover; height: 60px;">
                      <?php else: ?>
                         <img class="img-fluid rounded mb-2" src="<?= site_url('assets/images/placeholder/main-placeholder-propaktani.png') ?>" style="object-fit: cover; height: 60px;">
                      <?php endif; ?>
@@ -319,6 +321,7 @@
                      </div>
                   </div>
                <?php endif; ?>
+
             </div>
             <div class="box shadow-sm rounded bg-white mb-3">
                <div class="box-title border-bottom p-3">

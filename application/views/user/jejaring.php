@@ -118,7 +118,8 @@
                                        </p>
                                     </div>
                                  </div>
-                              <?php elseif($row->status == 2): ?>
+                              <?php endif; ?>
+                              <?php if($row->status_butuh == 1): ?>
                                  <!-- Membutuhkan Produk -->
                                  <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
                                     <a href="<?= site_url('jejaring/' . $row->id) ?>" class="mb-1 font-weight-light text-dark text-xs"><?= ($this->session->userdata('lang') == 'EN') ? 'Needs' : 'Membutuhkan' ?></a>
@@ -134,8 +135,10 @@
                                        </p>
                                     </div>
                                  </div>
-                              <?php else: ?>
-                                  <!-- Keterangan jika tidak ada aktivitas -->
+                              <?php endif; ?>
+
+                              <?php if($row->status != 1 && $row->status_butuh != 1): ?>
+                                 <!-- Keterangan jika tidak ada aktivitas -->
                                  <div class="border rounded p-2 mt-1 mr-1 mb-2 d-flex flex-column w-100">
                                     <p class="mb-0 font-weight-light text-dark text-xs text-center"><?= ($this->session->userdata('lang') == 'EN') ? 'No Activity' : 'Tidak ada aktivitas' ?></p>
                                  </div>
